@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Link from "next/link";
 
@@ -41,6 +42,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${inter.variable}`}>
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7284698282537450"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900 font-[family-name:var(--font-inter)]">
         <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
           <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
