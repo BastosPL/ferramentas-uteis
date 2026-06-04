@@ -87,6 +87,8 @@ export default function RootLayout({
                   <li><Link href="/calculadora-imc" className="hover:text-blue-600">IMC</Link></li>
                   <li><Link href="/calculadora-porcentagem" className="hover:text-blue-600">Porcentagem</Link></li>
                   <li><Link href="/calculadora-combustivel" className="hover:text-blue-600">Alcool ou Gasolina</Link></li>
+                  <li><Link href="/calculadora-rescisao" className="hover:text-blue-600">Rescisao Trabalhista</Link></li>
+                  <li><Link href="/calculadora-calorias" className="hover:text-blue-600">Calorias Diarias</Link></li>
                 </ul>
               </div>
               <div>
@@ -94,6 +96,7 @@ export default function RootLayout({
                 <ul className="space-y-1 text-sm text-gray-600">
                   <li><Link href="/gerador-de-senha" className="hover:text-blue-600">Gerador de Senha</Link></li>
                   <li><Link href="/gerador-qr-code" className="hover:text-blue-600">Gerador de QR Code</Link></li>
+                  <li><Link href="/gerador-cpf-cnpj" className="hover:text-blue-600">Gerador CPF/CNPJ</Link></li>
                 </ul>
               </div>
               <div>

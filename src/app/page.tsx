@@ -64,6 +64,27 @@ const tools = [
     icon: "📱",
     keywords: "qr code, codigo qr, gerar qr, whatsapp, wifi",
   },
+  {
+    title: "Calculadora de Rescisao",
+    description: "Calcule sua rescisao trabalhista: saldo de salario, ferias, 13o, aviso previo e multa FGTS.",
+    href: "/calculadora-rescisao",
+    icon: "📋",
+    keywords: "rescisao, trabalhista, demissao, fgts, aviso previo",
+  },
+  {
+    title: "Gerador de CPF/CNPJ",
+    description: "Gere CPFs e CNPJs validos para testes de software. Valide numeros existentes.",
+    href: "/gerador-cpf-cnpj",
+    icon: "🆔",
+    keywords: "cpf, cnpj, gerador, validar, teste, desenvolvimento",
+  },
+  {
+    title: "Calculadora de Calorias",
+    description: "Descubra quantas calorias voce precisa por dia para emagrecer, manter ou ganhar peso.",
+    href: "/calculadora-calorias",
+    icon: "🍎",
+    keywords: "calorias, dieta, emagrecer, metabolismo, tmb",
+  },
 ];
 
 export default function Home() {
