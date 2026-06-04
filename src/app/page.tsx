@@ -108,10 +108,10 @@ export default function Home() {
             className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg hover:border-blue-300 transition-all group"
           >
             <span className="text-4xl mb-4 block">{tool.icon}</span>
-            <h2 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
+            <h2 className="text-xl font-semibold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">
               {tool.title}
             </h2>
-            <p className="text-gray-600 text-sm">{tool.description}</p>
+            <p className="text-gray-600 text-sm leading-relaxed">{tool.description}</p>
           </Link>
         ))}
 
