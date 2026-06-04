@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Metadata } from "next";
+import ToolPage from "../components/ToolPage";
 
 export default function CalculadoraJurosCompostos() {
   const [capital, setCapital] = useState("");
@@ -51,18 +52,12 @@ export default function CalculadoraJurosCompostos() {
     v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">Calculadora de Juros Compostos</h1>
-      <p className="text-gray-600 mb-8">
-        Simule o rendimento dos seus investimentos com juros compostos. Insira o valor
-        inicial, aporte mensal, taxa de juros e o periodo para ver quanto seu dinheiro
-        pode render.
-      </p>
+    <ToolPage title="Calculadora de Juros Compostos" description="Simule o rendimento dos seus investimentos com juros compostos. Insira o valor inicial, aporte mensal, taxa de juros e o periodo para ver quanto seu dinheiro pode render." accent="blue" icon="📈">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div>
-            <label className="block text-sm font-medium mb-1">Valor Inicial (R$)</label>
+            <label className="block text-sm font-medium mb-1 text-gray-800">Valor Inicial (R$)</label>
             <input
               type="number"
               value={capital}
@@ -72,7 +67,7 @@ export default function CalculadoraJurosCompostos() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Aporte Mensal (R$)</label>
+            <label className="block text-sm font-medium mb-1 text-gray-800">Aporte Mensal (R$)</label>
             <input
               type="number"
               value={aporteMensal}
@@ -82,7 +77,7 @@ export default function CalculadoraJurosCompostos() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Taxa de Juros Mensal (%)</label>
+            <label className="block text-sm font-medium mb-1 text-gray-800">Taxa de Juros Mensal (%)</label>
             <input
               type="number"
               step="0.01"
@@ -93,7 +88,7 @@ export default function CalculadoraJurosCompostos() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Periodo (meses)</label>
+            <label className="block text-sm font-medium mb-1 text-gray-800">Periodo (meses)</label>
             <input
               type="number"
               value={periodo}
@@ -190,6 +185,6 @@ export default function CalculadoraJurosCompostos() {
           formula de anuidade: M = PMT x ((1+i)^n - 1) / i.
         </p>
       </section>
-    </div>
+    </ToolPage>
   );
 }

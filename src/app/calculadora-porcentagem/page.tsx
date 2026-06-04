@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ToolPage from "../components/ToolPage";
 
 export default function CalculadoraPorcentagem() {
   const [v1a, setV1a] = useState("");
@@ -20,43 +21,38 @@ export default function CalculadoraPorcentagem() {
   const fmt = (n: number | null) => n !== null ? n.toLocaleString("pt-BR", { maximumFractionDigits: 2 }) : "—";
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">Calculadora de Porcentagem</h1>
-      <p className="text-gray-600 mb-8">
-        Calcule porcentagens de forma rapida e facil. Descubra quanto e X% de um valor,
-        calcule aumentos, descontos e a porcentagem entre dois numeros.
-      </p>
+    <ToolPage title="Calculadora de Porcentagem" description="Calcule porcentagens de forma rapida e facil. Descubra quanto e X% de um valor, calcule aumentos, descontos e a porcentagem entre dois numeros." accent="indigo" icon="💯">
 
       <div className="space-y-6">
         <div className="bg-white rounded-xl border border-gray-200 p-6">
           <h2 className="font-semibold mb-3">Quanto e X% de Y?</h2>
           <div className="flex items-center gap-2 flex-wrap">
             <span>Quanto e</span>
-            <input type="number" value={v1a} onChange={(e) => setV1a(e.target.value)} placeholder="10" className="w-24 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="number" value={v1a} onChange={(e) => setV1a(e.target.value)} placeholder="10" className="w-24 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             <span>% de</span>
-            <input type="number" value={v1b} onChange={(e) => setV1b(e.target.value)} placeholder="200" className="w-28 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="number" value={v1b} onChange={(e) => setV1b(e.target.value)} placeholder="200" className="w-28 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             <span>=</span>
-            <span className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-2 font-bold text-blue-800 min-w-[80px] text-center">{fmt(r1)}</span>
+            <span className="bg-indigo-50 border border-indigo-200 rounded-lg px-4 py-2 font-bold text-indigo-800 min-w-[80px] text-center">{fmt(r1)}</span>
           </div>
         </div>
 
         <div className="bg-white rounded-xl border border-gray-200 p-6">
           <h2 className="font-semibold mb-3">X e quantos % de Y?</h2>
           <div className="flex items-center gap-2 flex-wrap">
-            <input type="number" value={v2a} onChange={(e) => setV2a(e.target.value)} placeholder="25" className="w-28 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="number" value={v2a} onChange={(e) => setV2a(e.target.value)} placeholder="25" className="w-28 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             <span>e quantos % de</span>
-            <input type="number" value={v2b} onChange={(e) => setV2b(e.target.value)} placeholder="200" className="w-28 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="number" value={v2b} onChange={(e) => setV2b(e.target.value)} placeholder="200" className="w-28 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             <span>=</span>
-            <span className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-2 font-bold text-blue-800 min-w-[80px] text-center">{fmt(r2)}%</span>
+            <span className="bg-indigo-50 border border-indigo-200 rounded-lg px-4 py-2 font-bold text-indigo-800 min-w-[80px] text-center">{fmt(r2)}%</span>
           </div>
         </div>
 
         <div className="bg-white rounded-xl border border-gray-200 p-6">
           <h2 className="font-semibold mb-3">Aumento de X%</h2>
           <div className="flex items-center gap-2 flex-wrap">
-            <input type="number" value={v3a} onChange={(e) => setV3a(e.target.value)} placeholder="100" className="w-28 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="number" value={v3a} onChange={(e) => setV3a(e.target.value)} placeholder="100" className="w-28 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             <span>com aumento de</span>
-            <input type="number" value={v3b} onChange={(e) => setV3b(e.target.value)} placeholder="15" className="w-24 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="number" value={v3b} onChange={(e) => setV3b(e.target.value)} placeholder="15" className="w-24 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             <span>% =</span>
             <span className="bg-green-50 border border-green-200 rounded-lg px-4 py-2 font-bold text-green-800 min-w-[80px] text-center">{fmt(r3)}</span>
           </div>
@@ -65,9 +61,9 @@ export default function CalculadoraPorcentagem() {
         <div className="bg-white rounded-xl border border-gray-200 p-6">
           <h2 className="font-semibold mb-3">Desconto de X%</h2>
           <div className="flex items-center gap-2 flex-wrap">
-            <input type="number" value={v4a} onChange={(e) => setV4a(e.target.value)} placeholder="100" className="w-28 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="number" value={v4a} onChange={(e) => setV4a(e.target.value)} placeholder="100" className="w-28 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             <span>com desconto de</span>
-            <input type="number" value={v4b} onChange={(e) => setV4b(e.target.value)} placeholder="20" className="w-24 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="number" value={v4b} onChange={(e) => setV4b(e.target.value)} placeholder="20" className="w-24 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             <span>% =</span>
             <span className="bg-red-50 border border-red-200 rounded-lg px-4 py-2 font-bold text-red-800 min-w-[80px] text-center">{fmt(r4)}</span>
           </div>
@@ -86,6 +82,6 @@ export default function CalculadoraPorcentagem() {
           Para desconto: Valor Final = Valor x (1 - Porcentagem/100).
         </p>
       </section>
-    </div>
+    </ToolPage>
   );
 }

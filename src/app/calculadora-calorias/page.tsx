@@ -10,6 +10,8 @@ const niveis = [
   { id: "extremo", label: "Extremamente ativo", desc: "Exercicio intenso diario ou trabalho fisico", fator: 1.9 },
 ];
 
+import ToolPage from "../components/ToolPage";
+
 export default function CalculadoraCalorias() {
   const [sexo, setSexo] = useState<"masculino" | "feminino">("masculino");
   const [idade, setIdade] = useState("");
@@ -51,16 +53,16 @@ export default function CalculadoraCalorias() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">Calculadora de Calorias Diarias</h1>
-      <p className="text-gray-600 mb-8">
-        Descubra quantas calorias voce precisa consumir por dia para emagrecer, manter
-        ou ganhar peso. Calculo baseado na formula de Harris-Benedict.
-      </p>
+    <ToolPage
+      title="Calculadora de Calorias Diarias"
+      description="Descubra quantas calorias voce precisa consumir por dia para emagrecer, manter ou ganhar peso. Calculo baseado na formula de Harris-Benedict."
+      accent="red"
+      icon="🍎"
+    >
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="mb-4">
-          <label className="block text-sm font-medium mb-2">Sexo</label>
+          <label className="block text-sm font-medium text-gray-800 mb-2">Sexo</label>
           <div className="flex gap-2">
             <button onClick={() => setSexo("masculino")} className={`px-6 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${sexo === "masculino" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>
               Masculino
@@ -73,35 +75,35 @@ export default function CalculadoraCalorias() {
 
         <div className="grid md:grid-cols-3 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium mb-1">Idade (anos)</label>
+            <label className="block text-sm font-medium text-gray-800 mb-1">Idade (anos)</label>
             <input type="number" value={idade} onChange={(e) => setIdade(e.target.value)} placeholder="Ex: 30" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Peso (kg)</label>
+            <label className="block text-sm font-medium text-gray-800 mb-1">Peso (kg)</label>
             <input type="number" step="0.1" value={peso} onChange={(e) => setPeso(e.target.value)} placeholder="Ex: 75" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Altura (cm)</label>
+            <label className="block text-sm font-medium text-gray-800 mb-1">Altura (cm)</label>
             <input type="number" value={altura} onChange={(e) => setAltura(e.target.value)} placeholder="Ex: 175" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
           </div>
         </div>
 
         <div className="mb-6">
-          <label className="block text-sm font-medium mb-2">Nivel de atividade fisica</label>
+          <label className="block text-sm font-medium text-gray-800 mb-2">Nivel de atividade fisica</label>
           <div className="space-y-2">
             {niveis.map((n) => (
               <label key={n.id} className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer border transition-colors ${nivel === n.id ? "border-blue-500 bg-blue-50" : "border-gray-200 hover:bg-gray-50"}`}>
                 <input type="radio" name="nivel" value={n.id} checked={nivel === n.id} onChange={() => setNivel(n.id)} className="accent-blue-600" />
                 <div>
-                  <span className="font-medium text-sm">{n.label}</span>
-                  <span className="text-xs text-gray-500 ml-2">{n.desc}</span>
+                  <span className="font-medium text-sm text-gray-900">{n.label}</span>
+                  <span className="text-xs text-gray-600 ml-2">{n.desc}</span>
                 </div>
               </label>
             ))}
           </div>
         </div>
 
-        <button onClick={calcular} className="w-full bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors cursor-pointer">
+        <button onClick={calcular} className="w-full bg-red-600 text-white rounded-lg py-3 font-semibold hover:bg-red-700 transition-colors cursor-pointer">
           Calcular Calorias
         </button>
       </div>
@@ -158,6 +160,6 @@ export default function CalculadoraCalorias() {
           Mulheres: TMB = 447,593 + (9,247 x peso em kg) + (3,098 x altura em cm) - (4,33 x idade).
         </p>
       </section>
-    </div>
+    </ToolPage>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ToolPage from "../components/ToolPage";
 
 const faixas = [
   { min: 0, max: 16, label: "Magreza grave", cor: "bg-red-600", descricao: "Procure orientacao medica urgente." },
@@ -37,40 +38,35 @@ export default function CalculadoraIMC() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">Calculadora de IMC</h1>
-      <p className="text-gray-600 mb-8">
-        Calcule seu Indice de Massa Corporal (IMC) e descubra se voce esta no peso ideal.
-        O IMC e uma medida internacional usada para avaliar o nivel de gordura corporal.
-      </p>
+    <ToolPage title="Calculadora de IMC" description="Calcule seu Indice de Massa Corporal (IMC) e descubra se voce esta no peso ideal. O IMC e uma medida internacional usada para avaliar o nivel de gordura corporal." accent="orange" icon="⚖️">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div>
-            <label className="block text-sm font-medium mb-1">Peso (kg)</label>
+            <label className="block text-sm font-medium mb-1 text-gray-800">Peso (kg)</label>
             <input
               type="number"
               step="0.1"
               value={peso}
               onChange={(e) => setPeso(e.target.value)}
               placeholder="Ex: 70"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-orange-500"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Altura (cm)</label>
+            <label className="block text-sm font-medium mb-1 text-gray-800">Altura (cm)</label>
             <input
               type="number"
               value={altura}
               onChange={(e) => setAltura(e.target.value)}
               placeholder="Ex: 175"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-orange-500"
             />
           </div>
         </div>
         <button
           onClick={calcular}
-          className="w-full bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors cursor-pointer"
+          className="w-full bg-orange-500 text-white rounded-lg py-3 font-semibold hover:bg-orange-600 transition-colors cursor-pointer"
         >
           Calcular IMC
         </button>
@@ -151,6 +147,6 @@ export default function CalculadoraIMC() {
           para uma avaliacao completa.
         </p>
       </section>
-    </div>
+    </ToolPage>
   );
 }

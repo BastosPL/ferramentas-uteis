@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ToolPage from "../components/ToolPage";
 
 export default function CalculadoraCombustivel() {
   const [precoAlcool, setPrecoAlcool] = useState("");
@@ -13,35 +14,30 @@ export default function CalculadoraCombustivel() {
   const melhorAlcool = razao <= 0.7;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">Calculadora: Alcool ou Gasolina?</h1>
-      <p className="text-gray-600 mb-8">
-        Descubra qual combustivel e mais vantajoso para o seu bolso. A calculadora usa a
-        regra dos 70%: se o preco do alcool for ate 70% do preco da gasolina, compensa abastecer com alcool.
-      </p>
+    <ToolPage title="Calculadora: Alcool ou Gasolina?" description="Descubra qual combustivel e mais vantajoso para o seu bolso. A calculadora usa a regra dos 70%: se o preco do alcool for ate 70% do preco da gasolina, compensa abastecer com alcool." accent="emerald" icon="⛽">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div>
-            <label className="block text-sm font-medium mb-1">Preco do Alcool (R$/litro)</label>
+            <label className="block text-sm font-medium mb-1 text-gray-800">Preco do Alcool (R$/litro)</label>
             <input
               type="number"
               step="0.01"
               value={precoAlcool}
               onChange={(e) => setPrecoAlcool(e.target.value)}
               placeholder="Ex: 3.89"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-lg"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Preco da Gasolina (R$/litro)</label>
+            <label className="block text-sm font-medium mb-1 text-gray-800">Preco da Gasolina (R$/litro)</label>
             <input
               type="number"
               step="0.01"
               value={precoGasolina}
               onChange={(e) => setPrecoGasolina(e.target.value)}
               placeholder="Ex: 5.79"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-lg"
             />
           </div>
         </div>
@@ -101,6 +97,6 @@ export default function CalculadoraCombustivel() {
           Como 67% e menor que 70%, o alcool e mais vantajoso nesse caso.
         </p>
       </section>
-    </div>
+    </ToolPage>
   );
 }

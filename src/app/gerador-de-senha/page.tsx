@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import ToolPage from "../components/ToolPage";
 
 export default function GeradorDeSenha() {
   const [tamanho, setTamanho] = useState(16);
@@ -58,12 +59,7 @@ export default function GeradorDeSenha() {
   const forca = calcularForca(senha);
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">Gerador de Senha Segura</h1>
-      <p className="text-gray-600 mb-8">
-        Gere senhas fortes e aleatorias usando criptografia do navegador.
-        Nenhum dado e enviado para servidores. Sua senha e gerada 100% localmente.
-      </p>
+    <ToolPage title="Gerador de Senha Segura" description="Gere senhas fortes e aleatorias usando criptografia do navegador. Nenhum dado e enviado para servidores. Sua senha e gerada 100% localmente." accent="green" icon="🔐">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         {senha && (
@@ -74,7 +70,7 @@ export default function GeradorDeSenha() {
               </div>
               <button
                 onClick={copiar}
-                className="bg-blue-600 text-white rounded-lg px-4 py-3 font-semibold hover:bg-blue-700 transition-colors shrink-0 cursor-pointer"
+                className="bg-green-600 text-white rounded-lg px-4 py-3 font-semibold hover:bg-green-700 transition-colors shrink-0 cursor-pointer"
               >
                 {copiado ? "Copiado!" : "Copiar"}
               </button>
@@ -94,8 +90,8 @@ export default function GeradorDeSenha() {
         )}
 
         <div className="mb-6">
-          <label className="block text-sm font-medium mb-2">
-            Tamanho: <span className="text-blue-600 font-bold">{tamanho}</span> caracteres
+          <label className="block text-sm font-medium mb-2 text-gray-800">
+            Tamanho: <span className="text-green-600 font-bold">{tamanho}</span> caracteres
           </label>
           <input
             type="range"
@@ -103,7 +99,7 @@ export default function GeradorDeSenha() {
             max={64}
             value={tamanho}
             onChange={(e) => setTamanho(parseInt(e.target.value))}
-            className="w-full accent-blue-600"
+            className="w-full accent-green-600"
           />
           <div className="flex justify-between text-xs text-gray-400 mt-1">
             <span>4</span>
@@ -123,7 +119,7 @@ export default function GeradorDeSenha() {
                 type="checkbox"
                 checked={opt.value}
                 onChange={(e) => opt.set(e.target.checked)}
-                className="w-4 h-4 accent-blue-600"
+                className="w-4 h-4 accent-green-600"
               />
               <span className="text-sm">{opt.label}</span>
             </label>
@@ -132,7 +128,7 @@ export default function GeradorDeSenha() {
 
         <button
           onClick={gerarSenha}
-          className="w-full bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors cursor-pointer"
+          className="w-full bg-green-600 text-white rounded-lg py-3 font-semibold hover:bg-green-700 transition-colors cursor-pointer"
         >
           Gerar Senha
         </button>
@@ -149,7 +145,7 @@ export default function GeradorDeSenha() {
                   onClick={async () => {
                     await navigator.clipboard.writeText(s);
                   }}
-                  className="text-blue-600 text-xs hover:underline shrink-0 cursor-pointer"
+                  className="text-green-600 text-xs hover:underline shrink-0 cursor-pointer"
                 >
                   Copiar
                 </button>
@@ -175,6 +171,6 @@ export default function GeradorDeSenha() {
           <li>Use um gerenciador de senhas para guardar suas credenciais</li>
         </ul>
       </section>
-    </div>
+    </ToolPage>
   );
 }

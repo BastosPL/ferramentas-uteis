@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
+import ToolPage from "../components/ToolPage";
 
 export default function Cronometro() {
   const [tempo, setTempo] = useState(0);
@@ -62,23 +63,18 @@ export default function Cronometro() {
   const tempoExibido = modo === "progressivo" ? tempo : tempoRegressivo * 1000;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">Cronometro Online</h1>
-      <p className="text-gray-600 mb-8">
-        Cronometro preciso com contagem progressiva e regressiva. Funcao de voltas
-        para marcar tempos parciais.
-      </p>
+    <ToolPage title="Cronometro Online" description="Cronometro preciso com contagem progressiva e regressiva. Funcao de voltas para marcar tempos parciais." accent="amber" icon="⏱️">
 
       <div className="flex gap-2 mb-6">
         <button
           onClick={() => { resetar(); setModo("progressivo"); }}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${modo === "progressivo" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}
+          className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${modo === "progressivo" ? "bg-amber-500 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}
         >
           Cronometro
         </button>
         <button
           onClick={() => { resetar(); setModo("regressivo"); }}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${modo === "regressivo" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}
+          className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${modo === "regressivo" ? "bg-amber-500 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}
         >
           Timer (Regressivo)
         </button>
@@ -86,13 +82,13 @@ export default function Cronometro() {
 
       {modo === "regressivo" && !rodando && tempoRegressivo === tempoInicial && (
         <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
-          <label className="block text-sm font-medium mb-2">Definir tempo (segundos)</label>
+          <label className="block text-sm font-medium mb-2 text-gray-800">Definir tempo (segundos)</label>
           <div className="flex gap-2">
             {[60, 120, 300, 600, 900, 1800].map((s) => (
               <button
                 key={s}
                 onClick={() => { setTempoInicial(s); setTempoRegressivo(s); }}
-                className={`px-3 py-1.5 rounded-lg text-sm cursor-pointer ${tempoInicial === s ? "bg-blue-600 text-white" : "bg-gray-100 hover:bg-gray-200"}`}
+                className={`px-3 py-1.5 rounded-lg text-sm cursor-pointer ${tempoInicial === s ? "bg-amber-500 text-white" : "bg-gray-100 hover:bg-gray-200"}`}
               >
                 {s >= 60 ? `${s / 60}min` : `${s}s`}
               </button>
@@ -116,7 +112,7 @@ export default function Cronometro() {
             </button>
           )}
           {modo === "progressivo" && rodando && (
-            <button onClick={marcarVolta} className="bg-blue-600 text-white rounded-lg px-8 py-3 font-semibold hover:bg-blue-700 transition-colors cursor-pointer">
+            <button onClick={marcarVolta} className="bg-amber-500 text-white rounded-lg px-8 py-3 font-semibold hover:bg-amber-600 transition-colors cursor-pointer">
               Volta
             </button>
           )}
@@ -147,6 +143,6 @@ export default function Cronometro() {
           parciais. O modo Timer permite definir um tempo para contagem regressiva.
         </p>
       </section>
-    </div>
+    </ToolPage>
   );
 }

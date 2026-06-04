@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ToolPage from "../components/ToolPage";
 
 const limites = [
   { nome: "Twitter/X", limite: 280 },
@@ -22,12 +23,7 @@ export default function ContadorDeCaracteres() {
   const tempoLeitura = Math.max(1, Math.ceil(palavras / 200));
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">Contador de Caracteres e Palavras</h1>
-      <p className="text-gray-600 mb-8">
-        Conte caracteres, palavras, frases e paragrafos do seu texto. Verifique se esta
-        dentro dos limites de redes sociais e SEO.
-      </p>
+    <ToolPage title="Contador de Caracteres e Palavras" description="Conte caracteres, palavras, frases e paragrafos do seu texto. Verifique se esta dentro dos limites de redes sociais e SEO." accent="purple" icon="📝">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <textarea
@@ -35,7 +31,7 @@ export default function ContadorDeCaracteres() {
           onChange={(e) => setTexto(e.target.value)}
           placeholder="Cole ou digite seu texto aqui..."
           rows={8}
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y text-base"
+          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-y text-base"
         />
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mt-4">
@@ -51,7 +47,7 @@ export default function ContadorDeCaracteres() {
               key={stat.label}
               className="bg-gray-50 rounded-lg p-3 text-center"
             >
-              <p className="text-2xl font-bold text-blue-600">{stat.value}</p>
+              <p className="text-2xl font-bold text-purple-600">{stat.value}</p>
               <p className="text-xs text-gray-500">{stat.label}</p>
             </div>
           ))}
@@ -67,14 +63,14 @@ export default function ContadorDeCaracteres() {
             return (
               <div key={item.nome} className="border border-gray-100 rounded-lg p-3">
                 <div className="flex justify-between mb-1">
-                  <span className="text-sm font-medium">{item.nome}</span>
+                  <span className="text-sm font-medium text-gray-900">{item.nome}</span>
                   <span className={`text-xs font-mono ${excedeu ? "text-red-600" : "text-gray-500"}`}>
                     {caracteres}/{item.limite}
                   </span>
                 </div>
                 <div className="bg-gray-200 rounded-full h-2">
                   <div
-                    className={`h-2 rounded-full transition-all ${excedeu ? "bg-red-500" : "bg-blue-500"}`}
+                    className={`h-2 rounded-full transition-all ${excedeu ? "bg-red-500" : "bg-purple-500"}`}
                     style={{ width: `${Math.min(100, pct)}%` }}
                   />
                 </div>
@@ -107,7 +103,7 @@ export default function ContadorDeCaracteres() {
               .map(([word, count]) => (
                 <span
                   key={word}
-                  className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm"
+                  className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm"
                 >
                   {word} ({count})
                 </span>
@@ -130,6 +126,6 @@ export default function ContadorDeCaracteres() {
           descritivas.
         </p>
       </section>
-    </div>
+    </ToolPage>
   );
 }

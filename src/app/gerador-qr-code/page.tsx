@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import ToolPage from "../components/ToolPage";
 
 export default function GeradorQRCode() {
   const [texto, setTexto] = useState("");
@@ -48,12 +49,7 @@ export default function GeradorQRCode() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">Gerador de QR Code</h1>
-      <p className="text-gray-600 mb-8">
-        Crie QR Codes gratuitamente para links, textos, WhatsApp, Wi-Fi e mais.
-        Baixe em PNG para usar onde quiser.
-      </p>
+    <ToolPage title="Gerador de QR Code" description="Crie QR Codes gratuitamente para links, textos, WhatsApp, Wi-Fi e mais. Baixe em PNG para usar onde quiser." accent="cyan" icon="📱">
 
       <div className="grid md:grid-cols-[1fr_auto] gap-6">
         <div className="bg-white rounded-xl border border-gray-200 p-6">
@@ -63,7 +59,7 @@ export default function GeradorQRCode() {
                 key={t.id}
                 onClick={() => setTipo(t.id)}
                 className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer ${
-                  tipo === t.id ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  tipo === t.id ? "bg-cyan-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 {t.label}
@@ -72,33 +68,33 @@ export default function GeradorQRCode() {
           </div>
 
           {tipo === "url" && (
-            <input type="url" value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://exemplo.com" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="url" value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://exemplo.com" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-cyan-500" />
           )}
           {tipo === "texto" && (
-            <textarea value={texto} onChange={(e) => setTexto(e.target.value)} placeholder="Digite seu texto aqui..." rows={4} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y" />
+            <textarea value={texto} onChange={(e) => setTexto(e.target.value)} placeholder="Digite seu texto aqui..." rows={4} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-cyan-500 resize-y" />
           )}
           {tipo === "whatsapp" && (
             <div className="space-y-3">
-              <input type="tel" value={telefone} onChange={(e) => setTelefone(e.target.value)} placeholder="5581999999999 (com DDD e codigo do pais)" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-              <input type="text" value={mensagem} onChange={(e) => setMensagem(e.target.value)} placeholder="Mensagem (opcional)" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              <input type="tel" value={telefone} onChange={(e) => setTelefone(e.target.value)} placeholder="5581999999999 (com DDD e codigo do pais)" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-cyan-500" />
+              <input type="text" value={mensagem} onChange={(e) => setMensagem(e.target.value)} placeholder="Mensagem (opcional)" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-cyan-500" />
             </div>
           )}
           {tipo === "wifi" && (
             <div className="space-y-3">
-              <input type="text" value={ssid} onChange={(e) => setSsid(e.target.value)} placeholder="Nome da rede (SSID)" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-              <input type="text" value={senhaWifi} onChange={(e) => setSenhaWifi(e.target.value)} placeholder="Senha do Wi-Fi" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              <input type="text" value={ssid} onChange={(e) => setSsid(e.target.value)} placeholder="Nome da rede (SSID)" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-cyan-500" />
+              <input type="text" value={senhaWifi} onChange={(e) => setSenhaWifi(e.target.value)} placeholder="Senha do Wi-Fi" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-cyan-500" />
             </div>
           )}
           {tipo === "email" && (
-            <input type="email" value={texto} onChange={(e) => setTexto(e.target.value)} placeholder="email@exemplo.com" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="email" value={texto} onChange={(e) => setTexto(e.target.value)} placeholder="email@exemplo.com" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-cyan-500" />
           )}
           {tipo === "telefone" && (
-            <input type="tel" value={telefone} onChange={(e) => setTelefone(e.target.value)} placeholder="(81) 99999-9999" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="tel" value={telefone} onChange={(e) => setTelefone(e.target.value)} placeholder="(81) 99999-9999" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-cyan-500" />
           )}
 
           <div className="mt-4">
-            <label className="block text-sm font-medium mb-1">Tamanho: {tamanho}px</label>
-            <input type="range" min={128} max={512} step={64} value={tamanho} onChange={(e) => setTamanho(parseInt(e.target.value))} className="w-full accent-blue-600" />
+            <label className="block text-sm font-medium mb-1 text-gray-800">Tamanho: {tamanho}px</label>
+            <input type="range" min={128} max={512} step={64} value={tamanho} onChange={(e) => setTamanho(parseInt(e.target.value))} className="w-full accent-cyan-600" />
           </div>
         </div>
 
@@ -106,7 +102,7 @@ export default function GeradorQRCode() {
           {qrUrl ? (
             <>
               <img ref={imgRef} src={qrUrl} alt="QR Code gerado" width={tamanho} height={tamanho} className="rounded-lg mb-4" />
-              <button onClick={baixar} className="bg-blue-600 text-white rounded-lg px-6 py-2.5 font-semibold hover:bg-blue-700 transition-colors cursor-pointer">
+              <button onClick={baixar} className="bg-cyan-600 text-white rounded-lg px-6 py-2.5 font-semibold hover:bg-cyan-700 transition-colors cursor-pointer">
                 Baixar PNG
               </button>
             </>
@@ -127,6 +123,6 @@ export default function GeradorQRCode() {
           contatos e muito mais. Basta apontar a camera do celular para o codigo.
         </p>
       </section>
-    </div>
+    </ToolPage>
   );
 }

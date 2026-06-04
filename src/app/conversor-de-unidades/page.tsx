@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ToolPage from "../components/ToolPage";
 
 type Categoria = {
   nome: string;
@@ -102,12 +103,7 @@ export default function ConversorDeUnidades() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">Conversor de Unidades</h1>
-      <p className="text-gray-600 mb-8">
-        Converta unidades de comprimento, peso, temperatura, volume, area e velocidade
-        de forma rapida e precisa.
-      </p>
+    <ToolPage title="Conversor de Unidades" description="Converta unidades de comprimento, peso, temperatura, volume, area e velocidade de forma rapida e precisa." accent="teal" icon="🔄">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="flex flex-wrap gap-2 mb-6">
@@ -121,7 +117,7 @@ export default function ConversorDeUnidades() {
               }}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
                 i === catIndex
-                  ? "bg-blue-600 text-white"
+                  ? "bg-teal-600 text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
@@ -132,7 +128,7 @@ export default function ConversorDeUnidades() {
 
         <div className="grid md:grid-cols-[1fr_auto_1fr] gap-4 items-end">
           <div>
-            <label className="block text-sm font-medium mb-1">De</label>
+            <label className="block text-sm font-medium mb-1 text-gray-800">De</label>
             <select
               value={deIndex}
               onChange={(e) => setDeIndex(parseInt(e.target.value))}
@@ -149,7 +145,7 @@ export default function ConversorDeUnidades() {
               value={valor}
               onChange={(e) => setValor(e.target.value)}
               placeholder="Digite o valor"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-teal-500 text-lg"
             />
           </div>
 
@@ -165,7 +161,7 @@ export default function ConversorDeUnidades() {
           </button>
 
           <div>
-            <label className="block text-sm font-medium mb-1">Para</label>
+            <label className="block text-sm font-medium mb-1 text-gray-800">Para</label>
             <select
               value={paraIndex}
               onChange={(e) => setParaIndex(parseInt(e.target.value))}
@@ -177,7 +173,7 @@ export default function ConversorDeUnidades() {
                 </option>
               ))}
             </select>
-            <div className="w-full bg-blue-50 border border-blue-200 rounded-lg px-4 py-2.5 text-lg font-semibold text-blue-800">
+            <div className="w-full bg-teal-50 border border-teal-200 rounded-lg px-4 py-2.5 text-lg font-semibold text-teal-800">
               {valor ? resultado.toLocaleString("pt-BR", { maximumFractionDigits: 6 }) : "0"}{" "}
               {para.sigla}
             </div>
@@ -244,6 +240,6 @@ export default function ConversorDeUnidades() {
           <li>Litros para galoes</li>
         </ul>
       </section>
-    </div>
+    </ToolPage>
   );
 }

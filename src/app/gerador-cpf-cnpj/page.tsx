@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ToolPage from "../components/ToolPage";
 
 function gerarCPF(formatado: boolean): string {
   const rand = () => Math.floor(Math.random() * 10);
@@ -122,12 +123,7 @@ export default function GeradorCpfCnpj() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">Gerador de CPF e CNPJ</h1>
-      <p className="text-gray-600 mb-8">
-        Gere CPFs e CNPJs validos para testes de software. Numeros ficticios com digitos
-        verificadores matematicamente corretos. Tambem valide CPFs e CNPJs existentes.
-      </p>
+    <ToolPage title="Gerador de CPF e CNPJ" description="Gere CPFs e CNPJs validos para testes de software. Numeros ficticios com digitos verificadores matematicamente corretos. Tambem valide CPFs e CNPJs existentes." accent="pink" icon="🆔">
 
       <div className="flex gap-2 mb-6">
         {[
@@ -139,7 +135,7 @@ export default function GeradorCpfCnpj() {
             key={t.id}
             onClick={() => { setModo(t.id); setGerados([]); setValidarResultado(null); }}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
-              modo === t.id ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              modo === t.id ? "bg-pink-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
           >
             {t.label}
@@ -151,7 +147,7 @@ export default function GeradorCpfCnpj() {
         <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
           <div className="flex flex-wrap gap-4 items-end mb-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Quantidade</label>
+              <label className="block text-sm font-medium mb-1 text-gray-800">Quantidade</label>
               <select value={quantidade} onChange={(e) => setQuantidade(parseInt(e.target.value))} className="border border-gray-300 rounded-lg px-3 py-2.5">
                 {[1, 5, 10, 20, 50].map((q) => (
                   <option key={q} value={q}>{q}</option>
@@ -159,11 +155,11 @@ export default function GeradorCpfCnpj() {
               </select>
             </div>
             <label className="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" checked={formatado} onChange={(e) => setFormatado(e.target.checked)} className="w-4 h-4 accent-blue-600" />
+              <input type="checkbox" checked={formatado} onChange={(e) => setFormatado(e.target.checked)} className="w-4 h-4 accent-pink-600" />
               <span className="text-sm">Com formatacao</span>
             </label>
           </div>
-          <button onClick={gerar} className="w-full bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors cursor-pointer">
+          <button onClick={gerar} className="w-full bg-pink-600 text-white rounded-lg py-3 font-semibold hover:bg-pink-700 transition-colors cursor-pointer">
             Gerar {modo === "cpf" ? "CPF" : "CNPJ"}
           </button>
 
@@ -174,7 +170,7 @@ export default function GeradorCpfCnpj() {
                   <span className="font-mono text-lg flex-1">{g}</span>
                   <button
                     onClick={() => copiar(g, i)}
-                    className="text-blue-600 text-sm hover:underline cursor-pointer"
+                    className="text-pink-600 text-sm hover:underline cursor-pointer"
                   >
                     {copiado === i ? "Copiado!" : "Copiar"}
                   </button>
@@ -183,7 +179,7 @@ export default function GeradorCpfCnpj() {
               {gerados.length > 1 && (
                 <button
                   onClick={() => copiar(gerados.join("\n"), -1)}
-                  className="w-full text-center text-sm text-blue-600 hover:underline cursor-pointer py-2"
+                  className="w-full text-center text-sm text-pink-600 hover:underline cursor-pointer py-2"
                 >
                   {copiado === -1 ? "Todos copiados!" : "Copiar todos"}
                 </button>
@@ -193,16 +189,16 @@ export default function GeradorCpfCnpj() {
         </div>
       ) : (
         <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
-          <label className="block text-sm font-medium mb-1">Digite o CPF ou CNPJ</label>
+          <label className="block text-sm font-medium mb-1 text-gray-800">Digite o CPF ou CNPJ</label>
           <div className="flex gap-2">
             <input
               type="text"
               value={validarInput}
               onChange={(e) => { setValidarInput(e.target.value); setValidarResultado(null); }}
               placeholder="000.000.000-00 ou 00.000.000/0000-00"
-              className="flex-1 border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
+              className="flex-1 border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-pink-500 font-mono"
             />
-            <button onClick={validar} className="bg-blue-600 text-white rounded-lg px-6 py-2.5 font-semibold hover:bg-blue-700 transition-colors cursor-pointer">
+            <button onClick={validar} className="bg-pink-600 text-white rounded-lg px-6 py-2.5 font-semibold hover:bg-pink-700 transition-colors cursor-pointer">
               Validar
             </button>
           </div>
@@ -236,6 +232,6 @@ export default function GeradorCpfCnpj() {
           gera numeros matematicamente validos mas que nao pertencem a ninguem.
         </p>
       </section>
-    </div>
+    </ToolPage>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ToolPage from "../components/ToolPage";
 
 type TipoDemissao = "sem_justa_causa" | "pedido_demissao" | "acordo_mutuo";
 
@@ -113,23 +114,18 @@ export default function CalculadoraRescisao() {
   const fmt = (v: number) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">Calculadora de Rescisao Trabalhista</h1>
-      <p className="text-gray-600 mb-8">
-        Calcule o valor estimado da sua rescisao trabalhista. Inclui saldo de salario,
-        ferias proporcionais, 13o proporcional, aviso previo e multa do FGTS.
-      </p>
+    <ToolPage title="Calculadora de Rescisao Trabalhista" description="Calcule o valor estimado da sua rescisao trabalhista. Inclui saldo de salario, ferias proporcionais, 13o proporcional, aviso previo e multa do FGTS." accent="rose" icon="📋">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="mb-4">
-          <label className="block text-sm font-medium mb-1">Tipo de Demissao</label>
+          <label className="block text-sm font-medium mb-1 text-gray-800">Tipo de Demissao</label>
           <div className="flex flex-wrap gap-2">
             {(Object.keys(tiposLabel) as TipoDemissao[]).map((t) => (
               <button
                 key={t}
                 onClick={() => setTipo(t)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
-                  tipo === t ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  tipo === t ? "bg-rose-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 {tiposLabel[t]}
@@ -140,34 +136,34 @@ export default function CalculadoraRescisao() {
 
         <div className="grid md:grid-cols-2 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium mb-1">Salario Bruto (R$)</label>
-            <input type="number" value={salario} onChange={(e) => setSalario(e.target.value)} placeholder="Ex: 3000" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <label className="block text-sm font-medium mb-1 text-gray-800">Salario Bruto (R$)</label>
+            <input type="number" value={salario} onChange={(e) => setSalario(e.target.value)} placeholder="Ex: 3000" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-rose-500" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Saldo FGTS (R$)</label>
-            <input type="number" value={saldoFGTS} onChange={(e) => setSaldoFGTS(e.target.value)} placeholder="Ex: 5000" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <label className="block text-sm font-medium mb-1 text-gray-800">Saldo FGTS (R$)</label>
+            <input type="number" value={saldoFGTS} onChange={(e) => setSaldoFGTS(e.target.value)} placeholder="Ex: 5000" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-rose-500" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Data de Admissao</label>
-            <input type="date" value={dataAdmissao} onChange={(e) => setDataAdmissao(e.target.value)} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <label className="block text-sm font-medium mb-1 text-gray-800">Data de Admissao</label>
+            <input type="date" value={dataAdmissao} onChange={(e) => setDataAdmissao(e.target.value)} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-rose-500" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Data de Demissao</label>
-            <input type="date" value={dataDemissao} onChange={(e) => setDataDemissao(e.target.value)} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <label className="block text-sm font-medium mb-1 text-gray-800">Data de Demissao</label>
+            <input type="date" value={dataDemissao} onChange={(e) => setDataDemissao(e.target.value)} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-rose-500" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Dias trabalhados no ultimo mes</label>
-            <input type="number" value={diasTrabalhados} onChange={(e) => setDiasTrabalhados(e.target.value)} placeholder="Ex: 15" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <label className="block text-sm font-medium mb-1 text-gray-800">Dias trabalhados no ultimo mes</label>
+            <input type="number" value={diasTrabalhados} onChange={(e) => setDiasTrabalhados(e.target.value)} placeholder="Ex: 15" className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-rose-500" />
           </div>
           <div className="flex items-center">
             <label className="flex items-center gap-2 cursor-pointer mt-4">
-              <input type="checkbox" checked={feriasVencidas} onChange={(e) => setFeriasVencidas(e.target.checked)} className="w-4 h-4 accent-blue-600" />
+              <input type="checkbox" checked={feriasVencidas} onChange={(e) => setFeriasVencidas(e.target.checked)} className="w-4 h-4 accent-rose-600" />
               <span className="text-sm">Possui ferias vencidas</span>
             </label>
           </div>
         </div>
 
-        <button onClick={calcular} className="w-full bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors cursor-pointer">
+        <button onClick={calcular} className="w-full bg-rose-600 text-white rounded-lg py-3 font-semibold hover:bg-rose-700 transition-colors cursor-pointer">
           Calcular Rescisao
         </button>
       </div>
@@ -239,6 +235,6 @@ export default function CalculadoraRescisao() {
           <li><strong>Acordo mutuo:</strong> Ambas as partes concordam. Multa de 20% FGTS + metade do aviso previo (reforma trabalhista 2017).</li>
         </ul>
       </section>
-    </div>
+    </ToolPage>
   );
 }
