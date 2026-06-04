@@ -85,12 +85,15 @@ export default function RootLayout({
                 <ul className="space-y-1 text-sm text-gray-600">
                   <li><Link href="/calculadora-juros-compostos" className="hover:text-blue-600">Juros Compostos</Link></li>
                   <li><Link href="/calculadora-imc" className="hover:text-blue-600">IMC</Link></li>
+                  <li><Link href="/calculadora-porcentagem" className="hover:text-blue-600">Porcentagem</Link></li>
+                  <li><Link href="/calculadora-combustivel" className="hover:text-blue-600">Alcool ou Gasolina</Link></li>
                 </ul>
               </div>
               <div>
                 <h3 className="font-semibold mb-2 text-sm">Geradores</h3>
                 <ul className="space-y-1 text-sm text-gray-600">
                   <li><Link href="/gerador-de-senha" className="hover:text-blue-600">Gerador de Senha</Link></li>
+                  <li><Link href="/gerador-qr-code" className="hover:text-blue-600">Gerador de QR Code</Link></li>
                 </ul>
               </div>
               <div>
@@ -100,9 +103,10 @@ export default function RootLayout({
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold mb-2 text-sm">Texto</h3>
+                <h3 className="font-semibold mb-2 text-sm">Utilidades</h3>
                 <ul className="space-y-1 text-sm text-gray-600">
                   <li><Link href="/contador-de-caracteres" className="hover:text-blue-600">Contador de Caracteres</Link></li>
+                  <li><Link href="/cronometro" className="hover:text-blue-600">Cronometro Online</Link></li>
                 </ul>
               </div>
             </div>

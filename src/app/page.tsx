@@ -36,6 +36,34 @@ const tools = [
     icon: "⚖️",
     keywords: "peso ideal, saude, obesidade, magreza, massa corporal",
   },
+  {
+    title: "Calculadora de Porcentagem",
+    description: "Calcule porcentagens: quanto e X% de Y, aumentos, descontos e diferenca entre valores.",
+    href: "/calculadora-porcentagem",
+    icon: "💯",
+    keywords: "porcentagem, desconto, aumento, calcular percentual",
+  },
+  {
+    title: "Cronometro Online",
+    description: "Cronometro preciso com contagem progressiva e regressiva. Timer com funcao de voltas.",
+    href: "/cronometro",
+    icon: "⏱️",
+    keywords: "cronometro, timer, contagem regressiva, temporizador",
+  },
+  {
+    title: "Alcool ou Gasolina?",
+    description: "Descubra se vale mais a pena abastecer com alcool ou gasolina. Regra dos 70%.",
+    href: "/calculadora-combustivel",
+    icon: "⛽",
+    keywords: "alcool, gasolina, combustivel, etanol, economizar",
+  },
+  {
+    title: "Gerador de QR Code",
+    description: "Gere QR Codes para URLs, WhatsApp, Wi-Fi e mais. Baixe em PNG gratuitamente.",
+    href: "/gerador-qr-code",
+    icon: "📱",
+    keywords: "qr code, codigo qr, gerar qr, whatsapp, wifi",
+  },
 ];
 
 export default function Home() {

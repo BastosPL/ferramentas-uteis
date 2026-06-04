@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://ferramentas-uteis.vercel.app";
+const BASE_URL = "https://ferramentas-uteis-iota.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -10,5 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/contador-de-caracteres`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/conversor-de-unidades`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/calculadora-imc`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/calculadora-porcentagem`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/cronometro`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/calculadora-combustivel`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/gerador-qr-code`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
   ];
 }
