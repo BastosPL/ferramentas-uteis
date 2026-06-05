@@ -106,6 +106,27 @@ const tools = [
     icon: "📜",
     keywords: "lorem ipsum, texto placeholder, dummy text",
   },
+  {
+    title: "Calculadora de Financiamento",
+    description: "Simule financiamentos com tabela SAC e Price. Parcelas, juros e evolucao mes a mes.",
+    href: "/calculadora-financiamento",
+    icon: "🏠",
+    keywords: "financiamento, parcela, sac, price, imovel, carro",
+  },
+  {
+    title: "Conversor de Moedas",
+    description: "Converta moedas com cotacao atualizada: Dolar, Euro, Libra, Bitcoin e mais.",
+    href: "/conversor-moedas",
+    icon: "💱",
+    keywords: "dolar, euro, cotacao, cambio, moeda, conversao",
+  },
+  {
+    title: "Gerador de Cores",
+    description: "Gere paletas, converta HEX/RGB/HSL e visualize cores. Color picker para designers.",
+    href: "/gerador-cores",
+    icon: "🎨",
+    keywords: "cores, hex, rgb, hsl, paleta, color picker",
+  },
 ];
 
 export default function Home() {

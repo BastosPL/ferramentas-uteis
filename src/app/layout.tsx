@@ -89,6 +89,7 @@ export default function RootLayout({
                   <li><Link href="/calculadora-combustivel" className="hover:text-blue-600">Alcool ou Gasolina</Link></li>
                   <li><Link href="/calculadora-rescisao" className="hover:text-blue-600">Rescisao Trabalhista</Link></li>
                   <li><Link href="/calculadora-calorias" className="hover:text-blue-600">Calorias Diarias</Link></li>
+                  <li><Link href="/calculadora-financiamento" className="hover:text-blue-600">Financiamento</Link></li>
                 </ul>
               </div>
               <div>
@@ -97,6 +98,7 @@ export default function RootLayout({
                   <li><Link href="/gerador-de-senha" className="hover:text-blue-600">Gerador de Senha</Link></li>
                   <li><Link href="/gerador-qr-code" className="hover:text-blue-600">Gerador de QR Code</Link></li>
                   <li><Link href="/gerador-cpf-cnpj" className="hover:text-blue-600">Gerador CPF/CNPJ</Link></li>
+                  <li><Link href="/gerador-cores" className="hover:text-blue-600">Gerador de Cores</Link></li>
                 </ul>
               </div>
               <div>
@@ -105,6 +107,7 @@ export default function RootLayout({
                   <li><Link href="/conversor-de-unidades" className="hover:text-blue-600">Conversor de Unidades</Link></li>
                   <li><Link href="/juntar-pdf" className="hover:text-blue-600">Juntar PDF</Link></li>
                   <li><Link href="/imagem-para-pdf" className="hover:text-blue-600">Imagem para PDF</Link></li>
+                  <li><Link href="/conversor-moedas" className="hover:text-blue-600">Conversor de Moedas</Link></li>
                 </ul>
               </div>
               <div>

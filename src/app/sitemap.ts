@@ -2,23 +2,19 @@ import type { MetadataRoute } from "next";
 
 const BASE_URL = "https://ferramentas-uteis-iota.vercel.app";
 
+const tools = [
+  "", "calculadora-juros-compostos", "gerador-de-senha", "contador-de-caracteres",
+  "conversor-de-unidades", "calculadora-imc", "calculadora-porcentagem", "cronometro",
+  "calculadora-combustivel", "gerador-qr-code", "calculadora-rescisao", "gerador-cpf-cnpj",
+  "calculadora-calorias", "juntar-pdf", "imagem-para-pdf", "gerador-lorem-ipsum",
+  "calculadora-financiamento", "conversor-moedas", "gerador-cores",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    { url: BASE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: `${BASE_URL}/calculadora-juros-compostos`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/gerador-de-senha`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/contador-de-caracteres`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/conversor-de-unidades`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/calculadora-imc`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/calculadora-porcentagem`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/cronometro`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/calculadora-combustivel`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/gerador-qr-code`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/calculadora-rescisao`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/gerador-cpf-cnpj`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/calculadora-calorias`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/juntar-pdf`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/imagem-para-pdf`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/gerador-lorem-ipsum`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-  ];
+  return tools.map((slug) => ({
+    url: slug ? `${BASE_URL}/${slug}` : BASE_URL,
+    lastModified: new Date(),
+    changeFrequency: slug ? "monthly" as const : "weekly" as const,
+    priority: slug ? 0.9 : 1,
+  }));
 }
