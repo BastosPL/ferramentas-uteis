@@ -100,9 +100,11 @@ export default function RootLayout({
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold mb-2 text-sm">Conversores</h3>
+                <h3 className="font-semibold mb-2 text-sm">Conversores & PDF</h3>
                 <ul className="space-y-1 text-sm text-gray-600">
                   <li><Link href="/conversor-de-unidades" className="hover:text-blue-600">Conversor de Unidades</Link></li>
+                  <li><Link href="/juntar-pdf" className="hover:text-blue-600">Juntar PDF</Link></li>
+                  <li><Link href="/imagem-para-pdf" className="hover:text-blue-600">Imagem para PDF</Link></li>
                 </ul>
               </div>
               <div>
@@ -110,6 +112,7 @@ export default function RootLayout({
                 <ul className="space-y-1 text-sm text-gray-600">
                   <li><Link href="/contador-de-caracteres" className="hover:text-blue-600">Contador de Caracteres</Link></li>
                   <li><Link href="/cronometro" className="hover:text-blue-600">Cronometro Online</Link></li>
+                  <li><Link href="/gerador-lorem-ipsum" className="hover:text-blue-600">Lorem Ipsum</Link></li>
                 </ul>
               </div>
             </div>

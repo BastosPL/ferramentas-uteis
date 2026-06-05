@@ -85,6 +85,27 @@ const tools = [
     icon: "🍎",
     keywords: "calorias, dieta, emagrecer, metabolismo, tmb",
   },
+  {
+    title: "Juntar PDF",
+    description: "Combine varios arquivos PDF em um so. 100% gratis e privado — nada e enviado para servidores.",
+    href: "/juntar-pdf",
+    icon: "📄",
+    keywords: "juntar pdf, combinar pdf, unir pdf, merge",
+  },
+  {
+    title: "Imagem para PDF",
+    description: "Converta imagens JPG e PNG para PDF. Combine varias imagens em um unico arquivo.",
+    href: "/imagem-para-pdf",
+    icon: "🖼️",
+    keywords: "imagem pdf, jpg para pdf, png para pdf, foto pdf",
+  },
+  {
+    title: "Gerador de Lorem Ipsum",
+    description: "Gere textos placeholder para layouts e mockups. Paragrafos, frases ou palavras.",
+    href: "/gerador-lorem-ipsum",
+    icon: "📜",
+    keywords: "lorem ipsum, texto placeholder, dummy text",
+  },
 ];
 
 export default function Home() {
