@@ -38,7 +38,7 @@ export default function CalculadoraIMC() {
   }
 
   return (
-    <ToolPage title="Calculadora de IMC" description="Calcule seu Indice de Massa Corporal (IMC) e descubra se voce esta no peso ideal. O IMC e uma medida internacional usada para avaliar o nivel de gordura corporal." accent="orange" icon="⚖️">
+    <ToolPage title="Calculadora de IMC" description="Calcule seu Indice de Massa Corporal (IMC) e descubra se voce esta no peso ideal. O IMC e uma medida internacional usada para avaliar o nivel de gordura corporal." accent="orange" icon="⚖️" slug="calculadora-imc">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="grid md:grid-cols-2 gap-4 mb-6">

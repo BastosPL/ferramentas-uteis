@@ -59,7 +59,7 @@ export default function GeradorDeSenha() {
   const forca = calcularForca(senha);
 
   return (
-    <ToolPage title="Gerador de Senha Segura" description="Gere senhas fortes e aleatorias usando criptografia do navegador. Nenhum dado e enviado para servidores. Sua senha e gerada 100% localmente." accent="green" icon="🔐">
+    <ToolPage title="Gerador de Senha Segura" description="Gere senhas fortes e aleatorias usando criptografia do navegador. Nenhum dado e enviado para servidores. Sua senha e gerada 100% localmente." accent="green" icon="🔐" slug="gerador-de-senha">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         {senha && (

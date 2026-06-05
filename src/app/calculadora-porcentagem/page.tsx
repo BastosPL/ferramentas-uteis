@@ -21,7 +21,7 @@ export default function CalculadoraPorcentagem() {
   const fmt = (n: number | null) => n !== null ? n.toLocaleString("pt-BR", { maximumFractionDigits: 2 }) : "—";
 
   return (
-    <ToolPage title="Calculadora de Porcentagem" description="Calcule porcentagens de forma rapida e facil. Descubra quanto e X% de um valor, calcule aumentos, descontos e a porcentagem entre dois numeros." accent="indigo" icon="💯">
+    <ToolPage title="Calculadora de Porcentagem" description="Calcule porcentagens de forma rapida e facil. Descubra quanto e X% de um valor, calcule aumentos, descontos e a porcentagem entre dois numeros." accent="indigo" icon="💯" slug="calculadora-porcentagem">
 
       <div className="space-y-6">
         <div className="bg-white rounded-xl border border-gray-200 p-6">

@@ -91,6 +91,7 @@ export default function ImagemParaPDF() {
       description="Converta imagens JPG, PNG e WebP para PDF. Combine varias imagens em um unico arquivo. 100% privado — nada e enviado para servidores."
       accent="orange"
       icon="🖼️"
+      slug="imagem-para-pdf"
     >
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="flex gap-2 mb-4">

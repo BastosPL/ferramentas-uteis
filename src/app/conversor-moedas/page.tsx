@@ -67,6 +67,7 @@ export default function ConversorMoedas() {
       description="Converta moedas com cotacao atualizada. Dolar, Euro, Libra, Bitcoin e mais."
       accent="emerald"
       icon="💱"
+      slug="conversor-moedas"
     >
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         {carregando ? (

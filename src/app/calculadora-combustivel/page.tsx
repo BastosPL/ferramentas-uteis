@@ -14,7 +14,7 @@ export default function CalculadoraCombustivel() {
   const melhorAlcool = razao <= 0.7;
 
   return (
-    <ToolPage title="Calculadora: Alcool ou Gasolina?" description="Descubra qual combustivel e mais vantajoso para o seu bolso. A calculadora usa a regra dos 70%: se o preco do alcool for ate 70% do preco da gasolina, compensa abastecer com alcool." accent="emerald" icon="⛽">
+    <ToolPage title="Calculadora: Alcool ou Gasolina?" description="Descubra qual combustivel e mais vantajoso para o seu bolso. A calculadora usa a regra dos 70%: se o preco do alcool for ate 70% do preco da gasolina, compensa abastecer com alcool." accent="emerald" icon="⛽" slug="calculadora-combustivel">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="grid md:grid-cols-2 gap-4 mb-6">

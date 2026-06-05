@@ -66,6 +66,7 @@ export default function GeradorLoremIpsum() {
       description="Gere textos placeholder Lorem Ipsum para preencher layouts, mockups e prototipos. Escolha entre paragrafos, frases ou palavras."
       accent="purple"
       icon="📜"
+      slug="gerador-lorem-ipsum"
     >
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="flex flex-wrap gap-2 mb-4">

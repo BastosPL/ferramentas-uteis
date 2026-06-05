@@ -114,7 +114,7 @@ export default function CalculadoraRescisao() {
   const fmt = (v: number) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
   return (
-    <ToolPage title="Calculadora de Rescisao Trabalhista" description="Calcule o valor estimado da sua rescisao trabalhista. Inclui saldo de salario, ferias proporcionais, 13o proporcional, aviso previo e multa do FGTS." accent="rose" icon="📋">
+    <ToolPage title="Calculadora de Rescisao Trabalhista" description="Calcule o valor estimado da sua rescisao trabalhista. Inclui saldo de salario, ferias proporcionais, 13o proporcional, aviso previo e multa do FGTS." accent="rose" icon="📋" slug="calculadora-rescisao">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="mb-4">

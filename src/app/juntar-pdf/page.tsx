@@ -84,6 +84,7 @@ export default function JuntarPDF() {
       description="Combine varios arquivos PDF em um so. 100% gratis e privado — seus arquivos nunca saem do seu navegador."
       accent="red"
       icon="📄"
+      slug="juntar-pdf"
     >
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div

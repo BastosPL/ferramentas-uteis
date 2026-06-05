@@ -69,6 +69,7 @@ export default function GeradorCores() {
       description="Gere paletas, converta entre HEX, RGB e HSL. Color picker visual para designers e desenvolvedores."
       accent="pink"
       icon="🎨"
+      slug="gerador-cores"
     >
       <div className="grid md:grid-cols-2 gap-6 mb-8">
         <div className="bg-white rounded-xl border border-gray-200 p-6">

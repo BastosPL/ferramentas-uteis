@@ -58,6 +58,7 @@ export default function CalculadoraCalorias() {
       description="Descubra quantas calorias voce precisa consumir por dia para emagrecer, manter ou ganhar peso. Calculo baseado na formula de Harris-Benedict."
       accent="red"
       icon="🍎"
+      slug="calculadora-calorias"
     >
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">

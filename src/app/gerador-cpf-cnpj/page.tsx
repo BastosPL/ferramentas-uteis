@@ -123,7 +123,7 @@ export default function GeradorCpfCnpj() {
   };
 
   return (
-    <ToolPage title="Gerador de CPF e CNPJ" description="Gere CPFs e CNPJs validos para testes de software. Numeros ficticios com digitos verificadores matematicamente corretos. Tambem valide CPFs e CNPJs existentes." accent="pink" icon="🆔">
+    <ToolPage title="Gerador de CPF e CNPJ" description="Gere CPFs e CNPJs validos para testes de software. Numeros ficticios com digitos verificadores matematicamente corretos. Tambem valide CPFs e CNPJs existentes." accent="pink" icon="🆔" slug="gerador-cpf-cnpj">
 
       <div className="flex gap-2 mb-6">
         {[

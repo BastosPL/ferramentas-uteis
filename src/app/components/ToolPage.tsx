@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { WebAppSchema, BreadcrumbSchema } from "./SchemaOrg";
 
 type AccentColor = "blue" | "green" | "purple" | "orange" | "red" | "teal" | "pink" | "indigo" | "amber" | "emerald" | "cyan" | "rose";
 
@@ -22,17 +22,25 @@ export default function ToolPage({
   description,
   accent = "blue",
   icon,
+  slug,
   children,
 }: {
   title: string;
   description: string;
   accent?: AccentColor;
   icon: string;
+  slug?: string;
   children: React.ReactNode;
 }) {
   const style = accentStyles[accent];
+  const url = slug ? `/${slug}` : "";
   return (
     <div className="max-w-4xl mx-auto px-4 py-10">
+      <WebAppSchema name={title} description={description} url={url} />
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: title, url: url },
+      ]} />
       <div className={`bg-gradient-to-r ${style.header} rounded-2xl p-6 mb-8 text-white`}>
         <div className="flex items-center gap-3 mb-2">
           <span className="text-3xl">{icon}</span>

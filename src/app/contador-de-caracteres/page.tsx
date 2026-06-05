@@ -23,7 +23,7 @@ export default function ContadorDeCaracteres() {
   const tempoLeitura = Math.max(1, Math.ceil(palavras / 200));
 
   return (
-    <ToolPage title="Contador de Caracteres e Palavras" description="Conte caracteres, palavras, frases e paragrafos do seu texto. Verifique se esta dentro dos limites de redes sociais e SEO." accent="purple" icon="📝">
+    <ToolPage title="Contador de Caracteres e Palavras" description="Conte caracteres, palavras, frases e paragrafos do seu texto. Verifique se esta dentro dos limites de redes sociais e SEO." accent="purple" icon="📝" slug="contador-de-caracteres">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <textarea

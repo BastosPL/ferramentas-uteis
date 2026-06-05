@@ -49,7 +49,7 @@ export default function GeradorQRCode() {
   ];
 
   return (
-    <ToolPage title="Gerador de QR Code" description="Crie QR Codes gratuitamente para links, textos, WhatsApp, Wi-Fi e mais. Baixe em PNG para usar onde quiser." accent="cyan" icon="📱">
+    <ToolPage title="Gerador de QR Code" description="Crie QR Codes gratuitamente para links, textos, WhatsApp, Wi-Fi e mais. Baixe em PNG para usar onde quiser." accent="cyan" icon="📱" slug="gerador-qr-code">
 
       <div className="grid md:grid-cols-[1fr_auto] gap-6">
         <div className="bg-white rounded-xl border border-gray-200 p-6">

@@ -52,7 +52,7 @@ export default function CalculadoraJurosCompostos() {
     v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
   return (
-    <ToolPage title="Calculadora de Juros Compostos" description="Simule o rendimento dos seus investimentos com juros compostos. Insira o valor inicial, aporte mensal, taxa de juros e o periodo para ver quanto seu dinheiro pode render." accent="blue" icon="📈">
+    <ToolPage title="Calculadora de Juros Compostos" description="Simule o rendimento dos seus investimentos com juros compostos. Insira o valor inicial, aporte mensal, taxa de juros e o periodo para ver quanto seu dinheiro pode render." accent="blue" icon="📈" slug="calculadora-juros-compostos">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="grid md:grid-cols-2 gap-4 mb-6">

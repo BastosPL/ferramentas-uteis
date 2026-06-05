@@ -66,6 +66,7 @@ export default function CalculadoraFinanciamento() {
       description="Simule financiamentos com tabela SAC e Price. Calcule parcelas, juros totais e veja a evolucao mes a mes."
       accent="blue"
       icon="🏠"
+      slug="calculadora-financiamento"
     >
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="flex gap-2 mb-4">

@@ -103,7 +103,7 @@ export default function ConversorDeUnidades() {
   }
 
   return (
-    <ToolPage title="Conversor de Unidades" description="Converta unidades de comprimento, peso, temperatura, volume, area e velocidade de forma rapida e precisa." accent="teal" icon="🔄">
+    <ToolPage title="Conversor de Unidades" description="Converta unidades de comprimento, peso, temperatura, volume, area e velocidade de forma rapida e precisa." accent="teal" icon="🔄" slug="conversor-de-unidades">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
         <div className="flex flex-wrap gap-2 mb-6">

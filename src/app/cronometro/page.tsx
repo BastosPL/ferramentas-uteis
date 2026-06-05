@@ -63,7 +63,7 @@ export default function Cronometro() {
   const tempoExibido = modo === "progressivo" ? tempo : tempoRegressivo * 1000;
 
   return (
-    <ToolPage title="Cronometro Online" description="Cronometro preciso com contagem progressiva e regressiva. Funcao de voltas para marcar tempos parciais." accent="amber" icon="⏱️">
+    <ToolPage title="Cronometro Online" description="Cronometro preciso com contagem progressiva e regressiva. Funcao de voltas para marcar tempos parciais." accent="amber" icon="⏱️" slug="cronometro">
 
       <div className="flex gap-2 mb-6">
         <button
