@@ -25,6 +25,15 @@ export default function Error({
       <p className="text-xs text-gray-400 mt-4">
         Dica: se o erro persistir, tente Ctrl+Shift+R para limpar o cache.
       </p>
+      <details className="mt-6 text-left bg-gray-100 rounded-lg p-4">
+        <summary className="text-xs text-gray-500 cursor-pointer">Detalhes do erro (para diagnostico)</summary>
+        <pre className="mt-2 text-xs text-red-600 whitespace-pre-wrap break-all overflow-auto max-h-48">
+          {error?.message || "Erro desconhecido"}
+          {"\n\n"}
+          {error?.stack || ""}
+          {error?.digest ? `\n\nDigest: ${error.digest}` : ""}
+        </pre>
+      </details>
     </div>
   );
 }
