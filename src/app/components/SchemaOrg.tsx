@@ -12,7 +12,7 @@ export function WebAppSchema({
     "@type": "WebApplication",
     name,
     description,
-    url: `https://ferramentas-uteis-iota.vercel.app${url}`,
+    url: `https://ferramentautil.com.br${url}`,
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "All",
     offers: {
@@ -38,12 +38,12 @@ export function WebsiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Ferramentas Online Gratis",
-    url: "https://ferramentas-uteis-iota.vercel.app",
+    url: "https://ferramentautil.com.br",
     description: "Calculadoras, geradores e conversores online gratuitos. Sem cadastro, sem instalacao.",
     inLanguage: "pt-BR",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://ferramentas-uteis-iota.vercel.app/?q={search_term_string}",
+      target: "https://ferramentautil.com.br/?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };
@@ -64,7 +64,7 @@ export function BreadcrumbSchema({ items }: { items: { name: string; url: string
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      item: `https://ferramentas-uteis-iota.vercel.app${item.url}`,
+      item: `https://ferramentautil.com.br${item.url}`,
     })),
   };
 

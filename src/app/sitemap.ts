@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://ferramentas-uteis-iota.vercel.app";
+const BASE_URL = "https://ferramentautil.com.br";
 
 const tools = [
   "", "calculadora-juros-compostos", "gerador-de-senha", "contador-de-caracteres",
