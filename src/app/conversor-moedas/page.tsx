@@ -33,7 +33,10 @@ export default function ConversorMoedas() {
       setCarregando(true);
       setErro("");
       try {
-        const res = await fetch("https://api.exchangerate-data.com/v1/latest?base=USD");
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 5000);
+        const res = await fetch("https://open.er-api.com/v6/latest/USD", { signal: controller.signal });
+        clearTimeout(timeout);
         if (!res.ok) throw new Error("Falha ao buscar cotacoes");
         const data = await res.json();
         setCotacoes(data.rates);
