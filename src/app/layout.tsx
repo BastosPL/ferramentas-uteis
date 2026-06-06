@@ -90,6 +90,7 @@ export default function RootLayout({
                   <li><Link href="/calculadora-rescisao" className="hover:text-blue-600">Rescisao Trabalhista</Link></li>
                   <li><Link href="/calculadora-calorias" className="hover:text-blue-600">Calorias Diarias</Link></li>
                   <li><Link href="/calculadora-financiamento" className="hover:text-blue-600">Financiamento</Link></li>
+                  <li><Link href="/calculadora-idade" className="hover:text-blue-600">Idade</Link></li>
                 </ul>
               </div>
               <div>
@@ -116,6 +117,7 @@ export default function RootLayout({
                   <li><Link href="/contador-de-caracteres" className="hover:text-blue-600">Contador de Caracteres</Link></li>
                   <li><Link href="/cronometro" className="hover:text-blue-600">Cronometro Online</Link></li>
                   <li><Link href="/gerador-lorem-ipsum" className="hover:text-blue-600">Lorem Ipsum</Link></li>
+                  <li><Link href="/conversor-texto" className="hover:text-blue-600">Conversor de Texto</Link></li>
                 </ul>
               </div>
             </div>

@@ -128,6 +128,20 @@ const tools = [
     icon: "🎨",
     keywords: "cores, hex, rgb, hsl, paleta, color picker",
   },
+  {
+    title: "Calculadora de Idade",
+    description: "Calcule sua idade exata em anos, meses e dias. Descubra dias vividos, proximo aniversario e signo.",
+    href: "/calculadora-idade",
+    icon: "🎂",
+    keywords: "idade, anos, nascimento, aniversario, dias vividos",
+  },
+  {
+    title: "Conversor de Texto",
+    description: "Converta textos para maiusculas, minusculas, titulo, slug e mais. Remova acentos facilmente.",
+    href: "/conversor-texto",
+    icon: "🔤",
+    keywords: "maiusculas, minusculas, texto, converter, acentos, slug",
+  },
 ];
 
 export default function Home() {

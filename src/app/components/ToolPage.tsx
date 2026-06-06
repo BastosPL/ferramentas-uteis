@@ -1,6 +1,6 @@
 import { WebAppSchema, BreadcrumbSchema } from "./SchemaOrg";
 
-type AccentColor = "blue" | "green" | "purple" | "orange" | "red" | "teal" | "pink" | "indigo" | "amber" | "emerald" | "cyan" | "rose";
+type AccentColor = "blue" | "green" | "purple" | "orange" | "red" | "teal" | "pink" | "indigo" | "amber" | "emerald" | "cyan" | "rose" | "violet" | "sky";
 
 const accentStyles: Record<AccentColor, { header: string; badge: string }> = {
   blue: { header: "from-blue-600 to-blue-700", badge: "bg-blue-100 text-blue-700" },
@@ -15,6 +15,8 @@ const accentStyles: Record<AccentColor, { header: string; badge: string }> = {
   emerald: { header: "from-emerald-600 to-emerald-700", badge: "bg-emerald-100 text-emerald-700" },
   cyan: { header: "from-cyan-600 to-cyan-700", badge: "bg-cyan-100 text-cyan-700" },
   rose: { header: "from-rose-600 to-rose-700", badge: "bg-rose-100 text-rose-700" },
+  violet: { header: "from-violet-600 to-violet-700", badge: "bg-violet-100 text-violet-700" },
+  sky: { header: "from-sky-600 to-sky-700", badge: "bg-sky-100 text-sky-700" },
 };
 
 export default function ToolPage({

@@ -8,6 +8,7 @@ const tools = [
   "calculadora-combustivel", "gerador-qr-code", "calculadora-rescisao", "gerador-cpf-cnpj",
   "calculadora-calorias", "juntar-pdf", "imagem-para-pdf", "gerador-lorem-ipsum",
   "calculadora-financiamento", "conversor-moedas", "gerador-cores",
+  "calculadora-idade", "conversor-texto",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
