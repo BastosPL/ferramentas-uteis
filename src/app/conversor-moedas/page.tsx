@@ -133,7 +133,7 @@ export default function ConversorMoedas() {
               return (
                 <div key={m.code} className="flex items-center justify-between bg-gray-50 rounded-lg px-4 py-2.5">
                   <span className="text-sm text-gray-900">{m.flag} {m.code}</span>
-                  <span className="font-mono text-sm font-medium text-gray-900">R$ {taxaBRL.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: m.code === "BTC" ? 0 : 2 })}</span>
+                  <span className="font-mono text-sm font-medium text-gray-900">R$ {taxaBRL.toLocaleString("pt-BR", { minimumFractionDigits: m.code === "BTC" ? 0 : 2, maximumFractionDigits: m.code === "BTC" ? 0 : 2 })}</span>
                 </div>
               );
             })}

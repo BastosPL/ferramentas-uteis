@@ -184,6 +184,13 @@ const tools = [
     icon: "🏢",
     keywords: "consulta cnpj, receita federal, situacao cadastral, cnpj empresa, inscricao estadual",
   },
+  {
+    title: "Conversor Word ⇄ PDF",
+    description: "Converta Word para PDF e PDF para Word online. 100% privado, nenhum arquivo sai do seu navegador.",
+    href: "/conversor-word-pdf",
+    icon: "📄",
+    keywords: "word para pdf, pdf para word, converter docx, converter pdf, docx pdf",
+  },
 ];
 
 export default function Home() {
@@ -229,9 +236,10 @@ export default function Home() {
             <p className="text-white/80 text-sm leading-relaxed">
               Junte varios PDFs em um so ou converta imagens para PDF. 100% privado — nenhum arquivo e enviado para servidores.
             </p>
-            <div className="flex gap-2 mt-3">
+            <div className="flex gap-2 mt-3 flex-wrap">
               <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Juntar PDF</span>
               <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Imagem para PDF</span>
+              <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Word ⇄ PDF</span>
             </div>
           </Link>
         </div>

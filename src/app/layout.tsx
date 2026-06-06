@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 
 import "./globals.css";
 import Link from "next/link";
@@ -42,26 +43,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${inter.variable}`}>
-      <head>
-        <script
-          async
+      <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900 font-[family-name:var(--font-inter)]">
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XQ780P1HLG"
+          strategy="afterInteractive"
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-XQ780P1HLG');`,
-          }}
-        />
-        <script
-          async
+gtag('config', 'G-XQ780P1HLG');`}
+        </Script>
+        <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7284698282537450"
           crossOrigin="anonymous"
+          strategy="lazyOnload"
         />
-      </head>
-      <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900 font-[family-name:var(--font-inter)]">
         <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
           <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <Link href="/" className="text-xl font-bold text-blue-600">
@@ -125,6 +122,7 @@ gtag('config', 'G-XQ780P1HLG');`,
                   <li><Link href="/conversor-de-unidades" className="hover:text-blue-600">Conversor de Unidades</Link></li>
                   <li><Link href="/conversor-moedas" className="hover:text-blue-600">Conversor de Moedas</Link></li>
                   <li><Link href="/conversor-texto" className="hover:text-blue-600">Conversor de Texto</Link></li>
+                  <li><Link href="/conversor-word-pdf" className="hover:text-blue-600 font-medium">Word ⇄ PDF</Link></li>
                 </ul>
               </div>
               <div>

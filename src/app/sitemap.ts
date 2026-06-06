@@ -12,6 +12,7 @@ const tools = [
   "calculadora-horas", "gerador-contrato", "calculadora-desconto",
   "validador-email", "tabela-medidas",
   "consulta-cnpj",
+  "conversor-word-pdf",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
