@@ -177,6 +177,13 @@ const tools = [
     icon: "📏",
     keywords: "tabela medidas, tamanho roupa, numero calcado, conversao tamanhos",
   },
+  {
+    title: "Consulta CNPJ",
+    description: "Consulte dados da Receita Federal: razao social, situacao cadastral, CNAE, endereco, socios e capital social. Valide CNPJ e IE.",
+    href: "/consulta-cnpj",
+    icon: "🏢",
+    keywords: "consulta cnpj, receita federal, situacao cadastral, cnpj empresa, inscricao estadual",
+  },
 ];
 
 export default function Home() {
@@ -191,6 +198,43 @@ export default function Home() {
           Calculadoras, geradores e conversores que funcionam direto no seu navegador.
           Sem cadastro, sem instalacao, sem enviar dados para nenhum servidor.
         </p>
+      </section>
+
+      {/* Destaques */}
+      <section className="mb-10">
+        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">⭐ Ferramentas em Destaque</h2>
+        <div className="grid md:grid-cols-2 gap-5">
+          <Link
+            href="/consulta-cnpj"
+            className="relative bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 text-white hover:shadow-xl hover:scale-[1.02] transition-all group overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8" />
+            <span className="text-4xl mb-3 block">🏢</span>
+            <h3 className="text-xl font-bold mb-1">Consulta CNPJ</h3>
+            <p className="text-white/80 text-sm leading-relaxed">
+              Consulte dados da Receita Federal: razao social, situacao cadastral, CNAE, socios, endereco e mais. Gratis e instantaneo.
+            </p>
+            <span className="inline-block mt-3 text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">
+              + Validador de CNPJ e IE
+            </span>
+          </Link>
+
+          <Link
+            href="/juntar-pdf"
+            className="relative bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white hover:shadow-xl hover:scale-[1.02] transition-all group overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8" />
+            <span className="text-4xl mb-3 block">📄</span>
+            <h3 className="text-xl font-bold mb-1">Ferramentas de PDF</h3>
+            <p className="text-white/80 text-sm leading-relaxed">
+              Junte varios PDFs em um so ou converta imagens para PDF. 100% privado — nenhum arquivo e enviado para servidores.
+            </p>
+            <div className="flex gap-2 mt-3">
+              <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Juntar PDF</span>
+              <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Imagem para PDF</span>
+            </div>
+          </Link>
+        </div>
       </section>
 
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

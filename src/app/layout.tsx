@@ -118,21 +118,22 @@ gtag('config', 'G-XQ780P1HLG');`,
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold mb-2 text-sm">Conversores & PDF</h3>
+                <h3 className="font-semibold mb-2 text-sm">PDF & Conversores</h3>
                 <ul className="space-y-1 text-sm text-gray-600">
+                  <li><Link href="/juntar-pdf" className="hover:text-blue-600 font-medium">Juntar PDF</Link></li>
+                  <li><Link href="/imagem-para-pdf" className="hover:text-blue-600 font-medium">Imagem para PDF</Link></li>
                   <li><Link href="/conversor-de-unidades" className="hover:text-blue-600">Conversor de Unidades</Link></li>
-                  <li><Link href="/juntar-pdf" className="hover:text-blue-600">Juntar PDF</Link></li>
-                  <li><Link href="/imagem-para-pdf" className="hover:text-blue-600">Imagem para PDF</Link></li>
                   <li><Link href="/conversor-moedas" className="hover:text-blue-600">Conversor de Moedas</Link></li>
+                  <li><Link href="/conversor-texto" className="hover:text-blue-600">Conversor de Texto</Link></li>
                 </ul>
               </div>
               <div>
                 <h3 className="font-semibold mb-2 text-sm">Utilidades</h3>
                 <ul className="space-y-1 text-sm text-gray-600">
+                  <li><Link href="/consulta-cnpj" className="hover:text-blue-600 font-medium">Consulta CNPJ</Link></li>
                   <li><Link href="/contador-de-caracteres" className="hover:text-blue-600">Contador de Caracteres</Link></li>
                   <li><Link href="/cronometro" className="hover:text-blue-600">Cronometro Online</Link></li>
                   <li><Link href="/gerador-lorem-ipsum" className="hover:text-blue-600">Lorem Ipsum</Link></li>
-                  <li><Link href="/conversor-texto" className="hover:text-blue-600">Conversor de Texto</Link></li>
                   <li><Link href="/validador-email" className="hover:text-blue-600">Validador de Email</Link></li>
                   <li><Link href="/tabela-medidas" className="hover:text-blue-600">Tabela de Medidas</Link></li>
                 </ul>
