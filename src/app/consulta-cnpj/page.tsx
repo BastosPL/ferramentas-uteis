@@ -73,7 +73,7 @@ type DadosCNPJ = {
   cnpj: string;
   razao_social: string;
   nome_fantasia: string;
-  situacao_cadastral: string;
+  situacao_cadastral: string | number;
   descricao_situacao_cadastral: string;
   data_situacao_cadastral: string;
   data_inicio_atividade: string;
@@ -176,9 +176,10 @@ export default function ConsultaCNPJ() {
     });
   }
 
-  function situacaoColor(sit: string) {
-    if (sit === "02" || sit?.toLowerCase().includes("ativa")) return "text-green-700 bg-green-100";
-    if (sit === "08" || sit?.toLowerCase().includes("baixa")) return "text-red-700 bg-red-100";
+  function situacaoColor(sit: string | number | undefined | null) {
+    const s = String(sit ?? "").toLowerCase();
+    if (s === "02" || s === "2" || s.includes("ativa")) return "text-green-700 bg-green-100";
+    if (s === "08" || s === "8" || s.includes("baixa")) return "text-red-700 bg-red-100";
     return "text-yellow-700 bg-yellow-100";
   }
 
