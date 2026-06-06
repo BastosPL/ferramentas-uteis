@@ -45,6 +45,18 @@ export default function RootLayout({
       <head>
         <script
           async
+          src="https://www.googletagmanager.com/gtag/js?id=G-XQ780P1HLG"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XQ780P1HLG');`,
+          }}
+        />
+        <script
+          async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7284698282537450"
           crossOrigin="anonymous"
         />
