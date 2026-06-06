@@ -142,6 +142,41 @@ const tools = [
     icon: "🔤",
     keywords: "maiusculas, minusculas, texto, converter, acentos, slug",
   },
+  {
+    title: "Calculadora de Horas",
+    description: "Some horas trabalhadas, calcule banco de horas e diferenca entre horarios. Controle de ponto.",
+    href: "/calculadora-horas",
+    icon: "🕐",
+    keywords: "horas trabalhadas, banco de horas, controle ponto, horas extras",
+  },
+  {
+    title: "Gerador de Contrato",
+    description: "Gere modelos de contrato de prestacao de servico prontos para usar. Baixe gratuitamente.",
+    href: "/gerador-contrato",
+    icon: "📝",
+    keywords: "contrato, modelo contrato, prestacao servico, contrato simples",
+  },
+  {
+    title: "Calculadora de Desconto",
+    description: "Calcule descontos em porcentagem, descubra o preco final e compare ofertas.",
+    href: "/calculadora-desconto",
+    icon: "🏷️",
+    keywords: "desconto, porcentagem, preco final, black friday, promocao",
+  },
+  {
+    title: "Validador de Email",
+    description: "Verifique se enderecos de email tem formato valido. Detecta erros e sugere correcoes.",
+    href: "/validador-email",
+    icon: "📧",
+    keywords: "validar email, verificar email, email valido, checar email",
+  },
+  {
+    title: "Tabela de Medidas",
+    description: "Converta tamanhos de roupas, calcados e aneis entre Brasil, EUA e Europa.",
+    href: "/tabela-medidas",
+    icon: "📏",
+    keywords: "tabela medidas, tamanho roupa, numero calcado, conversao tamanhos",
+  },
 ];
 
 export default function Home() {

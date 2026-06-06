@@ -9,6 +9,8 @@ const tools = [
   "calculadora-calorias", "juntar-pdf", "imagem-para-pdf", "gerador-lorem-ipsum",
   "calculadora-financiamento", "conversor-moedas", "gerador-cores",
   "calculadora-idade", "conversor-texto",
+  "calculadora-horas", "gerador-contrato", "calculadora-desconto",
+  "validador-email", "tabela-medidas",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -91,6 +91,8 @@ export default function RootLayout({
                   <li><Link href="/calculadora-calorias" className="hover:text-blue-600">Calorias Diarias</Link></li>
                   <li><Link href="/calculadora-financiamento" className="hover:text-blue-600">Financiamento</Link></li>
                   <li><Link href="/calculadora-idade" className="hover:text-blue-600">Idade</Link></li>
+                  <li><Link href="/calculadora-horas" className="hover:text-blue-600">Horas</Link></li>
+                  <li><Link href="/calculadora-desconto" className="hover:text-blue-600">Desconto</Link></li>
                 </ul>
               </div>
               <div>
@@ -100,6 +102,7 @@ export default function RootLayout({
                   <li><Link href="/gerador-qr-code" className="hover:text-blue-600">Gerador de QR Code</Link></li>
                   <li><Link href="/gerador-cpf-cnpj" className="hover:text-blue-600">Gerador CPF/CNPJ</Link></li>
                   <li><Link href="/gerador-cores" className="hover:text-blue-600">Gerador de Cores</Link></li>
+                  <li><Link href="/gerador-contrato" className="hover:text-blue-600">Gerador de Contrato</Link></li>
                 </ul>
               </div>
               <div>
@@ -118,6 +121,8 @@ export default function RootLayout({
                   <li><Link href="/cronometro" className="hover:text-blue-600">Cronometro Online</Link></li>
                   <li><Link href="/gerador-lorem-ipsum" className="hover:text-blue-600">Lorem Ipsum</Link></li>
                   <li><Link href="/conversor-texto" className="hover:text-blue-600">Conversor de Texto</Link></li>
+                  <li><Link href="/validador-email" className="hover:text-blue-600">Validador de Email</Link></li>
+                  <li><Link href="/tabela-medidas" className="hover:text-blue-600">Tabela de Medidas</Link></li>
                 </ul>
               </div>
             </div>
