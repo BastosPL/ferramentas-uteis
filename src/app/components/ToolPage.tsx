@@ -1,4 +1,7 @@
+"use client";
+
 import { WebAppSchema, BreadcrumbSchema } from "./SchemaOrg";
+import ClientOnly from "./ClientOnly";
 
 type AccentColor = "blue" | "green" | "purple" | "orange" | "red" | "teal" | "pink" | "indigo" | "amber" | "emerald" | "cyan" | "rose" | "violet" | "sky";
 
@@ -37,20 +40,22 @@ export default function ToolPage({
   const style = accentStyles[accent];
   const url = slug ? `/${slug}` : "";
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <WebAppSchema name={title} description={description} url={url} />
-      <BreadcrumbSchema items={[
-        { name: "Inicio", url: "/" },
-        { name: title, url: url },
-      ]} />
-      <div className={`bg-gradient-to-r ${style.header} rounded-2xl p-6 mb-8 text-white`}>
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-3xl">{icon}</span>
-          <h1 className="text-2xl md:text-3xl font-bold">{title}</h1>
+    <ClientOnly>
+      <div className="max-w-4xl mx-auto px-4 py-10">
+        <WebAppSchema name={title} description={description} url={url} />
+        <BreadcrumbSchema items={[
+          { name: "Inicio", url: "/" },
+          { name: title, url: url },
+        ]} />
+        <div className={`bg-gradient-to-r ${style.header} rounded-2xl p-6 mb-8 text-white`}>
+          <div className="flex items-center gap-3 mb-2">
+            <span className="text-3xl">{icon}</span>
+            <h1 className="text-2xl md:text-3xl font-bold">{title}</h1>
+          </div>
+          <p className="text-white/90 text-sm md:text-base">{description}</p>
         </div>
-        <p className="text-white/90 text-sm md:text-base">{description}</p>
+        {children}
       </div>
-      {children}
-    </div>
+    </ClientOnly>
   );
 }

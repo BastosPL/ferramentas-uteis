@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { WebsiteSchema } from "./components/SchemaOrg";
+import ClientOnly from "./components/ClientOnly";
 
 const tools = [
   {
@@ -195,6 +198,7 @@ const tools = [
 
 export default function Home() {
   return (
+    <ClientOnly>
     <div className="max-w-6xl mx-auto px-4 py-12">
       <WebsiteSchema />
       <section className="text-center mb-12">
@@ -295,5 +299,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </ClientOnly>
   );
 }
