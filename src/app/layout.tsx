@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 
 import "./globals.css";
 import Link from "next/link";
+import ExternalScripts from "./components/ExternalScripts";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -42,23 +42,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${inter.variable}`}>
-      <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900 font-[family-name:var(--font-inter)]">
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XQ780P1HLG"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XQ780P1HLG');`}
-        </Script>
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7284698282537450"
-          crossOrigin="anonymous"
-          strategy="lazyOnload"
-        />
+    <html lang="pt-BR" className={`${inter.variable}`} suppressHydrationWarning>
+      <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900 font-[family-name:var(--font-inter)]" suppressHydrationWarning>
+        <ExternalScripts />
         <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
           <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <Link href="/" className="text-xl font-bold text-blue-600">
