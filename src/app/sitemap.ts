@@ -13,6 +13,9 @@ const tools = [
   "validador-email", "tabela-medidas",
   "consulta-cnpj",
   "conversor-word-pdf",
+  "compressor-imagem",
+  "gerador-pix",
+  "calculadora-investimentos",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

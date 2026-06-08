@@ -194,6 +194,27 @@ const tools = [
     icon: "📄",
     keywords: "word para pdf, pdf para word, converter docx, converter pdf, docx pdf",
   },
+  {
+    title: "Compressor de Imagem",
+    description: "Comprima imagens JPG, PNG e WebP online. Reduza o tamanho sem perder qualidade. 100% privado.",
+    href: "/compressor-imagem",
+    icon: "🖼️",
+    keywords: "comprimir imagem, reduzir tamanho, otimizar foto, webp, compressao",
+  },
+  {
+    title: "Gerador de QR Code PIX",
+    description: "Gere QR Code PIX para receber pagamentos. Crie codigo PIX copia e cola instantaneamente.",
+    href: "/gerador-pix",
+    icon: "💲",
+    keywords: "pix, qr code pix, copia e cola, receber pix, pagamento",
+  },
+  {
+    title: "Calculadora de Investimentos",
+    description: "Simule e compare CDB, LCI/LCA e Tesouro Direto. Veja o rendimento liquido com desconto de IR.",
+    href: "/calculadora-investimentos",
+    icon: "💰",
+    keywords: "investimentos, cdb, lci, lca, tesouro direto, renda fixa, ir",
+  },
 ];
 
 export default function Home() {
@@ -228,6 +249,22 @@ export default function Home() {
             <span className="inline-block mt-3 text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">
               + Validador de CNPJ e IE
             </span>
+          </Link>
+
+          <Link
+            href="/gerador-pix"
+            className="relative bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl p-6 text-white hover:shadow-xl hover:scale-[1.02] transition-all group overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8" />
+            <span className="text-4xl mb-3 block">💲</span>
+            <h3 className="text-xl font-bold mb-1">Gerador de QR Code PIX</h3>
+            <p className="text-white/80 text-sm leading-relaxed">
+              Gere QR Code PIX para receber pagamentos. Codigo copia e cola seguindo o padrao EMV do Banco Central.
+            </p>
+            <div className="flex gap-2 mt-3 flex-wrap">
+              <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">CPF / CNPJ / Email</span>
+              <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Copia e Cola</span>
+            </div>
           </Link>
 
           <Link
