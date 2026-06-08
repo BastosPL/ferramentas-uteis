@@ -123,6 +123,15 @@ export default function RootLayout({
                 </ul>
               </div>
             </div>
+            <div className="flex justify-center gap-4 text-sm text-gray-500 mb-4">
+              <Link href="/sobre" className="hover:text-blue-600 transition-colors">Sobre</Link>
+              <span className="text-gray-300">|</span>
+              <Link href="/contato" className="hover:text-blue-600 transition-colors">Contato</Link>
+              <span className="text-gray-300">|</span>
+              <Link href="/privacidade" className="hover:text-blue-600 transition-colors">Privacidade</Link>
+              <span className="text-gray-300">|</span>
+              <Link href="/termos" className="hover:text-blue-600 transition-colors">Termos de Uso</Link>
+            </div>
             <p className="text-center text-xs text-gray-400">
               Ferramentas Online Gratis &copy; {new Date().getFullYear()} &mdash; Todas as ferramentas funcionam direto no navegador. Nenhum dado e enviado para servidores.
             </p>

@@ -16,6 +16,10 @@ const tools = [
   "compressor-imagem",
   "gerador-pix",
   "calculadora-investimentos",
+  "sobre",
+  "contato",
+  "privacidade",
+  "termos",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
