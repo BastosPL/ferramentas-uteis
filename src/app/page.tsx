@@ -222,23 +222,38 @@ export default function Home() {
     <ClientOnly>
     <div className="max-w-6xl mx-auto px-4 py-12">
       <WebsiteSchema />
-      <section className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">
-          Ferramentas Online <span className="text-blue-600">Gratuitas</span>
-        </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Calculadoras, geradores e conversores que funcionam direto no seu navegador.
-          Sem cadastro, sem instalacao, sem enviar dados para nenhum servidor.
-        </p>
+
+      {/* Hero */}
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-3xl p-8 md:p-12 mb-12 text-white overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-20 translate-x-20" />
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-16 -translate-x-16" />
+        <div className="relative text-center">
+          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+            <span>🚀</span> 30+ ferramentas gratuitas
+          </div>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+            Ferramentas Online Gratuitas
+          </h1>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+            Calculadoras, geradores e conversores que funcionam direto no seu navegador.
+            Sem cadastro, sem instalacao, sem enviar dados para nenhum servidor.
+          </p>
+          <div className="flex justify-center gap-6 mt-8 text-sm text-white/70">
+            <span className="flex items-center gap-1.5"><span className="w-2 h-2 bg-green-400 rounded-full" /> 100% Gratis</span>
+            <span className="flex items-center gap-1.5"><span className="w-2 h-2 bg-green-400 rounded-full" /> Privacidade Total</span>
+            <span className="flex items-center gap-1.5"><span className="w-2 h-2 bg-green-400 rounded-full" /> Sem Cadastro</span>
+          </div>
+        </div>
       </section>
 
-      {/* Destaques */}
-      <section className="mb-10">
-        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">⭐ Ferramentas em Destaque</h2>
+      {/* Destaques — grid 2x2 */}
+      <section className="mb-12">
+        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-5">⭐ Ferramentas em Destaque</h2>
         <div className="grid md:grid-cols-2 gap-5">
+          {/* Principal 1 — Consulta CNPJ */}
           <Link
             href="/consulta-cnpj"
-            className="relative bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 text-white hover:shadow-xl hover:scale-[1.02] transition-all group overflow-hidden"
+            className="relative bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 text-white hover:shadow-xl hover:scale-[1.01] transition-all group overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8" />
             <span className="text-4xl mb-3 block">🏢</span>
@@ -251,9 +266,28 @@ export default function Home() {
             </span>
           </Link>
 
+          {/* Principal 2 — Ferramentas de PDF */}
+          <Link
+            href="/juntar-pdf"
+            className="relative bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white hover:shadow-xl hover:scale-[1.01] transition-all group overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8" />
+            <span className="text-4xl mb-3 block">📄</span>
+            <h3 className="text-xl font-bold mb-1">Ferramentas de PDF</h3>
+            <p className="text-white/80 text-sm leading-relaxed">
+              Junte varios PDFs em um so, converta imagens ou Word para PDF. 100% privado — nada sai do navegador.
+            </p>
+            <div className="flex gap-2 mt-3 flex-wrap">
+              <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Juntar PDF</span>
+              <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Imagem → PDF</span>
+              <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Word ⇄ PDF</span>
+            </div>
+          </Link>
+
+          {/* Destaque 3 — Gerador PIX */}
           <Link
             href="/gerador-pix"
-            className="relative bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl p-6 text-white hover:shadow-xl hover:scale-[1.02] transition-all group overflow-hidden"
+            className="relative bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl p-6 text-white hover:shadow-xl hover:scale-[1.01] transition-all group overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8" />
             <span className="text-4xl mb-3 block">💲</span>
@@ -267,20 +301,20 @@ export default function Home() {
             </div>
           </Link>
 
+          {/* Destaque 4 — Calculadora Investimentos */}
           <Link
-            href="/juntar-pdf"
-            className="relative bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white hover:shadow-xl hover:scale-[1.02] transition-all group overflow-hidden"
+            href="/calculadora-investimentos"
+            className="relative bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-6 text-white hover:shadow-xl hover:scale-[1.01] transition-all group overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8" />
-            <span className="text-4xl mb-3 block">📄</span>
-            <h3 className="text-xl font-bold mb-1">Ferramentas de PDF</h3>
+            <span className="text-4xl mb-3 block">💰</span>
+            <h3 className="text-xl font-bold mb-1">Calculadora de Investimentos</h3>
             <p className="text-white/80 text-sm leading-relaxed">
-              Junte varios PDFs em um so ou converta imagens para PDF. 100% privado — nenhum arquivo e enviado para servidores.
+              Compare CDB, LCI/LCA e Tesouro Direto. Simule rendimentos com desconto de IR e descubra a melhor opcao.
             </p>
             <div className="flex gap-2 mt-3 flex-wrap">
-              <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Juntar PDF</span>
-              <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Imagem para PDF</span>
-              <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Word ⇄ PDF</span>
+              <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">CDB / LCI / LCA</span>
+              <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full">Tesouro Direto</span>
             </div>
           </Link>
         </div>
