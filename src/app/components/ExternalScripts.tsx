@@ -24,11 +24,6 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-XQ780P1HLG');`}
       </Script>
-      <Script
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7284698282537450"
-        crossOrigin="anonymous"
-        strategy="lazyOnload"
-      />
     </>
   );
 }

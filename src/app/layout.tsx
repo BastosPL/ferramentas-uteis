@@ -43,6 +43,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${inter.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7284698282537450"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900 font-[family-name:var(--font-inter)]" suppressHydrationWarning>
         <ExternalScripts />
         <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
