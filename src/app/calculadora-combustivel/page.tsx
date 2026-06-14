@@ -83,19 +83,95 @@ export default function CalculadoraCombustivel() {
         </div>
       </div>
 
-      <section className="mt-12 prose prose-gray max-w-none">
-        <h2>Como funciona a regra dos 70%?</h2>
-        <p>
-          O motor a alcool consome em media 30% mais combustivel que o motor a gasolina.
-          Por isso, o alcool so compensa financeiramente quando seu preco for no maximo
-          70% do preco da gasolina. Divida o preco do alcool pelo da gasolina: se o
-          resultado for menor que 0,70, abasteça com alcool.
-        </p>
-        <h2>Exemplo pratico</h2>
-        <p>
-          Alcool a R$ 3,89 e gasolina a R$ 5,79: 3,89 / 5,79 = 0,67 (67%).
-          Como 67% e menor que 70%, o alcool e mais vantajoso nesse caso.
-        </p>
+      <section className="mt-12 max-w-4xl mx-auto space-y-10 text-gray-700">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar a Calculadora de Combustivel</h2>
+          <p className="mb-3">
+            A calculadora de alcool ou gasolina e extremamente simples de usar. Siga o passo a passo:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Passo 1:</strong> Informe o preco atual do litro do alcool (etanol) no primeiro campo. Voce encontra esse valor nos postos de combustivel ou em aplicativos como Waze e Google Maps.</li>
+            <li><strong>Passo 2:</strong> Informe o preco atual do litro da gasolina no segundo campo.</li>
+            <li><strong>Passo 3:</strong> O resultado aparece automaticamente logo abaixo, indicando qual combustivel e mais vantajoso para o seu bolso naquele momento.</li>
+          </ul>
+          <p className="mt-3">
+            A calculadora exibe a razao percentual entre os dois precos e mostra de forma clara se voce deve abastecer com alcool ou gasolina. Alem disso, a tabela de referencia rapida permite consultar valores comuns sem precisar digitar nada.
+          </p>
+          <p className="mt-2">
+            Dica: salve esta pagina nos favoritos do celular para consultar rapidamente enquanto estiver no posto de combustivel.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Entenda o Calculo: A Regra dos 70%</h2>
+          <p className="mb-3">
+            A regra dos 70% e baseada em um principio simples da engenharia automotiva: o motor flex, quando abastecido com etanol (alcool), consome em media 30% mais combustivel por quilometro rodado em comparacao com a gasolina. Isso acontece porque o etanol tem menor poder calorifico — ou seja, gera menos energia por litro queimado.
+          </p>
+          <p className="mb-3">
+            A formula matematica e direta: divida o preco do litro do alcool pelo preco do litro da gasolina. Se o resultado for igual ou menor que 0,70 (70%), o alcool compensa mais. Se for maior que 0,70, a gasolina e a melhor escolha.
+          </p>
+          <p className="mb-3">
+            <strong>Formula:</strong> Razao = Preco do Alcool / Preco da Gasolina
+          </p>
+          <ul className="list-disc pl-6 space-y-1 mb-3">
+            <li>Se a razao for <strong>menor ou igual a 0,70</strong> → abasteça com alcool</li>
+            <li>Se a razao for <strong>maior que 0,70</strong> → abasteça com gasolina</li>
+          </ul>
+          <p className="mb-3">
+            E importante notar que essa regra considera a media dos veiculos flex brasileiros. Alguns modelos mais eficientes podem ter um ponto de corte ligeiramente diferente (entre 0,68 e 0,72), dependendo da calibracao do motor e das condicoes de uso.
+          </p>
+          <p>
+            Fatores como manutencao do veiculo, pressao dos pneus, estilo de direcao e uso de ar-condicionado tambem influenciam o consumo real, mas a regra dos 70% continua sendo a referencia mais pratica e confiavel para a decisao no dia a dia.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
+          <div className="space-y-3">
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">A regra dos 70% funciona para todos os carros?</summary>
+              <p className="px-4 pb-3 text-sm">A regra dos 70% e uma media que funciona bem para a maioria dos veiculos flex vendidos no Brasil. Porem, carros mais novos com motores otimizados podem ter eficiencia um pouco melhor com etanol, enquanto veiculos mais antigos podem consumir proporcionalmente mais. Se voce quiser uma resposta mais precisa para o seu carro especifico, faca o teste: encha o tanque com alcool, anote a quilometragem, e repita com gasolina. Compare os km/l de cada um.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">E verdade que o alcool e melhor para o motor?</summary>
+              <p className="px-4 pb-3 text-sm">O etanol queima a uma temperatura mais baixa que a gasolina, o que pode ser benefico para a longevidade de alguns componentes do motor. Alem disso, o alcool tem propriedades detergentes que ajudam a manter o sistema de injecao mais limpo. Porem, em termos de desempenho, a gasolina geralmente oferece mais potencia por litro consumido.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">E ruim misturar alcool e gasolina no tanque?</summary>
+              <p className="px-4 pb-3 text-sm">Nao, em veiculos flex nao ha problema nenhum em misturar os dois combustiveis. O sistema de injecao eletronica ajusta automaticamente a mistura ar-combustivel com base no sensor lambda. Voce pode alternar entre alcool e gasolina livremente a cada abastecimento.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Por que o alcool rende menos quilometros?</summary>
+              <p className="px-4 pb-3 text-sm">O etanol possui menor poder calorifico que a gasolina (aproximadamente 6.300 kcal/litro contra 8.200 kcal/litro da gasolina). Isso significa que o motor precisa queimar mais etanol para gerar a mesma quantidade de energia. Na pratica, o consumo de etanol e cerca de 25% a 30% maior que o de gasolina.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">A regra muda para carros a GNV (gas natural)?</summary>
+              <p className="px-4 pb-3 text-sm">Sim, a regra dos 70% se aplica exclusivamente a comparacao entre alcool e gasolina em veiculos flex. Para veiculos equipados com GNV, a analise e diferente e depende do preco do metro cubico de gas, do rendimento do veiculo com gas e do custo de manutencao do kit GNV. Essa calculadora nao cobre GNV.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Devo considerar apenas o preco ou tambem a qualidade do combustivel?</summary>
+              <p className="px-4 pb-3 text-sm">Preco e o fator principal para a decisao no posto, mas a qualidade importa para a saude do motor. Postos com bandeira (Shell, Ipiranga, BR) geralmente oferecem combustivel com aditivos. Evite postos com precos muito abaixo da media da regiao, pois podem indicar adulteracao do combustivel.</p>
+            </details>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Exemplos Praticos do Dia a Dia</h2>
+          <p className="mb-3">
+            Veja alguns cenarios reais para entender melhor como aplicar a regra dos 70%:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Exemplo 1:</strong> Alcool a R$ 3,89 e gasolina a R$ 5,79. Razao: 3,89 / 5,79 = 0,67 (67%). Como 67% e menor que 70%, o <strong>alcool compensa mais</strong>.</li>
+            <li><strong>Exemplo 2:</strong> Alcool a R$ 4,29 e gasolina a R$ 5,49. Razao: 4,29 / 5,49 = 0,78 (78%). Como 78% e maior que 70%, a <strong>gasolina compensa mais</strong>.</li>
+            <li><strong>Exemplo 3:</strong> Alcool a R$ 3,99 e gasolina a R$ 5,69. Razao: 3,99 / 5,69 = 0,70 (70%). Empate tecnico — nesse caso, a gasolina costuma ser ligeiramente melhor pela questao de autonomia e menos paradas no posto.</li>
+          </ul>
+          <p className="mt-3">
+            <strong>Erro comum:</strong> Muitas pessoas comparam apenas o preco por litro sem considerar o rendimento diferente. Alcool a R$ 3,99 parece muito mais barato que gasolina a R$ 5,79, mas lembre-se: voce vai precisar de mais litros de alcool para rodar a mesma distancia. A regra dos 70% ja considera essa diferenca de rendimento no calculo.
+          </p>
+          <p className="mt-2">
+            <strong>Dica extra:</strong> Os precos de combustivel variam bastante entre postos da mesma cidade. Use aplicativos como Waze, Google Maps ou Precos de Combustiveis (ANP) para encontrar os melhores precos na sua regiao antes de abastecer.
+          </p>
+        </div>
       </section>
     </ToolPage>
   );

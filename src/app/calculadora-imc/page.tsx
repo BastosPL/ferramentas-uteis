@@ -132,20 +132,90 @@ export default function CalculadoraIMC() {
         </div>
       </div>
 
-      <section className="mt-12 prose prose-gray max-w-none">
-        <h2>O que e o IMC?</h2>
-        <p>
-          O Indice de Massa Corporal (IMC) e uma medida criada pelo matematico belga Adolphe
-          Quetelet. Ele e calculado dividindo o peso (em kg) pela altura ao quadrado (em metros).
-          O IMC e utilizado pela Organizacao Mundial da Saude (OMS) como referencia para
-          classificar o peso de adultos.
-        </p>
-        <h2>Limitacoes do IMC</h2>
-        <p>
-          O IMC nao diferencia massa muscular de gordura corporal. Pessoas muito musculosas
-          podem ter IMC elevado sem estar com sobrepeso. Consulte um profissional de saude
-          para uma avaliacao completa.
-        </p>
+      <section className="mt-12 max-w-4xl mx-auto space-y-10 text-gray-700">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar a Calculadora de IMC</h2>
+          <p className="mb-3">
+            Usar nossa calculadora de IMC e simples e rapido. Siga os passos abaixo para descobrir seu Indice de Massa Corporal em poucos segundos:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Informe seu peso:</strong> No campo &quot;Peso (kg)&quot;, digite seu peso atual em quilogramas. Voce pode usar casas decimais para maior precisao (exemplo: 72,5 kg). Use uma balanca confiavel, preferencialmente pela manha em jejum, para obter o valor mais preciso.</li>
+            <li><strong>Informe sua altura:</strong> No campo &quot;Altura (cm)&quot;, digite sua altura em centimetros. Por exemplo, se voce mede 1 metro e 75 centimetros, digite 175. Fique descalco e ereto ao se medir para garantir a precisao.</li>
+            <li><strong>Clique em Calcular IMC:</strong> Apos preencher ambos os campos, clique no botao &quot;Calcular IMC&quot;. O resultado aparecera imediatamente, mostrando seu IMC numerico, a classificacao correspondente (peso normal, sobrepeso, etc.) e a faixa de peso ideal para sua altura.</li>
+            <li><strong>Interprete os resultados:</strong> Alem do valor numerico do IMC, a ferramenta exibe tres cartoes: seu IMC atual com a classificacao, o peso ideal minimo e o peso ideal maximo para sua altura. A tabela abaixo mostra todas as faixas de classificacao, com destaque para a sua.</li>
+          </ul>
+          <p className="mt-3">
+            O calculo e realizado inteiramente no seu navegador, sem enviar nenhum dado pessoal para servidores externos. Voce pode usar a ferramenta quantas vezes quiser com total privacidade.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona o Calculo do IMC</h2>
+          <p className="mb-3">
+            O Indice de Massa Corporal (IMC) foi desenvolvido pelo matematico e estatistico belga Adolphe Quetelet em 1832 e e a medida mais utilizada mundialmente para classificar o peso corporal de adultos. A Organizacao Mundial da Saude (OMS) adota o IMC como padrao internacional desde a decada de 1990.
+          </p>
+          <p className="mb-3">
+            A formula e simples: <strong>IMC = peso (kg) / altura (m) ao quadrado</strong>. Por exemplo, uma pessoa com 70 kg e 1,75 m de altura tem IMC = 70 / (1,75 x 1,75) = 70 / 3,0625 = 22,9. Esse valor se enquadra na faixa de &quot;Peso normal&quot; (18,5 a 24,9).
+          </p>
+          <p className="mb-3">
+            A classificacao segue os parametros definidos pela OMS: abaixo de 16 indica magreza grave, entre 16 e 17 magreza moderada, entre 17 e 18,5 magreza leve, entre 18,5 e 25 peso normal, entre 25 e 30 sobrepeso, entre 30 e 35 obesidade grau I, entre 35 e 40 obesidade grau II, e acima de 40 obesidade grau III (morbida).
+          </p>
+          <p className="mb-3">
+            E importante entender que o IMC possui limitacoes. Ele nao diferencia entre massa muscular e gordura corporal, nao considera a distribuicao de gordura no corpo (gordura abdominal e mais perigosa que gordura periferica) e nao e adequado para criancas, gestantes, idosos ou atletas de alta performance. Para essas populacoes, existem medidas complementares como a circunferencia abdominal, o percentual de gordura corporal e a relacao cintura-quadril.
+          </p>
+          <p className="mb-3">
+            Nossa calculadora tambem mostra a faixa de peso ideal para sua altura, calculada usando os limites de IMC normal (18,5 a 24,9). Esse intervalo oferece uma referencia util, mas o peso ideal individual depende de fatores como composicao corporal, idade, sexo e condicoes de saude.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
+          <div className="space-y-3">
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">O IMC e confiavel para todas as pessoas?</summary>
+              <p className="px-4 pb-3 text-sm">O IMC e uma ferramenta de triagem util para a populacao geral adulta, mas possui limitacoes. Atletas e pessoas com muita massa muscular podem ter IMC elevado sem excesso de gordura. Idosos tendem a perder massa muscular, o que pode mascarar excesso de gordura com um IMC aparentemente normal. Gestantes, criancas e adolescentes devem usar tabelas especificas. Consulte sempre um profissional de saude para uma avaliacao completa.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Qual e o IMC ideal?</summary>
+              <p className="px-4 pb-3 text-sm">Segundo a OMS, o IMC ideal esta entre 18,5 e 24,9, classificado como &quot;Peso normal&quot;. Dentro dessa faixa, estudos mostram menor risco de doencas cronicas como diabetes tipo 2, hipertensao e doencas cardiovasculares. Porem, o valor ideal exato varia de pessoa para pessoa dependendo da composicao corporal, idade e historico de saude.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Meu IMC deu acima de 25. Devo me preocupar?</summary>
+              <p className="px-4 pb-3 text-sm">Um IMC acima de 25 indica sobrepeso segundo os parametros da OMS. Isso nao significa necessariamente que voce esta doente, mas e um sinal de atencao. Fatores como alimentacao, nivel de atividade fisica, circunferencia abdominal e historico familiar tambem devem ser considerados. O ideal e procurar um medico ou nutricionista para uma avaliacao individualizada e, se necessario, elaborar um plano de mudanca de habitos.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Qual a diferenca entre IMC e percentual de gordura?</summary>
+              <p className="px-4 pb-3 text-sm">O IMC e calculado apenas com peso e altura, sem considerar a composicao corporal. Ja o percentual de gordura mede especificamente quanto do peso total e composto por tecido adiposo. Duas pessoas com o mesmo IMC podem ter composicoes corporais muito diferentes: uma pode ter mais musculo e outra mais gordura. Metodos como bioimpedancia, dobras cutaneas e DEXA medem o percentual de gordura com maior precisao.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Como o IMC e calculado para criancas?</summary>
+              <p className="px-4 pb-3 text-sm">Para criancas e adolescentes (2 a 19 anos), o IMC e calculado da mesma forma (peso/altura ao quadrado), mas a interpretacao e diferente. O resultado e comparado com curvas de crescimento especificas por idade e sexo, usando percentis. O Ministerio da Saude e a OMS disponibilizam tabelas de referencia para essas faixas etarias. Nossa calculadora e destinada exclusivamente para adultos (maiores de 20 anos).</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">O IMC muda com a idade?</summary>
+              <p className="px-4 pb-3 text-sm">O IMC em si e um calculo fixo, mas a composicao corporal muda com a idade. Com o envelhecimento, a tendencia e perder massa muscular e acumular gordura, especialmente na regiao abdominal. Por isso, um idoso com IMC &quot;normal&quot; pode ter um percentual de gordura prelevado. Alguns especialistas sugerem que a faixa ideal de IMC para idosos deveria ser ligeiramente mais alta (entre 23 e 28).</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Posso confiar apenas no IMC para avaliar minha saude?</summary>
+              <p className="px-4 pb-3 text-sm">Nao. O IMC e apenas um indicador inicial. Para uma avaliacao completa da saude, e necessario considerar outros fatores como circunferencia abdominal (risco cardiovascular aumenta acima de 80 cm para mulheres e 94 cm para homens), exames de sangue (colesterol, glicemia, triglicerides), pressao arterial, historico familiar e nivel de atividade fisica. Use o IMC como ponto de partida e consulte um profissional de saude.</p>
+            </details>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas para Manter o Peso Ideal</h2>
+          <p className="mb-3">
+            Manter o IMC dentro da faixa saudavel exige atencao a alimentacao e ao estilo de vida. Veja algumas dicas praticas baseadas em recomendacoes do Ministerio da Saude e da OMS:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Monitore-se regularmente:</strong> Pese-se uma vez por semana, sempre no mesmo horario e nas mesmas condicoes (pela manha, em jejum, sem roupas pesadas). Use esta calculadora para acompanhar a evolucao do seu IMC ao longo do tempo.</li>
+            <li><strong>Alimentacao equilibrada:</strong> Priorize alimentos in natura e minimamente processados como frutas, verduras, legumes, graos integrais e proteinas magras. Evite ultraprocessados ricos em acucar, sodio e gorduras trans.</li>
+            <li><strong>Atividade fisica regular:</strong> A OMS recomenda pelo menos 150 minutos de atividade fisica moderada por semana (cerca de 30 minutos, 5 dias por semana). Caminhada, natacao, ciclismo e musculacao sao excelentes opcoes.</li>
+            <li><strong>Hidratacao adequada:</strong> Beba pelo menos 2 litros de agua por dia. A desidratacao pode ser confundida com fome, levando ao consumo excessivo de calorias.</li>
+            <li><strong>Sono de qualidade:</strong> Dormir de 7 a 9 horas por noite regula hormonios que controlam a fome (grelina e leptina). A privacao de sono esta associada ao ganho de peso.</li>
+            <li><strong>Consulte um profissional:</strong> Se seu IMC esta fora da faixa normal, procure um nutricionista ou endocrinologista. Dietas restritivas sem orientacao profissional podem causar carencias nutricionais e efeito sanfona.</li>
+          </ul>
+        </div>
       </section>
     </ToolPage>
   );

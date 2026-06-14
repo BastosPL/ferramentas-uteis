@@ -189,6 +189,76 @@ export default function TabelaMedidas() {
           como referencia mais precisa. Na duvida, consulte a tabela de medidas da marca especifica.
         </p>
       </section>
+
+      {/* ── EDITORIAL CONTENT ── */}
+      <section className="mt-16 max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar a Tabela de Medidas</h2>
+        <div className="text-gray-700 space-y-3">
+          <p>
+            Utilizar nossa tabela de conversao de medidas e simples e rapido. Primeiro, selecione a categoria desejada clicando em um dos botoes no topo da ferramenta: Roupas Femininas, Roupas Masculinas, Calcados Femininos, Calcados Masculinos ou Aneis. A tabela correspondente sera exibida imediatamente com todas as equivalencias entre os sistemas brasileiro, americano, europeu e britanico.
+          </p>
+          <p>
+            Para encontrar um tamanho especifico, utilize o campo de busca no canto superior direito da tabela. Basta digitar o numero ou a sigla do tamanho (como "M", "38" ou "PP") e a tabela filtrara automaticamente os resultados correspondentes. Isso e especialmente util quando voce ja sabe o tamanho em um pais e precisa descobrir o equivalente em outro.
+          </p>
+          <p>
+            Sempre que possivel, confira as medidas em centimetros indicadas na tabela (busto, cintura, quadril, comprimento do pe ou diametro do anel). Essas medidas corporais sao a referencia mais precisa, ja que os tamanhos nominais podem variar significativamente entre marcas e fabricantes diferentes.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Como Funciona a Conversao de Tamanhos</h2>
+        <div className="text-gray-700 space-y-3">
+          <p>
+            Os sistemas de numeracao de roupas e calcados variam de pais para pais porque foram desenvolvidos de forma independente ao longo da historia. O Brasil utiliza um sistema numerico proprio, baseado em medidas corporais em centimetros, enquanto os Estados Unidos adotam um sistema com letras (S, M, L, XL) e numeros diferentes. A Europa segue o padrao continental baseado em uma formula que considera o comprimento do tronco ou do pe, e o Reino Unido possui seu proprio sistema historico.
+          </p>
+          <p>
+            Nossa tabela cruza esses quatro sistemas e adiciona as medidas reais em centimetros como ponto de referencia universal. Para roupas, as medidas-chave sao o busto ou torax, a cintura e o quadril. Para calcados, o comprimento do pe em centimetros e a medida mais confiavel. Para aneis, utilizamos o diametro interno e a circunferencia em milimetros.
+          </p>
+          <p>
+            E importante saber que essas conversoes sao aproximadas. Marcas de luxo, marcas de fast fashion e fabricantes artesanais podem ter diferencas significativas em suas modelagens. Alem disso, o conceito de "vanity sizing" — quando marcas usam tamanhos menores no rotulo para que o consumidor se sinta melhor — e bastante comum, especialmente em roupas femininas americanas. Por isso, a melhor pratica e sempre medir o corpo e comparar com a tabela de medidas especifica da marca.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-6">Perguntas Frequentes</h2>
+        <div className="space-y-3">
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">O tamanho M no Brasil e igual ao M nos EUA?</summary>
+            <p className="text-gray-700 mt-2">Nao necessariamente. O tamanho M brasileiro geralmente corresponde aos numeros 40-42 e equivale aproximadamente ao tamanho M americano (8-10 feminino ou 40-42 masculino). Porem, a diferenca pode variar entre marcas. Sempre confira as medidas em centimetros para ter certeza.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">Como medir o pe corretamente para calcados?</summary>
+            <p className="text-gray-700 mt-2">Coloque uma folha de papel no chao, pise sobre ela com o peso do corpo distribuido igualmente e marque o ponto do calcanhar e do dedo mais longo. Meca a distancia entre as duas marcas com uma regua. Faca isso no final do dia, quando os pes estao naturalmente mais inchados. Meca os dois pes e considere o maior.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">Os tamanhos de roupas sao iguais em todas as marcas?</summary>
+            <p className="text-gray-700 mt-2">Nao. Existe uma variacao consideravel entre marcas, mesmo dentro do mesmo pais. Uma camiseta tamanho M da marca A pode ser maior ou menor que a mesma classificacao da marca B. Por isso, recomendamos sempre verificar a tabela de medidas especifica da marca antes de comprar, especialmente em compras online.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">Qual e a diferenca entre tamanhos europeus e brasileiros?</summary>
+            <p className="text-gray-700 mt-2">Os tamanhos europeus para roupas costumam ser numericamente maiores que os brasileiros. Por exemplo, um tamanho 40 brasileiro feminino equivale aproximadamente a um 38 europeu. Ja para calcados, os numeros europeus costumam ser 1 a 2 numeros acima dos brasileiros. A tabela acima mostra todas essas correspondencias de forma clara.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">Como saber meu tamanho de anel sem ir a uma joalheria?</summary>
+            <p className="text-gray-700 mt-2">Enrole um pedaco de barbante ou fita ao redor do dedo desejado, marque onde se encontra e meca o comprimento com uma regua. Esse valor e a circunferencia em milimetros. Consulte a tabela acima para encontrar o tamanho correspondente. Outra opcao e medir o diametro interno de um anel que ja sirva bem no dedo.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">Posso confiar nessas conversoes para compras internacionais?</summary>
+            <p className="text-gray-700 mt-2">Nossas tabelas seguem os padroes internacionais mais aceitos e servem como uma excelente referencia inicial. Porem, para compras internacionais online, recomendamos sempre verificar tambem a tabela de medidas da loja especifica, pois pode haver variacoes regionais. Sites como ASOS, Zara e H&M geralmente possuem suas proprias tabelas de conversao.</p>
+          </details>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Dicas Praticas</h2>
+        <div className="text-gray-700 space-y-3">
+          <p>
+            <strong>Compras online internacionais:</strong> Ao comprar em sites como Amazon, AliExpress ou Shein, sempre converta o tamanho usando as medidas em centimetros, nao apenas a letra ou numero. Muitas lojas asiaticas, por exemplo, usam numeracao propria que nao corresponde aos padroes ocidentais. Leia os comentarios de outros compradores brasileiros para saber se a peca veste maior ou menor do que o esperado.
+          </p>
+          <p>
+            <strong>Calcados de corrida:</strong> Para tenis de corrida, muitos especialistas recomendam comprar meio numero ou um numero acima do tamanho habitual. Os pes incham durante a corrida, e um tenis apertado pode causar bolhas e desconforto. Use a medida em centimetros do seu pe e adicione 0,5 a 1 cm para encontrar o tamanho ideal.
+          </p>
+          <p>
+            <strong>Presentes:</strong> Se voce esta comprando roupas ou calcados de presente e nao sabe o tamanho exato da pessoa, tente descobrir discretamente verificando uma peca que ela ja use. Olhe a etiqueta interna de uma camiseta ou o numero na palmilha de um sapato. Com essa informacao e a nossa tabela, voce consegue converter para qualquer sistema de medida.
+          </p>
+        </div>
+      </section>
     </ToolPage>
   );
 }

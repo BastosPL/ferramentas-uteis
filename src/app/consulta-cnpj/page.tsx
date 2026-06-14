@@ -488,6 +488,83 @@ export default function ConsultaCNPJ() {
           Nenhuma informacao e armazenada em nossos servidores.
         </p>
       </section>
+
+      {/* ── EDITORIAL CONTENT ── */}
+      <section className="mt-16 max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar a Consulta CNPJ</h2>
+        <div className="text-gray-700 space-y-3">
+          <p>
+            Nossa ferramenta oferece tres funcionalidades principais, acessiveis pelas abas no topo da pagina. Na aba <strong>Consultar CNPJ</strong>, digite os 14 digitos do CNPJ no campo de busca (com ou sem pontuacao) e clique em "Consultar" ou pressione Enter. Em poucos segundos, os dados cadastrais completos da empresa serao exibidos, incluindo razao social, nome fantasia, situacao cadastral, endereco, CNAE, quadro societario e informacoes sobre Simples Nacional e MEI.
+          </p>
+          <p>
+            Na aba <strong>Validar CNPJ</strong>, voce pode verificar se um numero de CNPJ e matematicamente valido, ou seja, se os digitos verificadores estao corretos. Basta digitar o numero e clicar em "Validar". Isso e util para identificar erros de digitacao antes de enviar documentos ou preencher cadastros.
+          </p>
+          <p>
+            A aba <strong>Validar IE</strong> permite verificar o formato da Inscricao Estadual para qualquer um dos 27 estados brasileiros. Selecione o estado no menu dropdown, digite a Inscricao Estadual e clique em "Validar". A ferramenta verifica se o numero segue o padrao correto de digitos e formato exigido pela SEFAZ do estado selecionado.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Como Funciona a Consulta de CNPJ</h2>
+        <div className="text-gray-700 space-y-3">
+          <p>
+            O CNPJ (Cadastro Nacional da Pessoa Juridica) e o registro unico de empresas junto a Receita Federal do Brasil. Composto por 14 digitos, ele segue o formato XX.XXX.XXX/XXXX-XX, onde os oito primeiros digitos identificam a empresa, os quatro seguintes representam o numero da filial (0001 para a matriz) e os dois ultimos sao digitos verificadores calculados por um algoritmo matematico especifico.
+          </p>
+          <p>
+            Quando voce realiza uma consulta, nossa ferramenta envia uma requisicao a API publica da BrasilAPI, que por sua vez consulta a base de dados da Receita Federal. Os dados retornados incluem todas as informacoes publicas cadastradas, como a situacao cadastral (ativa, baixada, suspensa, inapta ou nula), a data de abertura, o CNAE principal e secundarios, o capital social declarado e o quadro de socios e administradores.
+          </p>
+          <p>
+            A validacao matematica do CNPJ funciona atraves de um algoritmo de modulo 11. Os dois ultimos digitos do CNPJ sao calculados a partir dos 12 primeiros usando pesos multiplicadores especificos. Se os digitos calculados coincidem com os informados, o CNPJ e considerado matematicamente valido. Importante: um CNPJ valido matematicamente nao significa necessariamente que a empresa existe ou esta ativa — para isso, e preciso fazer a consulta completa na base da Receita Federal.
+          </p>
+          <p>
+            Ja a Inscricao Estadual (IE) segue regras diferentes para cada estado brasileiro. Cada Secretaria da Fazenda estadual define o formato, a quantidade de digitos e os prefixos obrigatorios da IE. Por exemplo, Sao Paulo utiliza 12 ou 13 digitos, enquanto o Rio de Janeiro usa apenas 8. Nossa ferramenta conhece as regras de todos os 27 estados e verifica se o formato digitado esta de acordo com o padrao do estado selecionado.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-6">Perguntas Frequentes</h2>
+        <div className="space-y-3">
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">Qual a diferenca entre validar e consultar um CNPJ?</summary>
+            <p className="text-gray-700 mt-2">Validar um CNPJ verifica apenas se os digitos verificadores estao corretos do ponto de vista matematico. E uma verificacao rapida que pode ser feita offline. Ja a consulta acessa a base de dados da Receita Federal e retorna todas as informacoes cadastrais reais da empresa, incluindo situacao cadastral, endereco, socios e atividades economicas.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">Por que a consulta retornou "CNPJ nao encontrado"?</summary>
+            <p className="text-gray-700 mt-2">Isso pode acontecer por tres motivos: o CNPJ digitado contem erros de digitacao, a empresa foi baixada ha muito tempo e removida da base publica, ou houve uma instabilidade temporaria na API da Receita Federal. Verifique o numero digitado e tente novamente. Se o problema persistir, o servico pode estar temporariamente indisponivel.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">O que significam as situacoes cadastrais do CNPJ?</summary>
+            <p className="text-gray-700 mt-2"><strong>Ativa:</strong> a empresa esta regularizada e em funcionamento. <strong>Baixada:</strong> a empresa foi encerrada voluntariamente ou de oficio. <strong>Suspensa:</strong> ha pendencias que impedem a empresa de operar normalmente. <strong>Inapta:</strong> a empresa deixou de entregar obrigacoes acessorias por dois ou mais exercicios consecutivos. <strong>Nula:</strong> a inscricao foi considerada nula por irregularidades na constituicao.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">O que e o CNAE e para que serve?</summary>
+            <p className="text-gray-700 mt-2">O CNAE (Classificacao Nacional de Atividades Economicas) e um codigo que identifica a atividade economica principal e as secundarias de uma empresa. Ele e utilizado pela Receita Federal, IBGE e orgaos estaduais para fins tributarios, estatisticos e de fiscalizacao. Cada empresa tem um CNAE principal e pode ter varios secundarios.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">A Inscricao Estadual e obrigatoria para todas as empresas?</summary>
+            <p className="text-gray-700 mt-2">Nao. A Inscricao Estadual e obrigatoria apenas para empresas que realizam operacoes sujeitas ao ICMS (Imposto sobre Circulacao de Mercadorias e Servicos), como comercio e industria. Prestadores de servicos puros, que pagam apenas ISS municipal, geralmente nao precisam de IE. Algumas empresas podem ser isentas de IE dependendo do estado e da atividade exercida.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">Posso consultar qualquer CNPJ gratuitamente?</summary>
+            <p className="text-gray-700 mt-2">Sim, os dados cadastrais do CNPJ sao informacoes publicas disponibilizadas pela Receita Federal. Nossa ferramenta consulta essas informacoes de forma gratuita e nao armazena nenhum dado. Voce pode consultar quantos CNPJs quiser sem nenhum custo ou limitacao de cadastro.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">O que e o Simples Nacional e o MEI mostrados na consulta?</summary>
+            <p className="text-gray-700 mt-2">O Simples Nacional e um regime tributario simplificado para micro e pequenas empresas com faturamento anual de ate R$ 4,8 milhoes. O MEI (Microempreendedor Individual) e uma categoria especial dentro do Simples Nacional para empreendedores individuais com faturamento de ate R$ 81 mil por ano. A consulta mostra se a empresa optou por esses regimes junto a Receita Federal.</p>
+          </details>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Dicas Praticas</h2>
+        <div className="text-gray-700 space-y-3">
+          <p>
+            <strong>Antes de fechar negocios:</strong> Sempre consulte o CNPJ de empresas com as quais voce pretende fazer negocios. Verifique se a situacao cadastral esta "Ativa" e se o endereco e atividade economica correspondem ao que foi informado. Empresas com situacao "Inapta" ou "Suspensa" podem indicar problemas fiscais que afetam a validade de notas fiscais emitidas por elas.
+          </p>
+          <p>
+            <strong>Emissao de notas fiscais:</strong> Ao preencher dados de clientes em notas fiscais, use a consulta de CNPJ para obter a razao social e endereco corretos. Erros nesses campos podem causar rejeicao da nota fiscal pela SEFAZ. Tambem valide a Inscricao Estadual do destinatario antes de emitir NF-e para evitar problemas com o fisco.
+          </p>
+          <p>
+            <strong>Verificacao de fornecedores:</strong> Use a consulta para verificar o quadro societario de fornecedores. Isso ajuda a identificar possiveis conflitos de interesse, verificar a idoneidade dos socios e confirmar quem sao os responsaveis legais pela empresa. Combine essa informacao com consultas em portais de reclamacoes e protestos para uma analise mais completa.
+          </p>
+        </div>
+      </section>
     </ToolPage>
   );
 }

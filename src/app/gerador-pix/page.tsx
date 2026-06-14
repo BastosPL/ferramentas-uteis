@@ -323,21 +323,83 @@ export default function GeradorPix() {
         </div>
       </div>
 
-      <section className="mt-12 prose prose-gray max-w-none">
-        <h2>O que e o PIX Copia e Cola?</h2>
-        <p>
-          O PIX Copia e Cola e um codigo de texto que contem todas as informacoes necessarias
-          para realizar um pagamento via PIX. Funciona como alternativa ao QR Code — basta
-          copiar o codigo e colar no aplicativo do banco para efetuar o pagamento.
-        </p>
+      {/* Editorial Content */}
+      <div className="max-w-4xl mx-auto mt-16 space-y-12 text-gray-700">
 
-        <h2>O QR Code gerado aqui e seguro?</h2>
-        <p>
-          Sim. O codigo e gerado 100% no seu navegador seguindo o padrao EMV definido pelo
-          Banco Central. Nenhum dado e enviado para servidores externos. Voce pode conferir
-          o codigo gerado escaneando com o app do seu banco antes de compartilhar.
-        </p>
-      </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar o Gerador de QR Code PIX</h2>
+          <p className="mb-3">Gerar um QR Code PIX e rapido e gratuito. Siga o passo a passo para criar seu codigo de pagamento em segundos:</p>
+          <ol className="list-decimal list-inside space-y-2 ml-2">
+            <li><strong>Escolha o tipo de chave:</strong> Selecione entre CPF, CNPJ, Email, Telefone ou Chave Aleatoria. Use a mesma chave cadastrada no seu banco.</li>
+            <li><strong>Informe a chave PIX:</strong> Digite sua chave exatamente como esta cadastrada. Para CPF e CNPJ, pode digitar com ou sem pontos — o sistema formata automaticamente.</li>
+            <li><strong>Preencha nome e cidade:</strong> Esses campos sao obrigatorios pelo padrao do Banco Central. O nome pode ter ate 25 caracteres e a cidade ate 15.</li>
+            <li><strong>Valor (opcional):</strong> Se quiser definir um valor fixo para a cobranca, preencha o campo. Se deixar vazio ou zero, quem pagar pode escolher o valor.</li>
+            <li><strong>Descricao (opcional):</strong> Adicione uma descricao curta como &quot;Pagamento servico&quot; ou &quot;Venda produto&quot; para identificar a transacao.</li>
+            <li><strong>Clique em &quot;Gerar QR Code PIX&quot;:</strong> O QR Code e o codigo Copia e Cola sao gerados instantaneamente.</li>
+            <li><strong>Compartilhe:</strong> Baixe a imagem do QR Code para enviar por WhatsApp ou redes sociais, ou copie o codigo Copia e Cola para enviar por texto.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona o QR Code PIX</h2>
+          <p className="mb-3">O QR Code PIX segue o padrao EMV (Europay, Mastercard e Visa) definido pelo Banco Central do Brasil. O processo de geracao envolve varias etapas tecnicas:</p>
+          <ul className="list-disc list-inside space-y-2 ml-2">
+            <li><strong>Payload EMV:</strong> Os dados sao organizados em campos TLV (Tag-Length-Value), onde cada informacao recebe um identificador, o tamanho e o valor. Por exemplo, o campo 26 contem as informacoes do recebedor.</li>
+            <li><strong>GUI do PIX:</strong> O campo de identificacao do arranjo de pagamento usa o valor &quot;br.gov.bcb.pix&quot;, que identifica o sistema PIX do Banco Central.</li>
+            <li><strong>CRC16:</strong> Um codigo de verificacao (checksum) e calculado sobre todo o payload usando o algoritmo CRC-CCITT. Isso garante que o codigo nao foi alterado ou corrompido.</li>
+            <li><strong>Codigo de moeda:</strong> O campo 53 contem o codigo &quot;986&quot;, que identifica o Real Brasileiro (BRL) no padrao ISO 4217.</li>
+            <li><strong>Geracao do QR Code:</strong> O payload em texto e convertido em uma imagem QR Code usando o padrao ISO/IEC 18004, com nivel de correcao de erro &quot;M&quot; (recupera ate 15% de dados danificados).</li>
+          </ul>
+          <p className="mt-3">Todo o processamento acontece no seu navegador. Nenhuma informacao e enviada para servidores externos, garantindo total privacidade dos seus dados bancarios.</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
+          <div className="space-y-3">
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">O QR Code gerado aqui e seguro?</summary>
+              <p className="mt-2">Sim. O codigo e gerado 100% no seu navegador seguindo o padrao EMV oficial do Banco Central. Nenhum dado e enviado para servidores. Voce pode conferir o codigo escaneando com o app do seu banco antes de compartilhar.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">O que e o PIX Copia e Cola?</summary>
+              <p className="mt-2">E um codigo de texto que contem todas as informacoes do pagamento PIX. Funciona como alternativa ao QR Code — o pagador copia o codigo e cola no aplicativo do banco. E util quando nao e possivel escanear o QR Code, como em mensagens de texto ou emails.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">Posso usar para receber pagamentos no meu negocio?</summary>
+              <p className="mt-2">Sim. Muitos autonomos, MEIs e pequenos negocios usam QR Code PIX para receber pagamentos. Voce pode imprimir o QR Code e colocar no balcao, enviar por WhatsApp para clientes ou incluir em notas e orcamentos.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">O QR Code tem validade?</summary>
+              <p className="mt-2">QR Codes estaticos (sem valor definido ou com valor fixo) nao expiram. Eles continuam funcionando enquanto a chave PIX estiver ativa no banco. QR Codes dinamicos (gerados pelo banco com identificador unico) podem ter prazo de validade, mas essa ferramenta gera apenas codigos estaticos.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">Preciso ter conta em algum banco especifico?</summary>
+              <p className="mt-2">Nao. O PIX e um sistema universal do Banco Central que funciona com qualquer banco ou instituicao de pagamento. Basta ter uma chave PIX cadastrada em qualquer conta — banco tradicional, fintech ou carteira digital.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">Posso gerar QR Code com valor aberto?</summary>
+              <p className="mt-2">Sim. Basta deixar o campo de valor vazio ou com zero. Nesse caso, o pagador digita o valor no momento do pagamento. Isso e util para doacoes, gorjetas ou quando o valor varia.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">Qual a diferenca entre QR Code estatico e dinamico?</summary>
+              <p className="mt-2">O QR Code estatico (gerado aqui) pode ser reutilizado varias vezes e nao tem identificador de transacao unico. O QR Code dinamico e gerado pelo banco com um identificador unico para cada cobranca, permite rastreamento individual e pode ter data de vencimento. Para comercios com alto volume, o QR Code dinamico e mais adequado.</p>
+            </details>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas para Usar o PIX</h2>
+          <ul className="list-disc list-inside space-y-2 ml-2">
+            <li><strong>Imprima em boa qualidade:</strong> Se for colocar o QR Code em balcao ou vitrine, imprima em alta resolucao. QR Codes borrados ou pequenos demais podem nao ser lidos pelos celulares.</li>
+            <li><strong>Teste antes de compartilhar:</strong> Sempre escaneie o QR Code gerado com o app do seu banco para confirmar que os dados estao corretos antes de enviar para clientes.</li>
+            <li><strong>Use chave aleatoria para mais seguranca:</strong> Se nao quer expor seu CPF ou telefone, cadastre uma chave aleatoria no banco e use-a no QR Code.</li>
+            <li><strong>Inclua descricao:</strong> Adicionar uma descricao ajuda a identificar a origem dos pagamentos no extrato, especialmente se voce recebe muitas transferencias.</li>
+            <li><strong>PIX para MEI:</strong> Se voce e MEI, use o CNPJ como chave PIX para separar recebimentos pessoais dos profissionais. Isso facilita a contabilidade.</li>
+            <li><strong>Limite de transferencia:</strong> Cada banco define limites diarios para PIX. Consulte seu banco se precisar receber valores altos. O limite noturno (20h-6h) costuma ser mais restritivo.</li>
+          </ul>
+        </section>
+
+      </div>
     </ToolPage>
   );
 }

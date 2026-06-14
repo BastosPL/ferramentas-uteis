@@ -149,13 +149,84 @@ export default function GeradorCores() {
         )}
       </div>
 
-      <section className="mt-12 prose prose-gray max-w-none">
-        <h2>Formatos de cor: HEX, RGB e HSL</h2>
-        <p>
-          <strong>HEX</strong> usa 6 digitos hexadecimais (ex: #3B82F6). <strong>RGB</strong> define
-          vermelho, verde e azul de 0 a 255. <strong>HSL</strong> usa matiz (0-360), saturacao e
-          luminosidade em porcentagem. Todos representam a mesma cor, apenas em formatos diferentes.
-        </p>
+      <section className="mt-12 max-w-4xl mx-auto space-y-10 text-gray-700 leading-relaxed">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar o Gerador e Conversor de Cores</h2>
+          <p className="mb-3">
+            Esta ferramenta foi criada para designers, desenvolvedores e qualquer pessoa que trabalhe com cores digitais. Ela permite escolher cores visualmente, converter entre formatos e gerar paletas harmonicas em segundos. Veja como aproveitar cada funcionalidade:
+          </p>
+          <ol className="list-decimal list-inside space-y-2 ml-2">
+            <li><strong>Escolha uma cor base:</strong> use o seletor de cores (color picker) clicando no quadrado colorido a esquerda, ou digite diretamente o codigo HEX no campo de texto. A cor sera atualizada em tempo real.</li>
+            <li><strong>Copie o codigo no formato desejado:</strong> abaixo do seletor, voce vera a cor convertida automaticamente em tres formatos — HEX, RGB e HSL. Clique em &quot;Copiar&quot; ao lado de qualquer formato para copia-lo para a area de transferencia.</li>
+            <li><strong>Gere uma cor aleatoria:</strong> clique no botao &quot;Cor Aleatoria&quot; para descobrir cores inesperadas. Essa funcao e otima para encontrar inspiracao quando voce esta sem ideias.</li>
+            <li><strong>Visualize a cor em contexto:</strong> no painel a direita, a cor e exibida em uma area grande para visualizacao, alem de dois exemplos mostrando como texto branco e preto ficam sobre ela — essencial para verificar contraste e legibilidade.</li>
+            <li><strong>Crie paletas de cores:</strong> use o botao &quot;Paleta Aleatoria&quot; para gerar 6 cores aleatorias, ou clique em &quot;Complementar&quot; para gerar automaticamente uma paleta com a cor base, variacoes mais claras, mais escuras e a cor complementar.</li>
+            <li><strong>Selecione cores da paleta:</strong> clique em qualquer cor da paleta para defini-la como a cor principal e copiar seu codigo automaticamente.</li>
+          </ol>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona: Formatos HEX, RGB e HSL</h2>
+          <p className="mb-3">
+            Toda cor digital e representada como uma combinacao de valores numericos. Existem varios sistemas para descrever essas cores, e cada um tem vantagens especificas dependendo do contexto de uso.
+          </p>
+          <h3 className="text-lg font-semibold text-gray-800 mt-4 mb-2">HEX (Hexadecimal)</h3>
+          <p className="mb-3">
+            O formato HEX e o mais popular na web. Ele usa 6 digitos hexadecimais (base 16, de 0 a F) precedidos pelo simbolo #. Os dois primeiros digitos representam vermelho, os dois do meio representam verde e os dois ultimos representam azul. Por exemplo, #FF0000 e vermelho puro, #00FF00 e verde puro e #0000FF e azul puro. O formato HEX e compacto e amplamente suportado em CSS, editores de imagem e ferramentas de design como Figma, Canva e Photoshop.
+          </p>
+          <h3 className="text-lg font-semibold text-gray-800 mt-4 mb-2">RGB (Red, Green, Blue)</h3>
+          <p className="mb-3">
+            O modelo RGB define cores pela intensidade de tres canais: vermelho (Red), verde (Green) e azul (Blue), cada um variando de 0 a 255. O valor rgb(255, 0, 0) e vermelho puro, rgb(255, 255, 255) e branco e rgb(0, 0, 0) e preto. O RGB e o modelo nativo de monitores e telas, pois cada pixel e formado fisicamente por sub-pixels vermelhos, verdes e azuis. No CSS moderno, voce tambem pode usar rgba() para adicionar transparencia (canal alfa).
+          </p>
+          <h3 className="text-lg font-semibold text-gray-800 mt-4 mb-2">HSL (Hue, Saturation, Lightness)</h3>
+          <p className="mb-3">
+            O HSL e considerado o formato mais intuitivo para humanos. Ele descreve cores com tres propriedades: matiz (Hue, de 0 a 360 graus no circulo cromatico), saturacao (de 0% a 100%, onde 0% e cinza e 100% e a cor pura) e luminosidade (de 0% a 100%, onde 0% e preto e 100% e branco). O HSL facilita ajustes: para clarear uma cor, basta aumentar a luminosidade; para desaturar, basta reduzir a saturacao. Isso o torna ideal para criar variacoes de uma mesma cor em sistemas de design.
+          </p>
+          <p>
+            A conversao entre esses formatos e puramente matematica — todos representam o mesmo espectro de cores. Esta ferramenta realiza as conversoes automaticamente em tempo real, sem necessidade de calculos manuais.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
+          <div className="space-y-3">
+            <details className="bg-gray-50 rounded-lg p-4 cursor-pointer">
+              <summary className="font-semibold text-gray-800">Qual formato de cor devo usar no meu projeto web?</summary>
+              <p className="mt-2">Para a maioria dos projetos web, o HEX e o formato mais utilizado por ser compacto e universalmente suportado. Porem, se voce precisa de transparencia, use rgba() ou hsla(). Se voce esta criando um sistema de design com variacoes de cores (tons claros e escuros da mesma cor), o HSL e mais pratico porque permite ajustar luminosidade e saturacao de forma intuitiva.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4 cursor-pointer">
+              <summary className="font-semibold text-gray-800">O que e uma cor complementar?</summary>
+              <p className="mt-2">A cor complementar e aquela que esta no lado oposto do circulo cromatico. Ela cria o maximo contraste visual quando combinada com a cor original. Por exemplo, a complementar do azul e o laranja, a do vermelho e o ciano. Cores complementares sao muito usadas em design para criar destaque visual, call-to-actions e composicoes vibrantes.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4 cursor-pointer">
+              <summary className="font-semibold text-gray-800">Como escolher cores acessiveis para meu site?</summary>
+              <p className="mt-2">A acessibilidade de cores esta ligada ao contraste entre texto e fundo. As diretrizes WCAG recomendam uma taxa de contraste minima de 4.5:1 para texto normal e 3:1 para texto grande. Use os exemplos de texto branco e preto desta ferramenta como referencia inicial. Como regra geral, evite texto claro sobre fundo claro ou texto escuro sobre fundo escuro. Cores com luminosidade (L no HSL) abaixo de 40% geralmente funcionam bem com texto branco.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4 cursor-pointer">
+              <summary className="font-semibold text-gray-800">Qual a diferenca entre RGB e CMYK?</summary>
+              <p className="mt-2">RGB e um modelo de cores aditivo, usado em telas e monitores — misturando vermelho, verde e azul em intensidade maxima, voce obtem branco. CMYK (Ciano, Magenta, Amarelo e Preto) e um modelo subtrativo, usado em impressao — as tintas absorvem luz e a mistura de todas resulta em preto. Se voce esta projetando para telas, use RGB/HEX. Se e para impressao, o CMYK e necessario. Esta ferramenta trabalha com RGB, ideal para projetos digitais.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4 cursor-pointer">
+              <summary className="font-semibold text-gray-800">Como criar uma paleta de cores harmonica?</summary>
+              <p className="mt-2">Existem varias estrategias baseadas no circulo cromatico: cores analogas (vizinhas no circulo), complementares (opostas), triadicas (3 cores equidistantes) e monocromaticas (variacoes de luminosidade da mesma cor). Use o botao &quot;Complementar&quot; desta ferramenta para gerar automaticamente uma paleta com variacoes da cor selecionada. Para projetos profissionais, escolha uma cor principal, uma secundaria e uma de destaque, mantendo o restante neutro.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4 cursor-pointer">
+              <summary className="font-semibold text-gray-800">Posso usar as cores geradas em ferramentas como Figma, Canva ou Photoshop?</summary>
+              <p className="mt-2">Sim. Basta copiar o codigo HEX (por exemplo, #3B82F6) e colar diretamente no campo de cor de qualquer ferramenta de design. Todas as ferramentas profissionais aceitam codigos HEX. Algumas tambem aceitam RGB e HSL. O formato HEX e o mais universal e funciona em praticamente qualquer software.</p>
+            </details>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas para Trabalhar com Cores</h2>
+          <ul className="list-disc list-inside space-y-2 ml-2">
+            <li><strong>Regra 60-30-10:</strong> em design, use 60% de uma cor dominante (geralmente neutra), 30% de uma cor secundaria e 10% de uma cor de destaque. Isso cria hierarquia visual sem poluir o layout.</li>
+            <li><strong>Teste em modo escuro:</strong> se seu projeto suporta dark mode, verifique se as cores escolhidas funcionam bem com fundos escuros. Cores que ficam otimas em fundo branco podem perder contraste em fundo preto.</li>
+            <li><strong>Cuidado com cores vibrantes em excesso:</strong> cores muito saturadas (saturacao acima de 80% no HSL) cansam a vista quando usadas em grandes areas. Reserve-as para botoes, links e elementos de destaque.</li>
+            <li><strong>Considere daltonismo:</strong> cerca de 8% dos homens tem algum tipo de daltonismo. Evite depender apenas de vermelho e verde para transmitir informacao — combine cores com icones ou textos.</li>
+            <li><strong>Salve suas paletas:</strong> ao encontrar uma combinacao que funciona, copie os codigos HEX e guarde em um documento de referencia. Isso evita inconsistencias visuais ao longo do projeto.</li>
+          </ul>
+        </div>
       </section>
     </ToolPage>
   );

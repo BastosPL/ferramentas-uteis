@@ -224,21 +224,91 @@ export default function ConversorDeUnidades() {
         )}
       </div>
 
-      <section className="mt-12 prose prose-gray max-w-none">
-        <h2>Como usar o Conversor de Unidades?</h2>
-        <p>
-          Selecione a categoria (comprimento, peso, temperatura, etc.), escolha as unidades
-          de origem e destino, e digite o valor. A conversao e feita instantaneamente. Use o
-          botao de inverter para trocar as unidades rapidamente.
-        </p>
-        <h2>Conversoes mais populares</h2>
-        <ul>
-          <li>Quilogramas para libras</li>
-          <li>Metros para pes</li>
-          <li>Celsius para Fahrenheit</li>
-          <li>Quilometros para milhas</li>
-          <li>Litros para galoes</li>
-        </ul>
+      <section className="mt-12 max-w-4xl mx-auto space-y-10 text-gray-700">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar o Conversor de Unidades</h2>
+          <p className="mb-3">
+            Nosso conversor de unidades permite converter valores entre diferentes sistemas de medida de forma rapida e precisa. Siga os passos abaixo para realizar suas conversoes:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Escolha a categoria:</strong> Clique em um dos botoes no topo da ferramenta para selecionar o tipo de grandeza que deseja converter: Comprimento, Peso/Massa, Temperatura, Volume, Area ou Velocidade. A ferramenta se ajusta automaticamente mostrando apenas as unidades relevantes para a categoria escolhida.</li>
+            <li><strong>Selecione a unidade de origem:</strong> No campo &quot;De&quot;, use o menu suspenso para escolher a unidade a partir da qual deseja converter. Por exemplo, se voce quer converter quilogramas para libras, selecione &quot;Quilograma (kg)&quot; no campo de origem.</li>
+            <li><strong>Selecione a unidade de destino:</strong> No campo &quot;Para&quot;, escolha a unidade para a qual deseja converter o valor. Seguindo o exemplo, selecione &quot;Libra (lb)&quot;.</li>
+            <li><strong>Digite o valor:</strong> Insira o numero que deseja converter no campo de entrada. O resultado aparece automaticamente no campo de destino, sem necessidade de clicar em nenhum botao. Voce pode usar casas decimais para valores mais precisos.</li>
+            <li><strong>Inverta as unidades:</strong> Use o botao de setas (entre os campos De e Para) para inverter rapidamente as unidades de origem e destino, sem perder o valor digitado.</li>
+            <li><strong>Consulte a tabela completa:</strong> Abaixo da ferramenta, uma tabela de conversao rapida mostra o valor convertido para todas as unidades da categoria selecionada simultaneamente.</li>
+          </ul>
+          <p className="mt-3">
+            A conversao e realizada instantaneamente no seu navegador. Nenhuma informacao e enviada para servidores externos, e voce pode usar a ferramenta offline apos o primeiro carregamento.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Conversao de Unidades</h2>
+          <p className="mb-3">
+            A conversao de unidades e um processo matematico que transforma um valor expresso em uma unidade de medida para outra unidade equivalente. Cada unidade possui um fator de conversao em relacao a uma unidade base da sua categoria. Para converter, o valor e primeiro transformado na unidade base e depois convertido para a unidade de destino.
+          </p>
+          <p className="mb-3">
+            Para grandezas como comprimento, peso, volume, area e velocidade, o metodo utiliza <strong>fatores de conversao lineares</strong>. Por exemplo, 1 quilometro equivale a 1.000 metros (fator = 1000). Para converter 5 km para metros: 5 x 1000 = 5.000 m. Para converter entre duas unidades quaisquer, a formula e: <strong>Resultado = Valor x (Fator da unidade de origem / Fator da unidade de destino)</strong>.
+          </p>
+          <p className="mb-3">
+            A temperatura e um caso especial que nao usa fatores de conversao lineares simples. As formulas de conversao entre Celsius, Fahrenheit e Kelvin envolvem operacoes de adicao e multiplicacao diferentes. De Celsius para Fahrenheit: <strong>F = C x 9/5 + 32</strong>. De Celsius para Kelvin: <strong>K = C + 273,15</strong>. De Fahrenheit para Celsius: <strong>C = (F - 32) x 5/9</strong>. Nossa ferramenta trata a temperatura como caso especial, aplicando essas formulas automaticamente.
+          </p>
+          <p className="mb-3">
+            Os fatores de conversao utilizados seguem os padroes do Sistema Internacional de Unidades (SI) e as definicoes oficiais de cada unidade. Para medidas imperiais (polegadas, pes, libras, galoes), usamos os fatores de equivalencia internacionalmente aceitos. A precisao dos resultados e de ate 6 casas decimais, suficiente para a maioria das aplicacoes praticas.
+          </p>
+          <p className="mb-3">
+            Nosso conversor abrange 6 categorias com mais de 30 unidades no total, cobrindo desde medidas do dia a dia (quilos para libras, celsius para fahrenheit) ate unidades tecnicas (nos para metros por segundo, hectares para metros quadrados).
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
+          <div className="space-y-3">
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Quantos centimetros tem uma polegada?</summary>
+              <p className="px-4 pb-3 text-sm">Uma polegada equivale a exatamente 2,54 centimetros. Essa definicao foi padronizada internacionalmente em 1959. Para converter polegadas para centimetros, multiplique por 2,54. Para o caminho inverso, divida por 2,54. Exemplo: uma tela de 55 polegadas tem 139,7 cm de diagonal (55 x 2,54).</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Como converter Celsius para Fahrenheit de cabeca?</summary>
+              <p className="px-4 pb-3 text-sm">A formula exata e F = C x 9/5 + 32, mas para estimativas rapidas de cabeca, voce pode usar a aproximacao: dobre o valor em Celsius e some 30. Exemplo: 25 graus C: 25 x 2 + 30 = 80 graus F (o valor exato e 77 graus F). Essa aproximacao funciona razoavelmente bem para temperaturas do dia a dia (entre 0 e 40 graus C).</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Qual a diferenca entre quilograma e libra?</summary>
+              <p className="px-4 pb-3 text-sm">O quilograma e a unidade de massa do Sistema Internacional (SI), usado no Brasil e na maior parte do mundo. A libra (pound, lb) e usada nos Estados Unidos, Reino Unido e poucos outros paises. Um quilograma equivale a aproximadamente 2,205 libras, e uma libra equivale a cerca de 0,4536 quilogramas. Para converter kg para lb rapidamente, multiplique por 2,2.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">O que e o Kelvin e quando e usado?</summary>
+              <p className="px-4 pb-3 text-sm">O Kelvin e a unidade de temperatura do Sistema Internacional, usada principalmente em contextos cientificos. Sua escala comeca no zero absoluto (-273,15 graus Celsius), a temperatura teorica mais baixa possivel, onde as particulas param completamente de se mover. O Kelvin usa os mesmos incrementos que o Celsius: uma variacao de 1 K equivale a uma variacao de 1 grau C. Agua congela a 273,15 K e ferve a 373,15 K.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Quantos litros tem um galao?</summary>
+              <p className="px-4 pb-3 text-sm">Um galao americano (US gallon) equivale a 3,785 litros. Ja o galao imperial britanico e maior, com 4,546 litros. Nossa ferramenta usa o galao americano, que e o mais comum em referencias de consumo de combustivel, receitas americanas e especificacoes tecnicas. Para converter litros para galoes US, divida por 3,785.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Qual a diferenca entre milha terrestre e milha nautica?</summary>
+              <p className="px-4 pb-3 text-sm">A milha terrestre (statute mile) equivale a 1.609,344 metros e e usada em estradas nos EUA e UK. A milha nautica equivale a 1.852 metros (1 minuto de arco de latitude) e e usada na navegacao maritima e aerea. O no (knot) e a velocidade de 1 milha nautica por hora (1,852 km/h). Nossa ferramenta inclui ambas: a milha na categoria Comprimento e o no na categoria Velocidade.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Qual a diferenca entre hectare e acre?</summary>
+              <p className="px-4 pb-3 text-sm">Um hectare equivale a 10.000 metros quadrados (um quadrado de 100m x 100m) e e a unidade de area mais usada no Brasil para medir terrenos e propriedades rurais. Um acre equivale a 4.046,86 metros quadrados, sendo usado nos EUA e UK. Portanto, 1 hectare equivale a aproximadamente 2,471 acres. Para converter hectares para acres, multiplique por 2,471.</p>
+            </details>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas de Conversao</h2>
+          <p className="mb-3">
+            Conhecer algumas conversoes aproximadas de cabeca pode ser muito util no dia a dia, especialmente em viagens internacionais e compras em sites estrangeiros:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Peso em compras internacionais:</strong> Ao comprar produtos em sites americanos, lembre-se que 1 lb (libra) equivale a cerca de 450 gramas. Um pacote de 5 lbs tem aproximadamente 2,27 kg. Para estimar rapidamente, divida o peso em libras por 2 e adicione 10%.</li>
+            <li><strong>Temperatura em viagens:</strong> Se a previsao diz 68 graus F, subtraia 30 e divida por 2: (68 - 30) / 2 = 19 graus C (o valor exato e 20 graus C). Para climas extremos, essa estimativa perde precisao, entao use o conversor.</li>
+            <li><strong>Distancias nos EUA:</strong> 1 milha equivale a 1,6 km. Para converter milhas para quilometros rapidamente, multiplique por 1,6. Se um destino esta a 60 milhas, sao aproximadamente 96 km (60 x 1,6).</li>
+            <li><strong>Receitas americanas:</strong> 1 xicara (cup) americana equivale a 236,6 mL, e 1 onca fluida (fl oz) equivale a 29,6 mL. Uma garrafa de 16 fl oz tem cerca de 473 mL (quase meio litro).</li>
+            <li><strong>Velocidade do vento:</strong> Previsoes internacionais costumam usar m/s ou nos. Para converter m/s para km/h, multiplique por 3,6. Para converter nos para km/h, multiplique por 1,85. Vento de 10 m/s equivale a 36 km/h.</li>
+          </ul>
+        </div>
       </section>
     </ToolPage>
   );

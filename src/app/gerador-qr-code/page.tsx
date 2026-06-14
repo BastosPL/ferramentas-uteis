@@ -115,13 +115,89 @@ export default function GeradorQRCode() {
         </div>
       </div>
 
-      <section className="mt-12 prose prose-gray max-w-none">
-        <h2>O que e um QR Code?</h2>
-        <p>
-          QR Code (Quick Response Code) e um codigo de barras bidimensional que pode ser
-          lido por cameras de smartphones. Ele pode armazenar URLs, textos, dados de Wi-Fi,
-          contatos e muito mais. Basta apontar a camera do celular para o codigo.
-        </p>
+      <section className="mt-12 max-w-4xl mx-auto space-y-10 text-gray-700">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar o Gerador de QR Code</h2>
+          <p className="mb-3">
+            Criar um QR Code com nossa ferramenta e rapido e gratuito. Siga o passo a passo:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Passo 1 — Escolha o tipo:</strong> Selecione o tipo de conteudo que deseja codificar. As opcoes disponiveis sao: URL/Link, Texto livre, WhatsApp, Wi-Fi, Email e Telefone. Cada tipo possui campos especificos.</li>
+            <li><strong>Passo 2 — Preencha os dados:</strong> Insira as informacoes no campo correspondente. Para URLs, digite o endereco completo (com https://). Para WhatsApp, informe o numero com codigo do pais e DDD (exemplo: 5581999999999). Para Wi-Fi, preencha o nome da rede e a senha.</li>
+            <li><strong>Passo 3 — Ajuste o tamanho:</strong> Use o controle deslizante para definir o tamanho da imagem do QR Code, de 128px ate 512px. Tamanhos maiores sao ideais para impressao; menores funcionam bem para telas.</li>
+            <li><strong>Passo 4 — Visualize e baixe:</strong> O QR Code e gerado automaticamente na area de visualizacao a direita. Quando estiver satisfeito, clique em &quot;Baixar PNG&quot; para salvar a imagem no seu dispositivo.</li>
+          </ul>
+          <p className="mt-3">
+            O QR Code gerado pode ser usado em materiais impressos, sites, redes sociais, cartoes de visita, cardapios digitais e qualquer outro lugar onde voce deseje compartilhar informacoes de forma pratica.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona um QR Code</h2>
+          <p className="mb-3">
+            QR Code significa &quot;Quick Response Code&quot; (Codigo de Resposta Rapida). Foi inventado em 1994 pela empresa japonesa Denso Wave, originalmente para rastrear pecas automotivas. Diferente dos codigos de barras tradicionais que armazenam dados em uma unica dimensao (horizontal), o QR Code armazena informacoes em duas dimensoes (horizontal e vertical), o que permite guardar muito mais dados em um espaco menor.
+          </p>
+          <p className="mb-3">
+            A estrutura de um QR Code inclui varios elementos tecnicos: os tres quadrados grandes nos cantos servem como pontos de alinhamento, permitindo que a camera identifique a orientacao e o tamanho do codigo. Os padroes menores dentro do codigo representam os dados codificados em formato binario, alem de informacoes de correcao de erros.
+          </p>
+          <p className="mb-3">
+            O QR Code utiliza o algoritmo Reed-Solomon para correcao de erros, o que significa que mesmo se parte do codigo estiver danificada ou obstruida (ate 30% dependendo do nivel de correcao), ele ainda pode ser lido corretamente. Existem quatro niveis de correcao: L (7%), M (15%), Q (25%) e H (30%).
+          </p>
+          <p>
+            Nossa ferramenta utiliza uma API confiavel para gerar os codigos em tempo real. A imagem e criada no formato PNG, compativel com praticamente todos os dispositivos e softwares de edicao. Nenhum dado pessoal e armazenado — o QR Code e gerado e entregue diretamente para voce.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
+          <div className="space-y-3">
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">O QR Code gerado expira?</summary>
+              <p className="px-4 pb-3 text-sm">Nao. QR Codes estaticos (como os gerados aqui) nunca expiram. Eles simplesmente codificam uma informacao fixa na imagem. Desde que a informacao original continue valida (o link ainda funcione, o numero de WhatsApp esteja ativo, etc.), o QR Code funcionara para sempre.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Qual a diferenca entre QR Code estatico e dinamico?</summary>
+              <p className="px-4 pb-3 text-sm">O QR Code estatico (gerado aqui) contem a informacao diretamente no padrao visual. Uma vez criado, nao pode ser alterado. O QR Code dinamico contem um link intermediario que redireciona para o destino final, permitindo alterar o destino sem mudar a imagem. QR Codes dinamicos geralmente sao pagos.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Posso usar o QR Code para fins comerciais?</summary>
+              <p className="px-4 pb-3 text-sm">Sim, absolutamente. Os QR Codes gerados sao livres para uso pessoal e comercial. Voce pode imprimi-los em embalagens, cardapios, cartoes de visita, panfletos, banners e qualquer material de marketing sem nenhuma restricao.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Qual tamanho devo escolher para impressao?</summary>
+              <p className="px-4 pb-3 text-sm">Para impressao em papel, recomendamos o tamanho maximo de 512px. O tamanho minimo impresso do QR Code deve ser de pelo menos 2cm x 2cm para garantir a leitura por cameras de celular. Para cartazes e banners grandes, o QR Code deve ter pelo menos 5cm x 5cm. Sempre teste a leitura antes de imprimir em grande quantidade.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Como funciona o QR Code de Wi-Fi?</summary>
+              <p className="px-4 pb-3 text-sm">O QR Code de Wi-Fi codifica o nome da rede (SSID) e a senha em um formato padrao. Quando alguem escaneia o codigo com a camera do celular, o dispositivo oferece automaticamente a opcao de conectar a rede sem precisar digitar a senha manualmente. Funciona em Android e iOS.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">O QR Code de WhatsApp funciona em qualquer celular?</summary>
+              <p className="px-4 pb-3 text-sm">Sim, desde que o celular tenha o WhatsApp instalado. O QR Code gera um link wa.me que abre automaticamente uma conversa com o numero informado. Voce pode incluir uma mensagem predefinida que ja aparecera no campo de texto, facilitando o contato para clientes.</p>
+            </details>
+            <details className="bg-white border border-gray-200 rounded-lg">
+              <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Preciso de internet para ler um QR Code?</summary>
+              <p className="px-4 pb-3 text-sm">Para ler (decodificar) o QR Code, nao. A camera do celular faz isso offline. Porem, se o conteudo do QR Code for um link de internet, voce precisara de conexao para acessar o site. QR Codes de texto, contato ou Wi-Fi funcionam completamente sem internet.</p>
+            </details>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas e Usos Criativos</h2>
+          <p className="mb-3">
+            O QR Code e uma das ferramentas mais versateis do marketing digital e do dia a dia. Veja algumas ideias de uso:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Cardapio digital:</strong> Restaurantes podem criar um QR Code com o link do cardapio online, eliminando a necessidade de cardapios fisicos e facilitando atualizacoes.</li>
+            <li><strong>Cartao de visita:</strong> Adicione um QR Code no seu cartao que direcione para o seu LinkedIn, portfolio ou site profissional.</li>
+            <li><strong>Wi-Fi para visitantes:</strong> Cole um QR Code de Wi-Fi na recepcao do escritorio ou na sala de estar. Visitantes conectam sem precisar perguntar a senha.</li>
+            <li><strong>Pagamentos e Pix:</strong> Muitas lojas usam QR Codes para receber pagamentos via Pix. Embora o QR Code do Pix tenha formato especifico do Banco Central, o conceito e o mesmo.</li>
+            <li><strong>Eventos e convites:</strong> Inclua um QR Code no convite que direcione para o mapa do local, confirmacao de presenca ou informacoes do evento.</li>
+          </ul>
+          <p className="mt-3">
+            <strong>Erro comum:</strong> Gerar QR Codes muito pequenos para impressao. Se o QR Code for menor que 2cm impresso, muitas cameras terao dificuldade em le-lo, especialmente em condicoes de baixa iluminacao. Sempre teste antes de enviar para grafica.
+          </p>
+        </div>
       </section>
     </ToolPage>
   );

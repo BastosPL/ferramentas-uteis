@@ -319,20 +319,92 @@ export default function ConversorWordPDF() {
         </div>
       </div>
 
-      <section className="mt-12 prose prose-gray max-w-none">
-        <h2>Como converter Word para PDF?</h2>
-        <p>
-          Selecione o modo &quot;Word → PDF&quot;, arraste ou selecione seu arquivo .docx e clique em Converter.
-          O documento sera processado no seu navegador e uma janela de impressao abrira para voce salvar como PDF.
-          Nenhum dado e enviado para servidores externos.
-        </p>
+      {/* Editorial Content for SEO */}
+      <section className="mt-12 max-w-4xl mx-auto space-y-10 text-gray-700">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar o Conversor Word e PDF</h2>
+          <p className="mb-3">
+            Nossa ferramenta permite converter arquivos nos dois sentidos: de Word (.docx) para PDF e de PDF para Word (.docx). Veja como utilizar cada modo:
+          </p>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Converter Word para PDF</h3>
+          <ol className="list-decimal list-inside space-y-2 ml-2 mb-4">
+            <li><strong>Selecione o modo &quot;Word → PDF&quot;</strong> clicando na aba correspondente no topo da ferramenta.</li>
+            <li><strong>Envie seu arquivo .docx:</strong> Arraste o arquivo para a area pontilhada ou clique para selecionar do seu computador. O limite e de 20MB por arquivo.</li>
+            <li><strong>Clique em &quot;Converter para PDF&quot;:</strong> O sistema processara o documento e abrira uma janela de impressao do navegador.</li>
+            <li><strong>Salve como PDF:</strong> Na janela de impressao, selecione a opcao &quot;Salvar como PDF&quot; (em vez de uma impressora) e escolha onde salvar o arquivo.</li>
+          </ol>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Converter PDF para Word</h3>
+          <ol className="list-decimal list-inside space-y-2 ml-2">
+            <li><strong>Selecione o modo &quot;PDF → Word&quot;</strong> clicando na segunda aba.</li>
+            <li><strong>Envie seu arquivo .pdf:</strong> Arraste ou selecione o PDF que deseja converter. O arquivo precisa conter texto selecionavel (nao escaneado).</li>
+            <li><strong>Clique em &quot;Converter para Word&quot;:</strong> O texto sera extraido pagina a pagina e um arquivo .docx sera gerado automaticamente.</li>
+            <li><strong>Baixe o resultado:</strong> O download do arquivo Word comecara automaticamente apos a conversao.</li>
+          </ol>
+        </div>
 
-        <h2>Como converter PDF para Word?</h2>
-        <p>
-          Selecione o modo &quot;PDF → Word&quot;, arraste ou selecione seu arquivo .pdf e clique em Converter.
-          O texto sera extraido do PDF e um arquivo .docx sera gerado automaticamente para download.
-          Funciona melhor com PDFs que contem texto selecionavel (nao escaneados).
-        </p>
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Conversao</h2>
+          <p className="mb-3">
+            Diferente de outros conversores online, toda a conversao acontece diretamente no seu navegador. Nenhum arquivo e enviado para servidores externos, garantindo total privacidade e seguranca dos seus documentos.
+          </p>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Word para PDF</h3>
+          <p className="mb-3">
+            Na conversao de Word para PDF, o sistema utiliza a biblioteca Mammoth.js para interpretar o conteudo do arquivo .docx. O Mammoth extrai a estrutura do documento — titulos, paragrafos, tabelas, listas e imagens — e converte tudo em HTML semantico. Em seguida, esse HTML e estilizado com CSS para manter uma aparencia profissional e aberto em uma nova janela do navegador. A funcao nativa de impressao do navegador e utilizada para gerar o PDF final, o que garante alta fidelidade na formatacao.
+          </p>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">PDF para Word</h3>
+          <p className="mb-3">
+            Na conversao inversa, o sistema utiliza a biblioteca PDF.js (desenvolvida pela Mozilla) para ler o conteudo do PDF. O texto e extraido pagina a pagina, preservando a ordem de leitura e identificando paragrafos com base no posicionamento vertical dos elementos. Textos com tamanho de fonte maior sao automaticamente tratados como titulos. Apos a extracao, a biblioteca docx.js cria um arquivo Word (.docx) valido com todos os paragrafos e formatacao basica.
+          </p>
+          <p>
+            E importante notar que PDFs escaneados (imagens de texto) nao contem dados de texto extraiveis. Para esses casos, seria necessario um processo de OCR (reconhecimento optico de caracteres), que nao faz parte desta ferramenta. A conversao funciona melhor com PDFs que possuem texto selecionavel.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
+          <div className="space-y-3">
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <summary className="font-semibold text-gray-900 cursor-pointer">Meus arquivos sao enviados para algum servidor?</summary>
+              <p className="mt-2 text-gray-600">Nao. Toda a conversao acontece localmente no seu navegador usando JavaScript. Nenhum dado sai do seu computador. Voce pode inclusive desconectar a internet apos carregar a pagina e a conversao continuara funcionando.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <summary className="font-semibold text-gray-900 cursor-pointer">Qual o tamanho maximo de arquivo?</summary>
+              <p className="mt-2 text-gray-600">O limite e de 20MB por arquivo. Documentos muito grandes podem levar mais tempo para processar, dependendo da capacidade do seu dispositivo. Para arquivos maiores, considere dividir o documento em partes menores.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <summary className="font-semibold text-gray-900 cursor-pointer">A formatacao do Word e mantida no PDF?</summary>
+              <p className="mt-2 text-gray-600">A conversao preserva a maioria dos elementos: titulos, paragrafos, listas, tabelas e imagens embutidas. Porem, formatacoes complexas como cabecalhos, rodapes, numeros de pagina e estilos personalizados podem nao ser reproduzidos com total fidelidade, ja que a conversao interpreta o conteudo como HTML.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <summary className="font-semibold text-gray-900 cursor-pointer">Posso converter arquivos .doc (Word antigo)?</summary>
+              <p className="mt-2 text-gray-600">Nao. A ferramenta aceita apenas o formato .docx (Word 2007 em diante). Arquivos no formato antigo .doc precisam primeiro ser salvos como .docx no Microsoft Word ou LibreOffice antes de serem convertidos aqui.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <summary className="font-semibold text-gray-900 cursor-pointer">Por que o navegador abre a janela de impressao?</summary>
+              <p className="mt-2 text-gray-600">A funcao de impressao do navegador e utilizada para gerar o PDF porque ela oferece a melhor fidelidade visual. Basta selecionar &quot;Salvar como PDF&quot; no lugar da impressora. Esse metodo preserva fontes, cores e layout de maneira confiavel em todos os navegadores modernos.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <summary className="font-semibold text-gray-900 cursor-pointer">PDFs escaneados podem ser convertidos para Word?</summary>
+              <p className="mt-2 text-gray-600">Nao diretamente. PDFs escaneados sao essencialmente imagens e nao contem dados de texto que possam ser extraidos. Para converter esses PDFs, voce precisaria primeiro utilizar uma ferramenta de OCR (reconhecimento optico de caracteres) para transformar as imagens em texto.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <summary className="font-semibold text-gray-900 cursor-pointer">Funciona no celular?</summary>
+              <p className="mt-2 text-gray-600">Sim. A ferramenta funciona em qualquer dispositivo com um navegador moderno, incluindo smartphones e tablets. No celular, toque na area de upload para selecionar o arquivo da galeria ou gerenciador de arquivos do dispositivo.</p>
+            </details>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas</h2>
+          <ul className="list-disc list-inside space-y-2 ml-2">
+            <li><strong>Permita pop-ups:</strong> Na conversao Word para PDF, o resultado abre em uma nova janela. Se seu navegador bloquear pop-ups, permita-os para este site nas configuracoes.</li>
+            <li><strong>Verifique antes de enviar:</strong> Abra o PDF gerado e confira se tabelas, imagens e formatacoes ficaram corretos antes de enviar para terceiros.</li>
+            <li><strong>Use Chrome ou Edge:</strong> Esses navegadores oferecem a melhor experiencia de &quot;Salvar como PDF&quot; na janela de impressao, com mais opcoes de configuracao de margem e escala.</li>
+            <li><strong>Converta relatorios do trabalho:</strong> Se voce precisa enviar um relatorio em PDF mas so tem o Word, esta ferramenta resolve rapidamente sem precisar instalar nenhum software.</li>
+            <li><strong>Extraia texto de contratos:</strong> Recebeu um contrato em PDF e precisa editar? Converta para Word, faca suas anotacoes e observacoes, e depois converta de volta para PDF se necessario.</li>
+            <li><strong>Curriculos e documentos oficiais:</strong> Para enviar curriculos, sempre prefira o formato PDF, pois ele mantem a formatacao identica em qualquer dispositivo. Use esta ferramenta para fazer a conversao rapidamente.</li>
+          </ul>
+        </div>
       </section>
     </ToolPage>
   );

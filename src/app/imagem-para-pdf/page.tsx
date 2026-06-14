@@ -136,13 +136,70 @@ export default function ImagemParaPDF() {
         </button>
       </div>
 
-      <section className="mt-12 prose prose-gray max-w-none">
-        <h2>Como converter imagem para PDF?</h2>
-        <p>
-          Selecione uma ou mais imagens (JPG, PNG), escolha a orientacao (retrato ou paisagem)
-          e clique em Converter. Cada imagem sera colocada em uma pagina do PDF, centralizada
-          e ajustada automaticamente.
-        </p>
+      <section className="mt-16 max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar o Conversor de Imagem para PDF</h2>
+        <div className="text-gray-700 leading-relaxed space-y-3 mb-8">
+          <p>Converter imagens para PDF com nossa ferramenta e rapido e nao exige cadastro nem instalacao de software. Siga o passo a passo:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Escolha a orientacao da pagina:</strong> Selecione &quot;Retrato (A4)&quot; para documentos verticais ou &quot;Paisagem&quot; para imagens mais largas do que altas, como banners e fotos panoramicas.</li>
+            <li><strong>Selecione suas imagens:</strong> Clique na area pontilhada para abrir o seletor de arquivos do seu computador. Voce pode selecionar multiplas imagens de uma vez segurando Ctrl (ou Cmd no Mac) enquanto clica nos arquivos. Os formatos aceitos sao JPG e PNG.</li>
+            <li><strong>Revise e organize:</strong> As imagens selecionadas aparecem como miniaturas na tela. Passe o mouse sobre qualquer imagem e clique no &quot;X&quot; vermelho para remover as que nao deseja incluir no PDF.</li>
+            <li><strong>Converta para PDF:</strong> Clique no botao &quot;Converter X imagem(ns) para PDF&quot;. O arquivo PDF sera gerado instantaneamente e o download comecara automaticamente.</li>
+            <li><strong>Adicione mais imagens:</strong> Voce pode clicar novamente na area de selecao para adicionar mais imagens antes de converter. Todas serao combinadas em um unico PDF.</li>
+          </ul>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Conversao</h2>
+        <div className="text-gray-700 leading-relaxed space-y-3 mb-8">
+          <p>Nossa ferramenta utiliza a biblioteca pdf-lib, uma solucao robusta em JavaScript que opera inteiramente no seu navegador. Isso significa que nenhuma imagem e enviada para servidores externos — todo o processamento acontece localmente no seu dispositivo.</p>
+          <p>O processo tecnico funciona assim: quando voce seleciona as imagens, cada arquivo e lido e armazenado temporariamente na memoria do navegador como um buffer binario. No momento da conversao, o sistema cria um documento PDF vazio e, para cada imagem, adiciona uma nova pagina no tamanho A4 (595.28 x 841.89 pontos em retrato, ou invertido para paisagem).</p>
+          <p>Cada imagem e incorporada (embedded) no PDF respeitando sua proporcao original. O algoritmo calcula a razao entre largura e altura da imagem e compara com a razao da pagina. Se a imagem for mais larga proporcionalmente, ela ocupa toda a largura da pagina com margens laterais; se for mais alta, ocupa toda a altura. Em ambos os casos, a imagem e centralizada na pagina com uma margem minima de 20 pontos em cada lado.</p>
+          <p>O resultado e um PDF com qualidade profissional, onde cada pagina contem uma imagem perfeitamente enquadrada e centralizada. O arquivo final e gerado como um Blob binario e disponibilizado para download instantaneo, sem necessidade de recarregar a pagina.</p>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
+        <div className="space-y-3 mb-8">
+          <details className="bg-white border border-gray-200 rounded-lg">
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Minhas imagens sao enviadas para algum servidor?</summary>
+            <p className="px-4 pb-4 text-gray-700">Nao. Todo o processamento acontece localmente no seu navegador. Suas imagens nunca saem do seu computador, garantindo total privacidade. Diferente de muitos sites concorrentes que enviam seus arquivos para servidores na nuvem, nossa ferramenta usa tecnologia 100% client-side.</p>
+          </details>
+          <details className="bg-white border border-gray-200 rounded-lg">
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Quais formatos de imagem sao aceitos?</summary>
+            <p className="px-4 pb-4 text-gray-700">A ferramenta aceita imagens nos formatos JPG (JPEG) e PNG. Sao os formatos mais comuns usados em fotos, capturas de tela e imagens da web. Se voce tem imagens em outros formatos como WebP, BMP ou TIFF, recomendamos converter para JPG ou PNG antes de usar a ferramenta.</p>
+          </details>
+          <details className="bg-white border border-gray-200 rounded-lg">
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Quantas imagens posso converter de uma vez?</summary>
+            <p className="px-4 pb-4 text-gray-700">Nao existe um limite rigido de quantidade, mas recomendamos converter ate 50 imagens por vez para garantir um bom desempenho. Imagens muito pesadas (acima de 10MB cada) podem tornar o processamento mais lento, dependendo da memoria disponivel no seu dispositivo.</p>
+          </details>
+          <details className="bg-white border border-gray-200 rounded-lg">
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">A qualidade das imagens e preservada no PDF?</summary>
+            <p className="px-4 pb-4 text-gray-700">Sim. As imagens sao incorporadas no PDF em sua resolucao original, sem compressao adicional. A qualidade visual no PDF sera identica a da imagem original. Apenas o enquadramento e ajustado para caber na pagina A4 mantendo a proporcao.</p>
+          </details>
+          <details className="bg-white border border-gray-200 rounded-lg">
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Posso escolher a ordem das imagens no PDF?</summary>
+            <p className="px-4 pb-4 text-gray-700">Sim. As imagens aparecem no PDF na mesma ordem em que foram selecionadas e exibidas como miniaturas na tela. Caso queira alterar a ordem, remova as imagens indesejadas e adicione-as novamente na sequencia correta.</p>
+          </details>
+          <details className="bg-white border border-gray-200 rounded-lg">
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Funciona no celular?</summary>
+            <p className="px-4 pb-4 text-gray-700">Sim. A ferramenta e totalmente responsiva e funciona em smartphones e tablets com navegadores modernos. Voce pode selecionar fotos diretamente da galeria do celular e converter para PDF. O download do arquivo sera salvo na pasta de downloads do seu dispositivo.</p>
+          </details>
+          <details className="bg-white border border-gray-200 rounded-lg">
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">O PDF gerado pode ser editado depois?</summary>
+            <p className="px-4 pb-4 text-gray-700">O PDF contem as imagens como elementos graficos fixos, ou seja, nao e possivel editar o conteudo das imagens dentro do PDF. Porem, voce pode usar ferramentas como o Adobe Acrobat ou nosso proprio &quot;Juntar PDF&quot; para combinar o arquivo com outros documentos ou reorganizar as paginas.</p>
+          </details>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas</h2>
+        <div className="text-gray-700 leading-relaxed space-y-3">
+          <p>A conversao de imagem para PDF e util em muitas situacoes do dia a dia. Aqui estao cenarios onde essa ferramenta pode ajudar:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Digitalizar documentos:</strong> Tire fotos de documentos fisicos com o celular e converta para PDF para enviar por email ou armazenar digitalmente com aparencia profissional.</li>
+            <li><strong>Portfolio de trabalhos:</strong> Reuna fotos de projetos, artes ou trabalhos em um unico PDF organizado para enviar a clientes ou publicar online.</li>
+            <li><strong>Comprovantes e recibos:</strong> Junte capturas de tela de comprovantes de pagamento, recibos e notas fiscais em um unico arquivo PDF para facilitar a organizacao financeira.</li>
+            <li><strong>Trabalhos academicos:</strong> Converta graficos, diagramas e fotos de experimentos em PDF para anexar a relatorios e trabalhos universitarios.</li>
+            <li><strong>Envio para orgaos publicos:</strong> Muitos sites governamentais exigem documentos em formato PDF. Converta fotos de documentos como RG, CPF e comprovante de residencia para o formato correto.</li>
+          </ul>
+        </div>
       </section>
     </ToolPage>
   );

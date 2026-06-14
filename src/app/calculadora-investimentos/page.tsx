@@ -337,22 +337,82 @@ export default function CalculadoraInvestimentos() {
         </div>
       </div>
 
-      <section className="mt-12 prose prose-gray max-w-none">
-        <h2>Como comparar investimentos de renda fixa?</h2>
-        <p>
-          Para comparar CDB, LCI/LCA e Tesouro Direto de forma justa, e essencial considerar
-          o Imposto de Renda. CDB e Tesouro sao tributados pela tabela regressiva (22,5% a 15%),
-          enquanto LCI e LCA sao isentos de IR para pessoa fisica. Por isso, um LCI de 90% do CDI
-          pode render mais que um CDB de 100% do CDI em prazos curtos.
-        </p>
+      {/* Editorial Content */}
+      <div className="max-w-4xl mx-auto mt-16 space-y-12 text-gray-700">
 
-        <h2>O que e o CDI?</h2>
-        <p>
-          O CDI (Certificado de Deposito Interbancario) e a taxa de referencia para investimentos
-          de renda fixa no Brasil. Ele acompanha de perto a taxa Selic. Quando dizemos que um CDB
-          paga &quot;100% do CDI&quot;, significa que o rendimento sera igual a taxa CDI vigente.
-        </p>
-      </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar a Calculadora de Investimentos</h2>
+          <p className="mb-3">Comparar investimentos de renda fixa e fundamental para maximizar seus rendimentos. Veja como usar a ferramenta para tomar decisoes mais inteligentes:</p>
+          <ol className="list-decimal list-inside space-y-2 ml-2">
+            <li><strong>Informe o valor a investir:</strong> Digite o montante que pretende aplicar. Pode ser qualquer valor a partir de R$ 1,00.</li>
+            <li><strong>Defina o prazo:</strong> Escolha por quantos meses deseja manter o investimento. O prazo influencia diretamente a aliquota de IR aplicada.</li>
+            <li><strong>Confira a taxa CDI:</strong> A ferramenta ja vem com a taxa CDI atual pre-preenchida. Ajuste se necessario conforme a taxa vigente no momento da sua consulta.</li>
+            <li><strong>Configure as taxas de cada produto:</strong> Defina o percentual do CDI para CDB e LCI/LCA, e a taxa anual para o Tesouro Direto. Use as taxas oferecidas pelo seu banco ou corretora.</li>
+            <li><strong>Clique em &quot;Simular Investimentos&quot;:</strong> A calculadora processa tudo e exibe um comparativo lado a lado mostrando rendimento bruto, desconto de IR, rendimento liquido e rentabilidade.</li>
+            <li><strong>Analise o vencedor:</strong> O sistema destaca automaticamente a melhor opcao com base no rendimento liquido (ja descontado o IR).</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Entenda o Calculo dos Investimentos</h2>
+          <p className="mb-3">A calculadora simula o rendimento de tres tipos de investimento de renda fixa, cada um com suas particularidades tributarias:</p>
+          <h3 className="text-lg font-semibold text-gray-800 mt-4 mb-2">CDB (Certificado de Deposito Bancario)</h3>
+          <p className="mb-2">O CDB rende um percentual do CDI e e tributado pelo Imposto de Renda na fonte, seguindo a tabela regressiva. O calculo e: taxa efetiva = CDI anual x percentual do CDB. Por exemplo, se o CDI e 14,15% e o CDB paga 100% do CDI, a taxa efetiva e 14,15% ao ano. O IR incide apenas sobre o rendimento (nao sobre o principal investido).</p>
+          <h3 className="text-lg font-semibold text-gray-800 mt-4 mb-2">LCI/LCA (Letra de Credito Imobiliario/Agronegocio)</h3>
+          <p className="mb-2">LCI e LCA funcionam de forma similar ao CDB, mas com uma vantagem crucial: sao isentos de Imposto de Renda para pessoa fisica. Por isso, mesmo com percentuais menores do CDI (tipicamente 85% a 95%), podem render mais que CDBs de 100% do CDI, especialmente em prazos curtos quando a aliquota de IR e mais alta (22,5%).</p>
+          <h3 className="text-lg font-semibold text-gray-800 mt-4 mb-2">Tesouro Direto</h3>
+          <p className="mb-2">O Tesouro Direto usa uma taxa fixa anual definida no momento da compra. Tambem e tributado pela tabela regressiva de IR, alem da taxa de custodia da B3 (0,20% ao ano sobre o montante). A calculadora aplica o IR sobre o rendimento bruto, similar ao CDB.</p>
+          <h3 className="text-lg font-semibold text-gray-800 mt-4 mb-2">Tabela Regressiva de IR</h3>
+          <p>A aliquota de IR diminui com o tempo de aplicacao: 22,5% ate 180 dias, 20% de 181 a 360 dias, 17,5% de 361 a 720 dias e 15% acima de 720 dias. Essa regressividade incentiva investimentos de longo prazo.</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
+          <div className="space-y-3">
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">Por que LCI/LCA de 90% do CDI pode render mais que CDB de 100%?</summary>
+              <p className="mt-2">Porque o CDB paga IR sobre o rendimento (de 22,5% a 15%), enquanto LCI/LCA sao isentos. Em um investimento de 6 meses, por exemplo, o CDB de 100% CDI perde 22,5% do rendimento para o IR, enquanto o LCI de 90% CDI mantem 100% do rendimento. Faca a simulacao na calculadora para ver a diferenca exata no seu caso.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">O que e o CDI e por que e tao importante?</summary>
+              <p className="mt-2">O CDI (Certificado de Deposito Interbancario) e a taxa de referencia para investimentos de renda fixa no Brasil. Ele acompanha de perto a taxa Selic definida pelo Banco Central. Quando um CDB paga &quot;100% do CDI&quot;, significa que seu rendimento sera igual a taxa CDI vigente. A maioria dos investimentos de renda fixa usa o CDI como benchmark.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">O IOF afeta meu investimento?</summary>
+              <p className="mt-2">O IOF (Imposto sobre Operacoes Financeiras) incide apenas nos primeiros 30 dias de aplicacao, com aliquota regressiva diaria. No primeiro dia e 96%, caindo ate 0% no 30o dia. Apos 30 dias, nao ha IOF. Por isso, evite resgatar investimentos antes de completar 30 dias.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">Qual o investimento minimo para cada opcao?</summary>
+              <p className="mt-2">O Tesouro Direto aceita investimentos a partir de aproximadamente R$ 30. CDBs variam conforme o banco — alguns comecam com R$ 1,00 (bancos digitais) e outros exigem R$ 1.000 ou mais. LCI/LCA geralmente exigem investimento minimo entre R$ 1.000 e R$ 5.000.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">E seguro investir em CDB, LCI e Tesouro?</summary>
+              <p className="mt-2">CDBs e LCI/LCA sao protegidos pelo FGC (Fundo Garantidor de Creditos) ate R$ 250.000 por CPF por instituicao. O Tesouro Direto e garantido pelo Governo Federal, sendo considerado o investimento mais seguro do Brasil. Diversificar entre as tres opcoes e uma estrategia prudente.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">A simulacao considera a inflacao?</summary>
+              <p className="mt-2">Nao. A calculadora mostra o rendimento nominal (sem descontar a inflacao). Para calcular o rendimento real, subtraia a taxa de inflacao esperada (IPCA) da rentabilidade obtida. O Tesouro IPCA+ ja protege contra a inflacao, mas os outros investimentos nao oferecem essa garantia.</p>
+            </details>
+            <details className="bg-gray-50 rounded-lg p-4">
+              <summary className="font-semibold cursor-pointer">Posso resgatar antes do prazo?</summary>
+              <p className="mt-2">CDBs com liquidez diaria permitem resgate a qualquer momento. LCI/LCA geralmente tem carencia minima de 90 dias. O Tesouro Direto pode ser vendido a qualquer dia util, mas o preco pode variar (marcacao a mercado). CDBs sem liquidez diaria so podem ser resgatados no vencimento.</p>
+            </details>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas para Investir em Renda Fixa</h2>
+          <ul className="list-disc list-inside space-y-2 ml-2">
+            <li><strong>Reserva de emergencia:</strong> Para sua reserva (3 a 6 meses de despesas), escolha CDB com liquidez diaria de 100% do CDI ou Tesouro Selic. A prioridade e poder resgatar a qualquer momento, nao a rentabilidade maxima.</li>
+            <li><strong>Compare sempre o liquido:</strong> Nunca compare a taxa bruta de um CDB com a de um LCI. Use esta calculadora para ver o rendimento liquido (pos-IR) e tomar a melhor decisao.</li>
+            <li><strong>Prazo importa muito:</strong> Em investimentos curtos (ate 6 meses), LCI/LCA levam vantagem pela isencao de IR. Em prazos longos (acima de 2 anos), a diferenca diminui porque o IR do CDB cai para 15%.</li>
+            <li><strong>Diversifique entre bancos:</strong> Lembre-se do limite de R$ 250.000 do FGC por instituicao. Se tiver mais que isso para investir, divida entre bancos diferentes.</li>
+            <li><strong>Fique de olho na Selic:</strong> Quando o Banco Central sobe a Selic, o CDI acompanha, beneficiando todos os investimentos pos-fixados. Quando a Selic cai, considere travar taxas em CDBs pre-fixados.</li>
+            <li><strong>Nao esqueca os custos:</strong> Algumas corretoras cobram taxa de corretagem ou custodia. O Tesouro Direto tem taxa de custodia da B3 de 0,20% ao ano. Considere esses custos na decisao.</li>
+          </ul>
+        </section>
+
+      </div>
     </ToolPage>
   );
 }

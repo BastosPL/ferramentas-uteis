@@ -141,13 +141,84 @@ export default function ConversorMoedas() {
         )}
       </div>
 
-      <section className="mt-12 prose prose-gray max-w-none">
-        <h2>Como funciona o conversor de moedas?</h2>
-        <p>
-          O conversor busca cotacoes atualizadas e calcula a conversao em tempo real.
-          Selecione a moeda de origem e destino, digite o valor e veja o resultado
-          instantaneamente. As cotacoes sao atualizadas automaticamente.
-        </p>
+      {/* Editorial Content for SEO */}
+      <section className="mt-12 max-w-4xl mx-auto space-y-10 text-gray-700">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar o Conversor de Moedas</h2>
+          <p className="mb-3">
+            Utilizar nosso conversor de moedas e simples e rapido. Siga o passo a passo abaixo para converter qualquer valor entre as moedas disponiveis:
+          </p>
+          <ol className="list-decimal list-inside space-y-2 ml-2">
+            <li><strong>Selecione a moeda de origem:</strong> No campo &quot;De&quot;, escolha a moeda que voce possui ou deseja converter. Por exemplo, se voce tem dolares americanos, selecione USD.</li>
+            <li><strong>Selecione a moeda de destino:</strong> No campo &quot;Para&quot;, escolha a moeda para a qual deseja converter. Para ver o valor em reais, selecione BRL.</li>
+            <li><strong>Digite o valor:</strong> Informe a quantia que deseja converter no campo numerico. Voce pode digitar valores com centavos.</li>
+            <li><strong>Veja o resultado instantaneamente:</strong> O valor convertido aparece automaticamente no campo verde, sem necessidade de clicar em nenhum botao.</li>
+            <li><strong>Inverta as moedas:</strong> Use o botao de setas (&#8644;) no centro para trocar rapidamente a moeda de origem pela de destino.</li>
+          </ol>
+          <p className="mt-3">
+            Abaixo do resultado, voce encontra a taxa de cambio unitaria (quanto vale 1 unidade da moeda de origem na moeda de destino) e o horario da ultima atualizacao das cotacoes.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Conversao de Moedas</h2>
+          <p className="mb-3">
+            O conversor utiliza cotacoes obtidas em tempo real a partir de APIs financeiras internacionais. Quando voce acessa a pagina, o sistema busca automaticamente as taxas de cambio mais recentes com base no dolar americano (USD) como moeda de referencia.
+          </p>
+          <p className="mb-3">
+            O calculo de conversao segue o metodo de taxa cruzada (cross rate). Primeiro, o valor informado e convertido de volta para dolares usando a cotacao da moeda de origem. Em seguida, esse valor em dolares e multiplicado pela cotacao da moeda de destino. A formula e:
+          </p>
+          <p className="bg-gray-50 border border-gray-200 rounded-lg p-4 font-mono text-sm mb-3">
+            Resultado = (Valor / Taxa da moeda de origem) x Taxa da moeda de destino
+          </p>
+          <p className="mb-3">
+            Por exemplo, para converter 100 euros para reais: o sistema divide 100 pela cotacao do euro em relacao ao dolar e, em seguida, multiplica pela cotacao do real em relacao ao dolar. Esse metodo garante precisao mesmo entre moedas que nao sao negociadas diretamente entre si.
+          </p>
+          <p>
+            Caso a API nao esteja disponivel por problemas de conexao, o sistema utiliza cotacoes aproximadas como fallback, garantindo que a ferramenta continue funcional. Nesse caso, um aviso e exibido informando que as cotacoes sao estimativas.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
+          <div className="space-y-3">
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer">As cotacoes sao atualizadas em tempo real?</summary>
+              <p className="mt-2 text-gray-600">Sim. Ao abrir a pagina, o conversor busca as cotacoes mais recentes disponiveis. As taxas sao atualizadas periodicamente pelas fontes de dados financeiros. Para obter a cotacao mais atual, basta recarregar a pagina.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer">A cotacao mostrada e a mesma do banco ou casa de cambio?</summary>
+              <p className="mt-2 text-gray-600">As cotacoes exibidas sao taxas de mercado (mid-market rate), que representam o ponto medio entre o preco de compra e venda. Bancos e casas de cambio aplicam spreads e taxas adicionais, entao o valor final pago pode ser diferente. Use nosso conversor como referencia para comparar ofertas.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer">Posso converter Bitcoin e outras criptomoedas?</summary>
+              <p className="mt-2 text-gray-600">Sim. O conversor inclui Bitcoin (BTC) entre as opcoes disponiveis. A cotacao do Bitcoin e atualizada junto com as demais moedas. Para criptomoedas, o resultado e exibido com ate 8 casas decimais, dada a alta cotacao unitaria.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer">O conversor funciona offline?</summary>
+              <p className="mt-2 text-gray-600">Parcialmente. Se a conexao com a internet falhar ao buscar as cotacoes, o conversor utiliza valores aproximados como fallback. Os resultados serao estimativas e nao refletirao a cotacao exata do momento. Um aviso sera exibido nessa situacao.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer">Como saber qual moeda usar para viagens internacionais?</summary>
+              <p className="mt-2 text-gray-600">Use o conversor para comparar o Real (BRL) com a moeda do pais de destino. Para viagens aos EUA, converta para USD; para Europa, para EUR. Lembre-se de que casas de cambio cobram spread sobre a cotacao de mercado, entao o valor real pago sera ligeiramente maior que o mostrado aqui.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer">Por que o valor do dolar muda todo dia?</summary>
+              <p className="mt-2 text-gray-600">O cambio e determinado pelo mercado, com base na oferta e demanda por cada moeda. Fatores como taxa de juros, balanca comercial, politica monetaria, cenario politico e fluxo de investimentos estrangeiros influenciam a variacao diaria. E normal que o dolar oscile alguns centavos por dia.</p>
+            </details>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas para Conversao de Moedas</h2>
+          <ul className="list-disc list-inside space-y-2 ml-2">
+            <li><strong>Compare antes de comprar moeda:</strong> Verifique a cotacao de mercado aqui e depois compare com o preco oferecido por bancos e casas de cambio. A diferenca entre os dois e o spread — quanto menor, melhor para voce.</li>
+            <li><strong>Atencao ao IOF:</strong> Compras de moeda estrangeira no Brasil estao sujeitas ao IOF (Imposto sobre Operacoes Financeiras). Esse imposto nao esta incluso na cotacao de mercado e varia conforme o tipo de operacao (cartao, especie, remessa).</li>
+            <li><strong>Planeje compras parceladas:</strong> Se vai viajar, considere comprar moeda estrangeira aos poucos ao longo das semanas. Isso dilui o risco de pegar uma cotacao desfavoravel em um unico dia.</li>
+            <li><strong>Peso Argentino em alta volatilidade:</strong> O Peso Argentino (ARS) sofre desvalorizacoes frequentes. Se voce esta viajando para a Argentina, pesquise tambem a cotacao do &quot;dolar blue&quot; (mercado paralelo), que costuma ser diferente da cotacao oficial.</li>
+            <li><strong>Use WebP para importacoes:</strong> Para compras internacionais (AliExpress, Amazon EUA), use o conversor para ter nocao do preco real em reais antes de finalizar o pedido, considerando o frete e impostos de importacao.</li>
+          </ul>
+        </div>
       </section>
     </ToolPage>
   );
