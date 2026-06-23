@@ -1,69 +1,75 @@
 import Link from "next/link";
+import { BookOpen, ArrowLeft, Clock, ArrowRight } from "lucide-react";
 import { allArticles } from "../../lib/articles";
 
 const categoryColors: Record<string, string> = {
-  Financas: "bg-green-100 text-green-700",
-  Seguranca: "bg-red-100 text-red-700",
-  Saude: "bg-purple-100 text-purple-700",
-  Negocios: "bg-blue-100 text-blue-700",
-  Tecnologia: "bg-orange-100 text-orange-700",
+  Financas: "bg-emerald-50 text-emerald-700 border border-emerald-200",
+  Seguranca: "bg-red-50 text-red-700 border border-red-200",
+  Saude: "bg-violet-50 text-violet-700 border border-violet-200",
+  Negocios: "bg-blue-50 text-blue-700 border border-blue-200",
+  Tecnologia: "bg-amber-50 text-amber-700 border border-amber-200",
 };
 
 export default function BlogPage() {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <div className="max-w-6xl mx-auto px-4 py-16">
       {/* Header */}
       <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-3xl p-8 md:p-12 mb-12 text-white overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-20 translate-x-20" />
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-16 -translate-x-16" />
         <div className="relative text-center">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-            <span>📚</span> Artigos e Guias
+            <BookOpen className="w-4 h-4" />
+            Artigos e Guias
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Blog
           </h1>
           <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
-            Dicas praticas, guias completos e artigos educativos sobre financas,
-            seguranca digital, saude e tecnologia.
+            Dicas pr&aacute;ticas, guias completos e artigos educativos sobre finan&ccedil;as,
+            seguran&ccedil;a digital, sa&uacute;de e tecnologia.
           </p>
         </div>
       </section>
 
       {/* Articles Grid */}
-      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {allArticles.map((article) => (
           <Link
             key={article.slug}
             href={`/blog/${article.slug}`}
-            className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg hover:border-blue-300 transition-all group flex flex-col"
+            className="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group flex flex-col"
           >
             <div className="flex items-center gap-3 mb-3">
               <span
                 className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
-                  categoryColors[article.category] || "bg-gray-100 text-gray-700"
+                  categoryColors[article.category] || "bg-slate-100 text-slate-700 border border-slate-200"
                 }`}
               >
                 {article.category}
               </span>
-              <span className="text-xs text-gray-400">{article.readTime} de leitura</span>
+              <span className="inline-flex items-center gap-1 text-xs text-slate-400">
+                <Clock className="w-3 h-3" />
+                {article.readTime}
+              </span>
             </div>
-            <h2 className="text-lg font-semibold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors leading-snug">
+            <h2 className="text-lg font-bold tracking-tight text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
               {article.title}
             </h2>
-            <p className="text-gray-600 text-sm leading-relaxed flex-1">
+            <p className="text-slate-500 text-sm leading-relaxed flex-1">
               {article.excerpt}
             </p>
             <div className="mt-4 flex items-center justify-between">
-              <span className="text-xs text-gray-400">
+              <span className="text-xs text-slate-400">
                 {new Date(article.date).toLocaleDateString("pt-BR", {
                   day: "2-digit",
                   month: "long",
                   year: "numeric",
                 })}
               </span>
-              <span className="text-sm font-medium text-blue-600 group-hover:underline">
-                Ler artigo →
+              <span className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 group-hover:text-blue-700 transition-colors">
+                Ler artigo
+                <ArrowRight className="w-4 h-4" />
               </span>
             </div>
           </Link>
@@ -76,7 +82,8 @@ export default function BlogPage() {
           href="/"
           className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
         >
-          ← Voltar para as ferramentas
+          <ArrowLeft className="w-4 h-4" />
+          Voltar para as ferramentas
         </Link>
       </section>
     </div>

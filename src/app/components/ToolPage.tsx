@@ -2,6 +2,7 @@
 
 import { WebAppSchema, BreadcrumbSchema } from "./SchemaOrg";
 import ClientOnly from "./ClientOnly";
+import { getToolIcon } from "@/lib/tool-icons";
 
 type AccentColor = "blue" | "green" | "purple" | "orange" | "red" | "teal" | "pink" | "indigo" | "amber" | "emerald" | "cyan" | "rose" | "violet" | "sky";
 
@@ -33,12 +34,13 @@ export default function ToolPage({
   title: string;
   description: string;
   accent?: AccentColor;
-  icon: string;
-  slug?: string;
+  icon?: string;
+  slug: string;
   children: React.ReactNode;
 }) {
   const style = accentStyles[accent];
   const url = slug ? `/${slug}` : "";
+  const { icon: IconComponent, category } = getToolIcon(slug);
   return (
     <ClientOnly>
       <div className="max-w-4xl mx-auto px-4 py-10">
@@ -49,7 +51,9 @@ export default function ToolPage({
         ]} />
         <div className={`bg-gradient-to-r ${style.header} rounded-2xl p-6 mb-8 text-white`}>
           <div className="flex items-center gap-3 mb-2">
-            <span className="text-3xl">{icon}</span>
+            <div className={`flex items-center justify-center w-14 h-14 rounded-xl ${category.bg}`}>
+              <IconComponent className={category.text} size={28} />
+            </div>
             <h1 className="text-2xl md:text-3xl font-bold">{title}</h1>
           </div>
           <p className="text-white/90 text-sm md:text-base">{description}</p>

@@ -70,14 +70,14 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900 font-[family-name:var(--font-inter)]" suppressHydrationWarning>
+      <body className="min-h-screen flex flex-col bg-white font-[family-name:var(--font-inter)]" suppressHydrationWarning>
         <ExternalScripts />
-        <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <header className="bg-white/80 backdrop-blur-xl border-b border-slate-200/50 sticky top-0 z-50">
           <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-            <Link href="/" className="text-xl font-bold text-blue-600">
-              🔧 FerramentasUteis
+            <Link href="/" className="text-xl font-bold">
+              <span className="text-blue-600">Ferramenta</span><span className="text-slate-900">Util</span>
             </Link>
-            <div className="hidden md:flex gap-6 text-sm">
+            <div className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
               <Link href="/calculadora-juros-compostos" className="hover:text-blue-600 transition-colors">
                 Juros Compostos
               </Link>
@@ -93,7 +93,7 @@ export default function RootLayout({
               <Link href="/calculadora-imc" className="hover:text-blue-600 transition-colors">
                 Calculadora IMC
               </Link>
-              <Link href="/blog" className="hover:text-blue-600 transition-colors font-medium">
+              <Link href="/blog" className="hover:text-blue-600 transition-colors">
                 Blog
               </Link>
             </div>
@@ -102,70 +102,70 @@ export default function RootLayout({
 
         <main className="flex-1">{children}</main>
 
-        <footer className="bg-white border-t border-gray-200 mt-auto">
-          <div className="max-w-6xl mx-auto px-4 py-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+        <footer className="bg-slate-900 text-slate-400 mt-auto">
+          <div className="max-w-6xl mx-auto px-4 py-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
               <div>
-                <h3 className="font-semibold mb-2 text-sm">Calculadoras</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
-                  <li><Link href="/calculadora-juros-compostos" className="hover:text-blue-600">Juros Compostos</Link></li>
-                  <li><Link href="/calculadora-imc" className="hover:text-blue-600">IMC</Link></li>
-                  <li><Link href="/calculadora-porcentagem" className="hover:text-blue-600">Porcentagem</Link></li>
-                  <li><Link href="/calculadora-combustivel" className="hover:text-blue-600">Alcool ou Gasolina</Link></li>
-                  <li><Link href="/calculadora-rescisao" className="hover:text-blue-600">Rescisao Trabalhista</Link></li>
-                  <li><Link href="/calculadora-calorias" className="hover:text-blue-600">Calorias Diarias</Link></li>
-                  <li><Link href="/calculadora-financiamento" className="hover:text-blue-600">Financiamento</Link></li>
-                  <li><Link href="/calculadora-idade" className="hover:text-blue-600">Idade</Link></li>
-                  <li><Link href="/calculadora-horas" className="hover:text-blue-600">Horas</Link></li>
-                  <li><Link href="/calculadora-desconto" className="hover:text-blue-600">Desconto</Link></li>
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Calculadoras</h3>
+                <ul className="space-y-2">
+                  <li><Link href="/calculadora-juros-compostos" className="text-sm text-slate-400 hover:text-white transition-colors">Juros Compostos</Link></li>
+                  <li><Link href="/calculadora-imc" className="text-sm text-slate-400 hover:text-white transition-colors">IMC</Link></li>
+                  <li><Link href="/calculadora-porcentagem" className="text-sm text-slate-400 hover:text-white transition-colors">Porcentagem</Link></li>
+                  <li><Link href="/calculadora-combustivel" className="text-sm text-slate-400 hover:text-white transition-colors">Álcool ou Gasolina</Link></li>
+                  <li><Link href="/calculadora-rescisao" className="text-sm text-slate-400 hover:text-white transition-colors">Rescisão Trabalhista</Link></li>
+                  <li><Link href="/calculadora-calorias" className="text-sm text-slate-400 hover:text-white transition-colors">Calorias Diárias</Link></li>
+                  <li><Link href="/calculadora-financiamento" className="text-sm text-slate-400 hover:text-white transition-colors">Financiamento</Link></li>
+                  <li><Link href="/calculadora-idade" className="text-sm text-slate-400 hover:text-white transition-colors">Idade</Link></li>
+                  <li><Link href="/calculadora-horas" className="text-sm text-slate-400 hover:text-white transition-colors">Horas</Link></li>
+                  <li><Link href="/calculadora-desconto" className="text-sm text-slate-400 hover:text-white transition-colors">Desconto</Link></li>
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold mb-2 text-sm">Geradores</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
-                  <li><Link href="/gerador-de-senha" className="hover:text-blue-600">Gerador de Senha</Link></li>
-                  <li><Link href="/gerador-qr-code" className="hover:text-blue-600">Gerador de QR Code</Link></li>
-                  <li><Link href="/gerador-cpf-cnpj" className="hover:text-blue-600">Gerador CPF/CNPJ</Link></li>
-                  <li><Link href="/gerador-cores" className="hover:text-blue-600">Gerador de Cores</Link></li>
-                  <li><Link href="/gerador-contrato" className="hover:text-blue-600">Gerador de Contrato</Link></li>
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Geradores</h3>
+                <ul className="space-y-2">
+                  <li><Link href="/gerador-de-senha" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador de Senha</Link></li>
+                  <li><Link href="/gerador-qr-code" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador de QR Code</Link></li>
+                  <li><Link href="/gerador-cpf-cnpj" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador CPF/CNPJ</Link></li>
+                  <li><Link href="/gerador-cores" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador de Cores</Link></li>
+                  <li><Link href="/gerador-contrato" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador de Contrato</Link></li>
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold mb-2 text-sm">PDF & Conversores</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
-                  <li><Link href="/juntar-pdf" className="hover:text-blue-600 font-medium">Juntar PDF</Link></li>
-                  <li><Link href="/imagem-para-pdf" className="hover:text-blue-600 font-medium">Imagem para PDF</Link></li>
-                  <li><Link href="/conversor-de-unidades" className="hover:text-blue-600">Conversor de Unidades</Link></li>
-                  <li><Link href="/conversor-moedas" className="hover:text-blue-600">Conversor de Moedas</Link></li>
-                  <li><Link href="/conversor-texto" className="hover:text-blue-600">Conversor de Texto</Link></li>
-                  <li><Link href="/conversor-word-pdf" className="hover:text-blue-600 font-medium">Word ⇄ PDF</Link></li>
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">PDF & Conversores</h3>
+                <ul className="space-y-2">
+                  <li><Link href="/juntar-pdf" className="text-sm text-slate-400 hover:text-white transition-colors">Juntar PDF</Link></li>
+                  <li><Link href="/imagem-para-pdf" className="text-sm text-slate-400 hover:text-white transition-colors">Imagem para PDF</Link></li>
+                  <li><Link href="/conversor-de-unidades" className="text-sm text-slate-400 hover:text-white transition-colors">Conversor de Unidades</Link></li>
+                  <li><Link href="/conversor-moedas" className="text-sm text-slate-400 hover:text-white transition-colors">Conversor de Moedas</Link></li>
+                  <li><Link href="/conversor-texto" className="text-sm text-slate-400 hover:text-white transition-colors">Conversor de Texto</Link></li>
+                  <li><Link href="/conversor-word-pdf" className="text-sm text-slate-400 hover:text-white transition-colors">Word para PDF</Link></li>
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold mb-2 text-sm">Utilidades</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
-                  <li><Link href="/consulta-cnpj" className="hover:text-blue-600 font-medium">Consulta CNPJ</Link></li>
-                  <li><Link href="/contador-de-caracteres" className="hover:text-blue-600">Contador de Caracteres</Link></li>
-                  <li><Link href="/cronometro" className="hover:text-blue-600">Cronometro Online</Link></li>
-                  <li><Link href="/gerador-lorem-ipsum" className="hover:text-blue-600">Lorem Ipsum</Link></li>
-                  <li><Link href="/validador-email" className="hover:text-blue-600">Validador de Email</Link></li>
-                  <li><Link href="/tabela-medidas" className="hover:text-blue-600">Tabela de Medidas</Link></li>
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Utilidades</h3>
+                <ul className="space-y-2">
+                  <li><Link href="/consulta-cnpj" className="text-sm text-slate-400 hover:text-white transition-colors">Consulta CNPJ</Link></li>
+                  <li><Link href="/contador-de-caracteres" className="text-sm text-slate-400 hover:text-white transition-colors">Contador de Caracteres</Link></li>
+                  <li><Link href="/cronometro" className="text-sm text-slate-400 hover:text-white transition-colors">Cronômetro Online</Link></li>
+                  <li><Link href="/gerador-lorem-ipsum" className="text-sm text-slate-400 hover:text-white transition-colors">Lorem Ipsum</Link></li>
+                  <li><Link href="/validador-email" className="text-sm text-slate-400 hover:text-white transition-colors">Validador de Email</Link></li>
+                  <li><Link href="/tabela-medidas" className="text-sm text-slate-400 hover:text-white transition-colors">Tabela de Medidas</Link></li>
                 </ul>
               </div>
             </div>
-            <div className="flex justify-center gap-4 text-sm text-gray-500 mb-4">
-              <Link href="/sobre" className="hover:text-blue-600 transition-colors">Sobre</Link>
-              <span className="text-gray-300">|</span>
-              <Link href="/blog" className="hover:text-blue-600 transition-colors">Blog</Link>
-              <span className="text-gray-300">|</span>
-              <Link href="/contato" className="hover:text-blue-600 transition-colors">Contato</Link>
-              <span className="text-gray-300">|</span>
-              <Link href="/privacidade" className="hover:text-blue-600 transition-colors">Privacidade</Link>
-              <span className="text-gray-300">|</span>
-              <Link href="/termos" className="hover:text-blue-600 transition-colors">Termos de Uso</Link>
+            <div className="flex justify-center gap-4 text-sm text-slate-500 mb-4">
+              <Link href="/sobre" className="hover:text-white transition-colors">Sobre</Link>
+              <span className="text-slate-700">|</span>
+              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <span className="text-slate-700">|</span>
+              <Link href="/contato" className="hover:text-white transition-colors">Contato</Link>
+              <span className="text-slate-700">|</span>
+              <Link href="/privacidade" className="hover:text-white transition-colors">Privacidade</Link>
+              <span className="text-slate-700">|</span>
+              <Link href="/termos" className="hover:text-white transition-colors">Termos de Uso</Link>
             </div>
-            <p className="text-center text-xs text-gray-400">
-              Ferramentas Online Gratis &copy; {new Date().getFullYear()} &mdash; Todas as ferramentas funcionam direto no navegador. Nenhum dado e enviado para servidores.
+            <p className="text-center text-xs text-slate-600 border-t border-slate-800 pt-6 mt-8">
+              Ferramentas Online Grátis &copy; {new Date().getFullYear()} &mdash; Todas as ferramentas funcionam direto no navegador. Nenhum dado é enviado para servidores.
             </p>
           </div>
         </footer>
