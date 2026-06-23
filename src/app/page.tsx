@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { WebsiteSchema } from "./components/SchemaOrg";
 import ClientOnly from "./components/ClientOnly";
+import { allArticles } from "../lib/articles";
 
 const tools = [
   {
@@ -343,6 +344,31 @@ export default function Home() {
           <p className="text-blue-600 text-sm">
             Novas ferramentas sao adicionadas toda semana. Salve nos favoritos!
           </p>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="mt-16">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-bold text-gray-900">📚 Do nosso Blog</h2>
+          <Link href="/blog" className="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors">
+            Ver todos os artigos →
+          </Link>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {allArticles.slice(0, 4).map((article) => (
+            <Link
+              key={article.slug}
+              href={`/blog/${article.slug}`}
+              className="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-lg hover:border-blue-300 transition-all group flex flex-col"
+            >
+              <span className="text-xs font-semibold text-blue-600 mb-2">{article.category}</span>
+              <h3 className="text-sm font-semibold text-gray-900 group-hover:text-blue-600 transition-colors leading-snug mb-2 flex-1">
+                {article.title}
+              </h3>
+              <span className="text-xs text-gray-400">{article.readTime} de leitura</span>
+            </Link>
+          ))}
         </div>
       </section>
 

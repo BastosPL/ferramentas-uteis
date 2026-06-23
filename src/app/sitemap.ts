@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { allArticles } from "../lib/articles";
 
 const BASE_URL = "https://ferramentautil.com.br";
 
@@ -23,10 +24,26 @@ const tools = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return tools.map((slug) => ({
+  const toolPages = tools.map((slug) => ({
     url: slug ? `${BASE_URL}/${slug}` : BASE_URL,
     lastModified: new Date(),
     changeFrequency: slug ? "monthly" as const : "weekly" as const,
     priority: slug ? 0.9 : 1,
   }));
+
+  const blogIndex = {
+    url: `${BASE_URL}/blog`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  };
+
+  const blogArticles = allArticles.map((article) => ({
+    url: `${BASE_URL}/blog/${article.slug}`,
+    lastModified: new Date(article.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...toolPages, blogIndex, ...blogArticles];
 }

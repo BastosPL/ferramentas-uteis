@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import ExternalScripts from "./components/ExternalScripts";
+import CookieConsent from "./components/CookieConsent";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,6 +28,9 @@ export const metadata: Metadata = {
     "calculadora IMC",
     "ferramentas gratuitas",
   ],
+  other: {
+    "google-adsense-account": "ca-pub-7284698282537450",
+  },
   openGraph: {
     title: "Ferramentas Online Gratis",
     description:
@@ -72,6 +76,9 @@ export default function RootLayout({
               </Link>
               <Link href="/calculadora-imc" className="hover:text-blue-600 transition-colors">
                 Calculadora IMC
+              </Link>
+              <Link href="/blog" className="hover:text-blue-600 transition-colors font-medium">
+                Blog
               </Link>
             </div>
           </nav>
@@ -133,6 +140,8 @@ export default function RootLayout({
             <div className="flex justify-center gap-4 text-sm text-gray-500 mb-4">
               <Link href="/sobre" className="hover:text-blue-600 transition-colors">Sobre</Link>
               <span className="text-gray-300">|</span>
+              <Link href="/blog" className="hover:text-blue-600 transition-colors">Blog</Link>
+              <span className="text-gray-300">|</span>
               <Link href="/contato" className="hover:text-blue-600 transition-colors">Contato</Link>
               <span className="text-gray-300">|</span>
               <Link href="/privacidade" className="hover:text-blue-600 transition-colors">Privacidade</Link>
@@ -144,6 +153,7 @@ export default function RootLayout({
             </p>
           </div>
         </footer>
+        <CookieConsent />
       </body>
     </html>
   );
