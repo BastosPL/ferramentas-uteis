@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     "calculadora IMC",
     "ferramentas gratuitas",
   ],
+  metadataBase: new URL("https://ferramentautil.com.br"),
   other: {
     "google-adsense-account": "ca-pub-7284698282537450",
   },
@@ -37,6 +38,21 @@ export const metadata: Metadata = {
       "Calculadoras, geradores e conversores online gratuitos. Use direto no navegador.",
     type: "website",
     locale: "pt_BR",
+    siteName: "Ferramenta Útil",
+    url: "https://ferramentautil.com.br",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ferramentas Online Grátis - Calculadoras, Geradores e Conversores",
+    description: "Calculadoras, geradores e conversores online gratuitos. Use direto no navegador.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 
