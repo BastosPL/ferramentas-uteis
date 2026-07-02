@@ -13,6 +13,15 @@ export default function Privacidade() {
             usamos e protegemos suas informacoes.
           </p>
 
+          <h2>Controlador de Dados</h2>
+          <p>
+            O controlador dos dados pessoais coletados por este site é
+            <strong> Patrick Bastos</strong>, pessoa física, inscrito sob
+            responsabilidade própria, com sede em Recife/PE — Brasil.
+            Para exercer seus direitos de titular, entre em contato pelo e-mail{" "}
+            <strong>contato@ferramentautil.com.br</strong>.
+          </p>
+
           <h2>1. Dados que Coletamos</h2>
 
           <h3>1.1. Dados de Navegacao (automaticos)</h3>

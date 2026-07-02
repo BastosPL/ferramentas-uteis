@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Target, Zap, Shield, Heart, Monitor, Wrench } from "lucide-react";
+import { Target, Zap, Shield, Heart, Monitor, Wrench, MapPin, Code2, Users } from "lucide-react";
 
 export default function Sobre() {
   return (
@@ -7,12 +7,43 @@ export default function Sobre() {
       {/* Hero */}
       <section className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
-          Sobre o FerramentasUteis
+          Sobre o FerramentaUtil
         </h1>
         <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-          Somos um portal brasileiro de ferramentas online 100% gratuitas,
-          criado para facilitar o dia a dia de milh&otilde;es de pessoas.
+          Portal brasileiro de ferramentas online 100% gratuitas,
+          desenvolvido em Recife/PE para facilitar o dia a dia de milhões de pessoas.
         </p>
+      </section>
+
+      {/* Quem Somos */}
+      <section className="bg-white rounded-2xl border border-slate-200 p-8 mb-16">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
+            <Users className="w-5 h-5 text-blue-600" />
+          </div>
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">Quem Somos</h2>
+        </div>
+        <p className="text-slate-600 leading-relaxed mb-4">
+          O FerramentaUtil é mantido por <strong>Patrick Bastos</strong>, desenvolvedor de software
+          e empreendedor digital baseado em <strong>Recife, Pernambuco</strong>. Com experiência
+          em desenvolvimento web e sistemas empresariais, o projeto nasceu da necessidade
+          de oferecer ferramentas práticas e confiáveis para o público brasileiro.
+        </p>
+        <p className="text-slate-600 leading-relaxed mb-6">
+          Diferente de outros sites que dependem de servidores para processar seus dados,
+          todas as nossas ferramentas rodam 100% no navegador do usuário — garantindo
+          privacidade total e velocidade máxima.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <div className="flex items-center gap-2 text-sm text-slate-500">
+            <MapPin className="w-4 h-4 text-blue-500" />
+            Recife, PE — Brasil
+          </div>
+          <div className="flex items-center gap-2 text-sm text-slate-500">
+            <Code2 className="w-4 h-4 text-emerald-500" />
+            Next.js + React
+          </div>
+        </div>
       </section>
 
       {/* Values Grid */}
