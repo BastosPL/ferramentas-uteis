@@ -24,8 +24,8 @@ export default function Sobre() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">Quem Somos</h2>
         </div>
         <p className="text-slate-600 leading-relaxed mb-4">
-          O FerramentaUtil é mantido por <strong>Patrick Bastos</strong>, desenvolvedor de software
-          e empreendedor digital baseado em <strong>Recife, Pernambuco</strong>. Com experiência
+          O FerramentaUtil é mantido pelo <strong>Grupo Bastos</strong>, equipe de desenvolvimento de software
+          e empreendedorismo digital baseada em <strong>Recife, Pernambuco</strong>. Com experiência
           em desenvolvimento web e sistemas empresariais, o projeto nasceu da necessidade
           de oferecer ferramentas práticas e confiáveis para o público brasileiro.
         </p>
