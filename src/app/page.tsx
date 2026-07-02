@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { Shield, Zap, Lock, Smartphone, Clock, Sparkles, ArrowRight } from "lucide-react";
 import { WebsiteSchema } from "./components/SchemaOrg";
-import ClientOnly from "./components/ClientOnly";
 import { allArticles } from "../lib/articles";
 import { getToolIcon } from "@/lib/tool-icons";
 
@@ -195,8 +194,7 @@ const featuredTools = featuredSlugs.map((slug) => tools.find((t) => t.slug === s
 
 export default function Home() {
   return (
-    <ClientOnly>
-      <div className="min-h-screen">
+    <div className="min-h-screen">
         <WebsiteSchema />
 
         {/* Hero */}
@@ -408,6 +406,5 @@ export default function Home() {
           </div>
         </section>
       </div>
-    </ClientOnly>
   );
 }

@@ -1,12 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import ClientOnly from "../components/ClientOnly";
 
 export default function Privacidade() {
   return (
-    <ClientOnly>
-      <div className="max-w-3xl mx-auto px-4 py-12">
+    <div className="max-w-3xl mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Politica de Privacidade</h1>
         <p className="text-sm text-gray-500 mb-8">Ultima atualizacao: 08 de junho de 2026</p>
 
@@ -126,6 +122,5 @@ export default function Privacidade() {
           </ul>
         </div>
       </div>
-    </ClientOnly>
   );
 }
