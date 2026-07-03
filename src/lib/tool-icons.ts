@@ -2,7 +2,7 @@ import {
   TrendingUp, Lock, AlignLeft, ArrowLeftRight, Scale, Percent, Timer, Fuel,
   QrCode, FileText, Fingerprint, Apple, FileDown, Image, ScrollText, Home,
   DollarSign, Palette, Cake, Type, Clock, FileSignature, Tag, Mail, Ruler,
-  Building2, ImageDown, FileUp, Zap, PiggyBank, Search
+  Building2, ImageDown, FileUp, Zap, PiggyBank, Search, MapPin
 } from "lucide-react";
 import { type LucideIcon } from "lucide-react";
 
@@ -56,6 +56,7 @@ export const toolIcons: Record<string, ToolIconConfig> = {
   "compressor-imagem": { icon: ImageDown, category: CATEGORIES.utilidade },
   "gerador-pix": { icon: Zap, category: CATEGORIES.gerador },
   "calculadora-investimentos": { icon: PiggyBank, category: CATEGORIES.calculadora },
+  "consulta-cep": { icon: MapPin, category: CATEGORIES.utilidade },
 };
 
 export function getToolIcon(slug: string): ToolIconConfig {

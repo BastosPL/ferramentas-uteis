@@ -17,6 +17,7 @@ const tools = [
   "compressor-imagem",
   "gerador-pix",
   "calculadora-investimentos",
+  "consulta-cep",
   "sobre",
   "contato",
   "privacidade",

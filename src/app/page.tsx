@@ -187,6 +187,12 @@ const tools = [
     description: "Simule e compare CDB, LCI/LCA e Tesouro Direto. Veja o rendimento líquido com desconto de IR.",
     href: "/calculadora-investimentos",
   },
+  {
+    slug: "consulta-cep",
+    name: "Consulta CEP",
+    description: "Encontre endereços completos por CEP ou descubra o CEP de qualquer rua do Brasil. Dados oficiais dos Correios.",
+    href: "/consulta-cep",
+  },
 ];
 
 const featuredSlugs = ["consulta-cnpj", "juntar-pdf", "gerador-pix", "calculadora-investimentos"];
