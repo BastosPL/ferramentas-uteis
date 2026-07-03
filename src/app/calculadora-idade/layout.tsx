@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/calculadora-idade" },
   title: "Calculadora de Idade Online Gratis",
   description:
     "Calcule sua idade exata em anos, meses e dias. Descubra quantos dias voce ja viveu, seu proximo aniversario e seu signo. Gratuito e sem cadastro.",

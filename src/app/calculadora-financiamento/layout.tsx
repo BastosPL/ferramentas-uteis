@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/calculadora-financiamento" },
   title: "Calculadora de Financiamento Online Gratis",
   description:
     "Simule financiamentos com tabela SAC e Price. Calcule parcelas, juros totais e amortizacao. Ideal para imoveis, veiculos e emprestimos. Gratuito.",

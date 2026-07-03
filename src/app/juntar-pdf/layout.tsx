@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/juntar-pdf" },
   title: "Juntar PDF Online Gratis - Combinar Arquivos PDF",
   description:
     "Junte e combine varios arquivos PDF em um so. 100% gratis, sem upload para servidores. Seus arquivos nunca saem do seu navegador.",

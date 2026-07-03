@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/termos" },
   title: "Termos de Uso — FerramentasUteis",
   description:
     "Termos de Uso do FerramentasUteis. Regras de utilizacao das ferramentas online gratuitas.",

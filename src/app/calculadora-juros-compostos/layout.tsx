@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/calculadora-juros-compostos" },
   title: "Calculadora de Juros Compostos Online Gratis",
   description:
     "Calcule juros compostos com aporte mensal. Simule investimentos e descubra quanto seu dinheiro pode render. Calculadora gratuita, sem cadastro.",

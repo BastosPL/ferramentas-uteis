@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/conversor-de-unidades" },
   title: "Conversor de Unidades Online Gratis",
   description:
     "Converta unidades de comprimento, peso, temperatura, volume, area e velocidade. Conversor rapido, preciso e gratuito.",

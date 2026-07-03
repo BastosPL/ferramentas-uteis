@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/calculadora-rescisao" },
   title: "Calculadora de Rescisao Trabalhista Online Gratis",
   description:
     "Calcule o valor da sua rescisao trabalhista: saldo de salario, ferias proporcionais, 13o proporcional, aviso previo e multa do FGTS. Gratuito e sem cadastro.",

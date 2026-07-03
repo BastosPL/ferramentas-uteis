@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/gerador-cpf-cnpj" },
   title: "Gerador de CPF e CNPJ para Testes Online Gratis",
   description:
     "Gere CPFs e CNPJs validos para testes de software e desenvolvimento. Numeros ficticios com digitos verificadores corretos. Gratuito e sem cadastro.",

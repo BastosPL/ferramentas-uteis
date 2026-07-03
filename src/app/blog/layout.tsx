@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog" },
   title: "Blog - Dicas e Guias sobre Ferramentas Online",
   description:
     "Artigos educativos sobre financas, seguranca digital, saude e tecnologia. Dicas praticas e guias completos em portugues.",

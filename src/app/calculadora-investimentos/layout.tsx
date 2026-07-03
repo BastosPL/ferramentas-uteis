@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/calculadora-investimentos" },
   title: "Calculadora de Investimentos Online Gratis — CDB, LCI, LCA, Tesouro Direto",
   description:
     "Simule investimentos em CDB, LCI, LCA e Tesouro Direto. Compare rentabilidades liquidas com desconto de IR. Calculadora gratis e sem cadastro.",

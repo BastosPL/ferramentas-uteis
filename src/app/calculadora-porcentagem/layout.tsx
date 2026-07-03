@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/calculadora-porcentagem" },
   title: "Calculadora de Porcentagem Online Gratis",
   description:
     "Calcule porcentagens de forma rapida: quanto e X% de Y, aumento percentual, desconto, diferenca entre valores. Calculadora gratuita e sem cadastro.",

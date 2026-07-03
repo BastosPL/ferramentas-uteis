@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/conversor-texto" },
   title: "Conversor de Texto Online Gratis",
   description:
     "Converta textos para maiusculas, minusculas, titulo, frase e mais. Remova acentos, conte palavras e copie com um clique. Gratuito e sem cadastro.",

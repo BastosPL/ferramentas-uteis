@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/calculadora-calorias" },
   title: "Calculadora de Calorias Diarias Online Gratis",
   description:
     "Calcule quantas calorias voce precisa por dia para emagrecer, manter ou ganhar peso. Baseada na formula de Harris-Benedict. Gratuita e sem cadastro.",

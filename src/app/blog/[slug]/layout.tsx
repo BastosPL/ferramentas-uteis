@@ -14,6 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
+    alternates: { canonical: `/blog/${slug}` },
     title: article.title,
     description: article.excerpt,
     keywords: [article.category.toLowerCase(), "guia", "dicas", "ferramentas online"],

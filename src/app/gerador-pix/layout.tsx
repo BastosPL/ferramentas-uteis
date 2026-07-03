@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/gerador-pix" },
   title: "Gerador de QR Code PIX Online Gratis — Copia e Cola",
   description:
     "Gere QR Code PIX para receber pagamentos. Crie codigo PIX copia e cola com chave, valor e descricao. 100% gratis e instantaneo.",

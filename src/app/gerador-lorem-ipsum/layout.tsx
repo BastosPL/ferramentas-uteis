@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/gerador-lorem-ipsum" },
   title: "Gerador de Lorem Ipsum Online Gratis",
   description:
     "Gere textos Lorem Ipsum para preencher layouts e mockups. Escolha paragrafos, frases ou palavras. Copie com um clique. Gratuito e sem cadastro.",

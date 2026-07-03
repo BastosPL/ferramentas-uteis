@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     "ferramentas gratuitas",
   ],
   metadataBase: new URL("https://ferramentautil.com.br"),
+  alternates: { canonical: "/" },
   other: {
     "google-adsense-account": "ca-pub-7284698282537450",
   },

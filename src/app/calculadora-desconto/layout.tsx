@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/calculadora-desconto" },
   title: "Calculadora de Desconto Online Gratis",
   description:
     "Calcule descontos em porcentagem sobre qualquer valor. Descubra o preco final com desconto, economia e compare precos. Gratuito e sem cadastro.",

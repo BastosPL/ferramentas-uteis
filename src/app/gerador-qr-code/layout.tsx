@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/gerador-qr-code" },
   title: "Gerador de QR Code Online Gratis",
   description:
     "Gere QR Codes gratuitamente para URLs, textos, WhatsApp, Wi-Fi e mais. Baixe em PNG. Sem cadastro, sem limites.",
