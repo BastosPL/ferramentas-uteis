@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 import ExternalScripts from "./components/ExternalScripts";
 import CookieConsent from "./components/CookieConsent";
 
@@ -74,8 +75,9 @@ export default function RootLayout({
         <ExternalScripts />
         <header className="bg-white/80 backdrop-blur-xl border-b border-slate-200/50 sticky top-0 z-50">
           <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-            <Link href="/" className="text-xl font-bold">
-              <span className="text-blue-600">Ferramenta</span><span className="text-slate-900">Util</span>
+            <Link href="/" className="flex items-center gap-2 text-xl font-bold">
+              <Image src="/logo-icon.png" alt="FerramentaUtil" width={32} height={32} className="rounded-lg" />
+              <span><span className="text-blue-600">Ferramenta</span><span className="text-slate-900">Util</span></span>
             </Link>
             <div className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
               <Link href="/calculadora-juros-compostos" className="hover:text-blue-600 transition-colors">
