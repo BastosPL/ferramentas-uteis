@@ -16,9 +16,8 @@ export default function BlogPage() {
     <div className="max-w-6xl mx-auto px-4 py-16">
       {/* Header */}
       <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-3xl p-8 md:p-12 mb-12 text-white overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] md:w-[360px] opacity-[0.07]">
-          <Image src="/logo-full.png" alt="" width={800} height={450} className="w-full h-auto" />
-        </div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-20 translate-x-20" />
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-16 -translate-x-16" />
         <div className="relative text-center">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-medium mb-6">
             <BookOpen className="w-4 h-4" />

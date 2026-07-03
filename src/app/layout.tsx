@@ -106,6 +106,13 @@ export default function RootLayout({
 
         <footer className="bg-slate-900 text-slate-400 mt-auto">
           <div className="max-w-6xl mx-auto px-4 py-12">
+            <div className="flex items-center gap-3 mb-10">
+              <Image src="/logo-icon.png" alt="FerramentaUtil" width={36} height={36} className="rounded-lg opacity-90" />
+              <div>
+                <span className="text-white font-bold text-lg">Ferramenta<span className="text-blue-400">Util</span></span>
+                <p className="text-slate-500 text-xs">Ferramentas online gratuitas</p>
+              </div>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
               <div>
                 <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Calculadoras</h3>
