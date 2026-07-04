@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import ToolPage from "../components/ToolPage";
+import AnimatedResult, { AnimatedSection } from "../components/AnimatedResult";
 
 export default function GeradorDeSenha() {
   const [tamanho, setTamanho] = useState(16);
@@ -62,7 +63,7 @@ export default function GeradorDeSenha() {
     <ToolPage title="Gerador de Senha Segura" description="Gere senhas fortes e aleatorias usando criptografia do navegador. Nenhum dado e enviado para servidores. Sua senha e gerada 100% localmente." accent="green" icon="🔐" slug="gerador-de-senha">
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
-        {senha && (
+        <AnimatedResult show={!!senha}>
           <div className="mb-6">
             <div className="flex items-center gap-2 mb-2">
               <div className="flex-1 bg-gray-100 rounded-lg px-4 py-3 font-mono text-lg break-all select-all">
@@ -70,7 +71,7 @@ export default function GeradorDeSenha() {
               </div>
               <button
                 onClick={copiar}
-                className="bg-green-600 text-white rounded-lg px-4 py-3 font-semibold hover:bg-green-700 transition-colors shrink-0 cursor-pointer"
+                className="bg-green-600 text-white rounded-lg px-4 py-3 font-semibold hover:bg-green-700 transition-colors shrink-0 cursor-pointer cta-pulse"
               >
                 {copiado ? "Copiado!" : "Copiar"}
               </button>
@@ -87,7 +88,7 @@ export default function GeradorDeSenha() {
               </div>
             )}
           </div>
-        )}
+        </AnimatedResult>
 
         <div className="mb-6">
           <label className="block text-sm font-medium mb-2 text-gray-800">
@@ -156,7 +157,7 @@ export default function GeradorDeSenha() {
       )}
 
       <section className="mt-12 max-w-4xl mx-auto space-y-10 text-gray-700">
-        <div>
+        <AnimatedSection>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar o Gerador de Senha</h2>
           <p className="mb-3">
             Gerar uma senha segura com nossa ferramenta leva apenas alguns segundos. Veja o passo a passo completo:
@@ -169,9 +170,9 @@ export default function GeradorDeSenha() {
             <li><strong>Verifique a forca:</strong> O indicador de forca mostra se a senha e Fraca, Media, Forte ou Muito Forte. Ajuste o tamanho e os tipos de caracteres ate atingir o nivel desejado.</li>
             <li><strong>Consulte o historico:</strong> As ultimas 10 senhas geradas ficam salvas temporariamente na sessao para sua conveniencia. Ao fechar a pagina, o historico e apagado automaticamente por seguranca.</li>
           </ol>
-        </div>
+        </AnimatedSection>
 
-        <div>
+        <AnimatedSection>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Geracao de Senhas</h2>
           <p className="mb-3">
             Nosso gerador utiliza a <strong>API Web Crypto</strong> (crypto.getRandomValues), um recurso nativo dos navegadores modernos que fornece numeros criptograficamente seguros. Diferente de geradores que usam funcoes como Math.random() — que produzem sequencias previsiveis — a Web Crypto API utiliza fontes de entropia do sistema operacional para gerar valores verdadeiramente aleatorios.
@@ -185,9 +186,9 @@ export default function GeradorDeSenha() {
           <p>
             Todo o processamento acontece exclusivamente no seu navegador. Nenhuma senha gerada e transmitida pela internet, armazenada em servidores ou registrada em logs. Ao fechar a aba, as senhas do historico sao descartadas permanentemente.
           </p>
-        </div>
+        </AnimatedSection>
 
-        <div>
+        <AnimatedSection>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
           <div className="space-y-3">
             <details className="border border-gray-200 rounded-lg">
@@ -219,9 +220,9 @@ export default function GeradorDeSenha() {
               <p className="px-4 pb-4 text-gray-600">Nao. Absolutamente nenhum dado e enviado para servidores. A geracao da senha acontece inteiramente no seu navegador usando JavaScript e a API Web Crypto. O historico de senhas e mantido apenas na memoria da sessao atual e e apagado ao fechar a pagina. Nao usamos cookies, analytics ou qualquer rastreamento relacionado as senhas geradas.</p>
             </details>
           </div>
-        </div>
+        </AnimatedSection>
 
-        <div>
+        <AnimatedSection>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas de Seguranca Digital</h2>
           <ul className="list-disc list-inside space-y-2 ml-2">
             <li><strong>Use um gerenciador de senhas:</strong> Ferramentas como Bitwarden (gratuito), 1Password ou KeePass armazenam todas as suas senhas de forma criptografada. Voce so precisa memorizar uma senha mestra forte.</li>
@@ -230,7 +231,7 @@ export default function GeradorDeSenha() {
             <li><strong>Verifique vazamentos:</strong> Sites como &quot;Have I Been Pwned&quot; permitem verificar se seu e-mail apareceu em vazamentos de dados conhecidos. Se aparecer, troque imediatamente as senhas dos servicos afetados.</li>
             <li><strong>Evite senhas obvias:</strong> Senhas como &quot;123456&quot;, &quot;senha123&quot;, datas de aniversario e nomes de familiares sao as primeiras tentativas de qualquer atacante. Use sempre senhas geradas aleatoriamente.</li>
           </ul>
-        </div>
+        </AnimatedSection>
       </section>
     </ToolPage>
   );
