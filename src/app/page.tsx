@@ -220,7 +220,7 @@ export default function Home() {
               </p>
               <Link
                 href="#ferramentas"
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg shadow-blue-600/25 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg shadow-blue-600/25 transition-all duration-300 cta-pulse"
               >
                 Explorar Ferramentas
                 <ArrowRight size={18} />
@@ -264,7 +264,7 @@ export default function Home() {
                   <Link
                     key={tool.href}
                     href={tool.href}
-                    className="group relative bg-white rounded-2xl border border-slate-200 p-6 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/50 hover:border-slate-300 hover:-translate-y-1"
+                    className="group relative bg-white rounded-2xl border border-slate-200 p-6 card-interactive scroll-fade-up"
                   >
                     <div className={`flex items-center justify-center w-12 h-12 rounded-xl ${category.bg} mb-4`}>
                       <Icon className={category.text} size={24} />
@@ -300,7 +300,7 @@ export default function Home() {
                   <Link
                     key={tool.href}
                     href={tool.href}
-                    className="group relative bg-white rounded-2xl border border-slate-200 p-5 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/50 hover:border-slate-300 hover:-translate-y-1"
+                    className="group relative bg-white rounded-2xl border border-slate-200 p-5 card-interactive scroll-scale-in"
                   >
                     <div className={`flex items-center justify-center w-10 h-10 rounded-xl ${category.bg} mb-3`}>
                       <Icon className={category.text} size={20} />
@@ -340,7 +340,7 @@ export default function Home() {
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-              <div className="bg-white rounded-2xl p-6 border border-slate-200">
+              <div className="bg-white rounded-2xl p-6 border border-slate-200 scroll-fade-up">
                 <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-50 mb-4">
                   <Zap className="text-emerald-600" size={24} />
                 </div>
@@ -349,7 +349,7 @@ export default function Home() {
                   Interface limpa e direta. Sem popups, sem distração. Resultado instantâneo.
                 </p>
               </div>
-              <div className="bg-white rounded-2xl p-6 border border-slate-200">
+              <div className="bg-white rounded-2xl p-6 border border-slate-200 scroll-fade-up scroll-delay-1">
                 <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-blue-50 mb-4">
                   <Shield className="text-blue-600" size={24} />
                 </div>
@@ -358,7 +358,7 @@ export default function Home() {
                   Tudo roda no seu navegador. Nenhum dado é enviado para servidores externos.
                 </p>
               </div>
-              <div className="bg-white rounded-2xl p-6 border border-slate-200">
+              <div className="bg-white rounded-2xl p-6 border border-slate-200 scroll-fade-up scroll-delay-2">
                 <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-violet-50 mb-4">
                   <Smartphone className="text-violet-600" size={24} />
                 </div>
@@ -367,7 +367,7 @@ export default function Home() {
                   Funciona perfeitamente no celular, tablet e computador. Use onde quiser.
                 </p>
               </div>
-              <div className="bg-white rounded-2xl p-6 border border-slate-200">
+              <div className="bg-white rounded-2xl p-6 border border-slate-200 scroll-fade-up scroll-delay-3">
                 <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-50 mb-4">
                   <Clock className="text-amber-600" size={24} />
                 </div>
@@ -399,7 +399,7 @@ export default function Home() {
                 <Link
                   key={article.slug}
                   href={`/blog/${article.slug}`}
-                  className="group bg-white rounded-2xl border border-slate-200 p-5 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/50 hover:border-slate-300 hover:-translate-y-1 flex flex-col"
+                  className="group bg-white rounded-2xl border border-slate-200 p-5 card-interactive scroll-slide-left flex flex-col"
                 >
                   <span className="text-xs font-semibold text-blue-600 mb-2">{article.category}</span>
                   <h3 className="text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug mb-2 flex-1">

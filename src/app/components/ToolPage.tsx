@@ -47,7 +47,7 @@ export default function ToolPage({
         { name: "Inicio", url: "/" },
         { name: title, url: url },
       ]} />
-      <div className={`bg-gradient-to-r ${style.header} rounded-2xl p-6 mb-8 text-white`}>
+      <div className={`bg-gradient-to-r ${style.header} rounded-2xl p-6 mb-8 text-white scroll-fade-up`}>
         <div className="flex items-center gap-3 mb-2">
           <div className={`flex items-center justify-center w-14 h-14 rounded-xl ${category.bg}`}>
             <IconComponent className={category.text} size={28} />

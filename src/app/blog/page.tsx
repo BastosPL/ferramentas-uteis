@@ -39,7 +39,7 @@ export default function BlogPage() {
           <Link
             key={article.slug}
             href={`/blog/${article.slug}`}
-            className="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group flex flex-col"
+            className="bg-white rounded-2xl border border-slate-200 p-6 card-interactive scroll-scale-in group flex flex-col"
           >
             <div className="flex items-center gap-3 mb-3">
               <span
