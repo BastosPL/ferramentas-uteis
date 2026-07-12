@@ -43,10 +43,11 @@ export default function Privacidade() {
           <ul>
             <li><strong>Consulta CEP:</strong> envia o CEP digitado para a API do ViaCEP (viacep.com.br) para obter o endereco correspondente.</li>
             <li><strong>Consulta CNPJ:</strong> envia o CNPJ digitado para a BrasilAPI (brasilapi.com.br), que consulta dados publicos da Receita Federal.</li>
-            <li><strong>Conversor de Moedas:</strong> busca cotacoes atualizadas da ExchangeRate-API (open.er-api.com). Nenhum dado do usuario e enviado — apenas uma requisicao de taxas de cambio.</li>
+            <li><strong>Conversor de Moedas:</strong> busca cotacoes atualizadas da <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">ExchangeRate-API</a> (open.er-api.com). Nenhum valor digitado no conversor e enviado ao fornecedor. Para obter as taxas, o navegador realiza uma conexao direta com a ExchangeRate-API, que pode receber dados tecnicos da requisicao, como endereco IP e informacoes do dispositivo ou navegador.</li>
           </ul>
           <p>
-            Nenhuma dessas APIs recebe dados pessoais alem do estritamente necessario para a consulta (CEP ou CNPJ).
+            Para as ferramentas de Consulta CEP e Consulta CNPJ, apenas o dado digitado (CEP ou CNPJ) e enviado a API correspondente.
+            No caso do Conversor de Moedas, nenhum dado inserido pelo usuario e transmitido — apenas dados tecnicos de conexao.
             <strong> Nao armazenamos nenhum dado inserido nas ferramentas em nossos servidores.</strong>
           </p>
 

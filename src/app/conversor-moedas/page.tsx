@@ -65,7 +65,7 @@ export default function ConversorMoedas() {
   return (
     <ToolPage
       title="Conversor de Moedas"
-      description="Converta moedas com cotacao atualizada. Dolar, Euro, Libra, Bitcoin e mais."
+      description="Converta moedas com cotacao atualizada. Dolar, Euro, Libra e mais."
       accent="emerald"
       icon="💱"
       slug="conversor-moedas"
@@ -107,7 +107,7 @@ export default function ConversorMoedas() {
                   ))}
                 </select>
                 <div className="w-full bg-emerald-50 border border-emerald-200 rounded-lg px-4 py-2.5 text-lg font-bold text-emerald-800">
-                  {resultado.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: para === "BTC" ? 8 : 2 })} {para}
+                  {resultado.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {para}
                 </div>
               </div>
             </div>
@@ -118,6 +118,11 @@ export default function ConversorMoedas() {
             {ultimaAtualizacao && (
               <p className="text-center text-xs text-gray-400 mt-1">Atualizado: {ultimaAtualizacao}</p>
             )}
+            <p className="text-center text-xs text-gray-400 mt-2">
+              Cotacoes fornecidas pela{" "}
+              <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">ExchangeRate-API</a>.
+              Dados apenas informativos — nao utilize como confirmacao do valor final de uma operacao financeira.
+            </p>
           </>
         )}
       </div>
@@ -131,7 +136,7 @@ export default function ConversorMoedas() {
               return (
                 <div key={m.code} className="flex items-center justify-between bg-gray-50 rounded-lg px-4 py-2.5">
                   <span className="text-sm text-gray-900">{m.flag} {m.code}</span>
-                  <span className="font-mono text-sm font-medium text-gray-900">R$ {taxaBRL.toLocaleString("pt-BR", { minimumFractionDigits: m.code === "BTC" ? 0 : 2, maximumFractionDigits: m.code === "BTC" ? 0 : 2 })}</span>
+                  <span className="font-mono text-sm font-medium text-gray-900">R$ {taxaBRL.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 </div>
               );
             })}
