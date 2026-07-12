@@ -118,11 +118,19 @@ export default function CalculadoraCalorias() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-4 mb-4">
-            <div className="bg-orange-50 border border-orange-200 rounded-xl p-5 text-center">
-              <p className="text-xs text-orange-600 mb-1">Deficit Moderado</p>
-              <p className="text-2xl font-bold text-orange-700">{resultado.perda.toLocaleString("pt-BR")}</p>
-              <p className="text-xs text-orange-500">kcal/dia (~500 kcal abaixo)</p>
-            </div>
+            {resultado.perda >= 1200 ? (
+              <div className="bg-orange-50 border border-orange-200 rounded-xl p-5 text-center">
+                <p className="text-xs text-orange-600 mb-1">Deficit Moderado</p>
+                <p className="text-2xl font-bold text-orange-700">{resultado.perda.toLocaleString("pt-BR")}</p>
+                <p className="text-xs text-orange-500">kcal/dia (~500 kcal abaixo)</p>
+              </div>
+            ) : (
+              <div className="bg-amber-50 border border-amber-300 rounded-xl p-5 text-center">
+                <p className="text-xs text-amber-700 mb-1">Deficit Moderado</p>
+                <p className="text-lg font-bold text-amber-800">Avaliacao profissional recomendada</p>
+                <p className="text-xs text-amber-700 mt-2">O deficit calculado ficou abaixo da faixa de seguranca utilizada por esta ferramenta. Procure um nutricionista ou medico para uma orientacao individualizada.</p>
+              </div>
+            )}
             <div className="bg-green-50 border border-green-200 rounded-xl p-5 text-center">
               <p className="text-xs text-green-600 mb-1">Manutencao</p>
               <p className="text-2xl font-bold text-green-700">{resultado.manutencao.toLocaleString("pt-BR")}</p>
@@ -134,12 +142,6 @@ export default function CalculadoraCalorias() {
               <p className="text-xs text-purple-500">kcal/dia (~500 kcal acima)</p>
             </div>
           </div>
-
-          {resultado.perda < 1200 && (
-            <div className="bg-amber-50 border border-amber-300 rounded-xl p-4 mb-8">
-              <p className="text-sm text-amber-800 font-medium">&#9888; Atencao: o valor com deficit moderado ficou abaixo de 1.200 kcal/dia. Dietas com restricao calorica severa devem ser acompanhadas por um nutricionista ou medico.</p>
-            </div>
-          )}
 
           <p className="text-xs text-gray-500 mb-8 text-center">
             Estimativas baseadas na formula de Harris-Benedict. A perda de peso real varia conforme metabolismo individual, composicao corporal e outros fatores. Esta ferramenta nao substitui orientacao de nutricionista ou medico.

@@ -43,7 +43,7 @@ export default function Privacidade() {
           <ul>
             <li><strong>Consulta CEP:</strong> envia o CEP digitado para a API do ViaCEP (viacep.com.br) para obter o endereco correspondente.</li>
             <li><strong>Consulta CNPJ:</strong> envia o CNPJ digitado para a BrasilAPI (brasilapi.com.br), que consulta dados publicos da Receita Federal.</li>
-            <li><strong>Conversor de Moedas:</strong> busca cotacoes atualizadas da API Open Exchange Rates. Nenhum dado do usuario e enviado — apenas uma requisicao de taxas de cambio.</li>
+            <li><strong>Conversor de Moedas:</strong> busca cotacoes atualizadas da ExchangeRate-API (open.er-api.com). Nenhum dado do usuario e enviado — apenas uma requisicao de taxas de cambio.</li>
           </ul>
           <p>
             Nenhuma dessas APIs recebe dados pessoais alem do estritamente necessario para a consulta (CEP ou CNPJ).

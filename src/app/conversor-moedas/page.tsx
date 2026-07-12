@@ -161,7 +161,7 @@ export default function ConversorMoedas() {
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Conversao de Moedas</h2>
           <p className="mb-3">
-            O conversor utiliza cotacoes atualizadas obtidas a partir de uma API financeira internacional (Open Exchange Rates). Quando voce acessa a pagina, o sistema busca automaticamente as taxas de cambio mais recentes com base no dolar americano (USD) como moeda de referencia. As cotacoes refletem o ultimo valor publicado pela fonte, nao um feed de mercado ao vivo.
+            O conversor utiliza cotacoes atualizadas obtidas a partir da ExchangeRate-API (open.er-api.com). Quando voce acessa a pagina, o sistema busca automaticamente as taxas de cambio mais recentes com base no dolar americano (USD) como moeda de referencia. As cotacoes refletem o ultimo valor publicado pela fonte, nao um feed de mercado ao vivo.
           </p>
           <p className="mb-3">
             O calculo de conversao segue o metodo de taxa cruzada (cross rate). Primeiro, o valor informado e convertido de volta para dolares usando a cotacao da moeda de origem. Em seguida, esse valor em dolares e multiplicado pela cotacao da moeda de destino. A formula e:
