@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/conversor-moedas" },
-  title: "Conversor de Moedas Online Gratis - Cotacao em Tempo Real",
+  title: "Conversor de Moedas Online Grátis - Cotação Atualizada",
   description:
-    "Converta moedas com cotacao atualizada: Dolar, Euro, Libra, Bitcoin e mais. Conversor gratuito com taxas do Banco Central.",
+    "Converta moedas com cotação atualizada: Dólar, Euro, Libra e mais. Conversor gratuito com taxas de mercado atualizadas.",
   keywords: [
     "conversor de moedas",
     "cotacao dolar",

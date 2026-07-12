@@ -33,16 +33,21 @@ export default function Privacidade() {
 
           <h3>1.2. Dados Processados pelas Ferramentas</h3>
           <p>
-            Todas as ferramentas do site funcionam <strong>100% no seu navegador</strong> (client-side).
-            Isso significa que:
+            A grande maioria das ferramentas do site funciona <strong>inteiramente no seu navegador</strong> (client-side),
+            sem enviar dados para servidores. Isso inclui todas as calculadoras, geradores de senha, compressor de imagem,
+            conversores de PDF, cronometro, contador de caracteres e gerador de QR Code.
+          </p>
+          <p>
+            <strong>Excecoes — ferramentas que consultam APIs externas:</strong>
           </p>
           <ul>
-            <li>Nenhum arquivo enviado ao compressor de imagem, juntar PDF ou outras ferramentas sai do seu dispositivo</li>
-            <li>Nenhum texto digitado nas calculadoras ou geradores e enviado para nossos servidores</li>
-            <li>Nenhum dado pessoal (CPF, CNPJ, email, etc.) inserido nas ferramentas e armazenado ou transmitido</li>
+            <li><strong>Consulta CEP:</strong> envia o CEP digitado para a API do ViaCEP (viacep.com.br) para obter o endereco correspondente.</li>
+            <li><strong>Consulta CNPJ:</strong> envia o CNPJ digitado para a BrasilAPI (brasilapi.com.br), que consulta dados publicos da Receita Federal.</li>
+            <li><strong>Conversor de Moedas:</strong> busca cotacoes atualizadas da API Open Exchange Rates. Nenhum dado do usuario e enviado — apenas uma requisicao de taxas de cambio.</li>
           </ul>
           <p>
-            <strong>Nao coletamos, armazenamos ou transmitimos nenhum dado inserido nas ferramentas.</strong>
+            Nenhuma dessas APIs recebe dados pessoais alem do estritamente necessario para a consulta (CEP ou CNPJ).
+            <strong> Nao armazenamos nenhum dado inserido nas ferramentas em nossos servidores.</strong>
           </p>
 
           <h2>2. Cookies</h2>

@@ -214,7 +214,7 @@ export default function CalculadoraJurosCompostos() {
             </details>
             <details className="border border-gray-200 rounded-lg">
               <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Quais investimentos usam juros compostos?</summary>
-              <p className="px-4 pb-4 text-gray-600">A maioria dos investimentos utiliza juros compostos: CDB, LCI, LCA, Tesouro Direto, fundos de investimento e ate a poupanca. A diferenca esta na taxa oferecida, no prazo e na tributacao. CDBs de bancos digitais, por exemplo, costumam oferecer 100% do CDI ou mais, enquanto a poupanca rende 70% do CDI quando a Selic esta acima de 8,5%.</p>
+              <p className="px-4 pb-4 text-gray-600">A maioria dos investimentos utiliza juros compostos: CDB, LCI, LCA, Tesouro Direto, fundos de investimento e ate a poupanca. A diferenca esta na taxa oferecida, no prazo e na tributacao. CDBs de bancos digitais, por exemplo, costumam oferecer 100% do CDI ou mais. Ja a poupanca segue regras da Lei 12.703/2012: quando a Selic esta igual ou abaixo de 8,5% ao ano, rende 70% da Selic + TR; quando a Selic esta acima de 8,5% ao ano, rende 0,5% ao mes + TR (regra fixa antiga).</p>
             </details>
             <details className="border border-gray-200 rounded-lg">
               <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Os aportes mensais fazem tanta diferenca assim?</summary>

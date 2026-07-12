@@ -469,7 +469,7 @@ export default function ConsultaCNPJ() {
         <h2>Como consultar um CNPJ?</h2>
         <p>
           Digite o CNPJ completo (14 digitos) no campo acima e clique em Consultar.
-          Os dados sao obtidos diretamente da base publica da Receita Federal e incluem:
+          Os dados sao obtidos a partir da BrasilAPI, que consulta a base publica da Receita Federal. As informacoes incluem:
           razao social, nome fantasia, situacao cadastral, CNAE, endereco, telefone, email,
           capital social, quadro societario e opcao pelo Simples Nacional ou MEI.
         </p>

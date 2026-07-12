@@ -47,7 +47,7 @@ export default function CalculadoraCalorias() {
       tmb: Math.round(tmb),
       manutencao: Math.round(manutencao),
       perda: Math.round(manutencao - 500),
-      perdaRapida: Math.round(manutencao - 1000),
+      perdaRapida: 0,
       ganho: Math.round(manutencao + 500),
     });
   }
@@ -117,28 +117,33 @@ export default function CalculadoraCalorias() {
             <p className="text-xs text-blue-600 mt-1">Calorias que seu corpo gasta em repouso total</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <div className="bg-red-50 border border-red-200 rounded-xl p-5 text-center">
-              <p className="text-xs text-red-600 mb-1">Perda Rapida</p>
-              <p className="text-2xl font-bold text-red-700">{resultado.perdaRapida.toLocaleString("pt-BR")}</p>
-              <p className="text-xs text-red-500">kcal/dia (-1kg/sem)</p>
-            </div>
+          <div className="grid md:grid-cols-3 gap-4 mb-4">
             <div className="bg-orange-50 border border-orange-200 rounded-xl p-5 text-center">
-              <p className="text-xs text-orange-600 mb-1">Perda Moderada</p>
+              <p className="text-xs text-orange-600 mb-1">Deficit Moderado</p>
               <p className="text-2xl font-bold text-orange-700">{resultado.perda.toLocaleString("pt-BR")}</p>
-              <p className="text-xs text-orange-500">kcal/dia (-0,5kg/sem)</p>
+              <p className="text-xs text-orange-500">kcal/dia (~500 kcal abaixo)</p>
             </div>
             <div className="bg-green-50 border border-green-200 rounded-xl p-5 text-center">
-              <p className="text-xs text-green-600 mb-1">Manter Peso</p>
+              <p className="text-xs text-green-600 mb-1">Manutencao</p>
               <p className="text-2xl font-bold text-green-700">{resultado.manutencao.toLocaleString("pt-BR")}</p>
               <p className="text-xs text-green-500">kcal/dia</p>
             </div>
             <div className="bg-purple-50 border border-purple-200 rounded-xl p-5 text-center">
-              <p className="text-xs text-purple-600 mb-1">Ganhar Peso</p>
+              <p className="text-xs text-purple-600 mb-1">Superavit Moderado</p>
               <p className="text-2xl font-bold text-purple-700">{resultado.ganho.toLocaleString("pt-BR")}</p>
-              <p className="text-xs text-purple-500">kcal/dia (+0,5kg/sem)</p>
+              <p className="text-xs text-purple-500">kcal/dia (~500 kcal acima)</p>
             </div>
           </div>
+
+          {resultado.perda < 1200 && (
+            <div className="bg-amber-50 border border-amber-300 rounded-xl p-4 mb-8">
+              <p className="text-sm text-amber-800 font-medium">&#9888; Atencao: o valor com deficit moderado ficou abaixo de 1.200 kcal/dia. Dietas com restricao calorica severa devem ser acompanhadas por um nutricionista ou medico.</p>
+            </div>
+          )}
+
+          <p className="text-xs text-gray-500 mb-8 text-center">
+            Estimativas baseadas na formula de Harris-Benedict. A perda de peso real varia conforme metabolismo individual, composicao corporal e outros fatores. Esta ferramenta nao substitui orientacao de nutricionista ou medico.
+          </p>
         </>
       )}
 
@@ -152,7 +157,7 @@ export default function CalculadoraCalorias() {
             <li><strong>Passo 1 — Selecione o sexo:</strong> Escolha entre masculino ou feminino. A formula de calculo e diferente para cada sexo, pois homens e mulheres possuem composicoes corporais e metabolismos distintos.</li>
             <li><strong>Passo 2 — Informe idade, peso e altura:</strong> Digite sua idade em anos, peso em quilogramas e altura em centimetros. Esses dados sao usados diretamente na formula de Harris-Benedict para calcular sua Taxa Metabolica Basal (TMB).</li>
             <li><strong>Passo 3 — Escolha o nivel de atividade:</strong> Selecione a opcao que melhor descreve sua rotina de exercicios. Seja honesto nessa escolha — superestimar seu nivel de atividade resultara em um calculo de calorias acima do necessario, dificultando seus objetivos.</li>
-            <li><strong>Passo 4 — Clique em Calcular:</strong> O resultado mostrara sua TMB (calorias em repouso) e quatro metas calorias diarias: perda rapida de peso (-1 kg/semana), perda moderada (-0,5 kg/semana), manutencao do peso atual e ganho de peso (+0,5 kg/semana).</li>
+            <li><strong>Passo 4 — Clique em Calcular:</strong> O resultado mostrara sua TMB (calorias em repouso) e tres referencias diarias: deficit moderado (~500 kcal abaixo da manutencao), manutencao do peso atual e superavit moderado (~500 kcal acima). A perda de peso real varia conforme o individuo.</li>
           </ul>
           <p className="mt-3">
             O calculo e instantaneo e totalmente privado — nenhum dado pessoal e enviado para servidores. Use os resultados como ponto de partida e ajuste conforme seus resultados praticos ao longo das semanas.

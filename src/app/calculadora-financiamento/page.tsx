@@ -186,7 +186,7 @@ export default function CalculadoraFinanciamento() {
           </p>
           <h3 className="text-lg font-semibold text-gray-800 mt-4 mb-2">Comparacao pratica</h3>
           <p>
-            Para um financiamento de R$ 240.000 a 0,75% ao mes em 360 meses: na Price, a parcela fixa fica em torno de R$ 2.050 e o total de juros ultrapassa R$ 498.000. No SAC, a primeira parcela fica em torno de R$ 2.467, mas a ultima parcela cai para apenas R$ 672, e o total de juros fica em torno de R$ 324.000. A diferenca pode chegar a mais de R$ 170.000 em juros economizados com o SAC.
+            Para um financiamento de R$ 240.000 a 0,75% ao mes em 360 meses: na Price, a parcela fixa fica em R$ 1.931,09 e o total de juros chega a aproximadamente R$ 455.192. No SAC, a primeira parcela fica em torno de R$ 2.467, mas a ultima parcela cai para apenas R$ 672, e o total de juros fica em torno de R$ 324.900. A diferenca e de aproximadamente R$ 130.000 em juros economizados com o SAC.
           </p>
         </div>
 

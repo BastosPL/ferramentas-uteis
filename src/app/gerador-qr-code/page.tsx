@@ -12,6 +12,7 @@ export default function GeradorQRCode() {
   const [ssid, setSsid] = useState("");
   const [senhaWifi, setSenhaWifi] = useState("");
   const [tamanho, setTamanho] = useState(256);
+  const [qrDataUrl, setQrDataUrl] = useState("");
   const imgRef = useRef<HTMLImageElement>(null);
 
   const gerarConteudo = () => {
@@ -27,14 +28,25 @@ export default function GeradorQRCode() {
   };
 
   const conteudo = gerarConteudo();
-  const qrUrl = conteudo
-    ? `https://api.qrserver.com/v1/create-qr-code/?size=${tamanho}x${tamanho}&data=${encodeURIComponent(conteudo)}`
-    : "";
+
+  useEffect(() => {
+    if (!conteudo) {
+      setQrDataUrl("");
+      return;
+    }
+    let cancelled = false;
+    (async () => {
+      const QRCode = (await import("qrcode")).default;
+      const dataUrl = await QRCode.toDataURL(conteudo, { width: tamanho, margin: 2 });
+      if (!cancelled) setQrDataUrl(dataUrl);
+    })();
+    return () => { cancelled = true; };
+  }, [conteudo, tamanho]);
 
   const baixar = () => {
-    if (!qrUrl) return;
+    if (!qrDataUrl) return;
     const a = document.createElement("a");
-    a.href = qrUrl;
+    a.href = qrDataUrl;
     a.download = "qrcode.png";
     a.click();
   };
@@ -99,9 +111,9 @@ export default function GeradorQRCode() {
         </div>
 
         <div className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col items-center justify-center min-w-[280px]">
-          {qrUrl ? (
+          {qrDataUrl ? (
             <>
-              <img ref={imgRef} src={qrUrl} alt="QR Code gerado" width={tamanho} height={tamanho} className="rounded-lg mb-4" />
+              <img ref={imgRef} src={qrDataUrl} alt="QR Code gerado" width={tamanho} height={tamanho} className="rounded-lg mb-4" />
               <button onClick={baixar} className="bg-cyan-600 text-white rounded-lg px-6 py-2.5 font-semibold hover:bg-cyan-700 transition-colors cursor-pointer">
                 Baixar PNG
               </button>
@@ -144,7 +156,7 @@ export default function GeradorQRCode() {
             O QR Code utiliza o algoritmo Reed-Solomon para correcao de erros, o que significa que mesmo se parte do codigo estiver danificada ou obstruida (ate 30% dependendo do nivel de correcao), ele ainda pode ser lido corretamente. Existem quatro niveis de correcao: L (7%), M (15%), Q (25%) e H (30%).
           </p>
           <p>
-            Nossa ferramenta utiliza uma API confiavel para gerar os codigos em tempo real. A imagem e criada no formato PNG, compativel com praticamente todos os dispositivos e softwares de edicao. Nenhum dado pessoal e armazenado — o QR Code e gerado e entregue diretamente para voce.
+            Nossa ferramenta gera os QR Codes inteiramente no seu navegador, sem enviar nenhum dado para servidores externos. A imagem e criada no formato PNG, compativel com praticamente todos os dispositivos e softwares de edicao. Seus dados (incluindo senhas de Wi-Fi) permanecem 100% no seu dispositivo.
           </p>
         </div>
 

@@ -14,7 +14,6 @@ const MOEDAS = [
   { code: "AUD", name: "Dolar Australiano", flag: "🇦🇺" },
   { code: "CHF", name: "Franco Suico", flag: "🇨🇭" },
   { code: "CNY", name: "Yuan Chines", flag: "🇨🇳" },
-  { code: "BTC", name: "Bitcoin", flag: "₿" },
 ];
 
 type Cotacoes = Record<string, number>;
@@ -42,12 +41,11 @@ export default function ConversorMoedas() {
         setCotacoes(data.rates);
         setUltimaAtualizacao(new Date().toLocaleString("pt-BR"));
       } catch {
-        // Fallback com cotacoes aproximadas
         setCotacoes({
           BRL: 5.45, USD: 1, EUR: 0.92, GBP: 0.79, ARS: 950,
-          JPY: 156.5, CAD: 1.36, AUD: 1.53, CHF: 0.88, CNY: 7.24, BTC: 0.000015,
+          JPY: 156.5, CAD: 1.36, AUD: 1.53, CHF: 0.88, CNY: 7.24,
         });
-        setUltimaAtualizacao("Cotacoes aproximadas (offline)");
+        setUltimaAtualizacao("Cotacoes estimadas (sem conexao) — valores de referencia, nao use para transacoes financeiras");
       }
       setCarregando(false);
     }
@@ -163,7 +161,7 @@ export default function ConversorMoedas() {
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Conversao de Moedas</h2>
           <p className="mb-3">
-            O conversor utiliza cotacoes obtidas em tempo real a partir de APIs financeiras internacionais. Quando voce acessa a pagina, o sistema busca automaticamente as taxas de cambio mais recentes com base no dolar americano (USD) como moeda de referencia.
+            O conversor utiliza cotacoes atualizadas obtidas a partir de uma API financeira internacional (Open Exchange Rates). Quando voce acessa a pagina, o sistema busca automaticamente as taxas de cambio mais recentes com base no dolar americano (USD) como moeda de referencia. As cotacoes refletem o ultimo valor publicado pela fonte, nao um feed de mercado ao vivo.
           </p>
           <p className="mb-3">
             O calculo de conversao segue o metodo de taxa cruzada (cross rate). Primeiro, o valor informado e convertido de volta para dolares usando a cotacao da moeda de origem. Em seguida, esse valor em dolares e multiplicado pela cotacao da moeda de destino. A formula e:
@@ -183,16 +181,16 @@ export default function ConversorMoedas() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
           <div className="space-y-3">
             <details className="bg-gray-50 border border-gray-200 rounded-lg p-4 group">
-              <summary className="font-semibold text-gray-900 cursor-pointer">As cotacoes sao atualizadas em tempo real?</summary>
-              <p className="mt-2 text-gray-600">Sim. Ao abrir a pagina, o conversor busca as cotacoes mais recentes disponiveis. As taxas sao atualizadas periodicamente pelas fontes de dados financeiros. Para obter a cotacao mais atual, basta recarregar a pagina.</p>
+              <summary className="font-semibold text-gray-900 cursor-pointer">Com que frequencia as cotacoes sao atualizadas?</summary>
+              <p className="mt-2 text-gray-600">As cotacoes sao buscadas automaticamente ao abrir a pagina, a partir de uma API financeira que publica taxas atualizadas periodicamente. Nao se trata de um feed ao vivo de bolsa — para obter uma cotacao mais recente, recarregue a pagina.</p>
             </details>
             <details className="bg-gray-50 border border-gray-200 rounded-lg p-4 group">
               <summary className="font-semibold text-gray-900 cursor-pointer">A cotacao mostrada e a mesma do banco ou casa de cambio?</summary>
               <p className="mt-2 text-gray-600">As cotacoes exibidas sao taxas de mercado (mid-market rate), que representam o ponto medio entre o preco de compra e venda. Bancos e casas de cambio aplicam spreads e taxas adicionais, entao o valor final pago pode ser diferente. Use nosso conversor como referencia para comparar ofertas.</p>
             </details>
             <details className="bg-gray-50 border border-gray-200 rounded-lg p-4 group">
-              <summary className="font-semibold text-gray-900 cursor-pointer">Posso converter Bitcoin e outras criptomoedas?</summary>
-              <p className="mt-2 text-gray-600">Sim. O conversor inclui Bitcoin (BTC) entre as opcoes disponiveis. A cotacao do Bitcoin e atualizada junto com as demais moedas. Para criptomoedas, o resultado e exibido com ate 8 casas decimais, dada a alta cotacao unitaria.</p>
+              <summary className="font-semibold text-gray-900 cursor-pointer">O conversor inclui criptomoedas?</summary>
+              <p className="mt-2 text-gray-600">Nao. Este conversor e dedicado a moedas fiduciarias (Real, Dolar, Euro, etc.). Criptomoedas como Bitcoin possuem alta volatilidade e exigem fontes de dados especializadas. Uma ferramenta dedicada a criptomoedas podera ser disponibilizada no futuro.</p>
             </details>
             <details className="bg-gray-50 border border-gray-200 rounded-lg p-4 group">
               <summary className="font-semibold text-gray-900 cursor-pointer">O conversor funciona offline?</summary>
@@ -216,7 +214,7 @@ export default function ConversorMoedas() {
             <li><strong>Atencao ao IOF:</strong> Compras de moeda estrangeira no Brasil estao sujeitas ao IOF (Imposto sobre Operacoes Financeiras). Esse imposto nao esta incluso na cotacao de mercado e varia conforme o tipo de operacao (cartao, especie, remessa).</li>
             <li><strong>Planeje compras parceladas:</strong> Se vai viajar, considere comprar moeda estrangeira aos poucos ao longo das semanas. Isso dilui o risco de pegar uma cotacao desfavoravel em um unico dia.</li>
             <li><strong>Peso Argentino em alta volatilidade:</strong> O Peso Argentino (ARS) sofre desvalorizacoes frequentes. Se voce esta viajando para a Argentina, pesquise tambem a cotacao do &quot;dolar blue&quot; (mercado paralelo), que costuma ser diferente da cotacao oficial.</li>
-            <li><strong>Use WebP para importacoes:</strong> Para compras internacionais (AliExpress, Amazon EUA), use o conversor para ter nocao do preco real em reais antes de finalizar o pedido, considerando o frete e impostos de importacao.</li>
+            <li><strong>Compras internacionais:</strong> Para compras em sites estrangeiros (AliExpress, Amazon EUA), use o conversor para ter nocao do preco real em reais antes de finalizar o pedido, considerando o frete e impostos de importacao.</li>
           </ul>
         </div>
       </section>

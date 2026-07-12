@@ -68,8 +68,7 @@ function calcular({
   const aliq = isento ? 0 : aliquotaIR(dias);
   const ir = isento ? 0 : rendimentoBruto * (aliq / 100);
 
-  // IOF (only first 30 days, simplified)
-  const iof = dias < 30 ? rendimentoBruto * ((30 - dias) / 30) * (aliq / 100) * 0.5 : 0;
+  const iof = 0;
 
   const montanteLiquido = montanteBruto - ir - iof;
   const rendimentoLiquido = montanteLiquido - valor;
@@ -379,7 +378,7 @@ export default function CalculadoraInvestimentos() {
             </details>
             <details className="bg-gray-50 rounded-lg p-4">
               <summary className="font-semibold cursor-pointer">O IOF afeta meu investimento?</summary>
-              <p className="mt-2">O IOF (Imposto sobre Operacoes Financeiras) incide apenas nos primeiros 30 dias de aplicacao, com aliquota regressiva diaria. No primeiro dia e 96%, caindo ate 0% no 30o dia. Apos 30 dias, nao ha IOF. Por isso, evite resgatar investimentos antes de completar 30 dias.</p>
+              <p className="mt-2">O IOF (Imposto sobre Operacoes Financeiras) incide apenas nos primeiros 30 dias de aplicacao, com aliquota regressiva diaria (Decreto 6.306/2007): 96% no 1o dia, caindo ate 0% no 30o dia. Apos 30 dias, nao ha IOF. Esta simulacao considera prazos a partir de 30 dias, portanto o IOF nao e calculado neste modelo. Evite resgatar investimentos antes de completar 30 dias.</p>
             </details>
             <details className="bg-gray-50 rounded-lg p-4">
               <summary className="font-semibold cursor-pointer">Qual o investimento minimo para cada opcao?</summary>
