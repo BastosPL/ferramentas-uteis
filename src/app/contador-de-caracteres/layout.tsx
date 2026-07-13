@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/contador-de-caracteres" },
-  title: "Contador de Caracteres e Palavras Online Gratis",
+  title: "Contador de Caracteres e Palavras Online Grátis",
   description:
     "Conte caracteres, palavras, frases e paragrafos. Verifique limites do Twitter, Instagram, SEO e mais. Gratuito e sem cadastro.",
   keywords: [

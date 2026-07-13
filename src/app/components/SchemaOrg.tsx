@@ -37,7 +37,7 @@ export function WebsiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Ferramentas Online Gratis",
+    name: "Ferramentas Online Grátis",
     url: "https://ferramentautil.com.br",
     description: "Calculadoras, geradores e conversores online gratuitos. Sem cadastro, sem instalacao.",
     inLanguage: "pt-BR",

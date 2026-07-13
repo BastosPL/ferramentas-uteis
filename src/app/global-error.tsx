@@ -12,7 +12,7 @@ export default function GlobalError({
       <body style={{ fontFamily: "system-ui, sans-serif", padding: "40px", textAlign: "center" }}>
         <div style={{ maxWidth: "500px", margin: "80px auto" }}>
           <h1 style={{ fontSize: "24px", marginBottom: "16px", color: "#1e40af" }}>
-            🔧 FerramentasUteis
+            🔧 FerramentaUtil
           </h1>
           <p style={{ fontSize: "16px", color: "#374151", marginBottom: "24px" }}>
             Ocorreu um erro inesperado. Clique abaixo para tentar novamente.

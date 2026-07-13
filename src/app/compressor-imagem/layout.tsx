@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/compressor-imagem" },
-  title: "Compressor de Imagem Online Gratis — Reduzir JPG, PNG, WebP",
+  title: "Compressor de Imagem Online Grátis — Reduzir JPG, PNG, WebP",
   description:
     "Comprima imagens JPG, PNG e WebP online e gratis. Reduza o tamanho dos arquivos sem perder qualidade. 100% privado, nenhum arquivo e enviado para servidores.",
   keywords:

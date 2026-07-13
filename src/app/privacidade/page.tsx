@@ -8,7 +8,7 @@ export default function Privacidade() {
 
         <div className="prose prose-gray max-w-none">
           <p>
-            O <strong>FerramentasUteis</strong> (ferramentautil.com.br) tem o compromisso de proteger
+            O <strong>FerramentaUtil</strong> (ferramentautil.com.br) tem o compromisso de proteger
             a privacidade dos seus usuarios. Esta Politica de Privacidade descreve como coletamos,
             usamos e protegemos suas informacoes.
           </p>
