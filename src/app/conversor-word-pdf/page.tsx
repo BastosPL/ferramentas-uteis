@@ -172,7 +172,6 @@ export default function ConversorWordPDF() {
 
       setSucesso(`Arquivo convertido! ${paragraphs.length} paragrafos extraidos de ${pdf.numPages} paginas.`);
     } catch (err) {
-      console.error(err);
       setErro("Erro ao converter. Verifique se o PDF nao esta protegido por senha.");
     }
     setConvertendo(false);
@@ -323,40 +322,31 @@ export default function ConversorWordPDF() {
       <section className="mt-12 max-w-4xl mx-auto space-y-10 text-gray-700">
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar o Conversor Word e PDF</h2>
-          <p className="mb-3">
-            Nossa ferramenta permite converter arquivos nos dois sentidos: de Word (.docx) para PDF e de PDF para Word (.docx). Veja como utilizar cada modo:
-          </p>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Converter Word para PDF</h3>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Word para PDF</h3>
           <ol className="list-decimal list-inside space-y-2 ml-2 mb-4">
-            <li><strong>Selecione o modo &quot;Word → PDF&quot;</strong> clicando na aba correspondente no topo da ferramenta.</li>
-            <li><strong>Envie seu arquivo .docx:</strong> Arraste o arquivo para a area pontilhada ou clique para selecionar do seu computador. O limite e de 20MB por arquivo.</li>
-            <li><strong>Clique em &quot;Converter para PDF&quot;:</strong> O sistema processara o documento e abrira uma janela de impressao do navegador.</li>
-            <li><strong>Salve como PDF:</strong> Na janela de impressao, selecione a opcao &quot;Salvar como PDF&quot; (em vez de uma impressora) e escolha onde salvar o arquivo.</li>
+            <li>Selecione a aba &quot;Word → PDF&quot; e envie o arquivo .docx (arraste ou clique para selecionar, limite de 20 MB).</li>
+            <li>Clique em &quot;Converter para PDF&quot;. O documento sera renderizado e a <strong>janela de impressao do navegador</strong> abrira automaticamente.</li>
+            <li>Na janela de impressao, escolha &quot;Salvar como PDF&quot; no lugar da impressora e defina onde salvar. Esse passo e essencial — e a janela de impressao que gera o PDF final com alta fidelidade.</li>
           </ol>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Converter PDF para Word</h3>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">PDF para Word</h3>
           <ol className="list-decimal list-inside space-y-2 ml-2">
-            <li><strong>Selecione o modo &quot;PDF → Word&quot;</strong> clicando na segunda aba.</li>
-            <li><strong>Envie seu arquivo .pdf:</strong> Arraste ou selecione o PDF que deseja converter. O arquivo precisa conter texto selecionavel (nao escaneado).</li>
-            <li><strong>Clique em &quot;Converter para Word&quot;:</strong> O texto sera extraido pagina a pagina e um arquivo .docx sera gerado automaticamente.</li>
-            <li><strong>Baixe o resultado:</strong> O download do arquivo Word comecara automaticamente apos a conversao.</li>
+            <li>Selecione a aba &quot;PDF → Word&quot; e envie o PDF (precisa conter texto selecionavel, nao escaneado).</li>
+            <li>Clique em &quot;Converter para Word&quot;. O texto e extraido pagina a pagina e o download do .docx comeca automaticamente.</li>
           </ol>
         </div>
 
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Conversao</h2>
           <p className="mb-3">
-            Diferente de outros conversores online, toda a conversao acontece diretamente no seu navegador. Nenhum arquivo e enviado para servidores externos, garantindo total privacidade e seguranca dos seus documentos.
+            Toda a conversao roda no JavaScript do seu navegador — nenhum arquivo sai do seu computador. As duas direcoes usam bibliotecas diferentes, cada uma otimizada para seu formato de origem.
           </p>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Word para PDF</h3>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Word para PDF (Mammoth.js + Print)</h3>
           <p className="mb-3">
-            Na conversao de Word para PDF, o sistema utiliza a biblioteca Mammoth.js para interpretar o conteudo do arquivo .docx. O Mammoth extrai a estrutura do documento — titulos, paragrafos, tabelas, listas e imagens — e converte tudo em HTML semantico. Em seguida, esse HTML e estilizado com CSS para manter uma aparencia profissional e aberto em uma nova janela do navegador. A funcao nativa de impressao do navegador e utilizada para gerar o PDF final, o que garante alta fidelidade na formatacao.
+            A biblioteca Mammoth.js le a estrutura interna do .docx (que e um arquivo ZIP contendo XML) e converte cada elemento — titulos, paragrafos, tabelas, listas e imagens embutidas — em HTML semantico. Esse HTML recebe estilizacao CSS profissional e e aberto em uma nova janela, onde a funcao nativa de impressao do navegador gera o PDF. O resultado e um documento fiel ao original, com fontes, cores e espacamento preservados.
           </p>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">PDF para Word</h3>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">PDF para Word (PDF.js + docx.js)</h3>
           <p className="mb-3">
-            Na conversao inversa, o sistema utiliza a biblioteca PDF.js (desenvolvida pela Mozilla) para ler o conteudo do PDF. O texto e extraido pagina a pagina, preservando a ordem de leitura e identificando paragrafos com base no posicionamento vertical dos elementos. Textos com tamanho de fonte maior sao automaticamente tratados como titulos. Apos a extracao, a biblioteca docx.js cria um arquivo Word (.docx) valido com todos os paragrafos e formatacao basica.
-          </p>
-          <p>
-            E importante notar que PDFs escaneados (imagens de texto) nao contem dados de texto extraiveis. Para esses casos, seria necessario um processo de OCR (reconhecimento optico de caracteres), que nao faz parte desta ferramenta. A conversao funciona melhor com PDFs que possuem texto selecionavel.
+            A biblioteca PDF.js (criada pela Mozilla para o Firefox) decodifica o PDF e extrai o texto pagina a pagina, identificando paragrafos pelo posicionamento vertical e reconhecendo titulos pelo tamanho da fonte. A biblioteca docx.js entao monta um arquivo .docx valido com a estrutura e formatacao basica recuperadas. PDFs escaneados (imagens de texto) nao contem dados textuais extraiveis e precisariam de OCR antes da conversao.
           </p>
         </div>
 
@@ -364,45 +354,39 @@ export default function ConversorWordPDF() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
           <div className="space-y-3">
             <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-              <summary className="font-semibold text-gray-900 cursor-pointer">Meus arquivos sao enviados para algum servidor?</summary>
-              <p className="mt-2 text-gray-600">Nao. Toda a conversao acontece localmente no seu navegador usando JavaScript. Nenhum dado sai do seu computador. Voce pode inclusive desconectar a internet apos carregar a pagina e a conversao continuara funcionando.</p>
+              <summary className="font-semibold text-gray-900 cursor-pointer">Por que preciso usar a janela de impressao?</summary>
+              <p className="mt-2 text-gray-600">Gerar um PDF diretamente via JavaScript produziria um resultado inferior — fontes poderiam ser substituidas, tabelas desalinhadas e imagens perderiam resolucao. A funcao de impressao nativa do navegador ja tem um motor de renderizacao otimizado para isso, garantindo que o PDF final fique identico ao que voce ve na tela. Basta escolher &quot;Salvar como PDF&quot; em vez de selecionar uma impressora.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <summary className="font-semibold text-gray-900 cursor-pointer">Tabelas e imagens do Word sao preservadas?</summary>
+              <p className="mt-2 text-gray-600">Tabelas simples sao convertidas corretamente pelo Mammoth.js, incluindo celulas mescladas e bordas. Imagens embutidas no documento tambem sao transferidas. Porem, layouts muito complexos — como tabelas aninhadas dentro de tabelas, caixas de texto flutuantes ou graficos SmartArt — podem sofrer deslocamento. Recomendamos verificar o resultado antes de enviar para terceiros.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <summary className="font-semibold text-gray-900 cursor-pointer">Posso converter .doc (formato antigo)?</summary>
+              <p className="mt-2 text-gray-600">Nao. A ferramenta aceita apenas .docx, o formato introduzido no Word 2007. Arquivos .doc usam um formato binario proprietario que as bibliotecas JavaScript atuais nao conseguem interpretar. Se voce tem um .doc, abra-o no Word ou LibreOffice e salve como .docx antes de usar o conversor.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <summary className="font-semibold text-gray-900 cursor-pointer">O PDF para Word extrai imagens?</summary>
+              <p className="mt-2 text-gray-600">Nao. A conversao PDF para Word extrai apenas o conteudo textual — paragrafos, titulos e estrutura basica. Imagens presentes no PDF nao sao transferidas para o .docx. Se voce precisa das imagens, salve-as separadamente usando uma ferramenta de captura ou um editor de PDF.</p>
+            </details>
+            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <summary className="font-semibold text-gray-900 cursor-pointer">Qual navegador funciona melhor?</summary>
+              <p className="mt-2 text-gray-600">Chrome e Edge oferecem a melhor experiencia, especialmente na etapa &quot;Salvar como PDF&quot;: permitem ajustar margens, escala e orientacao da pagina diretamente na janela de impressao. O Firefox tambem funciona, mas com menos opcoes de configuracao. O Safari pode apresentar diferenca de fontes em alguns documentos.</p>
             </details>
             <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
               <summary className="font-semibold text-gray-900 cursor-pointer">Qual o tamanho maximo de arquivo?</summary>
-              <p className="mt-2 text-gray-600">O limite e de 20MB por arquivo. Documentos muito grandes podem levar mais tempo para processar, dependendo da capacidade do seu dispositivo. Para arquivos maiores, considere dividir o documento em partes menores.</p>
-            </details>
-            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-              <summary className="font-semibold text-gray-900 cursor-pointer">A formatacao do Word e mantida no PDF?</summary>
-              <p className="mt-2 text-gray-600">A conversao preserva a maioria dos elementos: titulos, paragrafos, listas, tabelas e imagens embutidas. Porem, formatacoes complexas como cabecalhos, rodapes, numeros de pagina e estilos personalizados podem nao ser reproduzidos com total fidelidade, ja que a conversao interpreta o conteudo como HTML.</p>
-            </details>
-            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-              <summary className="font-semibold text-gray-900 cursor-pointer">Posso converter arquivos .doc (Word antigo)?</summary>
-              <p className="mt-2 text-gray-600">Nao. A ferramenta aceita apenas o formato .docx (Word 2007 em diante). Arquivos no formato antigo .doc precisam primeiro ser salvos como .docx no Microsoft Word ou LibreOffice antes de serem convertidos aqui.</p>
-            </details>
-            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-              <summary className="font-semibold text-gray-900 cursor-pointer">Por que o navegador abre a janela de impressao?</summary>
-              <p className="mt-2 text-gray-600">A funcao de impressao do navegador e utilizada para gerar o PDF porque ela oferece a melhor fidelidade visual. Basta selecionar &quot;Salvar como PDF&quot; no lugar da impressora. Esse metodo preserva fontes, cores e layout de maneira confiavel em todos os navegadores modernos.</p>
-            </details>
-            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-              <summary className="font-semibold text-gray-900 cursor-pointer">PDFs escaneados podem ser convertidos para Word?</summary>
-              <p className="mt-2 text-gray-600">Nao diretamente. PDFs escaneados sao essencialmente imagens e nao contem dados de texto que possam ser extraidos. Para converter esses PDFs, voce precisaria primeiro utilizar uma ferramenta de OCR (reconhecimento optico de caracteres) para transformar as imagens em texto.</p>
-            </details>
-            <details className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-              <summary className="font-semibold text-gray-900 cursor-pointer">Funciona no celular?</summary>
-              <p className="mt-2 text-gray-600">Sim. A ferramenta funciona em qualquer dispositivo com um navegador moderno, incluindo smartphones e tablets. No celular, toque na area de upload para selecionar o arquivo da galeria ou gerenciador de arquivos do dispositivo.</p>
+              <p className="mt-2 text-gray-600">O limite e de 20 MB por arquivo. Documentos muito grandes com muitas imagens em alta resolucao podem levar mais tempo para processar, dependendo da memoria disponivel no seu dispositivo. Se o arquivo for maior, considere remover imagens desnecessarias ou dividir o documento em partes.</p>
             </details>
           </div>
         </div>
 
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas para Conversao de Documentos</h2>
           <ul className="list-disc list-inside space-y-2 ml-2">
-            <li><strong>Permita pop-ups:</strong> Na conversao Word para PDF, o resultado abre em uma nova janela. Se seu navegador bloquear pop-ups, permita-os para este site nas configuracoes.</li>
-            <li><strong>Verifique antes de enviar:</strong> Abra o PDF gerado e confira se tabelas, imagens e formatacoes ficaram corretos antes de enviar para terceiros.</li>
-            <li><strong>Use Chrome ou Edge:</strong> Esses navegadores oferecem a melhor experiencia de &quot;Salvar como PDF&quot; na janela de impressao, com mais opcoes de configuracao de margem e escala.</li>
-            <li><strong>Converta relatorios do trabalho:</strong> Se voce precisa enviar um relatorio em PDF mas so tem o Word, esta ferramenta resolve rapidamente sem precisar instalar nenhum software.</li>
-            <li><strong>Extraia texto de contratos:</strong> Recebeu um contrato em PDF e precisa editar? Converta para Word, faca suas anotacoes e observacoes, e depois converta de volta para PDF se necessario.</li>
-            <li><strong>Curriculos e documentos oficiais:</strong> Para enviar curriculos, sempre prefira o formato PDF, pois ele mantem a formatacao identica em qualquer dispositivo. Use esta ferramenta para fazer a conversao rapidamente.</li>
+            <li><strong>Curriculo:</strong> Sempre envie em PDF para vagas de emprego. O formato garante que fontes, espacamento e layout fiquem identicos em qualquer computador ou celular do recrutador — um .docx pode abrir diferente dependendo da versao do Word.</li>
+            <li><strong>Contrato recebido em PDF:</strong> Use a conversao PDF para Word para extrair o texto e poder revisar, anotar ou comparar clausulas com mais facilidade. Lembre-se de que o .docx gerado serve para analise — o documento oficial continua sendo o PDF original.</li>
+            <li><strong>Use Chrome ou Edge:</strong> Esses navegadores oferecem as melhores opcoes na janela &quot;Salvar como PDF&quot;, incluindo controle de margens, orientacao (retrato/paisagem) e escala. O resultado e visivelmente superior ao de outros navegadores.</li>
+            <li><strong>Verifique tabelas apos conversao:</strong> Tabelas complexas com celulas mescladas ou larguras customizadas podem precisar de ajuste manual no Word. Confira o resultado visualmente antes de considerar a conversao finalizada.</li>
           </ul>
         </div>
       </section>

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/cronometro" },
-  title: "Cronometro Online Gratis",
+  title: "Cronômetro Online Grátis",
   description:
-    "Cronometro online gratuito com contagem progressiva e regressiva. Timer preciso com funcao de voltas. Sem instalacao, funciona no navegador.",
+    "Cronômetro online gratuito com contagem progressiva e regressiva. Timer preciso com função de voltas. Sem instalação, funciona no navegador.",
   keywords: [
     "cronometro online",
     "timer online",

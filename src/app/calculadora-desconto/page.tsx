@@ -168,65 +168,59 @@ export default function CalculadoraDesconto() {
       <section className="mt-16 max-w-4xl mx-auto">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar a Calculadora de Desconto</h2>
         <div className="text-gray-700 leading-relaxed space-y-3 mb-8">
-          <p>Nossa calculadora de desconto oferece tres modos de uso para atender diferentes necessidades. Veja como utilizar cada um:</p>
+          <p>A calculadora possui tres modos independentes, cada um voltado para um tipo diferente de conta com descontos:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Modo &quot;Calcular Desconto&quot;:</strong> Insira o preco original do produto e a porcentagem de desconto. A calculadora mostra instantaneamente o preco final, o valor economizado e o preco original riscado. Voce tambem pode usar os botoes de desconto rapido (5%, 10%, 15%, 20%, etc.) para testar diferentes cenarios.</li>
-            <li><strong>Modo &quot;Descobrir %&quot;:</strong> Informe o preco original e o preco final que voce encontrou. A calculadora revela qual a porcentagem de desconto real aplicada e quanto voce economiza. Perfeito para verificar se uma promocao e realmente vantajosa.</li>
-            <li><strong>Modo &quot;Comparar Precos&quot;:</strong> Insira o preco e o desconto de dois produtos diferentes. A calculadora compara os precos finais e indica qual opcao e mais barata, mostrando exatamente quanto voce economiza escolhendo a melhor oferta.</li>
-            <li><strong>Leia os resultados:</strong> Todos os valores sao exibidos em reais (R$) formatados no padrao brasileiro, com destaque visual para facilitar a leitura rapida dos resultados.</li>
+            <li><strong>Modo &quot;Calcular Desconto&quot;:</strong> Informe o preco de etiqueta e a porcentagem do desconto. A calculadora exibe o preco final, a economia em reais e o preco original riscado. Os botoes de desconto rapido (5% a 70%) permitem simular cenarios sem redigitar valores — util para testar faixas de negociacao.</li>
+            <li><strong>Modo &quot;Descobrir %&quot;:</strong> Digite o preco original e o preco que voce encontrou na loja. O resultado mostra a porcentagem real de desconto aplicada. Exemplo: um tenis de R$ 349,90 por R$ 244,93 tem exatamente 30% de desconto.</li>
+            <li><strong>Modo &quot;Comparar Precos&quot;:</strong> Preencha preco e desconto de dois produtos lado a lado. A calculadora aponta qual oferta resulta no menor preco final e mostra a diferenca em reais. Essencial quando duas lojas vendem o mesmo item com precos e descontos diferentes.</li>
           </ul>
+          <p>Todos os valores aparecem formatados em reais (R$) no padrao brasileiro. Os calculos atualizam em tempo real conforme voce digita — nao ha botao &quot;calcular&quot; para clicar.</p>
         </div>
 
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona o Calculo de Desconto</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Entenda o Calculo de Desconto</h2>
         <div className="text-gray-700 leading-relaxed space-y-3 mb-8">
-          <p>O calculo de desconto em porcentagem segue uma formula matematica simples que nossa calculadora aplica automaticamente. Entender essa formula ajuda a fazer contas rapidas mesmo sem a ferramenta:</p>
-          <p><strong>Formula basica:</strong> Preco Final = Preco Original - (Preco Original x Desconto / 100). Por exemplo, um produto de R$ 300,00 com 25% de desconto: 300 - (300 x 25 / 100) = 300 - 75 = R$ 225,00.</p>
-          <p><strong>Formula inversa (descobrir a porcentagem):</strong> Desconto (%) = ((Preco Original - Preco Final) / Preco Original) x 100. Se um produto que custava R$ 400,00 esta por R$ 280,00: ((400 - 280) / 400) x 100 = 30%. O desconto real e de 30%.</p>
-          <p>A calculadora executa esses calculos em tempo real conforme voce digita os valores, sem necessidade de clicar em botoes. Os resultados sao atualizados instantaneamente, formatados em moeda brasileira usando a funcao nativa do JavaScript para formatacao de moeda (Intl.NumberFormat). Todo o processamento ocorre no seu navegador, sem envio de dados para servidores.</p>
-          <p>No modo de comparacao, o sistema calcula o preco final de cada produto independentemente e depois compara os resultados, destacando visualmente qual opcao oferece o menor preco final, independentemente do preco original ou da porcentagem de desconto de cada um.</p>
+          <p><strong>Formula basica:</strong> Preco Final = Preco Original x (1 - Desconto / 100). Um produto de R$ 199,90 com 30% de desconto: 199,90 x 0,70 = R$ 139,93. A economia e de R$ 59,97.</p>
+          <p><strong>Formula inversa:</strong> Desconto (%) = ((Preco Original - Preco Final) / Preco Original) x 100. Se um notebook que custava R$ 4.200 esta por R$ 3.150: ((4200 - 3150) / 4200) x 100 = 25%. O desconto real e de 25%.</p>
+          <p><strong>Desconto sobre desconto (cascata):</strong> Quando uma loja aplica 20% de desconto e voce ainda tem um cupom de 10%, o desconto total nao e 30%. O calculo correto e: primeiro aplica-se 20% sobre o preco cheio, depois 10% sobre o valor ja reduzido. Exemplo: produto de R$ 200 com 20% fica R$ 160; o cupom de 10% sobre R$ 160 resulta em R$ 144. O desconto total real e 28%, nao 30%. Essa diferenca cresce com valores maiores — em um produto de R$ 2.000, sao R$ 40 a menos de economia do que o esperado.</p>
+          <p><strong>Preco original a partir do final:</strong> Se voce sabe que pagou R$ 150 com 25% de desconto, o preco original era: 150 / (1 - 0,25) = 150 / 0,75 = R$ 200. Essa conta e util para verificar se o &quot;preco antigo&quot; exibido pela loja e real.</p>
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
         <div className="space-y-3 mb-8">
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Como saber se um desconto e realmente bom?</summary>
-            <p className="px-4 pb-4 text-gray-700">Um desconto e bom quando o preco final esta abaixo do valor medio praticado pelo mercado para aquele produto. Use o modo &quot;Descobrir %&quot; para verificar a porcentagem real do desconto. Descontos abaixo de 10% sao considerados pequenos para a maioria dos produtos. Na Black Friday, por exemplo, descontos reais geralmente ficam entre 15% e 40% — desconfie de ofertas que prometem 70% ou 80% de desconto em itens de alto valor.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Como identificar o &quot;metade do dobro&quot; na Black Friday?</summary>
+            <p className="px-4 pb-4 text-gray-700">Use o modo &quot;Descobrir %&quot; para calcular o desconto real. Se uma loja anuncia &quot;50% OFF&quot; mas o preco original parece inflado, compare com o historico do produto em sites como Buscape ou Google Shopping. Descontos reais na Black Friday brasileira ficam tipicamente entre 15% e 40% para eletronicos. Descontos acima de 60% em produtos de alto valor merecem desconfianca.</p>
           </details>
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Como calcular desconto sobre desconto (desconto progressivo)?</summary>
-            <p className="px-4 pb-4 text-gray-700">Descontos progressivos nao sao somados diretamente. Por exemplo, 20% + 10% nao e 30%. O correto e aplicar o primeiro desconto e depois aplicar o segundo sobre o valor ja reduzido. Um produto de R$ 100 com 20% + 10%: primeiro fica R$ 80,00 (20% de desconto), depois R$ 72,00 (10% sobre R$ 80). O desconto total real e de 28%, nao 30%. Use nossa calculadora duas vezes para simular esse cenario.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Como calcular desconto sobre desconto corretamente?</summary>
+            <p className="px-4 pb-4 text-gray-700">Descontos em cascata nunca sao somados. Use a calculadora duas vezes: primeiro calcule o preco com o primeiro desconto, depois use esse resultado como preco original para aplicar o segundo desconto. Exemplo pratico: celular de R$ 3.000 com 15% na loja + cupom de 5%. Primeiro: R$ 3.000 com 15% = R$ 2.550. Segundo: R$ 2.550 com 5% = R$ 2.422,50. O desconto total e 19,25%, nao 20%.</p>
           </details>
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Para que serve o modo de comparar precos?</summary>
-            <p className="px-4 pb-4 text-gray-700">O modo de comparacao e ideal para decidir entre duas ofertas diferentes. Por exemplo, se uma loja vende um produto por R$ 500 com 30% de desconto e outra vende o mesmo produto por R$ 450 com 20% de desconto, qual compensa mais? A calculadora mostra que o primeiro fica R$ 350 e o segundo R$ 360 — o primeiro e mais vantajoso, apesar do preco original ser maior.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Desconto de 50% e melhor que &quot;pague 1 leve 2&quot;?</summary>
+            <p className="px-4 pb-4 text-gray-700">Dependem da mesma matematica. &quot;Pague 1 leve 2&quot; equivale a 50% de desconto no preco unitario — mas so se voce realmente precisa de duas unidades. Se voce so precisa de uma, 50% de desconto em uma unidade e mais vantajoso porque voce gasta metade do valor total. Use o modo &quot;Comparar Precos&quot; colocando o preco de 1 unidade com 50% contra o preco de 2 unidades sem desconto dividido por 2.</p>
           </details>
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Posso usar a calculadora para calcular margem de lucro?</summary>
-            <p className="px-4 pb-4 text-gray-700">Sim, de forma indireta. Se voce sabe o custo de um produto e quer vende-lo com uma margem de lucro, use o modo &quot;Descobrir %&quot; colocando o preco de venda como &quot;original&quot; e o custo como &quot;final&quot;. Isso mostra a porcentagem de margem. Para calcular o preco de venda a partir de uma margem desejada, use o modo &quot;Calcular Desconto&quot; invertendo a logica.</p>
-          </details>
-          <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Os valores que eu digito sao salvos ou enviados para algum lugar?</summary>
-            <p className="px-4 pb-4 text-gray-700">Nao. Todos os calculos sao realizados localmente no seu navegador. Nenhum dado e armazenado, salvo em cookies ou enviado para servidores. Ao fechar ou recarregar a pagina, todos os valores digitados sao apagados automaticamente.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Posso usar para calcular margem de lucro?</summary>
+            <p className="px-4 pb-4 text-gray-700">Sim, com uma adaptacao. Coloque o preco de venda como &quot;Preco Original&quot; e o custo como &quot;Preco Final&quot; no modo &quot;Descobrir %&quot;. O resultado mostra a margem sobre o preco de venda (markup). Exemplo: custo de R$ 60 e venda a R$ 100 resulta em 40% de margem. Atencao: margem sobre venda e diferente de margem sobre custo (que seria 66,7% neste caso).</p>
           </details>
           <details className="bg-white border border-gray-200 rounded-lg">
             <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">A calculadora funciona com centavos?</summary>
-            <p className="px-4 pb-4 text-gray-700">Sim. Voce pode inserir valores com casas decimais, como R$ 199,90 ou R$ 49,99. Use o ponto (.) como separador decimal ao digitar. Os resultados sao formatados automaticamente no padrao brasileiro com virgula e duas casas decimais.</p>
+            <p className="px-4 pb-4 text-gray-700">Sim. Use o ponto (.) como separador decimal ao digitar: 199.90, 49.99, etc. Os resultados sao formatados automaticamente com virgula e duas casas decimais no padrao brasileiro (R$ 139,93). O calculo e preciso ate a segunda casa decimal.</p>
           </details>
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Qual a formula para calcular o preco original a partir do preco com desconto?</summary>
-            <p className="px-4 pb-4 text-gray-700">Para descobrir o preco original quando voce sabe o preco final e a porcentagem de desconto, use a formula: Preco Original = Preco Final / (1 - Desconto/100). Exemplo: se um produto esta por R$ 150,00 com 25% de desconto, o original era: 150 / (1 - 0,25) = 150 / 0,75 = R$ 200,00.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Desconto em porcentagem ou em reais: qual e maior?</summary>
+            <p className="px-4 pb-4 text-gray-700">Depende do preco do produto. Um cupom de &quot;R$ 50 de desconto&quot; e melhor que &quot;10% OFF&quot; em produtos abaixo de R$ 500, mas pior em produtos acima desse valor. No exato ponto de R$ 500, os dois sao iguais. Use a calculadora para comparar: aplique os 10% e veja se a economia em reais e maior ou menor que R$ 50.</p>
           </details>
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas</h2>
         <div className="text-gray-700 leading-relaxed space-y-3">
-          <p>A calculadora de desconto e uma aliada em diversas situacoes do dia a dia. Confira cenarios praticos onde ela brilha:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Black Friday e promocoes sazonais:</strong> Use o modo &quot;Descobrir %&quot; para verificar se o desconto anunciado e real. Compare o preco atual com o historico para garantir que nao e o famoso &quot;metade do dobro&quot;.</li>
-            <li><strong>Compras no atacado:</strong> Compare o preco unitario com desconto de quantidade versus o preco no varejo usando o modo &quot;Comparar Precos&quot; para decidir se compensa comprar em maior volume.</li>
-            <li><strong>Negociacoes comerciais:</strong> Ao negociar precos com fornecedores, use a calculadora para simular diferentes cenarios de desconto e encontrar rapidamente o ponto ideal de preco.</li>
-            <li><strong>Cupons de desconto:</strong> Quando tiver multiplos cupons com porcentagens diferentes, use a calculadora para descobrir qual oferece a maior economia real em reais.</li>
-            <li><strong>Planejamento de orcamento:</strong> Simule quanto economizaria aproveitando promocoes para compras planejadas e decida o melhor momento para comprar.</li>
+            <li><strong>Black Friday e datas sazonais:</strong> Antes de comprar, anote o preco do produto 2-3 semanas antes. No dia da promocao, use o modo &quot;Descobrir %&quot; com o preco original real (nao o da etiqueta) para calcular o desconto verdadeiro. Muitas lojas aumentam o preco antes de &quot;dar desconto&quot;.</li>
+            <li><strong>Compras parceladas vs. a vista:</strong> Se a loja oferece 10% de desconto a vista sobre um produto de R$ 1.200, voce paga R$ 1.080. Compare com o parcelamento: 12x de R$ 100 = R$ 1.200. A diferenca de R$ 120 pode render mais aplicada durante os 12 meses do que o desconto — depende da taxa de juros disponivel para voce.</li>
+            <li><strong>Cashback combinado com desconto:</strong> Sites de cashback oferecem 3-8% de retorno. Um produto de R$ 500 com 20% de desconto fica R$ 400; com 5% de cashback sobre R$ 400, voce recebe R$ 20 de volta. O desconto efetivo total e 24%, nao 25%. Use a calculadora para conferir a economia real.</li>
+            <li><strong>Negociacao com fornecedores:</strong> Ao receber uma proposta comercial, use o comparador para colocar o preco do fornecedor A contra o B, cada um com seus descontos por volume. A diferenca aparece em reais, facilitando a decisao.</li>
+            <li><strong>Frete incluso vs. desconto:</strong> Uma loja oferece frete gratis (frete custaria R$ 25) e outra oferece 10% de desconto em um produto de R$ 200. Com 10%, voce economiza R$ 20 mas paga R$ 25 de frete: gasta R$ 205 no total. Na primeira loja, paga R$ 200. O frete gratis vence. Use a calculadora para tirar essa duvida rapidamente.</li>
           </ul>
         </div>
       </section>

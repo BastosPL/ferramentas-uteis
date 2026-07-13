@@ -8,14 +8,14 @@ export default function Termos() {
 
         <div className="prose prose-gray max-w-none">
           <p>
-            Ao acessar e utilizar o site <strong>FerramentasUteis</strong> (ferramentautil.com.br),
+            Ao acessar e utilizar o site <strong>FerramentaUtil</strong> (ferramentautil.com.br),
             voce concorda com os termos e condicoes descritos abaixo. Caso nao concorde, por favor,
             nao utilize o site.
           </p>
 
           <h2>1. Sobre o Servico</h2>
           <p>
-            O FerramentasUteis e um portal que oferece ferramentas online gratuitas, incluindo
+            O FerramentaUtil e um portal que oferece ferramentas online gratuitas, incluindo
             calculadoras, geradores, conversores e outras utilidades. Todas as ferramentas sao
             disponibilizadas &quot;como estao&quot; (as is), sem garantias de qualquer tipo.
           </p>

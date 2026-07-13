@@ -322,66 +322,63 @@ export default function ConsultaCEP() {
         </div>
       )}
 
-      {/* ── CONTEÚDO EDITORIAL ── */}
-      <section className="mt-12 prose prose-gray max-w-none">
-        <h2>O que é o CEP?</h2>
-        <p>
-          O CEP (Código de Endereçamento Postal) é um sistema numérico criado pelos Correios
-          do Brasil em 1971 para organizar e agilizar a entrega de correspondências. Composto
-          por 8 dígitos no formato XXXXX-XXX, cada parte do código identifica uma região,
-          sub-região, setor, subsetor e divisor de subsetor do território nacional.
-        </p>
+      {/* ── CONTEUDO EDITORIAL ── */}
+      <section className="mt-16 max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar a Consulta de CEP</h2>
+        <div className="text-gray-700 leading-relaxed space-y-3 mb-8">
+          <p>A ferramenta possui duas abas com funcoes complementares:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Buscar por CEP:</strong> Digite os 8 digitos do CEP (com ou sem hifen) e clique em &quot;Consultar&quot; ou pressione Enter. O resultado exibe logradouro, bairro, cidade, estado, codigo IBGE e DDD da regiao. Use o botao &quot;Copiar endereco&quot; para levar o endereco completo formatado para a area de transferencia.</li>
+            <li><strong>Buscar por Endereco:</strong> Selecione o estado no dropdown, digite o nome da cidade e pelo menos parte do nome da rua. A ferramenta retorna todos os CEPs que correspondem a busca. Cada resultado mostra o logradouro, bairro, cidade e CEP, com botao de copiar individual. Essa aba e ideal quando voce tem o endereco mas nao sabe o CEP.</li>
+          </ul>
+          <p>A consulta acessa a API publica do ViaCEP em tempo real. Isso significa que voce precisa de conexao com a internet para usar esta ferramenta — diferente das outras ferramentas do site, que funcionam offline.</p>
+        </div>
 
-        <h2>Como funciona a estrutura do CEP?</h2>
-        <p>
-          O primeiro dígito do CEP indica a região postal do Brasil. Por exemplo, CEPs que
-          começam com 0 e 1 pertencem à Grande São Paulo e interior de São Paulo, enquanto
-          CEPs iniciados com 5 correspondem a estados do Nordeste como Bahia, Sergipe e
-          Pernambuco. Os dígitos seguintes refinam a localização até chegar ao logradouro
-          ou grupo de logradouros específico.
-        </p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Estrutura do CEP</h2>
+        <div className="text-gray-700 leading-relaxed space-y-3 mb-8">
+          <p>O CEP (Codigo de Enderecamento Postal) foi criado pelos Correios em 1971 e possui 8 digitos no formato XXXXX-XXX. Cada posicao tem significado:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>1o digito — Regiao postal:</strong> 0 e 1 = Grande Sao Paulo e interior de SP; 2 = Rio de Janeiro e Espirito Santo; 3 = Minas Gerais; 4 = Bahia e Sergipe; 5 = Pernambuco, Alagoas, Paraiba e Rio Grande do Norte; 6 = Ceara, Piaui, Maranhao, Para e Amapa; 7 = Distrito Federal, Goias, Tocantins, Mato Grosso, Mato Grosso do Sul, Rondonia e Acre; 8 = Parana e Santa Catarina; 9 = Rio Grande do Sul.</li>
+            <li><strong>2o e 3o digitos — Sub-regiao e setor:</strong> Refinam a localizacao dentro do estado, identificando a cidade ou grupo de cidades.</li>
+            <li><strong>4o e 5o digitos — Subsetor e divisor:</strong> Indicam o bairro ou regiao dentro da cidade.</li>
+            <li><strong>Sufixo (3 ultimos digitos):</strong> Identificam o logradouro especifico. CEPs terminados em 000 sao &quot;genericos&quot; — representam uma cidade inteira, comum em municipios pequenos com pouco volume de correspondencia.</li>
+          </ul>
+          <p>Quando voce consulta um CEP aqui, a ferramenta envia apenas o numero do CEP para a API do ViaCEP (viacep.com.br), que retorna os dados do endereco. Na busca por endereco, sao enviados estado, cidade e nome da rua. O ViaCEP utiliza a base oficial dos Correios, atualizada periodicamente.</p>
+        </div>
 
-        <h2>Para que serve a consulta de CEP?</h2>
-        <p>
-          A consulta de CEP é essencial para diversas situações do dia a dia: preencher
-          formulários de cadastro em lojas online, enviar correspondências e encomendas,
-          calcular fretes de entrega, localizar endereços em sistemas de GPS e validar
-          dados de clientes em sistemas empresariais. Nossa ferramenta utiliza a API gratuita
-          do ViaCEP, mantida com dados oficiais dos Correios.
-        </p>
-
-        <h2>A consulta é gratuita?</h2>
-        <p>
-          Sim, a consulta é 100% gratuita e sem limite de uso. Os dados são obtidos em
-          tempo real da base do ViaCEP, que utiliza informações oficiais dos Correios do Brasil.
-          Nenhuma informação é armazenada em nossos servidores.
-        </p>
-      </section>
-
-      {/* ── FAQ ── */}
-      <section className="mt-10">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Perguntas Frequentes</h2>
-        <div className="space-y-3">
+        <div className="space-y-3 mb-8">
           <details className="bg-gray-50 rounded-lg p-4 group">
-            <summary className="font-semibold text-gray-900 cursor-pointer">Como descobrir o CEP de um endereço?</summary>
-            <p className="text-gray-700 mt-2">Use a aba &quot;Buscar por Endereço&quot; acima. Selecione o estado, digite o nome da cidade e pelo menos parte do nome da rua. A ferramenta retornará todos os CEPs que correspondem à busca. Quanto mais específico o nome da rua, mais preciso será o resultado.</p>
+            <summary className="font-semibold text-gray-900 cursor-pointer">Por que alguns CEPs nao retornam resultado?</summary>
+            <p className="text-gray-700 mt-2">Tres motivos comuns: (1) CEPs de loteamentos novos podem demorar meses para entrar na base dos Correios e, consequentemente, no ViaCEP. (2) Areas rurais frequentemente usam o CEP generico da cidade — o CEP especifico de uma fazenda ou sitio pode nao existir. (3) CEPs antigos que foram desativados apos reestruturacoes postais retornam erro. Em todos esses casos, tente buscar pelo endereco na segunda aba.</p>
           </details>
           <details className="bg-gray-50 rounded-lg p-4 group">
-            <summary className="font-semibold text-gray-900 cursor-pointer">O CEP retornado está correto e atualizado?</summary>
-            <p className="text-gray-700 mt-2">Sim. Os dados são obtidos em tempo real do ViaCEP, que utiliza a base oficial dos Correios do Brasil. A base é atualizada periodicamente conforme os Correios publicam alterações na distribuição de CEPs.</p>
+            <summary className="font-semibold text-gray-900 cursor-pointer">Que dados sao enviados para a internet durante a consulta?</summary>
+            <p className="text-gray-700 mt-2">Na busca por CEP, apenas o numero de 8 digitos e enviado para a API do ViaCEP. Na busca por endereco, sao enviados o estado (UF), o nome da cidade e o trecho do nome da rua. O ViaCEP nao registra quem fez a consulta e nao exige autenticacao. Nenhuma outra informacao pessoal e transmitida.</p>
           </details>
           <details className="bg-gray-50 rounded-lg p-4 group">
-            <summary className="font-semibold text-gray-900 cursor-pointer">Por que alguns CEPs não retornam o nome da rua?</summary>
-            <p className="text-gray-700 mt-2">CEPs genéricos (que terminam em 000) representam uma cidade inteira ou uma grande região e não estão vinculados a um logradouro específico. Isso é comum em cidades pequenas que possuem um único CEP para toda a área urbana. Nesses casos, o campo logradouro fica vazio.</p>
+            <summary className="font-semibold text-gray-900 cursor-pointer">Por que alguns CEPs nao mostram o nome da rua?</summary>
+            <p className="text-gray-700 mt-2">CEPs genericos (sufixo 000) cobrem uma cidade inteira ou grande regiao e nao estao vinculados a um logradouro. Isso e padrao em municipios com menos de 50 mil habitantes, onde um unico CEP atende toda a area urbana. Capitais e cidades grandes possuem CEPs especificos por rua ou ate por trecho de rua.</p>
           </details>
           <details className="bg-gray-50 rounded-lg p-4 group">
-            <summary className="font-semibold text-gray-900 cursor-pointer">Posso usar essa ferramenta para integrar no meu sistema?</summary>
-            <p className="text-gray-700 mt-2">Nossa ferramenta é voltada para consultas manuais pelo navegador. Se você precisa integrar consultas de CEP no seu sistema ou aplicativo, recomendamos usar diretamente a API do ViaCEP (viacep.com.br), que é gratuita e possui documentação completa para desenvolvedores.</p>
+            <summary className="font-semibold text-gray-900 cursor-pointer">O que e o codigo IBGE exibido no resultado?</summary>
+            <p className="text-gray-700 mt-2">E o codigo numerico atribuido pelo Instituto Brasileiro de Geografia e Estatistica a cada municipio do Brasil. Ele e usado em sistemas governamentais, notas fiscais eletronicas (NF-e) e integracoes com a Receita Federal. Se voce precisa do codigo IBGE de uma cidade, basta consultar qualquer CEP dela aqui.</p>
           </details>
           <details className="bg-gray-50 rounded-lg p-4 group">
-            <summary className="font-semibold text-gray-900 cursor-pointer">Qual a diferença entre CEP genérico e CEP específico?</summary>
-            <p className="text-gray-700 mt-2">O CEP genérico (sufixo 000) abrange toda uma localidade ou grande área — geralmente cidades pequenas onde um único código atende toda a população. O CEP específico identifica um logradouro ou trecho de logradouro em particular, sendo mais comum em capitais e cidades maiores que possuem alta densidade de entregas postais.</p>
+            <summary className="font-semibold text-gray-900 cursor-pointer">Posso integrar essa consulta no meu sistema?</summary>
+            <p className="text-gray-700 mt-2">Esta ferramenta e voltada para consultas manuais pelo navegador. Para integrar em sistemas, use diretamente a API do ViaCEP (viacep.com.br), que e gratuita e aceita requisicoes nos formatos JSON, XML e PIPED. A documentacao oficial explica os endpoints e limites de uso.</p>
           </details>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas</h2>
+        <div className="text-gray-700 leading-relaxed space-y-3">
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Calculo de frete em lojas online:</strong> Muitos e-commerces pedem o CEP para estimar o frete antes da compra. Se voce esta cotando para um cliente em outra cidade, use a busca por endereco para encontrar o CEP dele rapidamente.</li>
+            <li><strong>Validacao de cadastros:</strong> Ao preencher formularios que pedem CEP + endereco, consulte o CEP primeiro para verificar se o endereco que voce tem corresponde. Isso evita devolucoes de encomendas por endereco incorreto.</li>
+            <li><strong>Busca parcial de rua:</strong> Na aba &quot;Buscar por Endereco&quot;, nao e necessario digitar o nome completo da rua. &quot;Paulist&quot; em Sao Paulo retorna a Avenida Paulista e ruas similares. Use termos curtos para obter mais resultados.</li>
+            <li><strong>Cidades com CEP unico:</strong> Se voce mora em cidade pequena e o CEP generico nao retorna sua rua, e normal. Use o CEP terminado em 000 da sua cidade — os Correios entregam corretamente com base no endereco completo, nao apenas no CEP.</li>
+            <li><strong>Mudanca de CEP:</strong> Os Correios eventualmente alteram CEPs quando criam novos setores de distribuicao. Se um CEP antigo nao funciona mais, busque pelo endereco na segunda aba para encontrar o CEP atualizado.</li>
+          </ul>
         </div>
       </section>
     </ToolPage>

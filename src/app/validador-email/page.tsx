@@ -192,60 +192,46 @@ export default function ValidadorEmail() {
 
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar o Validador de Email</h2>
-          <p className="mb-3">Validar enderecos de email e essencial para evitar erros em cadastros, campanhas de marketing e comunicacoes importantes. Veja como utilizar cada funcionalidade da ferramenta:</p>
           <ol className="list-decimal list-inside space-y-2 ml-2">
-            <li><strong>Validacao individual:</strong> Digite o endereco de email no campo principal e clique em &quot;Validar&quot; ou pressione Enter. O sistema analisa a sintaxe completa do email.</li>
-            <li><strong>Analise do resultado:</strong> Voce recebe um diagnostico detalhado mostrando se o email e valido, quais erros foram encontrados (se houver) e sugestoes de correcao para erros de digitacao comuns.</li>
-            <li><strong>Deteccao de typos:</strong> Se voce digitar &quot;gmial.com&quot; em vez de &quot;gmail.com&quot;, a ferramenta detecta automaticamente e sugere a correcao.</li>
-            <li><strong>Validacao em lote:</strong> Para verificar varios emails de uma vez, cole uma lista (um email por linha) na area de texto da secao &quot;Validacao em Lote&quot; e clique em &quot;Validar Todos&quot;.</li>
-            <li><strong>Interpretacao do lote:</strong> O resultado mostra cada email com um indicador verde (valido) ou vermelho (invalido), alem do total de emails validos.</li>
+            <li><strong>Email avulso:</strong> Cole ou digite o endereco no campo e clique &quot;Validar&quot;. Em menos de 1 segundo voce recebe o diagnostico completo.</li>
+            <li><strong>Correcao automatica:</strong> Digitou &quot;gmial.com&quot;? A ferramenta identifica o erro e sugere &quot;gmail.com&quot; na hora.</li>
+            <li><strong>Lote:</strong> Cole ate centenas de enderecos (um por linha) na area &quot;Validacao em Lote&quot; e clique &quot;Validar Todos&quot;. O resultado separa validos (verde) e invalidos (vermelho) com contagem total.</li>
           </ol>
-          <p className="mt-3">A ferramenta processa tudo localmente no navegador, sem enviar seus emails para servidores externos.</p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Validacao de Email</h2>
-          <p className="mb-3">A validacao segue as regras definidas pela RFC 5321 e RFC 5322, os padroes internacionais que definem o formato de enderecos de email. O processo verifica varias camadas:</p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Validacao</h2>
+          <p className="mb-3">O motor de validacao aplica as regras da RFC 5321/5322 em tres camadas distintas, indo alem de um simples regex:</p>
           <ul className="list-disc list-inside space-y-2 ml-2">
-            <li><strong>Estrutura basica:</strong> Verifica se o email contem exatamente um caractere @ separando o nome de usuario do dominio.</li>
-            <li><strong>Nome de usuario:</strong> Confere se nao comeca ou termina com ponto, se nao contem pontos consecutivos e se utiliza apenas caracteres permitidos (letras, numeros, pontos, hifens e alguns caracteres especiais).</li>
-            <li><strong>Dominio:</strong> Valida se o dominio contem pelo menos um ponto, se nao comeca ou termina com ponto ou hifen, e se a extensao tem no minimo 2 caracteres.</li>
-            <li><strong>Dicionario de typos:</strong> Compara o dominio com uma lista de erros de digitacao conhecidos em provedores populares como Gmail, Hotmail, Outlook e Yahoo.</li>
-            <li><strong>Provedores conhecidos:</strong> Se o dominio nao esta na lista de provedores comuns, emite um alerta para que o usuario verifique se digitou corretamente.</li>
+            <li><strong>Sintaxe RFC:</strong> Verifica a presenca de exatamente um @, regras de pontos consecutivos, caracteres proibidos no nome de usuario e formato valido do dominio (extensao com minimo de 2 caracteres).</li>
+            <li><strong>Dicionario de typos:</strong> Um banco com dezenas de erros de digitacao mapeados — como &quot;hotmial.com&quot;, &quot;outllook.com&quot;, &quot;yaho.com&quot; — compara o dominio digitado e sugere a correcao exata.</li>
+            <li><strong>Alerta de dominio desconhecido:</strong> Se o dominio nao consta na lista de provedores conhecidos (Gmail, Outlook, Yahoo, iCloud, etc.), um aviso aparece para que voce confira a grafia. Isso nao invalida o email — apenas sinaliza que merece atencao.</li>
           </ul>
-          <p className="mt-3">E importante entender que a validacao de sintaxe nao garante que o email existe — apenas que o formato esta correto. Para verificar se uma caixa de entrada realmente existe, seria necessario enviar um email de confirmacao.</p>
+          <p className="mt-3">Tudo roda no JavaScript do seu navegador. Nenhum dado trafega pela rede.</p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
           <div className="space-y-3">
             <details className="bg-gray-50 rounded-lg p-4">
-              <summary className="font-semibold cursor-pointer">A validacao confirma que o email existe?</summary>
-              <p className="mt-2">Nao. A ferramenta valida apenas o formato (sintaxe) do email, verificando se ele segue as regras da RFC. Para confirmar que o email existe e recebe mensagens, seria necessario enviar um email de verificacao, o que esta fora do escopo desta ferramenta.</p>
+              <summary className="font-semibold cursor-pointer">Qual a diferenca entre validar formato e verificar se o email existe?</summary>
+              <p className="mt-2">Validar formato (o que esta ferramenta faz) confere se o endereco segue as regras de sintaxe — por exemplo, se tem um @ e um dominio valido. Verificar existencia exige uma conexao SMTP com o servidor do destinatario para checar se a caixa de entrada realmente aceita mensagens. Sao etapas complementares: a primeira elimina enderecos obviamente errados, a segunda confirma entrega.</p>
             </details>
             <details className="bg-gray-50 rounded-lg p-4">
-              <summary className="font-semibold cursor-pointer">Quais erros de digitacao sao detectados?</summary>
-              <p className="mt-2">A ferramenta detecta typos comuns em provedores populares como: gmial.com, gmal.com, hotmial.com, outllook.com, yaho.com, entre outros. Ao identificar um desses dominios, sugere automaticamente a correcao para o dominio correto.</p>
+              <summary className="font-semibold cursor-pointer">A ferramenta detecta emails temporarios (descartaveis)?</summary>
+              <p className="mt-2">Nao. Servicos como Guerrilla Mail ou Temp Mail geram enderecos com sintaxe perfeitamente valida. O validador confere apenas formato e typos de dominio, sem consultar listas de provedores descartaveis. Para bloquear emails temporarios em formularios, voce precisaria de uma API especializada em disposable email detection.</p>
             </details>
             <details className="bg-gray-50 rounded-lg p-4">
-              <summary className="font-semibold cursor-pointer">Posso validar emails corporativos?</summary>
-              <p className="mt-2">Sim. A ferramenta valida a sintaxe de qualquer email, incluindo dominios corporativos (ex: joao@empresa.com.br). Se o dominio nao estiver na lista de provedores conhecidos, voce recebera um aviso para verificar o dominio, mas isso nao significa que o email seja invalido.</p>
+              <summary className="font-semibold cursor-pointer">Posso colar uma lista do Excel?</summary>
+              <p className="mt-2">Sim. Copie a coluna de emails na planilha (selecione as celulas e use Ctrl+C) e cole diretamente na area de Validacao em Lote. O Excel separa cada celula com uma quebra de linha, que e exatamente o formato esperado pela ferramenta — um email por linha.</p>
             </details>
             <details className="bg-gray-50 rounded-lg p-4">
-              <summary className="font-semibold cursor-pointer">Quantos emails posso validar em lote?</summary>
-              <p className="mt-2">Nao ha limite definido. Como o processamento acontece no seu navegador, a velocidade depende da capacidade do seu dispositivo. Na pratica, listas com ate 1.000 emails sao processadas instantaneamente.</p>
+              <summary className="font-semibold cursor-pointer">O que significa o aviso &quot;dominio desconhecido&quot;?</summary>
+              <p className="mt-2">Significa que o dominio digitado (ex: @minhaempresa.net) nao consta no dicionario interno de provedores populares. Isso nao torna o email invalido — apenas indica que a ferramenta nao consegue confirmar que o dominio e um provedor real. Emails corporativos e dominios proprios frequentemente disparam esse aviso e sao perfeitamente funcionais.</p>
             </details>
             <details className="bg-gray-50 rounded-lg p-4">
-              <summary className="font-semibold cursor-pointer">E seguro inserir emails de clientes nesta ferramenta?</summary>
-              <p className="mt-2">Sim. Todos os dados sao processados localmente no seu navegador e nao sao enviados para nenhum servidor. Os emails inseridos nao sao armazenados, coletados ou compartilhados. A ferramenta funciona mesmo sem conexao com a internet.</p>
-            </details>
-            <details className="bg-gray-50 rounded-lg p-4">
-              <summary className="font-semibold cursor-pointer">Por que um email valido pode nao funcionar?</summary>
-              <p className="mt-2">Um email pode ter formato correto mas nao existir (ex: asdkjh@gmail.com). Alem disso, a caixa pode estar cheia, desativada ou bloqueando recebimentos. A validacao de sintaxe e o primeiro passo, mas nao substitui a verificacao pratica.</p>
-            </details>
-            <details className="bg-gray-50 rounded-lg p-4">
-              <summary className="font-semibold cursor-pointer">Quais caracteres sao permitidos em um email?</summary>
-              <p className="mt-2">No nome de usuario (antes do @): letras, numeros, pontos, hifens e caracteres especiais como ! # $ % & e outros definidos pela RFC 5322. No dominio (apos o @): letras, numeros, hifens e pontos. Acentos e caracteres especiais no dominio podem funcionar com internacionalizacao (IDN), mas nao sao universalmente suportados.</p>
+              <summary className="font-semibold cursor-pointer">Emails com acentos ou caracteres especiais sao validos?</summary>
+              <p className="mt-2">Tecnicamente, a RFC 6531 permite enderecos internacionalizados (ex: joao@empresa.com.br com til no &quot;a&quot;). Na pratica, a maioria dos servidores de email ainda rejeita caracteres acentuados no nome de usuario. O mais seguro e usar apenas letras sem acento, numeros, pontos e hifens para garantir compatibilidade universal.</p>
             </details>
           </div>
         </section>
@@ -253,11 +239,10 @@ export default function ValidadorEmail() {
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas para Validacao de Emails</h2>
           <ul className="list-disc list-inside space-y-2 ml-2">
-            <li><strong>Limpeza de listas:</strong> Antes de enviar campanhas de email marketing, valide toda a lista. Emails invalidos aumentam a taxa de bounce e podem prejudicar a reputacao do seu dominio.</li>
-            <li><strong>Formularios web:</strong> Implemente validacao de email em formularios de cadastro para evitar que usuarios digitem emails com formato incorreto. Isso reduz problemas de comunicacao e cadastros perdidos.</li>
-            <li><strong>Erros mais comuns:</strong> Os typos mais frequentes sao: trocar letras no Gmail (gmial, gmal), esquecer o ponto no dominio (.com vira com), usar virgula em vez de ponto e esquecer o @ ao copiar e colar.</li>
-            <li><strong>Emails temporarios:</strong> Servicos como Guerrilla Mail e Temp Mail geram emails validos sintaticamente, mas temporarios. A validacao de formato nao detecta esses casos.</li>
-            <li><strong>Double opt-in:</strong> A melhor pratica para confirmar emails e o double opt-in: enviar um email com link de confirmacao. Isso garante que o email existe e que o dono realmente quer se cadastrar.</li>
+            <li><strong>Limpeza de mailing list antes de campanha:</strong> Execute a validacao em lote em toda a sua base antes de disparar. Cada email invalido que gera bounce prejudica o score do seu dominio nos provedores — acima de 5% de bounce rate, plataformas como Mailchimp e RD Station podem suspender seus envios.</li>
+            <li><strong>Validacao em formularios de cadastro:</strong> Use validacao de formato no front-end (para feedback instantaneo ao usuario) e repita no back-end (para seguranca). A combinacao reduz em ate 90% os cadastros com email digitado errado, segundo dados de mercado.</li>
+            <li><strong>Erros mais comuns por provedor:</strong> No Gmail, os typos frequentes sao &quot;gmial&quot;, &quot;gmal&quot; e &quot;gnail&quot;. No Hotmail, &quot;hotmial&quot; e &quot;hotmai&quot;. No Outlook, &quot;outllook&quot; e &quot;outlok&quot;. Saber esses padroes ajuda a configurar autocorrecao em seus proprios formularios.</li>
+            <li><strong>Double opt-in como complemento:</strong> A validacao de formato e o primeiro filtro. O segundo — e mais robusto — e o double opt-in: enviar um email com link de confirmacao. Isso garante que a caixa existe, que o dono autorizou o cadastro e protege contra spam traps.</li>
           </ul>
         </section>
 

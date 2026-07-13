@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/calculadora-horas" },
-  title: "Calculadora de Horas Online Gratis",
+  title: "Calculadora de Horas Online Grátis",
   description:
     "Some horas trabalhadas, calcule banco de horas e diferenca entre horarios. Ideal para controle de ponto e jornada de trabalho. Gratuito e sem cadastro.",
   keywords: [

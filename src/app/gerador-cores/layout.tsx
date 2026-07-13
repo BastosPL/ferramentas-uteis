@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/gerador-cores" },
-  title: "Gerador e Conversor de Cores Online Gratis",
+  title: "Gerador e Conversor de Cores Online Grátis",
   description:
     "Gere e converta cores entre HEX, RGB, HSL. Color picker visual, paletas aleatorias e copie codigos com um clique. Gratuito para designers e devs.",
   keywords: [

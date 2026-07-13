@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/validador-email" },
-  title: "Validador de Email Online Gratis",
+  title: "Validador de Email Online Grátis",
   description:
     "Verifique se um endereco de email tem formato valido. Validacao de sintaxe, dominio e sugestoes de correcao. Gratuito e sem cadastro.",
   keywords: [

@@ -318,92 +318,73 @@ export default function CompressorImagem() {
         </div>
       </div>
 
-      <section className="mt-12 prose prose-gray max-w-none">
-        <h2>Como comprimir imagens?</h2>
-        <p>
-          Selecione ou arraste suas imagens para a area de upload. Ajuste a qualidade desejada
-          (recomendamos 70-85% para um bom equilibrio entre tamanho e qualidade), escolha a
-          largura maxima e o formato de saida. A compressao acontece instantaneamente no seu
-          navegador.
-        </p>
-
-        <h2>Qual formato escolher?</h2>
-        <p>
-          <strong>JPEG</strong> e ideal para fotos e imagens com muitas cores. <strong>PNG</strong> e
-          melhor para imagens com transparencia e graficos simples. <strong>WebP</strong> oferece
-          o menor tamanho de arquivo com boa qualidade — ideal para sites e redes sociais.
-        </p>
-      </section>
-
       {/* ── EDITORIAL CONTENT ── */}
       <section className="mt-16 max-w-4xl mx-auto">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar o Compressor de Imagem</h2>
         <div className="text-gray-700 space-y-3">
           <p>
-            Para comprimir suas imagens, comece ajustando as configuracoes no painel superior. Defina a <strong>qualidade</strong> desejada usando o controle deslizante — valores entre 70% e 85% oferecem o melhor equilibrio entre reducao de tamanho e qualidade visual. Escolha a <strong>largura maxima</strong> para redimensionar imagens grandes automaticamente (1920px e ideal para a maioria dos usos na web). Selecione o <strong>formato de saida</strong>: mantenha o original, converta para JPEG, PNG ou WebP.
+            Antes de enviar suas imagens, ajuste os tres controles no painel superior:
           </p>
+          <ul className="list-disc list-inside space-y-2 ml-2">
+            <li><strong>Qualidade (slider):</strong> Controla o nivel de compressao. Para fotos de produto, use 80-85%. Para thumbnails e imagens decorativas, 65-75% ja basta.</li>
+            <li><strong>Largura maxima:</strong> Redimensiona automaticamente imagens maiores que o valor definido, mantendo a proporcao. Use 1920px para banners, 1280px para conteudo de blog, 1024px para miniaturas.</li>
+            <li><strong>Formato de saida:</strong> Mantenha o original ou force a conversao para JPEG (fotos), PNG (graficos com transparencia) ou WebP (melhor compressao geral).</li>
+          </ul>
           <p>
-            Em seguida, arraste suas imagens diretamente para a area de upload ou clique nela para abrir o seletor de arquivos do seu computador. Voce pode selecionar multiplas imagens de uma vez. A compressao comeca automaticamente assim que os arquivos sao carregados. Quando o processamento terminar, voce vera um resumo com o tamanho original, o tamanho comprimido e a porcentagem de reducao de cada imagem.
-          </p>
-          <p>
-            Para baixar as imagens comprimidas, clique no botao "Baixar" ao lado de cada imagem individual ou use o botao "Baixar todas" para fazer o download de todas de uma vez. Se precisar comprimir mais imagens com configuracoes diferentes, clique em "Limpar" para remover os resultados anteriores e comece novamente.
+            Depois, arraste as imagens para a area de upload ou clique para selecionar. A compressao comeca automaticamente. Ao terminar, cada resultado mostra o tamanho original, o comprimido e a porcentagem de economia. Baixe individualmente ou todas de uma vez.
           </p>
         </div>
 
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Como Funciona a Compressao de Imagens</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Como Funciona a Compressao</h2>
         <div className="text-gray-700 space-y-3">
           <p>
-            Nossa ferramenta utiliza as APIs nativas do navegador para processar as imagens diretamente no seu dispositivo, sem enviar nenhum arquivo para servidores externos. Isso garante total privacidade e velocidade no processamento. O mecanismo principal e baseado no elemento Canvas do HTML5, que permite manipular pixels de imagens de forma eficiente.
+            O processamento usa a API Canvas do HTML5 diretamente no seu navegador, em tres etapas: decodificacao da imagem original via <em>createImageBitmap</em>, redesenho no Canvas com as dimensoes configuradas e exportacao no formato escolhido com o nivel de qualidade definido.
           </p>
           <p>
-            O processo funciona em tres etapas. Primeiro, a imagem original e carregada e decodificada pelo navegador usando a API <em>createImageBitmap</em>. Em seguida, ela e redesenhada em um Canvas com as dimensoes desejadas (respeitando a largura maxima configurada e mantendo a proporcao original). Por fim, o Canvas exporta a imagem no formato escolhido, aplicando a compressao com o nivel de qualidade definido pelo usuario.
+            No JPEG, a compressao aplica a Transformada Discreta de Cosseno (DCT), descartando frequencias visuais que o olho humano mal percebe. O WebP vai alem, usando compressao preditiva que analisa blocos vizinhos — por isso gera arquivos 25-35% menores que JPEG em qualidade equivalente. O PNG, por sua vez, usa compressao lossless (sem perda), ideal quando cada pixel importa, como em logos e screenshots.
           </p>
           <p>
-            A compressao JPEG funciona eliminando detalhes visuais que o olho humano dificilmente percebe, utilizando a Transformada Discreta de Cosseno (DCT). Quanto menor a qualidade selecionada, mais detalhes sao descartados, resultando em arquivos menores mas com possivel perda de nitidez. O formato WebP, desenvolvido pelo Google, utiliza tecnicas mais avancadas de compressao preditiva e geralmente produz arquivos 25-35% menores que JPEG com qualidade equivalente. O PNG usa compressao sem perda (lossless), preservando todos os detalhes, incluindo transparencia, mas resultando em arquivos maiores.
-          </p>
-          <p>
-            A reducao de dimensoes (redimensionamento) tambem contribui significativamente para diminuir o tamanho do arquivo. Uma foto de 4000x3000 pixels tirada por um celular moderno pode ter 5 MB ou mais. Ao redimensiona-la para 1920px de largura (Full HD), o tamanho ja cai drasticamente antes mesmo da compressao de qualidade ser aplicada.
+            <strong>Exemplo concreto:</strong> Uma foto de 4000x3000 (12 megapixels) em JPEG a 100% pesa cerca de 5 MB. Com qualidade 80% e largura maxima de 1920px, o arquivo cai para aproximadamente 300 KB — uma reducao de 94%. O redimensionamento contribui tanto quanto a compressao de qualidade nessa economia.
           </p>
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-6">Perguntas Frequentes</h2>
         <div className="space-y-3">
           <details className="bg-gray-50 rounded-lg p-4 group">
-            <summary className="font-semibold text-gray-900 cursor-pointer">A compressao reduz a qualidade da imagem?</summary>
-            <p className="text-gray-700 mt-2">Depende do formato e do nivel de qualidade selecionado. Com qualidade entre 75% e 85% em JPEG ou WebP, a perda e praticamente imperceptivel ao olho humano na maioria das imagens. Abaixo de 50%, artefatos visuais como borroes e blocos podem se tornar visiveis. O formato PNG nao perde qualidade, pois usa compressao lossless, mas a reducao de tamanho e menor.</p>
+            <summary className="font-semibold text-gray-900 cursor-pointer">Qual a diferenca entre redimensionar e comprimir?</summary>
+            <p className="text-gray-700 mt-2">Sao processos distintos que funcionam juntos. Redimensionar reduz a quantidade de pixels da imagem (ex: de 4000px para 1920px de largura), o que diminui o tamanho do arquivo de forma significativa. Comprimir reduz a quantidade de dados armazenados por pixel, descartando detalhes visuais imperceptiveis. Esta ferramenta faz as duas coisas simultaneamente para a maxima reducao.</p>
           </details>
           <details className="bg-gray-50 rounded-lg p-4 group">
-            <summary className="font-semibold text-gray-900 cursor-pointer">Minhas imagens sao enviadas para algum servidor?</summary>
-            <p className="text-gray-700 mt-2">Nao. Todo o processamento acontece localmente no seu navegador. Nenhum arquivo e enviado para servidores externos. Isso significa que suas fotos pessoais, documentos e imagens confidenciais permanecem completamente privados no seu dispositivo. Voce pode ate usar a ferramenta sem conexao com a internet apos carregar a pagina.</p>
+            <summary className="font-semibold text-gray-900 cursor-pointer">WebP funciona em todos os navegadores?</summary>
+            <p className="text-gray-700 mt-2">Sim, desde 2020. O Chrome suporta WebP desde 2014, o Firefox desde 2019 e o Safari desde a versao 14 (setembro de 2020). Hoje, mais de 97% dos navegadores em uso no Brasil suportam WebP. E a escolha mais segura para sites que buscam performance sem abrir mao de compatibilidade.</p>
           </details>
           <details className="bg-gray-50 rounded-lg p-4 group">
-            <summary className="font-semibold text-gray-900 cursor-pointer">Qual a diferenca entre JPEG, PNG e WebP?</summary>
-            <p className="text-gray-700 mt-2"><strong>JPEG</strong> e o formato mais universal para fotos, com boa compressao e compatibilidade em todos os dispositivos. <strong>PNG</strong> preserva transparencia e detalhes finos, ideal para logos, capturas de tela e graficos. <strong>WebP</strong> e o formato mais moderno, oferecendo compressao superior a JPEG e suporte a transparencia como PNG — e a melhor escolha para sites e aplicacoes web, pois e suportado por todos os navegadores modernos.</p>
-          </details>
-          <details className="bg-gray-50 rounded-lg p-4 group">
-            <summary className="font-semibold text-gray-900 cursor-pointer">Quantas imagens posso comprimir de uma vez?</summary>
-            <p className="text-gray-700 mt-2">Nao ha limite fixo de quantidade. Voce pode selecionar ou arrastar quantas imagens quiser de uma vez. Porem, como o processamento acontece no seu navegador, muitas imagens grandes simultaneamente podem tornar o processo mais lento dependendo do seu dispositivo. Para lotes muito grandes (mais de 50 imagens), recomendamos processar em grupos menores.</p>
-          </details>
-          <details className="bg-gray-50 rounded-lg p-4 group">
-            <summary className="font-semibold text-gray-900 cursor-pointer">Qual qualidade devo usar para redes sociais?</summary>
-            <p className="text-gray-700 mt-2">Para redes sociais como Instagram, Facebook e WhatsApp, uma qualidade de 75-80% em JPEG ou WebP e mais do que suficiente. Essas plataformas ja recomprimem as imagens ao fazer upload, entao enviar uma imagem em qualidade maxima nao traz beneficios visiveis. Uma largura de 1280px a 1920px atende a maioria dos posts e stories.</p>
+            <summary className="font-semibold text-gray-900 cursor-pointer">Como saber se a qualidade esta boa o suficiente?</summary>
+            <p className="text-gray-700 mt-2">Apos a compressao, clique na imagem resultante para visualiza-la em tamanho real no navegador. Compare visualmente com a original. Para a maioria das fotos, qualidade entre 75% e 85% nao apresenta diferenca perceptivel. Se notar blocos ou borroes (especialmente em areas de gradiente ou texto sobre imagem), aumente a qualidade em 5-10 pontos e reprocesse.</p>
           </details>
           <details className="bg-gray-50 rounded-lg p-4 group">
             <summary className="font-semibold text-gray-900 cursor-pointer">Por que minha imagem PNG ficou maior apos a compressao?</summary>
-            <p className="text-gray-700 mt-2">Isso pode acontecer quando uma imagem JPEG e convertida para PNG. Como o PNG usa compressao sem perda, ele preserva todos os detalhes da imagem, o que pode resultar em um arquivo maior. Se voce quer reduzir o tamanho de fotos, use JPEG ou WebP. O PNG e mais adequado para imagens com areas solidas de cor, como logos e capturas de tela.</p>
+            <p className="text-gray-700 mt-2">Isso acontece quando uma foto em JPEG e convertida para PNG. O JPEG descarta dados para reduzir tamanho, enquanto o PNG preserva cada pixel sem perda — o resultado e um arquivo maior. Se a imagem e uma foto (nao um grafico ou logo), use JPEG ou WebP. Reserve o PNG para imagens com transparencia, texto nitido ou areas de cor solida.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">Posso comprimir GIF ou SVG?</summary>
+            <p className="text-gray-700 mt-2">Nao. Esta ferramenta processa apenas formatos raster estaticos: JPEG, PNG e WebP. GIFs animados exigem um compressor especializado que preserve os quadros da animacao. SVGs sao arquivos vetoriais baseados em texto (XML) e se beneficiam de minificacao de codigo, nao de compressao de pixels.</p>
           </details>
         </div>
 
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Dicas Praticas</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Dicas por Tipo de Uso</h2>
         <div className="text-gray-700 space-y-3">
           <p>
-            <strong>Para sites e blogs:</strong> Use WebP com qualidade de 80% e largura maxima de 1280px para imagens de conteudo. Para banners e imagens de destaque, mantenha 1920px. Imagens otimizadas melhoram o tempo de carregamento da pagina, o que impacta positivamente o SEO e a experiencia do usuario. O Google PageSpeed Insights recomenda que imagens de paginas web tenham menos de 100 KB quando possivel.
+            <strong>Site ou blog (SEO):</strong> WebP a 80% com largura maxima de 1280px. O Google PageSpeed Insights penaliza imagens acima de 100 KB — com essas configuracoes, a maioria das fotos fica entre 40 KB e 90 KB, ideal para Core Web Vitals e carregamento rapido.
           </p>
           <p>
-            <strong>Para e-commerce:</strong> Fotos de produtos devem ter qualidade entre 80-85% em JPEG com largura de 1200px a 1600px. Isso garante que os clientes possam ver detalhes do produto sem que as paginas fiquem lentas. Se o produto tem fundo transparente, use WebP (que suporta transparencia) em vez de PNG para arquivos muito menores.
+            <strong>E-commerce (fotos de produto):</strong> JPEG a 85% com largura de 1600px. O cliente precisa ver detalhes como textura e costura, entao a qualidade importa mais do que em banners. Se o produto tem fundo transparente (recorte), use WebP em vez de PNG — o arquivo fica ate 70% menor.
           </p>
           <p>
-            <strong>Para enviar por email ou WhatsApp:</strong> Reduza a qualidade para 70-75% e a largura para 1024px. Isso resulta em arquivos pequenos que nao travam o envio e carregam rapidamente para quem recebe. E especialmente util para enviar multiplas fotos de uma vez sem exceder os limites de tamanho de anexos de email (geralmente 25 MB no Gmail).
+            <strong>WhatsApp e email:</strong> JPEG ou WebP a 70% com largura de 1024px. Isso gera arquivos entre 50 KB e 150 KB que enviam instantaneamente, sem travar em conexoes moveis. Util para enviar multiplas fotos sem estourar o limite de 16 MB do WhatsApp ou 25 MB do Gmail.
+          </p>
+          <p>
+            <strong>Marketplace (OLX, Mercado Livre):</strong> JPEG a 75% com largura de 1024px, limitando a 5 fotos por anuncio. Essas plataformas recomprimem as imagens internamente, entao enviar em qualidade maxima nao traz ganho visual — so torna o upload mais lento.
           </p>
         </div>
       </section>

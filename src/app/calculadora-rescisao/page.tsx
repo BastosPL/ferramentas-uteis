@@ -56,13 +56,25 @@ export default function CalculadoraRescisao() {
     const feriasProp = (sal / 12) * mesesFerias;
     const tercoFerias = feriasProp / 3;
 
-    // Ferias vencidas
-    const feriasVenc = feriasVencidas ? sal : 0;
+    // Ferias vencidas (CLT Art. 137 — pagamento em dobro)
+    const feriasVenc = feriasVencidas ? sal * 2 : 0;
     const tercoFeriasVenc = feriasVenc / 3;
 
-    // 13o proporcional
-    const mesAtual = demissao.getMonth() + 1;
-    const decimoTerceiro = (sal / 12) * mesAtual;
+    // 13o proporcional (Lei 4.090/1962, art. 1o, paragrafo unico)
+    // Conta avos: meses trabalhados no ano da demissao, com regra dos 15 dias
+    const anoRef = demissao.getFullYear();
+    const inicioAno = new Date(anoRef, 0, 1);
+    const inicioContagem = admissao > inicioAno ? admissao : inicioAno;
+    let avos = 0;
+    for (let m = inicioContagem.getMonth(); m <= demissao.getMonth(); m++) {
+      const inicioMes = new Date(anoRef, m, 1);
+      const fimMes = new Date(anoRef, m + 1, 0);
+      const de = inicioMes < inicioContagem ? inicioContagem : inicioMes;
+      const ate = fimMes > demissao ? demissao : fimMes;
+      const diasTrabMes = Math.floor((ate.getTime() - de.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+      if (diasTrabMes >= 15) avos++;
+    }
+    const decimoTerceiro = (sal / 12) * avos;
 
     // Aviso previo (3 dias por ano trabalhado, min 30 dias)
     let avisoPrevio = 0;
@@ -210,12 +222,21 @@ export default function CalculadoraRescisao() {
             </ul>
           </div>
 
-          <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-8">
+          <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
             <p className="text-sm text-yellow-800">
-              <strong>Aviso:</strong> Esta calculadora fornece uma estimativa. Valores reais podem variar
-              de acordo com convencoes coletivas, descontos de INSS/IR e outros fatores. Consulte um
-              contador ou advogado trabalhista para valores exatos.
+              <strong>Aviso:</strong> Esta calculadora fornece uma estimativa simplificada. Valores reais podem variar conforme aviso previo, medias salariais, adicionais, descontos, convencoes coletivas e caracteristicas especificas do contrato. Nao utilize como calculo oficial — consulte um contador ou advogado trabalhista.
             </p>
+          </div>
+
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-8">
+            <h3 className="font-semibold text-sm mb-2 text-gray-900">Base Legal e Metodologia</h3>
+            <ul className="text-sm text-gray-700 space-y-1">
+              <li>• 13o Salario Proporcional — Lei 4.090/1962</li>
+              <li>• Ferias — CLT Art. 129 a 145 e Art. 137 (ferias vencidas em dobro)</li>
+              <li>• Aviso Previo Proporcional — Lei 12.506/2011</li>
+              <li>• FGTS e Multa Rescisoria — Lei 8.036/1990</li>
+              <li>• Acordo Mutuo — CLT Art. 484-A (Reforma Trabalhista)</li>
+            </ul>
           </div>
         </>
       )}
@@ -291,7 +312,7 @@ export default function CalculadoraRescisao() {
             </details>
             <details className="bg-white border border-gray-200 rounded-lg">
               <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">O que sao ferias vencidas?</summary>
-              <p className="px-4 pb-3 text-sm">Ferias vencidas sao aquelas cujo periodo aquisitivo (12 meses de trabalho) ja se completou, mas o empregador nao concedeu o descanso dentro do periodo concessivo (os 12 meses seguintes). Nesse caso, alem do pagamento normal das ferias, o trabalhador tem direito ao pagamento em dobro (Art. 137 da CLT). Na nossa calculadora, marcamos ferias vencidas como um salario integral adicional.</p>
+              <p className="px-4 pb-3 text-sm">Ferias vencidas sao aquelas cujo periodo aquisitivo (12 meses de trabalho) ja se completou, mas o empregador nao concedeu o descanso dentro do periodo concessivo (os 12 meses seguintes). Nesse caso, o trabalhador tem direito ao pagamento em dobro das ferias, incluindo o terco constitucional (Art. 137 da CLT e OJ-386/SDI-1 do TST). Na nossa calculadora, as ferias vencidas sao calculadas como o dobro do salario, acrescido de 1/3 sobre esse valor.</p>
             </details>
             <details className="bg-white border border-gray-200 rounded-lg">
               <summary className="px-4 py-3 cursor-pointer font-medium text-gray-900 hover:bg-gray-50">Posso negociar uma rescisao melhor com a empresa?</summary>

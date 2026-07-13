@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/imagem-para-pdf" },
-  title: "Converter Imagem para PDF Online Gratis",
+  title: "Converter Imagem para PDF Online Grátis",
   description:
     "Converta imagens JPG, PNG e WebP para PDF gratuitamente. Combine varias imagens em um unico PDF. 100% privado, sem upload para servidores.",
   keywords: [

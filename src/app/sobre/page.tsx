@@ -151,7 +151,7 @@ export default function Sobre() {
       {/* Footer note */}
       <div className="mt-16 text-center">
         <p className="text-sm text-slate-400">
-          FerramentasUteis &mdash; Ferramentas online gratuitas para o dia a dia.
+          FerramentaUtil &mdash; Ferramentas online gratuitas para o dia a dia.
         </p>
       </div>
     </div>

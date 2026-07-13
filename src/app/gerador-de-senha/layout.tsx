@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/gerador-de-senha" },
-  title: "Gerador de Senha Segura Online Gratis",
+  title: "Gerador de Senha Segura Online Grátis",
   description:
     "Gere senhas fortes e aleatorias com criptografia do navegador. Escolha tamanho, maiusculas, numeros e simbolos. 100% gratis e privado.",
   keywords: [

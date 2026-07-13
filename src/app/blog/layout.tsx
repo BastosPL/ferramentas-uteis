@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "comprimir imagens",
   ],
   openGraph: {
-    title: "Blog - Ferramentas Online Gratis",
+    title: "Blog - Ferramentas Online Grátis",
     description:
       "Artigos educativos e guias praticos sobre financas, seguranca, saude e tecnologia.",
     type: "website",

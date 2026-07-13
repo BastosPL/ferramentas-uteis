@@ -54,6 +54,11 @@ export default async function ArticlePage({ params }: Props) {
                 year: "numeric",
               })}
             </span>
+            {article.author && (
+              <span className="text-sm text-slate-400">
+                Por {article.author}
+              </span>
+            )}
           </div>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 leading-tight mb-4">
             {article.title}
@@ -76,6 +81,31 @@ export default async function ArticlePage({ params }: Props) {
             prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline"
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
+
+        {/* Authorship & Sources */}
+        <div className="mt-12 border-t border-slate-200 pt-6">
+          <div className="flex items-start gap-3 text-sm text-slate-600">
+            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold shrink-0">FU</div>
+            <div>
+              <p className="font-medium text-slate-800">{article.author}</p>
+              {article.lastReviewedAt && (
+                <p className="text-xs text-slate-400 mt-0.5">
+                  Ultima revisao: {new Date(article.lastReviewedAt).toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" })}
+                </p>
+              )}
+            </div>
+          </div>
+          {article.sources && article.sources.length > 0 && (
+            <div className="mt-4 text-xs text-slate-500">
+              <p className="font-medium text-slate-600 mb-1">Fontes</p>
+              <ul className="list-disc pl-4 space-y-0.5">
+                {article.sources.map((source, i) => (
+                  <li key={i}>{source}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
 
         {/* CTA - Related Tools */}
         <div className="mt-12 bg-white rounded-2xl border border-slate-200 p-6 md:p-8">
