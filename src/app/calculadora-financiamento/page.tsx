@@ -236,6 +236,27 @@ export default function CalculadoraFinanciamento() {
           </ul>
         </div>
       </section>
+
+      <section className="mt-8 border-t border-gray-200 pt-6 max-w-4xl mx-auto">
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-4 text-sm text-amber-800">
+          Simulacao informativa. O valor real das parcelas depende de seguros, taxas administrativas e condicoes do contrato.
+        </div>
+        <div className="flex items-start gap-3 text-sm text-gray-600">
+          <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold shrink-0">FU</div>
+          <div>
+            <p className="font-medium text-gray-800">Equipe Editorial FerramentaUtil</p>
+            <p className="text-xs text-gray-500 mt-0.5">Conteudo produzido e revisado pela equipe responsavel pelo FerramentaUtil, com consulta as fontes indicadas abaixo.</p>
+          </div>
+        </div>
+        <div className="mt-4 text-xs text-gray-500">
+          <p className="font-medium text-gray-600 mb-1">Fontes e metodologia</p>
+          <ul className="list-disc pl-4 space-y-0.5">
+            <li>SFH/SFI — tabelas de amortizacao Price e SAC utilizadas no Sistema Financeiro da Habitacao</li>
+            <li>Banco Central do Brasil — taxas de juros de mercado para financiamentos</li>
+          </ul>
+          <p className="mt-2 text-gray-400">Ultima revisao: 12 de julho de 2026</p>
+        </div>
+      </section>
     </ToolPage>
   );
 }

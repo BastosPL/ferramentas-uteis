@@ -5,6 +5,9 @@ export interface Article {
   category: string;
   date: string;
   readTime: string;
+  author: string;
+  lastReviewedAt: string;
+  sources?: string[];
   relatedTools: { name: string; href: string }[];
   content: string;
 }
@@ -17,6 +20,9 @@ export const allArticles: Article[] = [
     category: "Financas",
     date: "2026-06-20",
     readTime: "8 min",
+    author: "Equipe Editorial FerramentaUtil",
+    lastReviewedAt: "2026-07-12",
+    sources: ["Banco Central do Brasil — taxa Selic e CDI", "Lei 12.703/2012 — regra da poupanca"],
     relatedTools: [{ name: "Calculadora de Juros Compostos", href: "/calculadora-juros-compostos" }],
     content: `
 <h2>O que sao juros compostos?</h2>
@@ -87,6 +93,9 @@ export const allArticles: Article[] = [
     category: "Seguranca",
     date: "2026-06-18",
     readTime: "7 min",
+    author: "Equipe Editorial FerramentaUtil",
+    lastReviewedAt: "2026-07-12",
+    sources: ["NIST (National Institute of Standards and Technology) — diretrizes de seguranca de senhas", "OWASP — boas praticas de autenticacao"],
     relatedTools: [{ name: "Gerador de Senha Segura", href: "/gerador-de-senha" }],
     content: `
 <h2>Por que senhas fortes sao essenciais?</h2>
@@ -163,6 +172,9 @@ export const allArticles: Article[] = [
     category: "Financas",
     date: "2026-06-15",
     readTime: "9 min",
+    author: "Equipe Editorial FerramentaUtil",
+    lastReviewedAt: "2026-07-12",
+    sources: ["Banco Central do Brasil — regulamentacao do PIX e padrao EMV", "Resolucao BCB 1/2020 — regras do arranjo PIX"],
     relatedTools: [{ name: "Gerador de QR Code PIX", href: "/gerador-pix" }],
     content: `
 <h2>O que e o PIX?</h2>
@@ -243,6 +255,9 @@ export const allArticles: Article[] = [
     category: "Negocios",
     date: "2026-06-12",
     readTime: "7 min",
+    author: "Equipe Editorial FerramentaUtil",
+    lastReviewedAt: "2026-07-12",
+    sources: ["Receita Federal do Brasil — Cadastro Nacional da Pessoa Juridica", "IBGE — Classificacao Nacional de Atividades Economicas (CNAE)"],
     relatedTools: [{ name: "Consulta CNPJ", href: "/consulta-cnpj" }],
     content: `
 <h2>O que e o CNPJ?</h2>
@@ -319,6 +334,9 @@ export const allArticles: Article[] = [
     category: "Saude",
     date: "2026-06-10",
     readTime: "8 min",
+    author: "Equipe Editorial FerramentaUtil",
+    lastReviewedAt: "2026-07-12",
+    sources: ["OMS (Organizacao Mundial da Saude) — classificacao do IMC", "Ministerio da Saude do Brasil — diretrizes de avaliacao nutricional"],
     relatedTools: [{ name: "Calculadora de IMC", href: "/calculadora-imc" }],
     content: `
 <h2>O que e o IMC?</h2>
@@ -397,6 +415,9 @@ export const allArticles: Article[] = [
     category: "Financas",
     date: "2026-06-08",
     readTime: "9 min",
+    author: "Equipe Editorial FerramentaUtil",
+    lastReviewedAt: "2026-07-12",
+    sources: ["Receita Federal — tabela regressiva de IR sobre renda fixa", "CVM — regulamentacao de investimentos", "Tesouro Nacional — Tesouro Direto", "Banco Central do Brasil — FGC e regulacao bancaria"],
     relatedTools: [{ name: "Calculadora de Investimentos", href: "/calculadora-investimentos" }],
     content: `
 <h2>Por que investir e importante?</h2>
@@ -470,6 +491,9 @@ export const allArticles: Article[] = [
     category: "Tecnologia",
     date: "2026-06-05",
     readTime: "7 min",
+    author: "Equipe Editorial FerramentaUtil",
+    lastReviewedAt: "2026-07-12",
+    sources: ["Google Developers — formatos WebP e AVIF", "MDN Web Docs — otimizacao de imagens para web"],
     relatedTools: [{ name: "Compressor de Imagem", href: "/compressor-imagem" }],
     content: `
 <h2>Por que comprimir imagens?</h2>
@@ -539,6 +563,9 @@ export const allArticles: Article[] = [
     category: "Tecnologia",
     date: "2026-06-02",
     readTime: "8 min",
+    author: "Equipe Editorial FerramentaUtil",
+    lastReviewedAt: "2026-07-12",
+    sources: ["Adobe — especificacao do formato PDF (ISO 32000)", "PDF Association — padroes PDF/A para arquivamento"],
     relatedTools: [
       { name: "Juntar PDF", href: "/juntar-pdf" },
       { name: "Imagem para PDF", href: "/imagem-para-pdf" },
