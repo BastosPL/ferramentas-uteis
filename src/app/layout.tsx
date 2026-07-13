@@ -5,7 +5,6 @@ import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
 import ExternalScripts from "./components/ExternalScripts";
-import CookieConsent from "./components/CookieConsent";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -14,11 +13,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Ferramentas Online Gratis - Calculadoras, Geradores e Conversores",
-    template: "%s | Ferramentas Online Gratis",
+    default: "Ferramentas Online Grátis - Calculadoras, Geradores e Conversores",
+    template: "%s | Ferramentas Online Grátis",
   },
   description:
-    "Ferramentas online gratuitas: calculadoras, geradores de senha, contador de caracteres, conversor de unidades e muito mais. Sem cadastro, sem instalacao.",
+    "Ferramentas online gratuitas: calculadoras, geradores de senha, contador de caracteres, conversor de unidades e muito mais. Sem cadastro, sem instalação.",
   keywords: [
     "ferramentas online",
     "calculadora online",
@@ -35,12 +34,12 @@ export const metadata: Metadata = {
     "google-adsense-account": "ca-pub-7284698282537450",
   },
   openGraph: {
-    title: "Ferramentas Online Gratis",
+    title: "Ferramentas Online Grátis",
     description:
       "Calculadoras, geradores e conversores online gratuitos. Use direto no navegador.",
     type: "website",
     locale: "pt_BR",
-    siteName: "Ferramenta Útil",
+    siteName: "FerramentaUtil",
     url: "https://ferramentautil.com.br",
   },
   twitter: {
@@ -66,6 +65,21 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable}`} suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'wait_for_update': 500
+              });
+            `,
+          }}
+        />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7284698282537450"
@@ -179,7 +193,7 @@ export default function RootLayout({
             </p>
           </div>
         </footer>
-        <CookieConsent />
+        {/* Consent banner is managed by Google CMP (AdSense > Privacy & messaging) */}
       </body>
     </html>
   );

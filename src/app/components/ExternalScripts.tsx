@@ -1,17 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Script from "next/script";
 
 export default function ExternalScripts() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   return (
     <>
       <Script

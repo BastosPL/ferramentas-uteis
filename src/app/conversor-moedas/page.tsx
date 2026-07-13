@@ -24,13 +24,11 @@ export default function ConversorMoedas() {
   const [valor, setValor] = useState("1");
   const [cotacoes, setCotacoes] = useState<Cotacoes | null>(null);
   const [carregando, setCarregando] = useState(true);
-  const [erro, setErro] = useState("");
   const [ultimaAtualizacao, setUltimaAtualizacao] = useState("");
 
   useEffect(() => {
     async function buscarCotacoes() {
       setCarregando(true);
-      setErro("");
       try {
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 5000);

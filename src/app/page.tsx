@@ -106,7 +106,7 @@ const tools = [
   {
     slug: "conversor-moedas",
     name: "Conversor de Moedas",
-    description: "Converta moedas com cotação atualizada: Dólar, Euro, Libra, Bitcoin e mais.",
+    description: "Converta moedas com cotação atualizada: Dólar, Euro, Libra e mais.",
     href: "/conversor-moedas",
   },
   {
