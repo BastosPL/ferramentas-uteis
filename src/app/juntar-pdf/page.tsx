@@ -151,55 +151,47 @@ export default function JuntarPDF() {
           </ul>
         </div>
 
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Combinacao de PDFs</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Combinacao</h2>
         <div className="text-gray-700 leading-relaxed space-y-3 mb-8">
-          <p>Nossa ferramenta utiliza a biblioteca pdf-lib, uma solucao JavaScript de codigo aberto que processa documentos PDF inteiramente no navegador do usuario. Isso garante que seus arquivos nunca sejam enviados para servidores externos, mantendo total privacidade e seguranca.</p>
-          <p>O processo tecnico funciona da seguinte forma: quando voce seleciona os PDFs, cada arquivo e lido e armazenado como um ArrayBuffer na memoria do navegador. No momento da combinacao, o sistema cria um novo documento PDF vazio e, para cada arquivo de origem, carrega o PDF completo, copia todas as suas paginas e as adiciona sequencialmente ao documento final.</p>
-          <p>A copia e feita pagina por pagina, preservando todos os elementos originais: texto, imagens, fontes incorporadas, links, anotacoes e formatacao. O tamanho de cada pagina tambem e mantido — se voce combinar um PDF A4 com um PDF carta, cada pagina preservara suas dimensoes originais no documento final.</p>
-          <p>Apos copiar todas as paginas de todos os arquivos, o sistema salva o PDF combinado como um arquivo binario e dispara o download automaticamente. Todo esse processo acontece em milissegundos para arquivos de tamanho comum, sem necessidade de recarregar a pagina ou aguardar processamento em nuvem.</p>
+          <p>Esta ferramenta une documentos PDF ja prontos em um unico arquivo. Diferente do conversor de imagens para PDF (que transforma fotos em paginas), aqui voce trabalha com PDFs completos — cada um ja tem seu texto, fontes, imagens e formatacao propria.</p>
+          <p>O processo de mesclagem copia cada pagina dos PDFs originais para um novo documento, na ordem que voce definir. A copia e feita no nivel estrutural do PDF: o texto continua sendo texto selecionavel, as fontes incorporadas sao transferidas, e os hyperlinks internos e externos permanecem funcionais no arquivo combinado.</p>
+          <p>Um detalhe importante e que cada pagina preserva suas dimensoes originais. Se voce combinar um relatorio em A4 (210 x 297 mm) com um contrato em formato Carta (215.9 x 279.4 mm), o PDF final tera paginas com tamanhos diferentes — o leitor de PDF ajusta a visualizacao automaticamente. Isso evita distorcoes que ocorreriam se todas as paginas fossem forcadas a um tamanho unico.</p>
+          <p>O processamento acontece inteiramente no navegador usando a biblioteca pdf-lib. Os arquivos nao sao enviados para nenhum servidor — a combinacao e feita na memoria do seu dispositivo e o resultado e disponibilizado como download direto.</p>
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
         <div className="space-y-3 mb-8">
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Meus PDFs sao enviados para algum servidor?</summary>
-            <p className="px-4 pb-4 text-gray-700">Nao. Todo o processamento e feito localmente no seu navegador. Seus arquivos nunca saem do seu computador, o que garante total privacidade e seguranca. Diferente de servicos como ILovePDF ou SmallPDF que processam arquivos na nuvem, nossa ferramenta opera 100% offline apos o carregamento da pagina.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Posso escolher quais paginas de cada PDF incluir?</summary>
+            <p className="px-4 pb-4 text-gray-700">Nao. Esta ferramenta combina PDFs completos — todas as paginas de cada arquivo sao incluidas no resultado final. Se voce precisa incluir apenas paginas especificas, primeiro separe as paginas desejadas usando uma ferramenta de divisao de PDF e depois combine os arquivos resultantes aqui.</p>
           </details>
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Quantos PDFs posso combinar de uma vez?</summary>
-            <p className="px-4 pb-4 text-gray-700">Nao existe um limite fixo de quantidade de arquivos. Na pratica, o desempenho depende da memoria disponivel no seu dispositivo. Para uso comum, combinar ate 20-30 PDFs funciona perfeitamente. Para volumes maiores ou arquivos muito pesados (acima de 50MB cada), recomendamos dividir em lotes menores.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">PDFs com tamanhos de pagina diferentes funcionam?</summary>
+            <p className="px-4 pb-4 text-gray-700">Sim. Cada pagina mantem suas dimensoes originais no documento combinado. Voce pode juntar um PDF em A4 com outro em formato Carta ou ate em tamanhos personalizados sem problema. O leitor de PDF (Adobe Reader, navegador, etc.) ajusta a exibicao de cada pagina individualmente. Isso e util quando voce precisa anexar plantas tecnicas em formato A3 junto a relatorios em A4, por exemplo.</p>
           </details>
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">A formatacao dos PDFs originais e preservada?</summary>
-            <p className="px-4 pb-4 text-gray-700">Sim. A ferramenta copia as paginas integralmente, preservando textos, imagens, fontes, tabelas, graficos, links e toda a formatacao original. O resultado e identico a abrir cada PDF separadamente — apenas reunido em um unico arquivo.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">O PDF combinado mantem os links e marcadores?</summary>
+            <p className="px-4 pb-4 text-gray-700">Os hyperlinks (URLs clicaveis e links para emails) sao preservados na maioria dos casos. Ja os marcadores (bookmarks) da barra lateral e o sumario interativo do PDF original podem nao ser transferidos, pois dependem da estrutura de navegacao do documento de origem. Se os marcadores sao essenciais, recomendamos verificar o PDF final e adiciona-los manualmente em um editor como o Adobe Acrobat.</p>
           </details>
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Posso juntar PDFs protegidos com senha?</summary>
-            <p className="px-4 pb-4 text-gray-700">PDFs protegidos com senha de abertura nao podem ser processados pela ferramenta, pois o navegador nao consegue ler seu conteudo sem a senha. PDFs com restricoes de edicao (que abrem normalmente mas impedem copiar texto) geralmente funcionam, pois a copia de paginas nao e bloqueada pelas restricoes de edicao na maioria dos casos.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Posso juntar um PDF com um documento Word?</summary>
+            <p className="px-4 pb-4 text-gray-700">Nao diretamente. Esta ferramenta aceita apenas arquivos no formato PDF. Para incluir um documento Word (.docx), primeiro converta-o para PDF usando nossa ferramenta &quot;Word para PDF&quot; disponivel no site, ou exporte como PDF pelo proprio Microsoft Word (Arquivo &gt; Salvar como &gt; PDF). Depois, basta selecionar o PDF resultante junto com os demais arquivos aqui.</p>
           </details>
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Funciona no celular?</summary>
-            <p className="px-4 pb-4 text-gray-700">Sim. A ferramenta e responsiva e funciona em smartphones e tablets. Voce pode selecionar PDFs do armazenamento do celular ou de servicos de nuvem como Google Drive e iCloud. O arquivo combinado sera salvo na pasta de downloads do dispositivo.</p>
-          </details>
-          <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Posso alterar a ordem das paginas de um unico PDF?</summary>
-            <p className="px-4 pb-4 text-gray-700">Esta ferramenta combina PDFs inteiros na ordem que voce definir, mas nao permite reorganizar paginas individuais dentro de um mesmo PDF. Para reorganizar paginas de um unico documento, voce pode dividir o PDF em partes menores e depois recombina-las na ordem desejada.</p>
-          </details>
-          <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">O tamanho do arquivo final e a soma dos originais?</summary>
-            <p className="px-4 pb-4 text-gray-700">Em geral, o tamanho do PDF combinado e aproximadamente a soma dos arquivos originais. Em alguns casos, pode ser ligeiramente menor se houver recursos compartilhados (como fontes iguais) que sao otimizados durante a combinacao. Nao e aplicada compressao adicional, garantindo que a qualidade original seja preservada.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">O tamanho final e a soma dos originais?</summary>
+            <p className="px-4 pb-4 text-gray-700">Aproximadamente, sim. Na pratica, o arquivo combinado pode ser ate 5-10% menor que a soma dos originais quando os PDFs compartilham as mesmas fontes (como Arial ou Times New Roman) — a biblioteca evita duplicar recursos identicos. Por outro lado, nao ha compressao adicional das imagens ou do conteudo, entao a qualidade permanece intacta. Se voce combinar 3 PDFs de 2 MB cada, espere um resultado entre 5.4 e 6 MB.</p>
           </details>
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas</h2>
         <div className="text-gray-700 leading-relaxed space-y-3">
-          <p>Juntar PDFs e uma necessidade comum em diversas situacoes profissionais e pessoais. Veja alguns cenarios onde essa ferramenta e especialmente util:</p>
+          <p>Reunir varios PDFs em um so e uma tarefa frequente no trabalho e na vida pessoal. Estas dicas ajudam a obter o melhor resultado:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Documentacao para processos:</strong> Reuna RG, CPF, comprovante de residencia e outros documentos em um unico PDF para enviar em processos seletivos, matriculas ou solicitacoes governamentais.</li>
-            <li><strong>Relatorios empresariais:</strong> Combine relatorios mensais, graficos de desempenho e apresentacoes em um documento consolidado para reunioes e auditorias.</li>
-            <li><strong>Trabalhos academicos:</strong> Junte capa, sumario, capitulos e anexos gerados em momentos diferentes em um unico arquivo para entrega final.</li>
-            <li><strong>Propostas comerciais:</strong> Una proposta tecnica, orcamento, portfolio e termos contratuais em um documento profissional para enviar a clientes.</li>
-            <li><strong>Organizacao de recibos:</strong> Agrupe comprovantes de pagamento, notas fiscais e recibos do mes em um unico PDF para controle financeiro e contabilidade.</li>
+            <li><strong>Documentacao pessoal completa:</strong> Junte RG + CPF + comprovante de endereco + certidao em um unico arquivo para processos seletivos, matriculas e cadastros. Muitos portais aceitam apenas um upload por campo — ter tudo em um PDF resolve o problema.</li>
+            <li><strong>Relatorios financeiros mensais:</strong> Reuna os balancetes de janeiro a dezembro em um documento consolidado para auditoria ou prestacao de contas. A paginacao sequencial facilita a referencia durante reunioes.</li>
+            <li><strong>Propostas comerciais profissionais:</strong> Una a proposta tecnica + tabela de precos + contrato de servico + portfolio de casos de sucesso. Um unico PDF transmite mais profissionalismo do que quatro anexos separados no email.</li>
+            <li><strong>Nomeie os PDFs antes de selecionar:</strong> A ordem dos arquivos no seletor determina a ordem no PDF final. Renomear como &quot;01-capa.pdf&quot;, &quot;02-introducao.pdf&quot;, &quot;03-conteudo.pdf&quot; garante a sequencia correta ao selecionar todos de uma vez.</li>
+            <li><strong>Verifique a paginacao final:</strong> Apos combinar, abra o PDF e confira se nao ficaram paginas em branco entre os documentos. Alguns PDFs tem uma pagina vazia no final que so aparece depois da juncao. Se necessario, remova o PDF problematico, delete a pagina em branco na origem e combine novamente.</li>
           </ul>
         </div>
       </section>

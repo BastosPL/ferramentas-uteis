@@ -151,53 +151,45 @@ export default function ImagemParaPDF() {
 
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Funciona a Conversao</h2>
         <div className="text-gray-700 leading-relaxed space-y-3 mb-8">
-          <p>Nossa ferramenta utiliza a biblioteca pdf-lib, uma solucao robusta em JavaScript que opera inteiramente no seu navegador. Isso significa que nenhuma imagem e enviada para servidores externos — todo o processamento acontece localmente no seu dispositivo.</p>
-          <p>O processo tecnico funciona assim: quando voce seleciona as imagens, cada arquivo e lido e armazenado temporariamente na memoria do navegador como um buffer binario. No momento da conversao, o sistema cria um documento PDF vazio e, para cada imagem, adiciona uma nova pagina no tamanho A4 (595.28 x 841.89 pontos em retrato, ou invertido para paisagem).</p>
-          <p>Cada imagem e incorporada (embedded) no PDF respeitando sua proporcao original. O algoritmo calcula a razao entre largura e altura da imagem e compara com a razao da pagina. Se a imagem for mais larga proporcionalmente, ela ocupa toda a largura da pagina com margens laterais; se for mais alta, ocupa toda a altura. Em ambos os casos, a imagem e centralizada na pagina com uma margem minima de 20 pontos em cada lado.</p>
-          <p>O resultado e um PDF com qualidade profissional, onde cada pagina contem uma imagem perfeitamente enquadrada e centralizada. O arquivo final e gerado como um Blob binario e disponibilizado para download instantaneo, sem necessidade de recarregar a pagina.</p>
+          <p>Diferente de ferramentas que combinam PDFs ja existentes, este conversor transforma imagens JPG e PNG em paginas de um documento PDF. Cada foto selecionada vira uma pagina independente no arquivo final — se voce escolher 12 fotos, o PDF tera exatamente 12 paginas.</p>
+          <p>O processo de incorporacao (embedding) funciona assim: cada imagem e decodificada pelo navegador e inserida diretamente no PDF como dados graficos. A ferramenta calcula a proporcao da foto e compara com as dimensoes da pagina A4 (210 x 297 mm). Uma foto de celular no formato 4:3, por exemplo, nao preenche a pagina inteira — o sistema centraliza a imagem e distribui margens iguais nas laterais para manter o enquadramento harmonico.</p>
+          <p>Quando a imagem e mais larga que alta (paisagem), a pagina e automaticamente rotacionada para acomodar a foto na horizontal. Isso evita que fotos panoramicas aparecam diminutas no centro de uma pagina vertical. O resultado e um PDF onde cada imagem ocupa o maximo de espaco possivel sem distorcer ou cortar o conteudo original.</p>
+          <p>Todo o processamento usa a biblioteca pdf-lib diretamente no navegador. As imagens nao passam por nenhum servidor — o PDF e montado na memoria do seu dispositivo e entregue como download instantaneo.</p>
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
         <div className="space-y-3 mb-8">
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Minhas imagens sao enviadas para algum servidor?</summary>
-            <p className="px-4 pb-4 text-gray-700">Nao. Todo o processamento acontece localmente no seu navegador. Suas imagens nunca saem do seu computador, garantindo total privacidade. Diferente de muitos sites concorrentes que enviam seus arquivos para servidores na nuvem, nossa ferramenta usa tecnologia 100% client-side.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Por que minhas fotos ficam com bordas brancas no PDF?</summary>
+            <p className="px-4 pb-4 text-gray-700">Isso acontece porque a proporcao da sua foto e diferente da proporcao da pagina A4. Uma foto de celular tipica tem formato 4:3 ou 16:9, enquanto o A4 e aproximadamente 1:1.41. Como a ferramenta nunca corta ou distorce a imagem, ela centraliza a foto e preenche o espaco restante com margens brancas. Para reduzir as bordas, voce pode recortar a imagem antes para uma proporcao mais proxima do A4 (por exemplo, 210 x 297 pixels de proporcao).</p>
           </details>
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Quais formatos de imagem sao aceitos?</summary>
-            <p className="px-4 pb-4 text-gray-700">A ferramenta aceita imagens nos formatos JPG (JPEG) e PNG. Sao os formatos mais comuns usados em fotos, capturas de tela e imagens da web. Se voce tem imagens em outros formatos como WebP, BMP ou TIFF, recomendamos converter para JPG ou PNG antes de usar a ferramenta.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Posso misturar fotos na vertical e na horizontal?</summary>
+            <p className="px-4 pb-4 text-gray-700">Sim. Cada pagina do PDF se adapta individualmente a orientacao da imagem. Se voce selecionar 5 fotos em retrato e 3 em paisagem, as paginas correspondentes serao automaticamente ajustadas — retrato para as verticais, paisagem para as horizontais. Nao e necessario separar as fotos por orientacao.</p>
           </details>
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Quantas imagens posso converter de uma vez?</summary>
-            <p className="px-4 pb-4 text-gray-700">Nao existe um limite rigido de quantidade, mas recomendamos converter ate 50 imagens por vez para garantir um bom desempenho. Imagens muito pesadas (acima de 10MB cada) podem tornar o processamento mais lento, dependendo da memoria disponivel no seu dispositivo.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Qual a resolucao ideal das imagens?</summary>
+            <p className="px-4 pb-4 text-gray-700">Depende do uso final. Para imprimir o PDF com qualidade profissional, o ideal e usar imagens com pelo menos 300 DPI — o que equivale a aproximadamente 2480 x 3508 pixels para preencher uma pagina A4 inteira. Para visualizacao em tela (enviar por email, anexar em formulario), 150 DPI ja e suficiente, ou seja, cerca de 1240 x 1754 pixels. Fotos de celulares modernos geralmente ultrapassam esses valores, entao na maioria dos casos a resolucao ja sera adequada.</p>
           </details>
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">A qualidade das imagens e preservada no PDF?</summary>
-            <p className="px-4 pb-4 text-gray-700">Sim. As imagens sao incorporadas no PDF em sua resolucao original, sem compressao adicional. A qualidade visual no PDF sera identica a da imagem original. Apenas o enquadramento e ajustado para caber na pagina A4 mantendo a proporcao.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Posso converter WebP ou HEIC?</summary>
+            <p className="px-4 pb-4 text-gray-700">Nao diretamente. A ferramenta aceita apenas JPG e PNG, que sao os formatos mais universais. Fotos do iPhone em formato HEIC e imagens WebP da internet precisam ser convertidas antes. Voce pode usar o aplicativo Fotos do celular para exportar como JPG, ou sites gratuitos de conversao de formato. Apos converter, basta selecionar os arquivos JPG ou PNG resultantes nesta ferramenta.</p>
           </details>
           <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Posso escolher a ordem das imagens no PDF?</summary>
-            <p className="px-4 pb-4 text-gray-700">Sim. As imagens aparecem no PDF na mesma ordem em que foram selecionadas e exibidas como miniaturas na tela. Caso queira alterar a ordem, remova as imagens indesejadas e adicione-as novamente na sequencia correta.</p>
-          </details>
-          <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">Funciona no celular?</summary>
-            <p className="px-4 pb-4 text-gray-700">Sim. A ferramenta e totalmente responsiva e funciona em smartphones e tablets com navegadores modernos. Voce pode selecionar fotos diretamente da galeria do celular e converter para PDF. O download do arquivo sera salvo na pasta de downloads do seu dispositivo.</p>
-          </details>
-          <details className="bg-white border border-gray-200 rounded-lg">
-            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">O PDF gerado pode ser editado depois?</summary>
-            <p className="px-4 pb-4 text-gray-700">O PDF contem as imagens como elementos graficos fixos, ou seja, nao e possivel editar o conteudo das imagens dentro do PDF. Porem, voce pode usar ferramentas como o Adobe Acrobat ou nosso proprio &quot;Juntar PDF&quot; para combinar o arquivo com outros documentos ou reorganizar as paginas.</p>
+            <summary className="px-4 py-3 font-medium text-gray-900 cursor-pointer hover:bg-gray-50">O PDF gerado tem texto pesquisavel?</summary>
+            <p className="px-4 pb-4 text-gray-700">Nao. O PDF criado contem apenas as imagens como elementos graficos — nao ha camada de texto. Isso significa que voce nao consegue selecionar, copiar ou pesquisar palavras dentro do PDF. Para criar PDFs com texto pesquisavel a partir de fotos de documentos, seria necessario um software de OCR (reconhecimento optico de caracteres), que e um processo diferente. Esta ferramenta foca em preservar a qualidade visual exata das suas imagens.</p>
           </details>
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas</h2>
         <div className="text-gray-700 leading-relaxed space-y-3">
-          <p>A conversao de imagem para PDF e util em muitas situacoes do dia a dia. Aqui estao cenarios onde essa ferramenta pode ajudar:</p>
+          <p>Converter fotos para PDF e essencial em situacoes que exigem documentos padronizados. Veja como aproveitar melhor esta ferramenta:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Digitalizar documentos:</strong> Tire fotos de documentos fisicos com o celular e converta para PDF para enviar por email ou armazenar digitalmente com aparencia profissional.</li>
-            <li><strong>Portfolio de trabalhos:</strong> Reuna fotos de projetos, artes ou trabalhos em um unico PDF organizado para enviar a clientes ou publicar online.</li>
-            <li><strong>Comprovantes e recibos:</strong> Junte capturas de tela de comprovantes de pagamento, recibos e notas fiscais em um unico arquivo PDF para facilitar a organizacao financeira.</li>
-            <li><strong>Trabalhos academicos:</strong> Converta graficos, diagramas e fotos de experimentos em PDF para anexar a relatorios e trabalhos universitarios.</li>
-            <li><strong>Envio para orgaos publicos:</strong> Muitos sites governamentais exigem documentos em formato PDF. Converta fotos de documentos como RG, CPF e comprovante de residencia para o formato correto.</li>
+            <li><strong>Digitalizar documentos com o celular:</strong> Posicione o documento sobre uma superficie lisa e bem iluminada. Fotografe de cima, mantendo o celular paralelo ao papel para evitar distorcao trapezoidal. Evite sombras e reflexos — luz natural difusa e o ideal.</li>
+            <li><strong>Fotos para concurso ou processo seletivo:</strong> Muitos editais exigem fotos 3x4 ou documentos em PDF com resolucao minima de 200 DPI. Verifique as especificacoes do edital antes de converter. Uma foto de celular com 12 MP ou mais geralmente atende aos requisitos.</li>
+            <li><strong>Comprovantes e recibos em lote:</strong> Se voce tem dezenas de comprovantes para organizar, considere comprimir as imagens antes (reduzindo para 1000 pixels de largura, por exemplo). Isso mantem a legibilidade e reduz o tamanho final do PDF de centenas de MB para poucos MB.</li>
+            <li><strong>Portfolio de design ou fotografia:</strong> Organize as imagens na ordem desejada antes de selecionar. A sequencia no PDF sera a mesma da selecao. Para portfolios profissionais, use imagens na maior resolucao disponivel.</li>
+            <li><strong>Documentos para orgaos publicos:</strong> Sites como gov.br, DETRAN e prefeituras geralmente exigem PDF em formato A4, orientacao retrato e tamanho maximo de 5 MB. Converta cada documento separadamente e verifique se o texto esta legivel antes de enviar.</li>
           </ul>
         </div>
       </section>
