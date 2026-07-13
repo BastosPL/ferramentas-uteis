@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 
 import "./globals.css";
 import Link from "next/link";
@@ -64,8 +65,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${inter.variable}`} suppressHydrationWarning>
-      <head>
-        <script
+      <head />
+      <body className="min-h-screen flex flex-col bg-white font-[family-name:var(--font-inter)]" suppressHydrationWarning>
+        <Script
+          id="consent-defaults"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -80,13 +84,12 @@ export default function RootLayout({
             `,
           }}
         />
-        <script
-          async
+        <Script
+          id="adsense-script"
+          strategy="beforeInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7284698282537450"
           crossOrigin="anonymous"
         />
-      </head>
-      <body className="min-h-screen flex flex-col bg-white font-[family-name:var(--font-inter)]" suppressHydrationWarning>
         <ExternalScripts />
         <header className="bg-white/80 backdrop-blur-xl border-b border-slate-200/50 sticky top-0 z-50">
           <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
