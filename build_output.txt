@@ -1,3 +1,0 @@
-Next.js Build
-═══════════════════════════════════════
-Time: 21.2s | Errors: 1 | Warnings: 0
