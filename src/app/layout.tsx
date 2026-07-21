@@ -6,6 +6,7 @@ import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
 import ExternalScripts from "./components/ExternalScripts";
+import CookieConsent from "./components/CookieConsent";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -196,7 +197,7 @@ export default function RootLayout({
             </p>
           </div>
         </footer>
-        {/* Consent banner is managed by Google CMP (AdSense > Privacy & messaging) */}
+        <CookieConsent />
       </body>
     </html>
   );
