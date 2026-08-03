@@ -215,8 +215,8 @@ export default function Home() {
                 <span className="text-blue-600">Gratuitas</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-8">
-                Calculadoras, geradores e conversores que funcionam direto no seu navegador.
-                Sem cadastro, sem instalação, sem enviar dados para nenhum servidor.
+                Calculadoras, geradores e conversores gratuitos, sem cadastro e sem instalação.
+                A maioria das ferramentas processa os dados diretamente no navegador.
               </p>
               <Link
                 href="#ferramentas"
@@ -353,9 +353,9 @@ export default function Home() {
                 <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-blue-50 mb-4">
                   <Shield className="text-blue-600" size={24} />
                 </div>
-                <h3 className="text-base font-semibold text-slate-900 mb-2">Privacidade Total</h3>
+                <h3 className="text-base font-semibold text-slate-900 mb-2">Privacidade</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">
-                  Tudo roda no seu navegador. Nenhum dado é enviado para servidores externos.
+                  A maioria das ferramentas processa os dados diretamente no navegador. Quando uma consulta utiliza um serviço externo, isso é informado na própria ferramenta e na Política de Privacidade.
                 </p>
               </div>
               <div className="bg-white rounded-2xl p-6 border border-slate-200 scroll-fade-up scroll-delay-2">

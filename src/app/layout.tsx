@@ -193,7 +193,7 @@ export default function RootLayout({
               <Link href="/termos" className="hover:text-white transition-colors">Termos de Uso</Link>
             </div>
             <p className="text-center text-xs text-slate-600 border-t border-slate-800 pt-6 mt-8">
-              Ferramentas Online Grátis &copy; {new Date().getFullYear()} &mdash; Todas as ferramentas funcionam direto no navegador. Nenhum dado é enviado para servidores.
+              Ferramentas Online Grátis &copy; {new Date().getFullYear()} &mdash; A maioria das ferramentas funciona diretamente no navegador. Algumas consultas utilizam serviços externos, conforme explicado em nossa <Link href="/privacidade" className="underline hover:text-white transition-colors">Política de Privacidade</Link>.
             </p>
           </div>
         </footer>

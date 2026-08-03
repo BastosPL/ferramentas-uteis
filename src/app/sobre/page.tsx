@@ -30,9 +30,9 @@ export default function Sobre() {
           de oferecer ferramentas práticas e confiáveis para o público brasileiro.
         </p>
         <p className="text-slate-600 leading-relaxed mb-6">
-          Diferente de outros sites que dependem de servidores para processar seus dados,
-          todas as nossas ferramentas rodam 100% no navegador do usuário — garantindo
-          privacidade total e velocidade máxima.
+          Priorizamos o processamento direto no navegador sempre que possível, oferecendo
+          agilidade e maior privacidade. Algumas consultas dependem de serviços externos,
+          conforme informado em cada ferramenta e na Política de Privacidade.
         </p>
         <div className="flex flex-wrap gap-4">
           <div className="flex items-center gap-2 text-sm text-slate-500">
@@ -74,10 +74,11 @@ export default function Sobre() {
           <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-4">
             <Shield className="w-6 h-6 text-emerald-600" />
           </div>
-          <h2 className="text-lg font-bold tracking-tight text-slate-900 mb-2">Privacidade Total</h2>
+          <h2 className="text-lg font-bold tracking-tight text-slate-900 mb-2">Privacidade</h2>
           <p className="text-slate-500 text-sm leading-relaxed">
-            Todas as ferramentas funcionam 100% no seu navegador. Seus dados nunca
-            saem do seu dispositivo &mdash; nenhum arquivo &eacute; enviado a servidores externos.
+            A maioria das ferramentas processa os dados diretamente no seu dispositivo.
+            Quando um serviço externo &eacute; necessário, informamos claramente quais dados
+            s&atilde;o utilizados e qual serviço realiza a consulta.
           </p>
         </div>
 

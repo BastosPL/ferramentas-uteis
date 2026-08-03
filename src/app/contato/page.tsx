@@ -213,7 +213,7 @@ export default function Contato() {
             },
             {
               q: "Meus dados são enviados para algum servidor?",
-              a: "Não. Todas as ferramentas funcionam inteiramente no seu navegador. Nenhum arquivo ou dado pessoal é enviado para servidores externos.",
+              a: "Na maioria das ferramentas, os dados são processados diretamente no navegador. Algumas consultas, como CEP e CNPJ, enviam apenas o dado necessário ao serviço externo informado na própria página. Consulte a Política de Privacidade para mais detalhes.",
             },
             {
               q: "Posso usar as ferramentas no celular?",

@@ -27,14 +27,12 @@ const tools = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const toolPages = tools.map((slug) => ({
     url: slug ? `${BASE_URL}/${slug}` : BASE_URL,
-    lastModified: new Date(),
     changeFrequency: slug ? "monthly" as const : "weekly" as const,
     priority: slug ? 0.9 : 1,
   }));
 
   const blogIndex = {
     url: `${BASE_URL}/blog`,
-    lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.8,
   };
