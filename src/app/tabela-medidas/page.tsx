@@ -184,9 +184,10 @@ export default function TabelaMedidas() {
       <section className="mt-12 prose prose-gray max-w-none">
         <h2>Tabela de conversao de tamanhos</h2>
         <p>
-          As tabelas de medidas permitem converter tamanhos entre diferentes paises.
-          Os tamanhos podem variar entre marcas, por isso use as medidas em centimetros
-          como referencia mais precisa. Na duvida, consulte a tabela de medidas da marca especifica.
+          As tabelas acima cobrem cinco categorias: roupas femininas, roupas masculinas, calcados femininos, calcados masculinos e aneis.
+          Cada tabela cruza quatro sistemas de numeracao (Brasil, EUA, Europa e Reino Unido) e inclui as medidas corporais correspondentes em centimetros ou milimetros.
+          Os tamanhos podem variar entre marcas, cortes e materiais — use as medidas corporais como referencia mais precisa.
+          Se precisar converter entre centimetros e polegadas ou outras unidades, utilize o <a href="/conversor-de-unidades" className="text-teal-600 hover:underline">Conversor de Unidades</a>.
         </p>
       </section>
 
@@ -246,17 +247,69 @@ export default function TabelaMedidas() {
           </details>
         </div>
 
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Como Medir com Fita Metrica</h2>
+        <div className="text-gray-700 space-y-3">
+          <p>
+            Tirar medidas corporais corretas e o passo mais importante para acertar o tamanho em compras online. Use uma fita metrica flexivel (de costura), nao uma trena rigida. Meca sobre a roupa intima ou sobre uma camada fina de roupa — medir sobre casacos ou blusas grossas distorce os numeros.
+          </p>
+          <p>
+            <strong>Busto ou torax:</strong> Passe a fita ao redor da parte mais larga do peito, mantendo-a paralela ao chao. Respire normalmente e nao estique nem afrouxe a fita.
+          </p>
+          <p>
+            <strong>Cintura:</strong> Meca na parte mais estreita do tronco, geralmente na altura do umbigo ou logo acima dele. Nao prenda a respiracao.
+          </p>
+          <p>
+            <strong>Quadril:</strong> Meca na parte mais larga dos quadris e gluteos, com os pes juntos.
+          </p>
+          <p>
+            <strong>Comprimento do pe:</strong> Pise em uma folha de papel com o peso do corpo distribuido igualmente. Marque o ponto do calcanhar e a ponta do dedo mais longo (que nem sempre e o dedao). Meca a distancia entre as marcas com uma regua. Faca isso no final do dia, quando os pes estao naturalmente um pouco mais inchados, e meca os dois pes — considere o maior.
+          </p>
+          <p>
+            <strong>Circunferencia do dedo (aneis):</strong> Enrole um pedaco de barbante ou tira de papel ao redor do dedo onde o anel sera usado. Marque o ponto de encontro e meca o comprimento com uma regua em milimetros. Esse valor e a circunferencia. Para obter o diametro, divida a circunferencia por 3,14. Consulte a tabela acima para encontrar o numero correspondente.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Por que os Tamanhos Variam entre Marcas</h2>
+        <div className="text-gray-700 space-y-3">
+          <p>
+            As tabelas de conversao desta pagina seguem os padroes internacionais mais aceitos, mas e importante saber que marcas diferentes podem interpretar esses padroes de formas distintas. Isso acontece por varios motivos:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Modelagem (fit):</strong> Uma camiseta "regular fit" tamanho M de uma marca pode ter medidas diferentes de uma "slim fit" tamanho M de outra. O numero no rotulo e o mesmo, mas o corte muda as dimensoes reais da peca.</li>
+            <li><strong>Vanity sizing:</strong> Pratica comum em que marcas usam numeros menores no rotulo para que o consumidor se sinta melhor. Um tamanho 38 de uma marca de luxo pode ter as mesmas medidas de um 42 de fast fashion.</li>
+            <li><strong>Materiais:</strong> Tecidos com elastano cedem e se adaptam ao corpo; tecidos rigidos como jeans bruto nao tem essa flexibilidade. O mesmo numero pode vestir de forma muito diferente dependendo do material.</li>
+            <li><strong>Padronizacao regional:</strong> Marcas asiaticas (Shein, AliExpress) costumam usar modelagem menor que o padrao brasileiro. Uma peca tamanho L asiatica pode corresponder a um M brasileiro.</li>
+          </ul>
+          <p>
+            Por essas razoes, a recomendacao e sempre: (1) meça seu corpo com fita metrica, (2) consulte a tabela de medidas da marca especifica antes de comprar, e (3) use a tabela desta pagina como ponto de partida para a conversao entre paises.
+          </p>
+        </div>
+
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Dicas Praticas</h2>
         <div className="text-gray-700 space-y-3">
           <p>
-            <strong>Compras online internacionais:</strong> Ao comprar em sites como Amazon, AliExpress ou Shein, sempre converta o tamanho usando as medidas em centimetros, nao apenas a letra ou numero. Muitas lojas asiaticas, por exemplo, usam numeracao propria que nao corresponde aos padroes ocidentais. Leia os comentarios de outros compradores brasileiros para saber se a peca veste maior ou menor do que o esperado.
+            <strong>Compras online internacionais:</strong> Ao comprar em sites como Amazon, AliExpress ou Shein, sempre converta o tamanho usando as medidas em centimetros, nao apenas a letra ou numero. Leia os comentarios de outros compradores brasileiros para saber se a peca veste maior ou menor do que o esperado.
           </p>
           <p>
-            <strong>Calcados de corrida:</strong> Para tenis de corrida, muitos especialistas recomendam comprar meio numero ou um numero acima do tamanho habitual. Os pes incham durante a corrida, e um tenis apertado pode causar bolhas e desconforto. Use a medida em centimetros do seu pe e adicione 0,5 a 1 cm para encontrar o tamanho ideal.
+            <strong>Calcados de corrida:</strong> Para tenis de corrida, muitos especialistas recomendam comprar meio numero ou um numero acima do tamanho habitual. Os pes incham durante a corrida, e um tenis apertado pode causar bolhas e desconforto. Use a medida em centimetros do seu pe e adicione 0,5 a 1 cm.
           </p>
           <p>
-            <strong>Presentes:</strong> Se voce esta comprando roupas ou calcados de presente e nao sabe o tamanho exato da pessoa, tente descobrir discretamente verificando uma peca que ela ja use. Olhe a etiqueta interna de uma camiseta ou o numero na palmilha de um sapato. Com essa informacao e a nossa tabela, voce consegue converter para qualquer sistema de medida.
+            <strong>Presentes:</strong> Se voce esta comprando roupas ou calcados de presente, tente descobrir discretamente o tamanho verificando uma peca que a pessoa ja use. Olhe a etiqueta interna de uma camiseta ou o numero na palmilha de um sapato. Com essa informacao e a tabela acima, voce consegue converter para qualquer sistema.
           </p>
+          <p>
+            <strong>Entre dois tamanhos:</strong> Se suas medidas ficarem entre dois tamanhos na tabela, escolha o maior para roupas com pouca elasticidade (jeans, camisas sociais) e o menor para roupas com bastante elasticidade (leggings, camisetas de malha).
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Limitacoes</h2>
+        <div className="text-gray-700 space-y-3">
+          <ul className="list-disc pl-6 space-y-2">
+            <li>As equivalencias sao aproximadas e baseadas nos padroes internacionais mais comuns. Marcas individuais podem ter variacoes significativas.</li>
+            <li>A tabela nao cobre tamanhos plus size acima de GG (50/52), tamanhos infantis ou tamanhos especiais (como petite ou tall).</li>
+            <li>Para calcados, a largura do pe nao e considerada. Pessoas com pes largos podem precisar de um numero acima mesmo que o comprimento esteja correto.</li>
+            <li>As medidas de aneis podem variar entre joalherias artesanais e industriais. Para compras de alto valor, recomenda-se medir o dedo em uma joalheria com aneleira profissional.</li>
+            <li>A tabela nao substitui a tabela de medidas oficial da marca que voce esta comprando. Sempre consulte a referencia do fabricante quando disponivel.</li>
+          </ul>
         </div>
       </section>
     </ToolPage>

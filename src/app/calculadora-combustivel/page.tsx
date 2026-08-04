@@ -118,10 +118,13 @@ export default function CalculadoraCombustivel() {
             <li>Se a razao for <strong>maior que 0,70</strong> → abasteça com gasolina</li>
           </ul>
           <p className="mb-3">
-            E importante notar que essa regra considera a media dos veiculos flex brasileiros. Alguns modelos mais eficientes podem ter um ponto de corte ligeiramente diferente (entre 0,68 e 0,72), dependendo da calibracao do motor e das condicoes de uso.
+            E importante entender que 70% e uma referencia estatistica baseada na media dos veiculos flex brasileiros, nao uma constante universal. Cada veiculo tem sua propria relacao de eficiencia entre etanol e gasolina. Alguns modelos mais novos com motores otimizados para etanol podem ter um ponto de corte de 72% ou ate 75%, enquanto veiculos mais antigos podem ficar em 65-68%. O valor exato depende da calibracao do motor, da tecnologia de injecao e do estado de manutencao do veiculo.
+          </p>
+          <p className="mb-3">
+            Para descobrir o ponto de corte real do seu carro, o metodo mais confiavel e medir o consumo na pratica: encha o tanque com etanol, zere o hodometro, rode ate precisar reabastecer, anote os km percorridos e os litros abastecidos. Repita com gasolina nas mesmas condicoes (mesmo trajeto, mesmo estilo de direcao). Divida o consumo de gasolina (km/l) pelo consumo de etanol (km/l) e voce tera a proporcao real do seu veiculo.
           </p>
           <p>
-            Fatores como manutencao do veiculo, pressao dos pneus, estilo de direcao e uso de ar-condicionado tambem influenciam o consumo real, mas a regra dos 70% continua sendo a referencia mais pratica e confiavel para a decisao no dia a dia.
+            Fatores como manutencao do veiculo, pressao dos pneus, estilo de direcao, uso de ar-condicionado, carga transportada e tipo de percurso (cidade vs. estrada) tambem influenciam o consumo real. A regra dos 70% continua sendo a referencia mais pratica para a decisao rapida no posto, mas nao substitui a medicao personalizada.
           </p>
         </div>
 
@@ -171,6 +174,42 @@ export default function CalculadoraCombustivel() {
           <p className="mt-2">
             <strong>Dica extra:</strong> Os precos de combustivel variam bastante entre postos da mesma cidade. Use aplicativos como Waze, Google Maps ou Precos de Combustiveis (ANP) para encontrar os melhores precos na sua regiao antes de abastecer.
           </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Custo por Quilometro: a Conta Completa</h2>
+          <p className="mb-3">
+            A regra dos 70% compara precos por litro, mas a conta mais precisa e o <strong>custo por quilometro rodado</strong>. Essa metrica considera o consumo real do seu veiculo e mostra quanto voce gasta para cada km percorrido com cada combustivel.
+          </p>
+          <p className="mb-3">
+            <strong>Formula:</strong> Custo por km = Preco do litro / Consumo (km/l)
+          </p>
+          <p className="mb-3">
+            <strong>Exemplo completo:</strong> Suponha que seu carro faz 12 km/l com gasolina e 8,5 km/l com etanol. Com gasolina a R$ 5,79 e etanol a R$ 3,89:
+          </p>
+          <ul className="list-disc pl-6 space-y-1 mb-3">
+            <li>Custo por km com gasolina: 5,79 / 12 = <strong>R$ 0,4825/km</strong></li>
+            <li>Custo por km com etanol: 3,89 / 8,5 = <strong>R$ 0,4576/km</strong></li>
+            <li>Neste caso, o etanol e mais economico em R$ 0,025 por km</li>
+            <li>Em 1.000 km rodados, a economia seria de aproximadamente R$ 25</li>
+          </ul>
+          <p className="mb-3">
+            Note que, neste exemplo, a razao preco etanol/gasolina e 67% (abaixo de 70%), o que confirma a indicacao da regra. A vantagem do custo por km e que ele mostra o valor exato da economia, nao apenas a direcao da decisao.
+          </p>
+          <p>
+            Se voce nao sabe o consumo exato do seu veiculo, a regra dos 70% continua sendo a melhor referencia rapida. Quando a razao esta perto de 70% (entre 68% e 72%), o custo por km e a unica forma de desempatar com seguranca.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Limitacoes desta Calculadora</h2>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>A ferramenta compara apenas preco por litro usando a proporcao fixa de 70%. Nao considera o consumo real do seu veiculo especifico.</li>
+            <li>A regra dos 70% e uma media estatistica. Para veiculos com consumo muito diferente da media (utilitarios, esportivos, veiculos pesados), o ponto de corte pode variar.</li>
+            <li>A calculadora nao cobre GNV (gas natural veicular), diesel ou combustiveis aditivados. Cada um desses requer uma analise de custo-beneficio propria.</li>
+            <li>Precos de combustivel mudam diariamente. Os exemplos desta pagina usam valores ilustrativos; sempre consulte o preco real no posto antes de decidir.</li>
+            <li>Qualidade do combustivel nao e considerada. Combustivel adulterado pode ter rendimento inferior ao esperado, distorcendo a comparacao.</li>
+          </ul>
         </div>
       </section>
     </ToolPage>

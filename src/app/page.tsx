@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Shield, Zap, Lock, Smartphone, Clock, Sparkles, ArrowRight } from "lucide-react";
+import { Shield, Zap, Lock, Smartphone, Clock, Sparkles, ArrowRight, BookOpen, Mail } from "lucide-react";
 import { WebsiteSchema } from "./components/SchemaOrg";
 import { allArticles } from "../lib/articles";
 import { getToolIcon } from "@/lib/tool-icons";
@@ -290,7 +290,7 @@ export default function Home() {
                 Todas as Ferramentas
               </h2>
               <p className="text-slate-500 text-lg max-w-xl mx-auto">
-                Escolha a ferramenta que você precisa. Tudo roda no navegador, sem instalar nada.
+                Escolha a ferramenta que você precisa. Sem instalar nada e sem criar conta.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -375,6 +375,153 @@ export default function Home() {
                 <p className="text-slate-500 text-sm leading-relaxed">
                   Todas as ferramentas são totalmente gratuitas, sem limites de uso e sem cadastro.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* O que é o FerramentaUtil */}
+        <section className="py-16 md:py-24 bg-slate-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-blue-50">
+                  <BookOpen className="text-blue-600" size={20} />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">
+                  O que é o FerramentaUtil
+                </h2>
+              </div>
+              <div className="text-slate-600 leading-relaxed space-y-4">
+                <p>
+                  O FerramentaUtil é um portal brasileiro de ferramentas online gratuitas, mantido pelo Grupo Bastos em Recife/PE.
+                  As calculadoras, geradores e conversores do site são voltados para quem precisa resolver tarefas do dia a dia
+                  de forma rápida — estudantes, profissionais, empreendedores ou qualquer pessoa que precise de um cálculo
+                  confiável sem instalar software.
+                </p>
+                <p>
+                  Cada ferramenta apresenta a metodologia utilizada, exemplos verificáveis e as limitações do resultado.
+                  Quando uma fórmula segue uma convenção específica — como a regra dos 70% na calculadora de combustível
+                  ou a fórmula de Harris-Benedict na calculadora de calorias — isso é explicado na própria página,
+                  para que o usuário entenda o que está sendo calculado e possa conferir o resultado.
+                </p>
+                <p>
+                  A maioria das ferramentas processa os dados diretamente no navegador, sem enviar informações para servidores externos.
+                  Algumas consultas — como CEP, CNPJ e cotação de moedas — dependem de APIs externas para obter dados atualizados.
+                  Nesses casos, a ferramenta informa qual serviço é utilizado e quais dados são enviados. Os detalhes completos
+                  estão na <Link href="/privacidade" className="text-blue-600 hover:underline">Política de Privacidade</Link>.
+                </p>
+                <p>
+                  Se você encontrar um erro em alguma ferramenta, tiver uma sugestão ou quiser propor uma nova funcionalidade,
+                  use a página de <Link href="/contato" className="text-blue-600 hover:underline">contato</Link>.
+                  Todas as mensagens são lidas e respondidas em até 48 horas úteis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Categorias de Ferramentas */}
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mb-3">
+                Ferramentas por Categoria
+              </h2>
+              <p className="text-slate-500 text-lg max-w-xl mx-auto">
+                Mais de 30 ferramentas organizadas para facilitar a busca.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="bg-white rounded-2xl border border-slate-200 p-6">
+                <h3 className="text-base font-semibold text-slate-900 mb-2">Calculadoras Financeiras</h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-3">
+                  Juros compostos, financiamento (SAC e Price), investimentos (CDB, LCI/LCA, Tesouro Direto), rescisão trabalhista e descontos.
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  <Link href="/calculadora-juros-compostos" className="text-xs text-blue-600 hover:underline">Juros Compostos</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/calculadora-financiamento" className="text-xs text-blue-600 hover:underline">Financiamento</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/calculadora-investimentos" className="text-xs text-blue-600 hover:underline">Investimentos</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/calculadora-desconto" className="text-xs text-blue-600 hover:underline">Desconto</Link>
+                </div>
+              </div>
+              <div className="bg-white rounded-2xl border border-slate-200 p-6">
+                <h3 className="text-base font-semibold text-slate-900 mb-2">Calculadoras do Dia a Dia</h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-3">
+                  IMC, calorias, idade, horas trabalhadas, porcentagem e combustível. Cada uma explica a fórmula utilizada e suas limitações.
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  <Link href="/calculadora-imc" className="text-xs text-blue-600 hover:underline">IMC</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/calculadora-idade" className="text-xs text-blue-600 hover:underline">Idade</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/calculadora-horas" className="text-xs text-blue-600 hover:underline">Horas</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/calculadora-combustivel" className="text-xs text-blue-600 hover:underline">Combustível</Link>
+                </div>
+              </div>
+              <div className="bg-white rounded-2xl border border-slate-200 p-6">
+                <h3 className="text-base font-semibold text-slate-900 mb-2">Geradores</h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-3">
+                  Senhas seguras, QR Codes, QR Code PIX, CPF/CNPJ para testes, Lorem Ipsum, contratos e paletas de cores.
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  <Link href="/gerador-de-senha" className="text-xs text-blue-600 hover:underline">Senhas</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/gerador-pix" className="text-xs text-blue-600 hover:underline">PIX</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/gerador-qr-code" className="text-xs text-blue-600 hover:underline">QR Code</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/gerador-contrato" className="text-xs text-blue-600 hover:underline">Contrato</Link>
+                </div>
+              </div>
+              <div className="bg-white rounded-2xl border border-slate-200 p-6">
+                <h3 className="text-base font-semibold text-slate-900 mb-2">Conversores</h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-3">
+                  Unidades de medida, moedas com cotação atualizada, texto entre formatos e Word/PDF.
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  <Link href="/conversor-de-unidades" className="text-xs text-blue-600 hover:underline">Unidades</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/conversor-moedas" className="text-xs text-blue-600 hover:underline">Moedas</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/conversor-texto" className="text-xs text-blue-600 hover:underline">Texto</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/tabela-medidas" className="text-xs text-blue-600 hover:underline">Medidas</Link>
+                </div>
+              </div>
+              <div className="bg-white rounded-2xl border border-slate-200 p-6">
+                <h3 className="text-base font-semibold text-slate-900 mb-2">Ferramentas de PDF e Imagem</h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-3">
+                  Juntar PDFs, converter imagens para PDF, comprimir imagens e converter Word/PDF — tudo processado no navegador.
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  <Link href="/juntar-pdf" className="text-xs text-blue-600 hover:underline">Juntar PDF</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/imagem-para-pdf" className="text-xs text-blue-600 hover:underline">Imagem → PDF</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/compressor-imagem" className="text-xs text-blue-600 hover:underline">Compressor</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/conversor-word-pdf" className="text-xs text-blue-600 hover:underline">Word/PDF</Link>
+                </div>
+              </div>
+              <div className="bg-white rounded-2xl border border-slate-200 p-6">
+                <h3 className="text-base font-semibold text-slate-900 mb-2">Consultas e Utilidades</h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-3">
+                  Consulta CNPJ e CEP com dados oficiais, validador de e-mail, contador de caracteres e cronômetro.
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  <Link href="/consulta-cnpj" className="text-xs text-blue-600 hover:underline">CNPJ</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/consulta-cep" className="text-xs text-blue-600 hover:underline">CEP</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/validador-email" className="text-xs text-blue-600 hover:underline">Validador E-mail</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/contador-de-caracteres" className="text-xs text-blue-600 hover:underline">Caracteres</Link>
+                </div>
               </div>
             </div>
           </div>

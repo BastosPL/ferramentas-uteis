@@ -213,14 +213,49 @@ export default function CalculadoraDesconto() {
           </details>
         </div>
 
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Desconto, Acrescimo, Margem e Markup</h2>
+        <div className="text-gray-700 leading-relaxed space-y-3 mb-8">
+          <p>Esses termos sao frequentemente confundidos. Entender a diferenca ajuda a usar a calculadora de forma mais eficaz e a negociar com mais seguranca:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Desconto:</strong> Reducao aplicada sobre o preco original. Um desconto de 20% sobre R$ 100 resulta em R$ 80. O calculo parte do preco cheio para baixo.</li>
+            <li><strong>Acrescimo:</strong> Aumento aplicado sobre o preco base. Um acrescimo de 20% sobre R$ 100 resulta em R$ 120. E o oposto do desconto, mas com a mesma formula invertida.</li>
+            <li><strong>Margem de lucro (sobre venda):</strong> Percentual do preco de venda que e lucro. Se voce vende por R$ 100 algo que custou R$ 60, sua margem e 40% (R$ 40 / R$ 100). Voce pode calcular isso no modo &quot;Descobrir %&quot; colocando o preco de venda como original e o custo como final.</li>
+            <li><strong>Markup (sobre custo):</strong> Percentual aplicado sobre o custo para definir o preco de venda. No mesmo exemplo (custo R$ 60, venda R$ 100), o markup e 66,7% (R$ 40 / R$ 60). Note que margem e markup usam a mesma diferenca em reais, mas bases diferentes.</li>
+            <li><strong>Preco promocional:</strong> Preco temporariamente reduzido. Nem todo preco promocional e um desconto verdadeiro — alguns comercios inflam o preco de referencia antes de &quot;dar desconto&quot;.</li>
+          </ul>
+          <p>Para calculos de porcentagem mais gerais — quanto e X% de Y, aumento percentual, diferenca entre valores — a <a href="/calculadora-porcentagem" className="text-red-600 hover:underline">Calculadora de Porcentagem</a> complementa esta ferramenta.</p>
+        </div>
+
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas</h2>
+        <div className="text-gray-700 leading-relaxed space-y-3 mb-8">
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Black Friday e datas sazonais:</strong> Antes de comprar, anote o preco do produto 2-3 semanas antes. No dia da promocao, use o modo &quot;Descobrir %&quot; com o preco original real (nao o da etiqueta) para calcular o desconto verdadeiro.</li>
+            <li><strong>Compras parceladas vs. a vista:</strong> Se a loja oferece 10% de desconto a vista sobre um produto de R$ 1.200, voce paga R$ 1.080. Compare com o parcelamento: 12x de R$ 100 = R$ 1.200. A diferenca de R$ 120 pode render mais aplicada durante os 12 meses do que o desconto — depende da taxa de juros disponivel.</li>
+            <li><strong>Cashback combinado com desconto:</strong> Um produto de R$ 500 com 20% de desconto fica R$ 400; com 5% de cashback sobre R$ 400, voce recebe R$ 20 de volta. O desconto efetivo total e 24%, nao 25%.</li>
+            <li><strong>Negociacao com fornecedores:</strong> Use o comparador para colocar o preco do fornecedor A contra o B, cada um com seus descontos por volume. A diferenca aparece em reais.</li>
+            <li><strong>Frete incluso vs. desconto:</strong> Uma loja oferece frete gratis (frete custaria R$ 25) e outra oferece 10% de desconto em um produto de R$ 200. Com 10%, voce economiza R$ 20 mas paga R$ 25 de frete: gasta R$ 205. Na loja com frete gratis, paga R$ 200.</li>
+          </ul>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Impacto de Juros, Frete e Parcelamento</h2>
+        <div className="text-gray-700 leading-relaxed space-y-3 mb-8">
+          <p>Um desconto generoso pode ser anulado por custos adicionais que a calculadora nao considera automaticamente. Antes de concluir que uma oferta compensa, leve em conta:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Juros do parcelamento:</strong> Parcelas &quot;sem juros&quot; frequentemente embutem o custo financeiro no preco do produto. Se a loja oferece desconto a vista, esse desconto geralmente revela a margem de juros embutida no parcelamento.</li>
+            <li><strong>Frete:</strong> Compare o preco final com frete incluso, nao apenas o preco do produto. Um produto R$ 20 mais barato mas com R$ 35 de frete sai mais caro no total.</li>
+            <li><strong>Parcelamento no cartao:</strong> Se voce parcela em 12x e o desconto a vista e 10%, voce esta efetivamente pagando 10% de juros em 12 meses. Compare com o rendimento de uma aplicacao financeira para decidir se vale parcelar ou pagar a vista e investir a diferenca.</li>
+          </ul>
+          <p>Esta calculadora trabalha com precos e descontos diretos. Para simular financiamentos com juros compostos, use a <a href="/calculadora-juros-compostos" className="text-red-600 hover:underline">Calculadora de Juros Compostos</a>.</p>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Limitacoes</h2>
         <div className="text-gray-700 leading-relaxed space-y-3">
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Black Friday e datas sazonais:</strong> Antes de comprar, anote o preco do produto 2-3 semanas antes. No dia da promocao, use o modo &quot;Descobrir %&quot; com o preco original real (nao o da etiqueta) para calcular o desconto verdadeiro. Muitas lojas aumentam o preco antes de &quot;dar desconto&quot;.</li>
-            <li><strong>Compras parceladas vs. a vista:</strong> Se a loja oferece 10% de desconto a vista sobre um produto de R$ 1.200, voce paga R$ 1.080. Compare com o parcelamento: 12x de R$ 100 = R$ 1.200. A diferenca de R$ 120 pode render mais aplicada durante os 12 meses do que o desconto — depende da taxa de juros disponivel para voce.</li>
-            <li><strong>Cashback combinado com desconto:</strong> Sites de cashback oferecem 3-8% de retorno. Um produto de R$ 500 com 20% de desconto fica R$ 400; com 5% de cashback sobre R$ 400, voce recebe R$ 20 de volta. O desconto efetivo total e 24%, nao 25%. Use a calculadora para conferir a economia real.</li>
-            <li><strong>Negociacao com fornecedores:</strong> Ao receber uma proposta comercial, use o comparador para colocar o preco do fornecedor A contra o B, cada um com seus descontos por volume. A diferenca aparece em reais, facilitando a decisao.</li>
-            <li><strong>Frete incluso vs. desconto:</strong> Uma loja oferece frete gratis (frete custaria R$ 25) e outra oferece 10% de desconto em um produto de R$ 200. Com 10%, voce economiza R$ 20 mas paga R$ 25 de frete: gasta R$ 205 no total. Na primeira loja, paga R$ 200. O frete gratis vence. Use a calculadora para tirar essa duvida rapidamente.</li>
+            <li>A calculadora trabalha com valores nominais. Nao considera inflacao, custo de oportunidade ou valor do dinheiro no tempo.</li>
+            <li>Descontos em cascata precisam ser calculados em duas etapas separadas. A ferramenta nao tem um campo dedicado para &quot;desconto sobre desconto&quot;.</li>
+            <li>O modo &quot;Comparar Precos&quot; compara apenas preco e desconto percentual. Nao inclui frete, prazo de entrega, garantia ou qualidade do produto na analise.</li>
+            <li>Os valores sao arredondados para duas casas decimais. Em compras de grandes volumes (atacado), pequenas diferencas de arredondamento podem se acumular.</li>
+            <li>A ferramenta nao calcula impostos. Descontos sobre precos com ICMS, IPI ou ISS embutidos exigem analise fiscal separada.</li>
           </ul>
         </div>
       </section>
