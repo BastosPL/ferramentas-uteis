@@ -172,7 +172,7 @@ const tools = [
   {
     slug: "compressor-imagem",
     name: "Compressor de Imagem",
-    description: "Comprima imagens JPG, PNG e WebP online. Reduza o tamanho sem perder qualidade. 100% privado.",
+    description: "Comprima imagens JPG, PNG e WebP online. Ajuste a compressao e reduza o tamanho com controle de qualidade. 100% privado.",
     href: "/compressor-imagem",
   },
   {

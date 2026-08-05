@@ -20,7 +20,7 @@ export default function GeradorQRCode() {
       case "url": return url || "";
       case "texto": return texto || "";
       case "whatsapp": return `https://wa.me/${telefone.replace(/\D/g, "")}${mensagem ? `?text=${encodeURIComponent(mensagem)}` : ""}`;
-      case "wifi": return `WIFI:T:WPA;S:${ssid};P:${senhaWifi};;`;
+      case "wifi": return ssid.trim() ? `WIFI:T:WPA;S:${ssid};P:${senhaWifi};;` : "";
       case "email": return `mailto:${texto}`;
       case "telefone": return `tel:${telefone}`;
       default: return texto;

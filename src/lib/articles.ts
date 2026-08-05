@@ -553,7 +553,7 @@ export const allArticles: Article[] = [
 </ul>
 
 <h2>Comprima suas imagens gratuitamente</h2>
-<p>Use nosso <a href="/compressor-imagem">compressor de imagem</a> online para reduzir o tamanho de suas fotos sem perder qualidade visual. Suportamos JPG, PNG e WebP, com controle de nivel de compressao. Tudo e processado no seu navegador — nenhuma imagem e enviada para servidores. Experimente agora!</p>
+<p>Use nosso <a href="/compressor-imagem">compressor de imagem</a> online para reduzir o tamanho de suas fotos com controle do nivel de compressao. Suportamos JPG, PNG e WebP, com controle de nivel de compressao. Tudo e processado no seu navegador — nenhuma imagem e enviada para servidores. Experimente agora!</p>
     `,
   },
   {
