@@ -209,7 +209,7 @@ export default function CalculadoraIMC() {
           </p>
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Monitore-se regularmente:</strong> Pese-se uma vez por semana, sempre no mesmo horario e nas mesmas condicoes (pela manha, em jejum, sem roupas pesadas). Use esta calculadora para acompanhar a evolucao do seu IMC ao longo do tempo.</li>
-            <li><strong>Alimentacao equilibrada:</strong> Priorize alimentos in natura e minimamente processados como frutas, verduras, legumes, graos integrais e proteinas magras. Evite ultraprocessados ricos em acucar, sodio e gorduras trans.</li>
+            <li><strong>Alimentacao equilibrada:</strong> Priorize alimentos in natura e minimamente processados como frutas, verduras, legumes, graos integrais e proteinas magras. Evite ultraprocessados ricos em acucar, sodio e gorduras trans. Para estimar quantas calorias voce precisa por dia, use a <a href="/calculadora-calorias" className="text-teal-600 hover:underline">Calculadora de Calorias</a>.</li>
             <li><strong>Atividade fisica regular:</strong> A OMS recomenda pelo menos 150 minutos de atividade fisica moderada por semana (cerca de 30 minutos, 5 dias por semana). Caminhada, natacao, ciclismo e musculacao sao excelentes opcoes.</li>
             <li><strong>Hidratacao adequada:</strong> Beba pelo menos 2 litros de agua por dia. A desidratacao pode ser confundida com fome, levando ao consumo excessivo de calorias.</li>
             <li><strong>Sono de qualidade:</strong> Dormir de 7 a 9 horas por noite regula hormonios que controlam a fome (grelina e leptina). A privacao de sono esta associada ao ganho de peso.</li>

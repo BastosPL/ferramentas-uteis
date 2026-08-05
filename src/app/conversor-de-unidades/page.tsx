@@ -302,10 +302,11 @@ export default function ConversorDeUnidades() {
             Conhecer algumas conversoes aproximadas de cabeca pode ser muito util no dia a dia, especialmente em viagens internacionais e compras em sites estrangeiros:
           </p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Peso em compras internacionais:</strong> Ao comprar produtos em sites americanos, lembre-se que 1 lb (libra) equivale a cerca de 450 gramas. Um pacote de 5 lbs tem aproximadamente 2,27 kg. Para estimar rapidamente, divida o peso em libras por 2 e adicione 10%.</li>
+            <li><strong>Peso em compras internacionais:</strong> Ao comprar produtos em sites americanos, lembre-se que 1 lb (libra) equivale a cerca de 450 gramas. Um pacote de 5 lbs tem aproximadamente 2,27 kg. Para estimar rapidamente, divida o peso em libras por 2 e adicione 10%. Para converter tambem o preco em dolar, use o <a href="/conversor-moedas" className="text-teal-600 hover:underline">Conversor de Moedas</a>.</li>
             <li><strong>Temperatura em viagens:</strong> Se a previsao diz 68 graus F, subtraia 30 e divida por 2: (68 - 30) / 2 = 19 graus C (o valor exato e 20 graus C). Para climas extremos, essa estimativa perde precisao, entao use o conversor.</li>
             <li><strong>Distancias nos EUA:</strong> 1 milha equivale a 1,6 km. Para converter milhas para quilometros rapidamente, multiplique por 1,6. Se um destino esta a 60 milhas, sao aproximadamente 96 km (60 x 1,6).</li>
             <li><strong>Receitas americanas:</strong> 1 xicara (cup) americana equivale a 236,6 mL, e 1 onca fluida (fl oz) equivale a 29,6 mL. Uma garrafa de 16 fl oz tem cerca de 473 mL (quase meio litro).</li>
+            <li><strong>Tamanhos de roupas e calcados:</strong> Para converter tamanhos entre Brasil, EUA e Europa, a <a href="/tabela-medidas" className="text-teal-600 hover:underline">Tabela de Medidas</a> traz equivalencias prontas para roupas femininas, masculinas e calcados.</li>
             <li><strong>Velocidade do vento:</strong> Previsoes internacionais costumam usar m/s ou nos. Para converter m/s para km/h, multiplique por 3,6. Para converter nos para km/h, multiplique por 1,85. Vento de 10 m/s equivale a 36 km/h.</li>
           </ul>
         </div>

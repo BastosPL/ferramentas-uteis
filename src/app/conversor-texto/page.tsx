@@ -212,7 +212,7 @@ export default function ConversorTexto() {
             <li><strong>Desenvolvedores web:</strong> Use a conversao para slug ao criar URLs para blogs, e-commerces e landing pages. Um titulo como &quot;Promocao de Verao 2025&quot; vira instantaneamente &quot;promocao-de-verao-2025&quot;.</li>
             <li><strong>Profissionais de marketing:</strong> Padronize listas de emails removendo acentos e convertendo para minusculas antes de importar em plataformas de email marketing que nao aceitam caracteres especiais.</li>
             <li><strong>Redatores e editores:</strong> Converta rapidamente titulos para Title Case seguindo padroes editoriais. Transforme textos recebidos em MAIUSCULAS para um formato legivel sem precisar redigitar.</li>
-            <li><strong>Estudantes:</strong> Use o contador de palavras e caracteres para verificar se seu texto atende aos limites de trabalhos academicos e redacoes.</li>
+            <li><strong>Estudantes:</strong> Use o contador de palavras e caracteres para verificar se seu texto atende aos limites de trabalhos academicos e redacoes. O <a href="/contador-de-caracteres" className="text-indigo-600 hover:underline">Contador de Caracteres</a> mostra contagem detalhada por palavra, frase e paragrafo.</li>
             <li><strong>Redes sociais:</strong> Crie textos com estilo alternado para postagens humoristicas ou use a inversao de texto para brincadeiras e desafios criativos.</li>
           </ul>
           <p className="mt-3">

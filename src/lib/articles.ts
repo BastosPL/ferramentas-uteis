@@ -59,7 +59,7 @@ export const allArticles: Article[] = [
 <p>Os juros compostos estao presentes em diversas situacoes do dia a dia:</p>
 <ul>
 <li><strong>Investimentos:</strong> CDB, Tesouro Direto, LCI, LCA, fundos de investimento e poupanca usam juros compostos para calcular rendimentos.</li>
-<li><strong>Financiamentos:</strong> Quando voce financia um imovel ou carro, os juros sao compostos — por isso o valor total pago e muito maior que o bem.</li>
+<li><strong>Financiamentos:</strong> Quando voce financia um imovel ou carro, os juros sao compostos — por isso o valor total pago e muito maior que o bem. Para simular parcelas e comparar tabelas SAC e Price, use a <a href="/calculadora-financiamento">Calculadora de Financiamento</a>.</li>
 <li><strong>Cartao de credito:</strong> O rotativo do cartao cobra juros compostos, que podem ultrapassar 400% ao ano. Esse e o lado perigoso dos juros compostos.</li>
 <li><strong>Emprestimos pessoais:</strong> Bancos e financeiras aplicam juros compostos em emprestimos.</li>
 </ul>
@@ -83,7 +83,7 @@ export const allArticles: Article[] = [
 <p>Esse exemplo mostra por que especialistas em financas sempre recomendam comecar a investir o quanto antes. O tempo e o ingrediente principal dos juros compostos.</p>
 
 <h2>Use nossa calculadora gratuita</h2>
-<p>Para facilitar seus calculos e simulacoes, criamos uma calculadora de juros compostos completa e gratuita. Voce pode simular diferentes cenarios com capital inicial, aportes mensais, taxa de juros e prazo. Experimente agora e descubra quanto seu dinheiro pode render!</p>
+<p>Para facilitar seus calculos e simulacoes, criamos uma <a href="/calculadora-juros-compostos">calculadora de juros compostos</a> completa e gratuita. Voce pode simular diferentes cenarios com capital inicial, aportes mensais, taxa de juros e prazo. Se quiser comparar rendimentos entre CDB, LCI/LCA e Tesouro Direto, a <a href="/calculadora-investimentos">Calculadora de Investimentos</a> permite simular cada produto lado a lado.</p>
     `,
   },
   {
@@ -162,7 +162,7 @@ export const allArticles: Article[] = [
 </ul>
 
 <h2>Gere senhas fortes instantaneamente</h2>
-<p>Criar senhas verdadeiramente aleatorias na cabeca e dificil. Use nosso gerador de senhas gratuito para criar senhas fortes em segundos. Voce pode personalizar o comprimento, incluir ou excluir tipos de caracteres e gerar quantas senhas precisar.</p>
+<p>Criar senhas verdadeiramente aleatorias na cabeca e dificil. Use nosso <a href="/gerador-de-senha">gerador de senhas</a> gratuito para criar senhas fortes em segundos. Voce pode personalizar o comprimento, incluir ou excluir tipos de caracteres e gerar quantas senhas precisar.</p>
     `,
   },
   {
@@ -225,7 +225,7 @@ export const allArticles: Article[] = [
 <p>Para se proteger, nunca compartilhe sua senha, nao faca PIX sob pressao e confirme sempre os dados do destinatario antes de enviar.</p>
 
 <h2>QR Code PIX: estatico e dinamico</h2>
-<p>O PIX suporta dois tipos de QR Code:</p>
+<p>O PIX suporta dois tipos de QR Code (se voce precisa gerar QR Codes para outros fins alem do PIX — como URLs, Wi-Fi ou WhatsApp — o <a href="/gerador-qr-code">Gerador de QR Code</a> faz isso gratuitamente):</p>
 <ul>
 <li><strong>QR Code estatico:</strong> Pode ser reutilizado varias vezes. Ideal para receber pagamentos recorrentes. O valor pode ser definido ou deixado em aberto.</li>
 <li><strong>QR Code dinamico:</strong> Gerado para uma unica transacao, com valor fixo e dados especificos. Usado em comercio e notas fiscais.</li>
@@ -245,7 +245,7 @@ export const allArticles: Article[] = [
 </ul>
 
 <h2>Gere seu QR Code PIX gratuitamente</h2>
-<p>Precisa criar um QR Code PIX para receber pagamentos? Use nosso gerador gratuito! Basta informar sua chave PIX, o valor (opcional) e uma descricao. O QR Code e gerado seguindo o padrao EMV do Banco Central, compativel com todos os bancos. Crie o seu agora!</p>
+<p>Precisa criar um QR Code PIX para receber pagamentos? Use nosso <a href="/gerador-pix">gerador de QR Code PIX</a> gratuito! Basta informar sua chave PIX, o valor (opcional) e uma descricao. O QR Code e gerado seguindo o padrao EMV do Banco Central, compativel com todos os bancos. Crie o seu agora!</p>
     `,
   },
   {
@@ -258,7 +258,7 @@ export const allArticles: Article[] = [
     author: "Equipe Editorial FerramentaUtil",
     lastReviewedAt: "2026-07-12",
     sources: ["Receita Federal do Brasil — Cadastro Nacional da Pessoa Juridica", "IBGE — Classificacao Nacional de Atividades Economicas (CNAE)"],
-    relatedTools: [{ name: "Consulta CNPJ", href: "/consulta-cnpj" }],
+    relatedTools: [{ name: "Consulta CNPJ", href: "/consulta-cnpj" }, { name: "Gerador CPF/CNPJ", href: "/gerador-cpf-cnpj" }],
     content: `
 <h2>O que e o CNPJ?</h2>
 <p>O CNPJ (Cadastro Nacional da Pessoa Juridica) e o registro oficial de empresas junto a Receita Federal do Brasil. Assim como o CPF identifica pessoas fisicas, o CNPJ identifica empresas, associacoes, fundacoes e demais entidades juridicas. O numero tem 14 digitos e e unico para cada empresa.</p>
@@ -324,7 +324,7 @@ export const allArticles: Article[] = [
 <p>Alem do CNPJ, empresas que vendem produtos fisicos precisam de Inscricao Estadual (IE) junto a Secretaria da Fazenda do estado. A IE e obrigatoria para empresas contribuintes do ICMS. Voce pode verificar a IE juntamente com a consulta de CNPJ.</p>
 
 <h2>Consulte CNPJ de forma rapida e gratuita</h2>
-<p>Para facilitar sua pesquisa, oferecemos uma ferramenta de consulta CNPJ gratuita e instantanea. Basta digitar o numero do CNPJ e voce tera acesso a todas as informacoes da Receita Federal em segundos, sem captcha e com uma interface limpa e facil de usar. Consulte agora!</p>
+<p>Para facilitar sua pesquisa, oferecemos uma ferramenta de <a href="/consulta-cnpj">consulta CNPJ</a> gratuita e instantanea. Basta digitar o numero do CNPJ e voce tera acesso a todas as informacoes da Receita Federal em segundos, sem captcha e com uma interface limpa e facil de usar. Se voce e desenvolvedor e precisa de CNPJs validos para testes de software, o <a href="/gerador-cpf-cnpj">Gerador de CPF/CNPJ</a> gera numeros com digitos verificadores corretos, sem vincular a nenhuma pessoa ou empresa real.</p>
     `,
   },
   {
@@ -405,7 +405,7 @@ export const allArticles: Article[] = [
 </ul>
 
 <h2>Calcule seu IMC agora</h2>
-<p>Use nossa calculadora de IMC gratuita para descobrir em qual faixa voce se encontra. Basta informar seu peso e altura, e o resultado aparece instantaneamente com a classificacao completa da OMS. Calcule agora e cuide da sua saude!</p>
+<p>Use nossa <a href="/calculadora-imc">calculadora de IMC</a> gratuita para descobrir em qual faixa voce se encontra. Basta informar seu peso e altura, e o resultado aparece instantaneamente com a classificacao completa da OMS. Para complementar, a <a href="/calculadora-calorias">Calculadora de Calorias</a> estima quantas calorias voce precisa por dia de acordo com seu peso, altura e nivel de atividade. Calcule agora e cuide da sua saude!</p>
     `,
   },
   {
@@ -418,10 +418,10 @@ export const allArticles: Article[] = [
     author: "Equipe Editorial FerramentaUtil",
     lastReviewedAt: "2026-07-12",
     sources: ["Receita Federal — tabela regressiva de IR sobre renda fixa", "CVM — regulamentacao de investimentos", "Tesouro Nacional — Tesouro Direto", "Banco Central do Brasil — FGC e regulacao bancaria"],
-    relatedTools: [{ name: "Calculadora de Investimentos", href: "/calculadora-investimentos" }],
+    relatedTools: [{ name: "Calculadora de Investimentos", href: "/calculadora-investimentos" }, { name: "Calculadora de Financiamento", href: "/calculadora-financiamento" }],
     content: `
 <h2>Por que investir e importante?</h2>
-<p>Guardar dinheiro na poupanca e melhor do que nao guardar nada, mas nao e a forma mais inteligente de fazer seu dinheiro trabalhar por voce. Em 2026, a poupanca rende cerca de 7% ao ano, enquanto outras opcoes de renda fixa podem render entre 10% e 13% ao ano, dependendo do cenario economico.</p>
+<p>Guardar dinheiro na poupanca e melhor do que nao guardar nada, mas nao e a forma mais inteligente de fazer seu dinheiro trabalhar por voce. Em 2026, a poupanca rende cerca de 7% ao ano, enquanto outras opcoes de renda fixa podem render entre 10% e 13% ao ano, dependendo do cenario economico. Para entender como esses rendimentos se acumulam ao longo do tempo, veja nosso guia sobre <a href="/blog/como-calcular-juros-compostos">juros compostos</a>.</p>
 <p>Investir nao e um privilegio de quem tem muito dinheiro. Com R$ 30 voce ja pode comprar um titulo do Tesouro Direto. O importante e comecar, entender os conceitos basicos e ser consistente.</p>
 
 <h2>O que e renda fixa?</h2>
@@ -481,7 +481,7 @@ export const allArticles: Article[] = [
 </ul>
 
 <h2>Simule seus investimentos</h2>
-<p>Use nossa calculadora de investimentos gratuita para comparar CDB, LCI/LCA e Tesouro Direto lado a lado. Calcule o rendimento liquido, veja o desconto de IR e descubra qual opcao e mais vantajosa para o seu caso. Simule agora!</p>
+<p>Use nossa <a href="/calculadora-investimentos">calculadora de investimentos</a> gratuita para comparar CDB, LCI/LCA e Tesouro Direto lado a lado. Calcule o rendimento liquido, veja o desconto de IR e descubra qual opcao e mais vantajosa para o seu caso. Para simular o crescimento do capital com aportes mensais, a <a href="/calculadora-juros-compostos">Calculadora de Juros Compostos</a> mostra a evolucao mes a mes. E se voce pretende financiar um imovel ou veiculo, a <a href="/calculadora-financiamento">Calculadora de Financiamento</a> compara as tabelas SAC e Price.</p>
     `,
   },
   {
@@ -553,7 +553,7 @@ export const allArticles: Article[] = [
 </ul>
 
 <h2>Comprima suas imagens gratuitamente</h2>
-<p>Use nosso compressor de imagem online para reduzir o tamanho de suas fotos sem perder qualidade visual. Suportamos JPG, PNG e WebP, com controle de nivel de compressao. Tudo e processado no seu navegador — nenhuma imagem e enviada para servidores. Experimente agora!</p>
+<p>Use nosso <a href="/compressor-imagem">compressor de imagem</a> online para reduzir o tamanho de suas fotos sem perder qualidade visual. Suportamos JPG, PNG e WebP, com controle de nivel de compressao. Tudo e processado no seu navegador — nenhuma imagem e enviada para servidores. Experimente agora!</p>
     `,
   },
   {
@@ -584,7 +584,7 @@ export const allArticles: Article[] = [
 <li>Montar um relatorio a partir de varias fontes</li>
 <li>Organizar documentos para impressao</li>
 </ul>
-<p>Para juntar PDFs, voce pode usar ferramentas online que funcionam diretamente no navegador. O processo e simples:</p>
+<p>Para juntar PDFs, voce pode usar ferramentas online que funcionam diretamente no navegador — como o <a href="/juntar-pdf">Juntar PDF</a> do FerramentaUtil. O processo e simples:</p>
 <ul>
 <li>Selecione os arquivos PDF que deseja juntar</li>
 <li>Organize a ordem dos arquivos arrastando e soltando</li>
@@ -596,7 +596,7 @@ export const allArticles: Article[] = [
 <h2>Converter imagens para PDF</h2>
 <p>Converter imagens JPG ou PNG para PDF e util em diversas situacoes:</p>
 <ul>
-<li><strong>Digitalizacao de documentos:</strong> Tire fotos de documentos e converta para PDF.</li>
+<li><strong>Digitalizacao de documentos:</strong> Tire fotos de documentos e converta para PDF com a ferramenta <a href="/imagem-para-pdf">Imagem para PDF</a>.</li>
 <li><strong>Portfolios:</strong> Combine varias imagens de trabalhos em um unico PDF profissional.</li>
 <li><strong>Trabalhos escolares:</strong> Transforme fotos de cadernos ou quadros em PDF para entregar ao professor.</li>
 <li><strong>Comprovantes:</strong> Converta capturas de tela de comprovantes em PDF para arquivo.</li>
@@ -617,7 +617,7 @@ export const allArticles: Article[] = [
 <li><strong>Protecao do conteudo:</strong> PDFs sao mais dificeis de editar acidentalmente que documentos Word.</li>
 <li><strong>Impressao consistente:</strong> O PDF garante que a impressao sera identica ao que voce ve na tela.</li>
 </ul>
-<p>A maioria dos editores de texto modernos (Microsoft Word, Google Docs, LibreOffice) ja tem a opcao "Salvar como PDF" ou "Exportar para PDF". Porem, ferramentas online oferecem a conveniencia de converter sem precisar instalar nenhum software.</p>
+<p>A maioria dos editores de texto modernos (Microsoft Word, Google Docs, LibreOffice) ja tem a opcao "Salvar como PDF" ou "Exportar para PDF". Se preferir converter online sem instalar nada, o <a href="/conversor-word-pdf">Conversor Word / PDF</a> faz a conversao diretamente no navegador.</p>
 
 <h2>Converter PDF para Word</h2>
 <p>O caminho inverso tambem e muito procurado. Converter PDF para Word e util quando voce precisa editar o conteudo de um documento PDF. Algumas consideracoes:</p>
@@ -642,7 +642,7 @@ export const allArticles: Article[] = [
 <p>Prefira ferramentas que processam os arquivos localmente no seu navegador, sem enviar nada para servidores externos. Isso garante que seus documentos permanecem privados e seguros.</p>
 
 <h2>Use nossas ferramentas de PDF gratuitas</h2>
-<p>Oferecemos um conjunto completo de ferramentas para trabalhar com PDF, todas gratuitas e com privacidade total — nenhum arquivo sai do seu navegador. Junte PDFs, converta imagens e documentos Word para PDF, tudo de forma rapida e segura. Experimente agora!</p>
+<p>Oferecemos um conjunto completo de ferramentas para trabalhar com PDF, todas gratuitas e com privacidade total — nenhum arquivo sai do seu navegador: <a href="/juntar-pdf">Juntar PDF</a>, <a href="/imagem-para-pdf">Imagem para PDF</a> e <a href="/conversor-word-pdf">Conversor Word / PDF</a>. Experimente agora!</p>
     `,
   },
 ];

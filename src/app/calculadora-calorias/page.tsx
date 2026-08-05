@@ -231,6 +231,7 @@ export default function CalculadoraCalorias() {
             Saber suas calorias diarias e apenas o primeiro passo. Veja como aplicar esse conhecimento na pratica:
           </p>
           <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Confira seu IMC primeiro:</strong> Antes de definir uma meta calorica, verifique em que faixa de peso voce esta com a <a href="/calculadora-imc" className="text-teal-600 hover:underline">Calculadora de IMC</a>. Isso ajuda a decidir se o objetivo deve ser deficit, manutencao ou superavit calorico.</li>
             <li><strong>Use um aplicativo de contagem:</strong> Apps como MyFitnessPal, FatSecret ou Yazio facilitam o registro diario de alimentos. Nos primeiros dias, pese os alimentos para calibrar sua percepcao de porcoes — depois de algumas semanas, voce conseguira estimar visualmente.</li>
             <li><strong>Nao elimine grupos alimentares:</strong> Dietas muito restritivas sao dificeis de manter a longo prazo. Em vez de cortar carboidratos completamente, reduza porcoes e priorize fontes integrais (arroz integral, aveia, batata-doce).</li>
             <li><strong>Agua e aliada:</strong> Muitas vezes a sensacao de fome e na verdade sede. Beba pelo menos 35 ml de agua por kg de peso corporal por dia. Alem disso, beber agua antes das refeicoes pode ajudar a reduzir a ingestao calorica.</li>

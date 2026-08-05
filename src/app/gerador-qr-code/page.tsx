@@ -203,7 +203,7 @@ export default function GeradorQRCode() {
             <li><strong>Cardapio digital:</strong> Restaurantes podem criar um QR Code com o link do cardapio online, eliminando a necessidade de cardapios fisicos e facilitando atualizacoes.</li>
             <li><strong>Cartao de visita:</strong> Adicione um QR Code no seu cartao que direcione para o seu LinkedIn, portfolio ou site profissional.</li>
             <li><strong>Wi-Fi para visitantes:</strong> Cole um QR Code de Wi-Fi na recepcao do escritorio ou na sala de estar. Visitantes conectam sem precisar perguntar a senha.</li>
-            <li><strong>Pagamentos e Pix:</strong> Muitas lojas usam QR Codes para receber pagamentos via Pix. Embora o QR Code do Pix tenha formato especifico do Banco Central, o conceito e o mesmo.</li>
+            <li><strong>Pagamentos e Pix:</strong> Muitas lojas usam QR Codes para receber pagamentos via Pix. O QR Code do Pix segue o padrao EMV do Banco Central — para gerar um com sua chave PIX e valor definido, use o <a href="/gerador-pix" className="text-emerald-600 hover:underline">Gerador de QR Code PIX</a>.</li>
             <li><strong>Eventos e convites:</strong> Inclua um QR Code no convite que direcione para o mapa do local, confirmacao de presenca ou informacoes do evento.</li>
           </ul>
           <p className="mt-3">

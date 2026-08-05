@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Target, Zap, Shield, Heart, Monitor, Wrench, MapPin, Code2, Users } from "lucide-react";
+import { Target, Zap, Shield, Heart, Monitor, Wrench, MapPin, Code2, Users, CheckCircle2 } from "lucide-react";
 
 export default function Sobre() {
   return (
@@ -24,15 +24,17 @@ export default function Sobre() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">Quem Somos</h2>
         </div>
         <p className="text-slate-600 leading-relaxed mb-4">
-          O FerramentaUtil é mantido pelo <strong>Grupo Bastos</strong>, equipe de desenvolvimento de software
-          e empreendedorismo digital baseada em <strong>Recife, Pernambuco</strong>. Com experiência
-          em desenvolvimento web e sistemas empresariais, o projeto nasceu da necessidade
-          de oferecer ferramentas práticas e confiáveis para o público brasileiro.
+          O FerramentaUtil é um projeto independente de ferramentas online gratuitas,
+          desenvolvido e mantido em <strong>Recife, Pernambuco</strong>. O projeto nasceu da necessidade
+          de oferecer calculadoras, geradores e conversores práticos e confiáveis para o público brasileiro,
+          sem exigir cadastro, instalação ou pagamento.
         </p>
         <p className="text-slate-600 leading-relaxed mb-6">
-          Priorizamos o processamento direto no navegador sempre que possível, oferecendo
-          agilidade e maior privacidade. Algumas consultas dependem de serviços externos,
-          conforme informado em cada ferramenta e na Política de Privacidade.
+          A maioria das ferramentas processa os dados diretamente no navegador do usuário, sem enviar
+          informações para servidores externos. Algumas consultas — como CEP, CNPJ e cotação de moedas —
+          dependem de APIs externas para obter dados atualizados. Nesses casos, a ferramenta informa
+          qual serviço é utilizado. Os detalhes completos estão na{" "}
+          <Link href="/privacidade" className="text-blue-600 hover:underline">Política de Privacidade</Link>.
         </p>
         <div className="flex flex-wrap gap-4">
           <div className="flex items-center gap-2 text-sm text-slate-500">
@@ -121,6 +123,36 @@ export default function Sobre() {
         </div>
       </section>
 
+      {/* Metodologia e Transparência */}
+      <section className="bg-white rounded-2xl border border-slate-200 p-8 mb-16">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center">
+            <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+          </div>
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">Metodologia e Transparência</h2>
+        </div>
+        <div className="text-slate-600 leading-relaxed space-y-3">
+          <p>
+            Todas as calculadoras e ferramentas são testadas antes da publicação.
+            Quando uma ferramenta utiliza uma fórmula ou convenção específica — como
+            a regra dos 70% na calculadora de combustível ou a fórmula de Harris-Benedict
+            na calculadora de calorias — a metodologia é explicada na própria página.
+          </p>
+          <p>
+            Páginas que envolvem cálculos financeiros, de saúde ou medidas apresentam
+            exemplos verificáveis, fontes consultadas e limitações do resultado,
+            para que o usuário possa conferir e interpretar os dados com autonomia.
+          </p>
+          <p>
+            Quando erros são identificados — por testes internos ou por relatos de
+            usuários — as correções são realizadas e publicadas. Sugestões, dúvidas e
+            relatos de erro podem ser enviados pela
+            página de {" "}
+            <Link href="/contato" className="text-blue-600 hover:underline">contato</Link>.
+          </p>
+        </div>
+      </section>
+
       {/* Device support */}
       <section className="bg-white rounded-2xl border border-slate-200 p-8 mb-16">
         <div className="flex items-center gap-3 mb-4">
@@ -130,9 +162,10 @@ export default function Sobre() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">Qualquer Dispositivo</h2>
         </div>
         <p className="text-slate-500 leading-relaxed">
-          O site &eacute; totalmente responsivo e funciona perfeitamente em computadores,
-          tablets e celulares. Todo o processamento acontece localmente no seu
-          dispositivo, garantindo rapidez e privacidade onde quer que voc&ecirc; esteja.
+          O site é totalmente responsivo e funciona perfeitamente em computadores,
+          tablets e celulares. A maioria das ferramentas processa os dados
+          diretamente no seu dispositivo, garantindo rapidez e privacidade
+          onde quer que você esteja.
         </p>
       </section>
 

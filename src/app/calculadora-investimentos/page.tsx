@@ -407,6 +407,7 @@ export default function CalculadoraInvestimentos() {
             <li><strong>Prazo importa muito:</strong> Em investimentos curtos (ate 6 meses), LCI/LCA levam vantagem pela isencao de IR. Em prazos longos (acima de 2 anos), a diferenca diminui porque o IR do CDB cai para 15%.</li>
             <li><strong>Diversifique entre bancos:</strong> Lembre-se do limite de R$ 250.000 do FGC por instituicao. Se tiver mais que isso para investir, divida entre bancos diferentes.</li>
             <li><strong>Fique de olho na Selic:</strong> Quando o Banco Central sobe a Selic, o CDI acompanha, beneficiando todos os investimentos pos-fixados. Quando a Selic cai, considere travar taxas em CDBs pre-fixados.</li>
+            <li><strong>Entenda o efeito dos juros compostos:</strong> A <a href="/calculadora-juros-compostos" className="text-emerald-600 hover:underline">Calculadora de Juros Compostos</a> mostra a evolucao mes a mes com aportes regulares, ideal para projetar quanto voce acumula em 5, 10 ou 20 anos.</li>
             <li><strong>Nao esqueca os custos:</strong> Algumas corretoras cobram taxa de corretagem ou custodia. O Tesouro Direto tem taxa de custodia da B3 de 0,20% ao ano. Considere esses custos na decisao.</li>
           </ul>
         </section>

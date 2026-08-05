@@ -390,6 +390,7 @@ export default function GeradorPix() {
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas para Usar o PIX</h2>
           <ul className="list-disc list-inside space-y-2 ml-2">
+            <li><strong>QR Code para outros fins:</strong> Este gerador cria exclusivamente QR Codes no padrao PIX (EMV). Se voce precisa de QR Codes para URLs, Wi-Fi, WhatsApp ou outros dados, use o <a href="/gerador-qr-code" className="text-emerald-600 hover:underline">Gerador de QR Code</a> generico.</li>
             <li><strong>Imprima em boa qualidade:</strong> Se for colocar o QR Code em balcao ou vitrine, imprima em alta resolucao. QR Codes borrados ou pequenos demais podem nao ser lidos pelos celulares.</li>
             <li><strong>Teste antes de compartilhar:</strong> Sempre escaneie o QR Code gerado com o app do seu banco para confirmar que os dados estao corretos antes de enviar para clientes.</li>
             <li><strong>Use chave aleatoria para mais seguranca:</strong> Se nao quer expor seu CPF ou telefone, cadastre uma chave aleatoria no banco e use-a no QR Code.</li>

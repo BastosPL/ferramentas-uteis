@@ -456,6 +456,10 @@ export default function Home() {
                 <div className="flex flex-wrap gap-1.5">
                   <Link href="/calculadora-imc" className="text-xs text-blue-600 hover:underline">IMC</Link>
                   <span className="text-slate-300">·</span>
+                  <Link href="/calculadora-calorias" className="text-xs text-blue-600 hover:underline">Calorias</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/calculadora-porcentagem" className="text-xs text-blue-600 hover:underline">Porcentagem</Link>
+                  <span className="text-slate-300">·</span>
                   <Link href="/calculadora-idade" className="text-xs text-blue-600 hover:underline">Idade</Link>
                   <span className="text-slate-300">·</span>
                   <Link href="/calculadora-horas" className="text-xs text-blue-600 hover:underline">Horas</Link>
@@ -474,6 +478,8 @@ export default function Home() {
                   <Link href="/gerador-pix" className="text-xs text-blue-600 hover:underline">PIX</Link>
                   <span className="text-slate-300">·</span>
                   <Link href="/gerador-qr-code" className="text-xs text-blue-600 hover:underline">QR Code</Link>
+                  <span className="text-slate-300">·</span>
+                  <Link href="/gerador-cpf-cnpj" className="text-xs text-blue-600 hover:underline">CPF/CNPJ</Link>
                   <span className="text-slate-300">·</span>
                   <Link href="/gerador-contrato" className="text-xs text-blue-600 hover:underline">Contrato</Link>
                 </div>
