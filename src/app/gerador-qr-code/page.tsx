@@ -155,8 +155,24 @@ export default function GeradorQRCode() {
           <p className="mb-3">
             O QR Code utiliza o algoritmo Reed-Solomon para correcao de erros, o que significa que mesmo se parte do codigo estiver danificada ou obstruida (ate 30% dependendo do nivel de correcao), ele ainda pode ser lido corretamente. Existem quatro niveis de correcao: L (7%), M (15%), Q (25%) e H (30%).
           </p>
-          <p>
+          <p className="mb-3">
             Nossa ferramenta gera os QR Codes inteiramente no seu navegador, sem enviar nenhum dado para servidores externos. A imagem e criada no formato PNG, compativel com praticamente todos os dispositivos e softwares de edicao. Seus dados (incluindo senhas de Wi-Fi) permanecem 100% no seu dispositivo.
+          </p>
+          <p>
+            <strong>Exemplo verificavel:</strong> Digite &quot;https://exemplo.com&quot; no campo de URL e gere o QR Code. Use a camera do celular para escanear a imagem na tela — o resultado deve abrir exatamente a URL digitada. Esse teste simples confirma que o QR Code codifica fielmente o conteudo informado. Voce tambem pode verificar desconectando a internet e gerando um QR Code de texto — a geracao continua funcionando normalmente, comprovando o processamento local.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Limitacoes e Cuidados</h2>
+          <p className="mb-3">
+            <strong>QR Code estatico nao pode ser editado:</strong> Depois de impresso ou compartilhado, o conteudo codificado na imagem nao pode ser alterado. Se a URL de destino mudar, voce precisara gerar um novo QR Code. Para cenarios onde o destino muda com frequencia (promoções temporarias, links de campanhas), considere usar um encurtador de URL (como Bitly) como intermediario — assim voce altera o destino no encurtador sem mudar o QR Code.
+          </p>
+          <p className="mb-3">
+            <strong>A imagem e estatica, mas o destino pode sair do ar:</strong> O QR Code da imagem nunca expira, porem se o site, numero de WhatsApp ou email de destino deixar de existir, escanear o QR Code levara a uma pagina de erro ou a uma ligacao sem resposta. Verifique periodicamente se os destinos dos seus QR Codes impressos continuam ativos.
+          </p>
+          <p>
+            <strong>Wi-Fi assume WPA:</strong> O QR Code de Wi-Fi gerado utiliza o protocolo WPA/WPA2. Redes abertas (sem senha) ou redes com protocolo WEP exigiriam uma string diferente que esta ferramenta nao gera. A grande maioria das redes domesticas e empresariais usa WPA2, entao essa limitacao raramente e um problema na pratica.
           </p>
         </div>
 

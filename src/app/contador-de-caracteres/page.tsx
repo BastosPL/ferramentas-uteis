@@ -141,8 +141,14 @@ export default function ContadorDeCaracteres() {
           <p className="mb-3">
             O calculo de paragrafos considera blocos de texto separados por linhas em branco (duas quebras de linha consecutivas). Essa metrica e especialmente util para redatores e escritores que precisam manter uma estrutura consistente nos seus textos.
           </p>
-          <p>
+          <p className="mb-3">
             O tempo de leitura estimado e baseado na velocidade media de leitura de 200 palavras por minuto, que e o padrao usado pela maioria das plataformas de conteudo, incluindo Medium e blogs profissionais. Textos tecnicos ou complexos podem exigir mais tempo na pratica.
+          </p>
+          <p className="mb-3">
+            <strong>Emojis e caracteres especiais:</strong> A contagem utiliza o metodo nativo do JavaScript (<code className="bg-gray-100 px-1 rounded text-sm">String.length</code>), que conta unidades de codigo UTF-16. Letras acentuadas (a, e, c) contam como 1 caractere. Emojis basicos (como &#x1F600;) contam como 2, pois ocupam um par surrogate em UTF-16. Emojis compostos (familias, bandeiras, tons de pele) podem contar como 4 a 11 unidades. Esse comportamento e identico ao do Twitter/X e da maioria das plataformas web.
+          </p>
+          <p>
+            <strong>Exemplo verificavel:</strong> Digite &quot;Ola mundo&quot; e voce vera 9 caracteres (incluindo o espaco), 8 sem espacos, 2 palavras e 1 frase. Todo o processamento acontece no seu navegador — nenhum texto digitado e enviado para servidores externos.
           </p>
         </div>
 

@@ -138,7 +138,7 @@ export default function CompressorImagem() {
   return (
     <ToolPage
       title="Compressor de Imagem"
-      description="Comprima imagens JPG, PNG e WebP online. Reduza o tamanho sem perder qualidade. 100% privado."
+      description="Comprima imagens JPG, PNG e WebP online. Controle qualidade e tamanho com precisao. 100% privado — nenhum arquivo sai do seu navegador."
       accent="emerald"
       icon="🖼️"
       slug="compressor-imagem"
@@ -338,13 +338,19 @@ export default function CompressorImagem() {
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Como Funciona a Compressao</h2>
         <div className="text-gray-700 space-y-3">
           <p>
-            O processamento usa a API Canvas do HTML5 diretamente no seu navegador, em tres etapas: decodificacao da imagem original via <em>createImageBitmap</em>, redesenho no Canvas com as dimensoes configuradas e exportacao no formato escolhido com o nivel de qualidade definido.
+            O processamento usa a API Canvas do HTML5 diretamente no seu navegador, em tres etapas: decodificacao da imagem original via <em>createImageBitmap</em>, redesenho no Canvas com as dimensoes configuradas e exportacao no formato escolhido com o nivel de qualidade definido. Nenhum arquivo e enviado para servidores — todo o processamento acontece localmente no seu dispositivo.
           </p>
           <p>
             No JPEG, a compressao aplica a Transformada Discreta de Cosseno (DCT), descartando frequencias visuais que o olho humano mal percebe. O WebP vai alem, usando compressao preditiva que analisa blocos vizinhos — por isso gera arquivos 25-35% menores que JPEG em qualidade equivalente. O PNG, por sua vez, usa compressao lossless (sem perda), ideal quando cada pixel importa, como em logos e screenshots.
           </p>
           <p>
             <strong>Exemplo concreto:</strong> Uma foto de 4000x3000 (12 megapixels) em JPEG a 100% pesa cerca de 5 MB. Com qualidade 80% e largura maxima de 1920px, o arquivo cai para aproximadamente 300 KB — uma reducao de 94%. O redimensionamento contribui tanto quanto a compressao de qualidade nessa economia.
+          </p>
+          <p>
+            <strong>Transparencia:</strong> Imagens PNG e WebP com fundo transparente preservam a transparencia quando exportadas nesses mesmos formatos. Ao converter uma imagem com transparencia para JPEG, as areas transparentes serao preenchidas com preto, pois o formato JPEG nao suporta canal alfa. Se a transparencia e importante para o seu uso (recorte de produto, logo), mantenha o formato PNG ou WebP na saida.
+          </p>
+          <p>
+            <strong>O que a compressao altera:</strong> Em formatos lossy (JPEG e WebP), o slider de qualidade controla quanta informacao visual e descartada. Em 80%, a perda e imperceptivel na maioria das fotos, mas existe — pixels sao aproximados, nao preservados. Em qualidades abaixo de 50%, artefatos de bloco podem ser visiveis em areas de gradiente ou texto. No PNG (lossless), o slider de qualidade nao tem efeito: o arquivo resultante preserva cada pixel original, e a reducao de tamanho vem apenas do redimensionamento.
           </p>
         </div>
 
@@ -369,6 +375,14 @@ export default function CompressorImagem() {
           <details className="bg-gray-50 rounded-lg p-4 group">
             <summary className="font-semibold text-gray-900 cursor-pointer">Posso comprimir GIF ou SVG?</summary>
             <p className="text-gray-700 mt-2">Nao. Esta ferramenta processa apenas formatos raster estaticos: JPEG, PNG e WebP. GIFs animados exigem um compressor especializado que preserve os quadros da animacao. SVGs sao arquivos vetoriais baseados em texto (XML) e se beneficiam de minificacao de codigo, nao de compressao de pixels.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">Existe limite de tamanho ou quantidade de imagens?</summary>
+            <p className="text-gray-700 mt-2">Nao existe um limite fixo imposto pela ferramenta. Como o processamento acontece no seu navegador, o limite pratico depende da memoria RAM disponivel no seu dispositivo. Imagens muito grandes (acima de 20 megapixels) ou lotes com dezenas de arquivos podem deixar o navegador lento em computadores mais antigos ou celulares com pouca memoria. Se isso acontecer, processe em lotes menores.</p>
+          </details>
+          <details className="bg-gray-50 rounded-lg p-4 group">
+            <summary className="font-semibold text-gray-900 cursor-pointer">A compressao remove metadados EXIF da foto?</summary>
+            <p className="text-gray-700 mt-2">Sim. O processo de redesenho via Canvas do navegador descarta metadados EXIF (data da foto, modelo da camera, coordenadas GPS, orientacao). Se voce precisa preservar esses metadados, utilize um software desktop como o Squoosh ou ImageOptim. Para a maioria dos usos em web e redes sociais, a remocao de EXIF e na verdade uma vantagem de privacidade — coordenadas GPS nao sao expostas.</p>
           </details>
         </div>
 

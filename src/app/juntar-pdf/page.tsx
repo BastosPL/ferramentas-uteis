@@ -183,6 +183,22 @@ export default function JuntarPDF() {
           </details>
         </div>
 
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Limitacoes e Diferenca entre Juntar, Comprimir e Converter</h2>
+        <div className="text-gray-700 leading-relaxed space-y-3 mb-8">
+          <p>
+            <strong>Juntar PDF</strong> (esta ferramenta) combina dois ou mais PDFs completos em um unico arquivo, preservando todo o conteudo original. <strong>Comprimir PDF</strong> reduz o tamanho de um PDF existente descartando dados visuais redundantes (parecido com comprimir uma imagem). <strong>Converter PDF</strong> transforma o conteudo de um formato para outro (ex: PDF para Word, imagem para PDF). Sao tres operacoes distintas — esta ferramenta faz apenas a primeira.
+          </p>
+          <p>
+            <strong>PDFs protegidos por senha:</strong> Se algum dos PDFs exigir senha para abrir, a ferramenta nao conseguira le-lo e exibira um alerta de erro. Remova a protecao antes de combinar — no Adobe Reader, isso pode ser feito em Arquivo &gt; Propriedades &gt; Seguranca.
+          </p>
+          <p>
+            <strong>PDFs corrompidos:</strong> Arquivos PDF danificados (download incompleto, transferencia interrompida) tambem impedirao a combinacao. Se um PDF especifico gerar erro, tente abri-lo isoladamente no navegador para confirmar que esta integro.
+          </p>
+          <p>
+            <strong>Limite pratico de tamanho:</strong> Como o processamento acontece na memoria do navegador, combinar muitos PDFs grandes (ex: 10 arquivos de 50 MB cada) pode esgotar a memoria disponivel, especialmente em celulares. Nesses casos, processe em lotes menores — junte 5, depois junte o resultado com os proximos 5.
+          </p>
+        </div>
+
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas Praticas</h2>
         <div className="text-gray-700 leading-relaxed space-y-3">
           <p>Reunir varios PDFs em um so e uma tarefa frequente no trabalho e na vida pessoal. Estas dicas ajudam a obter o melhor resultado:</p>
@@ -192,6 +208,7 @@ export default function JuntarPDF() {
             <li><strong>Propostas comerciais profissionais:</strong> Una a proposta tecnica + tabela de precos + contrato de servico + portfolio de casos de sucesso. Um unico PDF transmite mais profissionalismo do que quatro anexos separados no email.</li>
             <li><strong>Nomeie os PDFs antes de selecionar:</strong> A ordem dos arquivos no seletor determina a ordem no PDF final. Renomear como &quot;01-capa.pdf&quot;, &quot;02-introducao.pdf&quot;, &quot;03-conteudo.pdf&quot; garante a sequencia correta ao selecionar todos de uma vez.</li>
             <li><strong>Verifique a paginacao final:</strong> Apos combinar, abra o PDF e confira se nao ficaram paginas em branco entre os documentos. Alguns PDFs tem uma pagina vazia no final que so aparece depois da juncao. Se necessario, remova o PDF problematico, delete a pagina em branco na origem e combine novamente.</li>
+            <li><strong>Precisa converter Word antes?</strong> Esta ferramenta aceita apenas PDFs. Se voce tem um .docx, use o <a href="/conversor-word-pdf" className="text-red-600 hover:underline">Conversor Word para PDF</a> primeiro e depois combine o resultado aqui.</li>
           </ul>
         </div>
       </section>

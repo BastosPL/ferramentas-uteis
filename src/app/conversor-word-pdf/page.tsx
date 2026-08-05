@@ -381,12 +381,30 @@ export default function ConversorWordPDF() {
         </div>
 
         <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Limitacoes e Transparencia</h2>
+          <p className="mb-3">
+            Para que voce saiba exatamente o que esperar, listamos as limitacoes conhecidas de cada direcao de conversao:
+          </p>
+          <ul className="list-disc list-inside space-y-2 ml-2 mb-3">
+            <li><strong>Word para PDF — nao e conversao direta:</strong> A ferramenta converte o .docx em HTML e usa a funcao &quot;Salvar como PDF&quot; do navegador. O resultado depende do motor de renderizacao do seu navegador, por isso fontes, espacamentos e quebras de pagina podem variar entre Chrome, Firefox e Safari.</li>
+            <li><strong>Word para PDF — layouts complexos:</strong> Caixas de texto flutuantes, graficos SmartArt, WordArt, formas geometricas e macros nao sao suportados pelo Mammoth.js. O conteudo textual sera preservado, mas a disposicao visual pode diferir do original.</li>
+            <li><strong>PDF para Word — somente texto:</strong> A conversao extrai texto e identifica titulos, mas nao recupera imagens, tabelas formatadas, cabecalhos/rodapes nem numeracao de paginas. O .docx gerado e ideal para reutilizar o conteudo textual, nao para recriar o layout visual do PDF.</li>
+            <li><strong>PDF para Word — PDFs escaneados:</strong> PDFs que contem imagens de texto (escaneados, fotos de documentos) nao tem dados textuais extraiveis. A conversao retornara vazio ou com erro. Nesses casos, e necessario OCR (reconhecimento optico de caracteres) antes da conversao.</li>
+            <li><strong>Formato .doc nao suportado:</strong> Apenas arquivos .docx (Word 2007 em diante) sao aceitos. Arquivos .doc precisam ser convertidos para .docx pelo Word ou LibreOffice antes do uso.</li>
+          </ul>
+          <p>
+            <strong>Exemplo verificavel:</strong> Crie um .docx simples no Word com um titulo, dois paragrafos e uma tabela de 2 colunas. Converta para PDF aqui e compare: o texto e a tabela serao preservados fielmente. Se adicionar uma imagem ao .docx, ela tambem aparecera no PDF. Esse teste confirma o funcionamento basico sem depender de nossa descricao.
+          </p>
+        </div>
+
+        <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Dicas para Conversao de Documentos</h2>
           <ul className="list-disc list-inside space-y-2 ml-2">
             <li><strong>Curriculo:</strong> Sempre envie em PDF para vagas de emprego. O formato garante que fontes, espacamento e layout fiquem identicos em qualquer computador ou celular do recrutador — um .docx pode abrir diferente dependendo da versao do Word.</li>
             <li><strong>Contrato recebido em PDF:</strong> Use a conversao PDF para Word para extrair o texto e poder revisar, anotar ou comparar clausulas com mais facilidade. Lembre-se de que o .docx gerado serve para analise — o documento oficial continua sendo o PDF original.</li>
             <li><strong>Use Chrome ou Edge:</strong> Esses navegadores oferecem as melhores opcoes na janela &quot;Salvar como PDF&quot;, incluindo controle de margens, orientacao (retrato/paisagem) e escala. O resultado e visivelmente superior ao de outros navegadores.</li>
             <li><strong>Verifique tabelas apos conversao:</strong> Tabelas complexas com celulas mescladas ou larguras customizadas podem precisar de ajuste manual no Word. Confira o resultado visualmente antes de considerar a conversao finalizada.</li>
+            <li><strong>Alternativa para layouts complexos:</strong> Se o documento tem muitas imagens, graficos ou formatacao avancada, considere usar a funcao &quot;Exportar como PDF&quot; do proprio Microsoft Word ou LibreOffice — esses programas conseguem reproduzir o layout com maior fidelidade do que a conversao via navegador.</li>
           </ul>
         </div>
       </section>

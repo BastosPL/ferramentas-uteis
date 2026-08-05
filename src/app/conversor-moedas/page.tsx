@@ -175,8 +175,26 @@ export default function ConversorMoedas() {
           <p className="mb-3">
             Por exemplo, para converter 100 euros para reais: o sistema divide 100 pela cotacao do euro em relacao ao dolar e, em seguida, multiplica pela cotacao do real em relacao ao dolar. Esse metodo garante precisao mesmo entre moedas que nao sao negociadas diretamente entre si.
           </p>
-          <p>
+          <p className="mb-3">
             Caso a API nao esteja disponivel por problemas de conexao, o sistema utiliza cotacoes aproximadas como fallback, garantindo que a ferramenta continue funcional. Nesse caso, um aviso e exibido informando que as cotacoes sao estimativas.
+          </p>
+          <p>
+            <strong>Exemplo verificavel:</strong> Converta 1 USD para BRL e compare o resultado com o Google (pesquise &quot;1 usd to brl&quot;). Os valores devem ser proximos — pequenas diferencas sao normais porque as fontes de dados atualizam em momentos diferentes. Se os valores divergirem muito, recarregue a pagina para buscar cotacoes mais recentes.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Tipos de Cotacao: Comercial, Turismo e Cartao</h2>
+          <p className="mb-3">
+            No Brasil, existem diferentes tipos de cotacao para o dolar e outras moedas. Entender a diferenca e importante para nao se surpreender com o valor final pago:
+          </p>
+          <ul className="list-disc list-inside space-y-2 ml-2 mb-3">
+            <li><strong>Dolar comercial (mid-market rate):</strong> E a taxa de referencia do mercado interbancario — o preco pelo qual bancos compram e vendem entre si. E o valor que nosso conversor exibe. Ninguem compra dolar por esse preco diretamente, mas ele serve como referencia para comparar ofertas.</li>
+            <li><strong>Dolar turismo:</strong> E a taxa praticada por casas de cambio para venda de moeda em especie. Costuma ser 2% a 5% mais caro que o dolar comercial. A diferenca (spread) cobre custos operacionais da casa de cambio, como logistica de transporte de cedulas, seguro e margem de lucro.</li>
+            <li><strong>Dolar cartao:</strong> Quando voce faz compras internacionais no cartao de credito, o banco aplica a cotacao do dia do fechamento da fatura (nao do dia da compra), acrescida de IOF (atualmente 3,38% para compras internacionais) e, em alguns casos, spread adicional do emissor.</li>
+          </ul>
+          <p>
+            Este conversor mostra a cotacao de mercado (mid-market rate), que e a mais util como referencia. Para saber o custo real de uma compra de moeda, adicione mentalmente o spread da casa de cambio e o IOF aplicavel a sua operacao.
           </p>
         </div>
 
