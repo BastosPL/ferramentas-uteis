@@ -193,7 +193,7 @@ export default function ContadorDeCaracteres() {
             <li><strong>Meta description persuasiva:</strong> Use entre 150 e 155 caracteres. Inclua um resumo claro do conteudo, a palavra-chave e um convite a acao (ex: &quot;Saiba como...&quot; ou &quot;Descubra agora...&quot;).</li>
             <li><strong>Posts no Twitter/X:</strong> Tweets com 70 a 100 caracteres tendem a gerar mais engajamento do que tweets muito longos. Deixe espaco para retweets com comentario adicionando uma margem de 20 caracteres.</li>
             <li><strong>Evite repeticao de palavras:</strong> Use a ferramenta de frequencia de palavras para identificar termos que aparecem muitas vezes. Substitua por sinonimos para melhorar a leitura e evitar penalizacoes de SEO por keyword stuffing.</li>
-            <li><strong>Formatacao de texto:</strong> Se alem de contar, voce precisa converter o texto para maiusculas, minusculas, Title Case ou slug, use o <a href="/conversor-texto" className="text-indigo-600 hover:underline">Conversor de Texto</a>.</li>
+            <li><strong>Formatacao de texto:</strong> Se alem de contar, voce precisa converter o texto para maiusculas, minusculas ou Title Case, a maioria dos editores de texto e processadores de documentos oferece essas funcoes nativamente.</li>
             <li><strong>Bio do Instagram:</strong> Com apenas 150 caracteres, cada palavra conta. Use emojis para economizar espaco, inclua uma proposta de valor clara e adicione um CTA (chamada para acao) direcionando ao link da bio.</li>
           </ul>
         </div>

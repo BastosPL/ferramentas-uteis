@@ -187,7 +187,7 @@ export default function TabelaMedidas() {
           As tabelas acima cobrem cinco categorias: roupas femininas, roupas masculinas, calcados femininos, calcados masculinos e aneis.
           Cada tabela cruza quatro sistemas de numeracao (Brasil, EUA, Europa e Reino Unido) e inclui as medidas corporais correspondentes em centimetros ou milimetros.
           Os tamanhos podem variar entre marcas, cortes e materiais — use as medidas corporais como referencia mais precisa.
-          Se precisar converter entre centimetros e polegadas ou outras unidades, utilize o <a href="/conversor-de-unidades" className="text-teal-600 hover:underline">Conversor de Unidades</a>.
+          Para referencia, 1 polegada equivale a 2,54 centimetros.
         </p>
       </section>
 

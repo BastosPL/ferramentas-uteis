@@ -1,7 +1,7 @@
 import {
-  TrendingUp, Lock, AlignLeft, ArrowLeftRight, Scale, Percent, Timer, Fuel,
-  QrCode, FileText, Fingerprint, Apple, FileDown, Image, ScrollText, Home,
-  DollarSign, Palette, Cake, Type, Clock, FileSignature, Tag, Mail, Ruler,
+  TrendingUp, Lock, AlignLeft, Scale, Percent, Fuel,
+  QrCode, FileText, Fingerprint, Apple, FileDown, Image, Home,
+  DollarSign, Cake, Clock, FileSignature, Tag, Ruler,
   Building2, ImageDown, FileUp, Zap, PiggyBank, Search, MapPin
 } from "lucide-react";
 import { type LucideIcon } from "lucide-react";
@@ -29,10 +29,8 @@ export const toolIcons: Record<string, ToolIconConfig> = {
   "calculadora-juros-compostos": { icon: TrendingUp, category: CATEGORIES.calculadora },
   "gerador-de-senha": { icon: Lock, category: CATEGORIES.gerador },
   "contador-de-caracteres": { icon: AlignLeft, category: CATEGORIES.utilidade },
-  "conversor-de-unidades": { icon: ArrowLeftRight, category: CATEGORIES.conversor },
   "calculadora-imc": { icon: Scale, category: CATEGORIES.calculadora },
   "calculadora-porcentagem": { icon: Percent, category: CATEGORIES.calculadora },
-  "cronometro": { icon: Timer, category: CATEGORIES.utilidade },
   "calculadora-combustivel": { icon: Fuel, category: CATEGORIES.calculadora },
   "gerador-qr-code": { icon: QrCode, category: CATEGORIES.gerador },
   "calculadora-rescisao": { icon: FileText, category: CATEGORIES.calculadora },
@@ -40,16 +38,12 @@ export const toolIcons: Record<string, ToolIconConfig> = {
   "calculadora-calorias": { icon: Apple, category: CATEGORIES.calculadora },
   "juntar-pdf": { icon: FileDown, category: CATEGORIES.pdf },
   "imagem-para-pdf": { icon: Image, category: CATEGORIES.pdf },
-  "gerador-lorem-ipsum": { icon: ScrollText, category: CATEGORIES.gerador },
   "calculadora-financiamento": { icon: Home, category: CATEGORIES.calculadora },
   "conversor-moedas": { icon: DollarSign, category: CATEGORIES.conversor },
-  "gerador-cores": { icon: Palette, category: CATEGORIES.gerador },
   "calculadora-idade": { icon: Cake, category: CATEGORIES.calculadora },
-  "conversor-texto": { icon: Type, category: CATEGORIES.conversor },
   "calculadora-horas": { icon: Clock, category: CATEGORIES.calculadora },
   "gerador-contrato": { icon: FileSignature, category: CATEGORIES.gerador },
   "calculadora-desconto": { icon: Tag, category: CATEGORIES.calculadora },
-  "validador-email": { icon: Mail, category: CATEGORIES.utilidade },
   "tabela-medidas": { icon: Ruler, category: CATEGORIES.utilidade },
   "consulta-cnpj": { icon: Building2, category: CATEGORIES.utilidade },
   "conversor-word-pdf": { icon: FileUp, category: CATEGORIES.pdf },

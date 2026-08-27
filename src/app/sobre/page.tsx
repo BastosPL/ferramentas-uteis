@@ -110,10 +110,10 @@ export default function Sobre() {
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { title: "Calculadoras", desc: "Juros compostos, IMC, calorias, financiamento, rescisão trabalhista, investimentos e mais" },
-            { title: "Geradores", desc: "Senhas seguras, QR Code, CPF/CNPJ para testes, Lorem Ipsum, contratos, QR Code PIX" },
-            { title: "Conversores", desc: "Unidades, moedas, texto, Word para PDF" },
+            { title: "Geradores", desc: "Senhas seguras, QR Code, CPF/CNPJ para testes, contratos, QR Code PIX" },
+            { title: "Conversores", desc: "Moedas com cotação atualizada, tabela de medidas, Word para PDF" },
             { title: "Ferramentas de PDF", desc: "Juntar PDF, imagem para PDF, compressor de imagem" },
-            { title: "Utilidades", desc: "Consulta CNPJ, validador de e-mail, cronômetro, tabela de medidas" },
+            { title: "Utilidades", desc: "Consulta CNPJ, consulta CEP, contador de caracteres" },
           ].map((cat) => (
             <div key={cat.title} className="bg-white rounded-xl border border-slate-200 p-4">
               <h3 className="font-bold text-slate-900 text-sm mb-1">{cat.title}</h3>

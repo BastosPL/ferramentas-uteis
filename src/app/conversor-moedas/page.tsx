@@ -235,7 +235,7 @@ export default function ConversorMoedas() {
             <li><strong>Atencao ao IOF:</strong> Compras de moeda estrangeira no Brasil estao sujeitas ao IOF (Imposto sobre Operacoes Financeiras). Esse imposto nao esta incluso na cotacao de mercado e varia conforme o tipo de operacao (cartao, especie, remessa).</li>
             <li><strong>Planeje compras parceladas:</strong> Se vai viajar, considere comprar moeda estrangeira aos poucos ao longo das semanas. Isso dilui o risco de pegar uma cotacao desfavoravel em um unico dia.</li>
             <li><strong>Peso Argentino em alta volatilidade:</strong> O Peso Argentino (ARS) sofre desvalorizacoes frequentes. Se voce esta viajando para a Argentina, pesquise tambem a cotacao do &quot;dolar blue&quot; (mercado paralelo), que costuma ser diferente da cotacao oficial.</li>
-            <li><strong>Compras internacionais:</strong> Para compras em sites estrangeiros (AliExpress, Amazon EUA), use o conversor para ter nocao do preco real em reais antes de finalizar o pedido, considerando o frete e impostos de importacao. Se o produto informa peso em libras ou medidas em polegadas, o <a href="/conversor-de-unidades" className="text-teal-600 hover:underline">Conversor de Unidades</a> ajuda a traduzir para o sistema metrico.</li>
+            <li><strong>Compras internacionais:</strong> Para compras em sites estrangeiros (AliExpress, Amazon EUA), use o conversor para ter nocao do preco real em reais antes de finalizar o pedido, considerando o frete e impostos de importacao. Se precisar converter tamanhos de roupas ou calcados, consulte a <a href="/tabela-medidas" className="text-teal-600 hover:underline">Tabela de Medidas</a>.</li>
           </ul>
         </div>
       </section>

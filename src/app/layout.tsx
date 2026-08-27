@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     template: "%s | Ferramentas Online Grátis",
   },
   description:
-    "Ferramentas online gratuitas: calculadoras, geradores de senha, contador de caracteres, conversor de unidades e muito mais. Sem cadastro, sem instalação.",
+    "Ferramentas online gratuitas: calculadoras financeiras, geradores de senha e QR Code, conversores e consultas. Sem cadastro, sem instalação.",
   keywords: [
     "ferramentas online",
     "calculadora online",
     "gerador de senha",
     "contador de caracteres",
-    "conversor de unidades",
+    "consulta cnpj",
     "calculadora de juros compostos",
     "calculadora IMC",
     "ferramentas gratuitas",
@@ -108,8 +108,8 @@ export default function RootLayout({
               <Link href="/contador-de-caracteres" className="hover:text-blue-600 transition-colors">
                 Contador de Caracteres
               </Link>
-              <Link href="/conversor-de-unidades" className="hover:text-blue-600 transition-colors">
-                Conversor de Unidades
+              <Link href="/calculadora-rescisao" className="hover:text-blue-600 transition-colors">
+                Rescisão Trabalhista
               </Link>
               <Link href="/calculadora-imc" className="hover:text-blue-600 transition-colors">
                 Calculadora IMC
@@ -154,7 +154,6 @@ export default function RootLayout({
                   <li><Link href="/gerador-de-senha" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador de Senha</Link></li>
                   <li><Link href="/gerador-qr-code" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador de QR Code</Link></li>
                   <li><Link href="/gerador-cpf-cnpj" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador CPF/CNPJ</Link></li>
-                  <li><Link href="/gerador-cores" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador de Cores</Link></li>
                   <li><Link href="/gerador-contrato" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador de Contrato</Link></li>
                 </ul>
               </div>
@@ -163,9 +162,7 @@ export default function RootLayout({
                 <ul className="space-y-2">
                   <li><Link href="/juntar-pdf" className="text-sm text-slate-400 hover:text-white transition-colors">Juntar PDF</Link></li>
                   <li><Link href="/imagem-para-pdf" className="text-sm text-slate-400 hover:text-white transition-colors">Imagem para PDF</Link></li>
-                  <li><Link href="/conversor-de-unidades" className="text-sm text-slate-400 hover:text-white transition-colors">Conversor de Unidades</Link></li>
                   <li><Link href="/conversor-moedas" className="text-sm text-slate-400 hover:text-white transition-colors">Conversor de Moedas</Link></li>
-                  <li><Link href="/conversor-texto" className="text-sm text-slate-400 hover:text-white transition-colors">Conversor de Texto</Link></li>
                   <li><Link href="/conversor-word-pdf" className="text-sm text-slate-400 hover:text-white transition-colors">Word para PDF</Link></li>
                 </ul>
               </div>
@@ -174,9 +171,6 @@ export default function RootLayout({
                 <ul className="space-y-2">
                   <li><Link href="/consulta-cnpj" className="text-sm text-slate-400 hover:text-white transition-colors">Consulta CNPJ</Link></li>
                   <li><Link href="/contador-de-caracteres" className="text-sm text-slate-400 hover:text-white transition-colors">Contador de Caracteres</Link></li>
-                  <li><Link href="/cronometro" className="text-sm text-slate-400 hover:text-white transition-colors">Cronômetro Online</Link></li>
-                  <li><Link href="/gerador-lorem-ipsum" className="text-sm text-slate-400 hover:text-white transition-colors">Lorem Ipsum</Link></li>
-                  <li><Link href="/validador-email" className="text-sm text-slate-400 hover:text-white transition-colors">Validador de Email</Link></li>
                   <li><Link href="/tabela-medidas" className="text-sm text-slate-400 hover:text-white transition-colors">Tabela de Medidas</Link></li>
                 </ul>
               </div>

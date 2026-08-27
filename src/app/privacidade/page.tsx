@@ -35,7 +35,7 @@ export default function Privacidade() {
           <p>
             A grande maioria das ferramentas do site funciona <strong>inteiramente no seu navegador</strong> (client-side),
             sem enviar dados para servidores. Isso inclui todas as calculadoras, geradores de senha, compressor de imagem,
-            conversores de PDF, cronometro, contador de caracteres e gerador de QR Code.
+            conversores de PDF, contador de caracteres e gerador de QR Code.
           </p>
           <p>
             <strong>Excecoes — ferramentas que consultam APIs externas:</strong>

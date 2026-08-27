@@ -26,12 +26,6 @@ const tools = [
     href: "/contador-de-caracteres",
   },
   {
-    slug: "conversor-de-unidades",
-    name: "Conversor de Unidades",
-    description: "Converta unidades de comprimento, peso, temperatura, volume e área de forma rápida e precisa.",
-    href: "/conversor-de-unidades",
-  },
-  {
     slug: "calculadora-imc",
     name: "Calculadora de IMC",
     description: "Calcule seu Índice de Massa Corporal e descubra se você está no peso ideal.",
@@ -42,12 +36,6 @@ const tools = [
     name: "Calculadora de Porcentagem",
     description: "Calcule porcentagens: quanto é X% de Y, aumentos, descontos e diferença entre valores.",
     href: "/calculadora-porcentagem",
-  },
-  {
-    slug: "cronometro",
-    name: "Cronômetro Online",
-    description: "Cronômetro preciso com contagem progressiva e regressiva. Timer com função de voltas.",
-    href: "/cronometro",
   },
   {
     slug: "calculadora-combustivel",
@@ -92,12 +80,6 @@ const tools = [
     href: "/imagem-para-pdf",
   },
   {
-    slug: "gerador-lorem-ipsum",
-    name: "Gerador de Lorem Ipsum",
-    description: "Gere textos placeholder para layouts e mockups. Parágrafos, frases ou palavras.",
-    href: "/gerador-lorem-ipsum",
-  },
-  {
     slug: "calculadora-financiamento",
     name: "Calculadora de Financiamento",
     description: "Simule financiamentos com tabela SAC e Price. Parcelas, juros e evolução mês a mês.",
@@ -110,22 +92,10 @@ const tools = [
     href: "/conversor-moedas",
   },
   {
-    slug: "gerador-cores",
-    name: "Gerador de Cores",
-    description: "Gere paletas, converta HEX/RGB/HSL e visualize cores. Color picker para designers.",
-    href: "/gerador-cores",
-  },
-  {
     slug: "calculadora-idade",
     name: "Calculadora de Idade",
     description: "Calcule sua idade exata em anos, meses e dias. Descubra dias vividos, próximo aniversário e signo.",
     href: "/calculadora-idade",
-  },
-  {
-    slug: "conversor-texto",
-    name: "Conversor de Texto",
-    description: "Converta textos para maiúsculas, minúsculas, título, slug e mais. Remova acentos facilmente.",
-    href: "/conversor-texto",
   },
   {
     slug: "calculadora-horas",
@@ -144,12 +114,6 @@ const tools = [
     name: "Calculadora de Desconto",
     description: "Calcule descontos em porcentagem, descubra o preço final e compare ofertas.",
     href: "/calculadora-desconto",
-  },
-  {
-    slug: "validador-email",
-    name: "Validador de Email",
-    description: "Verifique se endereços de email têm formato válido. Detecta erros e sugere correções.",
-    href: "/validador-email",
   },
   {
     slug: "tabela-medidas",
@@ -470,7 +434,7 @@ export default function Home() {
               <div className="bg-white rounded-2xl border border-slate-200 p-6">
                 <h3 className="text-base font-semibold text-slate-900 mb-2">Geradores</h3>
                 <p className="text-slate-500 text-sm leading-relaxed mb-3">
-                  Senhas seguras, QR Codes, QR Code PIX, CPF/CNPJ para testes, Lorem Ipsum, contratos e paletas de cores.
+                  Senhas seguras, QR Codes, QR Code PIX, CPF/CNPJ para testes e contratos.
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   <Link href="/gerador-de-senha" className="text-xs text-blue-600 hover:underline">Senhas</Link>
@@ -487,14 +451,10 @@ export default function Home() {
               <div className="bg-white rounded-2xl border border-slate-200 p-6">
                 <h3 className="text-base font-semibold text-slate-900 mb-2">Conversores</h3>
                 <p className="text-slate-500 text-sm leading-relaxed mb-3">
-                  Unidades de medida, moedas com cotação atualizada, texto entre formatos e Word/PDF.
+                  Moedas com cotação atualizada, tabela de medidas e Word/PDF.
                 </p>
                 <div className="flex flex-wrap gap-1.5">
-                  <Link href="/conversor-de-unidades" className="text-xs text-blue-600 hover:underline">Unidades</Link>
-                  <span className="text-slate-300">·</span>
                   <Link href="/conversor-moedas" className="text-xs text-blue-600 hover:underline">Moedas</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/conversor-texto" className="text-xs text-blue-600 hover:underline">Texto</Link>
                   <span className="text-slate-300">·</span>
                   <Link href="/tabela-medidas" className="text-xs text-blue-600 hover:underline">Medidas</Link>
                 </div>
@@ -517,14 +477,12 @@ export default function Home() {
               <div className="bg-white rounded-2xl border border-slate-200 p-6">
                 <h3 className="text-base font-semibold text-slate-900 mb-2">Consultas e Utilidades</h3>
                 <p className="text-slate-500 text-sm leading-relaxed mb-3">
-                  Consulta CNPJ e CEP com dados oficiais, validador de e-mail, contador de caracteres e cronômetro.
+                  Consulta CNPJ e CEP com dados oficiais e contador de caracteres.
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   <Link href="/consulta-cnpj" className="text-xs text-blue-600 hover:underline">CNPJ</Link>
                   <span className="text-slate-300">·</span>
                   <Link href="/consulta-cep" className="text-xs text-blue-600 hover:underline">CEP</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/validador-email" className="text-xs text-blue-600 hover:underline">Validador E-mail</Link>
                   <span className="text-slate-300">·</span>
                   <Link href="/contador-de-caracteres" className="text-xs text-blue-600 hover:underline">Caracteres</Link>
                 </div>
