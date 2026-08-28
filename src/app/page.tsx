@@ -1,160 +1,79 @@
 "use client";
 
 import Link from "next/link";
-import { Shield, Zap, Lock, Smartphone, Clock, Sparkles, ArrowRight, BookOpen, Mail } from "lucide-react";
+import { Shield, Zap, Lock, Smartphone, Clock, Sparkles, ArrowRight, BookOpen } from "lucide-react";
 import { WebsiteSchema } from "./components/SchemaOrg";
 import { allArticles } from "../lib/articles";
 import { getToolIcon } from "@/lib/tool-icons";
 
-const tools = [
+const categorias = [
   {
-    slug: "calculadora-juros-compostos",
-    name: "Calculadora de Juros Compostos",
-    description: "Simule investimentos com juros compostos. Descubra quanto seu dinheiro pode render ao longo do tempo.",
-    href: "/calculadora-juros-compostos",
+    titulo: "Finanças e Trabalho",
+    descricao: "Cálculos financeiros, trabalhistas e de investimento com fórmulas explicadas.",
+    ferramentas: [
+      { slug: "calculadora-rescisao", name: "Calculadora de Rescisão", description: "Calcule sua rescisão trabalhista: saldo de salário, férias, 13º, aviso prévio e multa FGTS.", href: "/calculadora-rescisao" },
+      { slug: "calculadora-juros-compostos", name: "Calculadora de Juros Compostos", description: "Simule investimentos com juros compostos. Descubra quanto seu dinheiro pode render ao longo do tempo.", href: "/calculadora-juros-compostos" },
+      { slug: "calculadora-investimentos", name: "Calculadora de Investimentos", description: "Simule e compare CDB, LCI/LCA e Tesouro Direto. Veja o rendimento líquido com desconto de IR.", href: "/calculadora-investimentos" },
+      { slug: "calculadora-financiamento", name: "Calculadora de Financiamento", description: "Simule financiamentos com tabela SAC e Price. Parcelas, juros e evolução mês a mês.", href: "/calculadora-financiamento" },
+      { slug: "calculadora-desconto", name: "Calculadora de Desconto", description: "Calcule descontos em porcentagem, descubra o preço final e compare ofertas.", href: "/calculadora-desconto" },
+      { slug: "calculadora-porcentagem", name: "Calculadora de Porcentagem", description: "Calcule porcentagens: quanto é X% de Y, aumentos, descontos e diferença entre valores.", href: "/calculadora-porcentagem" },
+      { slug: "calculadora-horas", name: "Calculadora de Horas", description: "Some horas trabalhadas, calcule banco de horas e diferença entre horários. Controle de ponto.", href: "/calculadora-horas" },
+      { slug: "calculadora-combustivel", name: "Álcool ou Gasolina?", description: "Descubra se vale mais a pena abastecer com álcool ou gasolina. Regra dos 70%.", href: "/calculadora-combustivel" },
+    ],
   },
   {
-    slug: "gerador-de-senha",
-    name: "Gerador de Senha Segura",
-    description: "Gere senhas fortes e aleatórias com letras, números e símbolos. Proteja suas contas online.",
-    href: "/gerador-de-senha",
+    titulo: "Consultas e Recursos do Brasil",
+    descricao: "Dados oficiais, pagamentos e consultas úteis para o dia a dia brasileiro.",
+    ferramentas: [
+      { slug: "consulta-cnpj", name: "Consulta CNPJ", description: "Consulte dados da Receita Federal: razão social, situação cadastral, CNAE, endereço, sócios e capital social.", href: "/consulta-cnpj" },
+      { slug: "consulta-cep", name: "Consulta CEP", description: "Encontre endereços completos por CEP ou descubra o CEP de qualquer rua do Brasil. Dados oficiais dos Correios.", href: "/consulta-cep" },
+      { slug: "gerador-pix", name: "Gerador de QR Code PIX", description: "Gere QR Code PIX para receber pagamentos. Crie código PIX copia e cola instantaneamente.", href: "/gerador-pix" },
+      { slug: "conversor-moedas", name: "Conversor de Moedas", description: "Converta moedas com cotação atualizada: Dólar, Euro, Libra e mais.", href: "/conversor-moedas" },
+      { slug: "gerador-cpf-cnpj", name: "Gerador de CPF/CNPJ", description: "Gere CPFs e CNPJs válidos para testes de software. Valide números existentes.", href: "/gerador-cpf-cnpj" },
+    ],
   },
   {
-    slug: "contador-de-caracteres",
-    name: "Contador de Caracteres e Palavras",
-    description: "Conte caracteres, palavras, frases e parágrafos. Ideal para redes sociais, SEO e redações.",
-    href: "/contador-de-caracteres",
+    titulo: "Saúde e Dia a Dia",
+    descricao: "Cálculos de saúde, medidas e utilidades práticas para o cotidiano.",
+    ferramentas: [
+      { slug: "calculadora-imc", name: "Calculadora de IMC", description: "Calcule seu Índice de Massa Corporal e descubra se você está no peso ideal.", href: "/calculadora-imc" },
+      { slug: "calculadora-calorias", name: "Calculadora de Calorias", description: "Descubra quantas calorias você precisa por dia para emagrecer, manter ou ganhar peso.", href: "/calculadora-calorias" },
+      { slug: "calculadora-idade", name: "Calculadora de Idade", description: "Calcule sua idade exata em anos, meses e dias. Descubra dias vividos, próximo aniversário e signo.", href: "/calculadora-idade" },
+      { slug: "tabela-medidas", name: "Tabela de Medidas", description: "Converta tamanhos de roupas, calçados e anéis entre Brasil, EUA e Europa.", href: "/tabela-medidas" },
+    ],
   },
   {
-    slug: "calculadora-imc",
-    name: "Calculadora de IMC",
-    description: "Calcule seu Índice de Massa Corporal e descubra se você está no peso ideal.",
-    href: "/calculadora-imc",
+    titulo: "Documentos, PDF e Imagem",
+    descricao: "Criação, conversão e manipulação de documentos e imagens no navegador.",
+    ferramentas: [
+      { slug: "juntar-pdf", name: "Juntar PDF e Imagens para PDF", description: "Combine PDFs em um só ou converta imagens JPG e PNG para PDF. 100% grátis e privado.", href: "/juntar-pdf" },
+      { slug: "conversor-word-pdf", name: "Conversor Word / PDF", description: "Converta Word para PDF e PDF para Word online. 100% privado, nenhum arquivo sai do seu navegador.", href: "/conversor-word-pdf" },
+      { slug: "compressor-imagem", name: "Compressor de Imagem", description: "Comprima imagens JPG, PNG e WebP online. Ajuste a compressão e reduza o tamanho com controle de qualidade.", href: "/compressor-imagem" },
+      { slug: "gerador-contrato", name: "Gerador de Contrato", description: "Gere modelos de contrato de prestação de serviço prontos para usar. Baixe gratuitamente.", href: "/gerador-contrato" },
+    ],
   },
   {
-    slug: "calculadora-porcentagem",
-    name: "Calculadora de Porcentagem",
-    description: "Calcule porcentagens: quanto é X% de Y, aumentos, descontos e diferença entre valores.",
-    href: "/calculadora-porcentagem",
-  },
-  {
-    slug: "calculadora-combustivel",
-    name: "Álcool ou Gasolina?",
-    description: "Descubra se vale mais a pena abastecer com álcool ou gasolina. Regra dos 70%.",
-    href: "/calculadora-combustivel",
-  },
-  {
-    slug: "gerador-qr-code",
-    name: "Gerador de QR Code",
-    description: "Gere QR Codes para URLs, WhatsApp, Wi-Fi e mais. Baixe em PNG gratuitamente.",
-    href: "/gerador-qr-code",
-  },
-  {
-    slug: "calculadora-rescisao",
-    name: "Calculadora de Rescisão",
-    description: "Calcule sua rescisão trabalhista: saldo de salário, férias, 13º, aviso prévio e multa FGTS.",
-    href: "/calculadora-rescisao",
-  },
-  {
-    slug: "gerador-cpf-cnpj",
-    name: "Gerador de CPF/CNPJ",
-    description: "Gere CPFs e CNPJs válidos para testes de software. Valide números existentes.",
-    href: "/gerador-cpf-cnpj",
-  },
-  {
-    slug: "calculadora-calorias",
-    name: "Calculadora de Calorias",
-    description: "Descubra quantas calorias você precisa por dia para emagrecer, manter ou ganhar peso.",
-    href: "/calculadora-calorias",
-  },
-  {
-    slug: "juntar-pdf",
-    name: "Juntar PDF e Imagens para PDF",
-    description: "Combine PDFs em um só ou converta imagens JPG e PNG para PDF. 100% grátis e privado.",
-    href: "/juntar-pdf",
-  },
-  {
-    slug: "calculadora-financiamento",
-    name: "Calculadora de Financiamento",
-    description: "Simule financiamentos com tabela SAC e Price. Parcelas, juros e evolução mês a mês.",
-    href: "/calculadora-financiamento",
-  },
-  {
-    slug: "conversor-moedas",
-    name: "Conversor de Moedas",
-    description: "Converta moedas com cotação atualizada: Dólar, Euro, Libra e mais.",
-    href: "/conversor-moedas",
-  },
-  {
-    slug: "calculadora-idade",
-    name: "Calculadora de Idade",
-    description: "Calcule sua idade exata em anos, meses e dias. Descubra dias vividos, próximo aniversário e signo.",
-    href: "/calculadora-idade",
-  },
-  {
-    slug: "calculadora-horas",
-    name: "Calculadora de Horas",
-    description: "Some horas trabalhadas, calcule banco de horas e diferença entre horários. Controle de ponto.",
-    href: "/calculadora-horas",
-  },
-  {
-    slug: "gerador-contrato",
-    name: "Gerador de Contrato",
-    description: "Gere modelos de contrato de prestação de serviço prontos para usar. Baixe gratuitamente.",
-    href: "/gerador-contrato",
-  },
-  {
-    slug: "calculadora-desconto",
-    name: "Calculadora de Desconto",
-    description: "Calcule descontos em porcentagem, descubra o preço final e compare ofertas.",
-    href: "/calculadora-desconto",
-  },
-  {
-    slug: "tabela-medidas",
-    name: "Tabela de Medidas",
-    description: "Converta tamanhos de roupas, calçados e anéis entre Brasil, EUA e Europa.",
-    href: "/tabela-medidas",
-  },
-  {
-    slug: "consulta-cnpj",
-    name: "Consulta CNPJ",
-    description: "Consulte dados da Receita Federal: razão social, situação cadastral, CNAE, endereço, sócios e capital social.",
-    href: "/consulta-cnpj",
-  },
-  {
-    slug: "conversor-word-pdf",
-    name: "Conversor Word / PDF",
-    description: "Converta Word para PDF e PDF para Word online. 100% privado, nenhum arquivo sai do seu navegador.",
-    href: "/conversor-word-pdf",
-  },
-  {
-    slug: "compressor-imagem",
-    name: "Compressor de Imagem",
-    description: "Comprima imagens JPG, PNG e WebP online. Ajuste a compressao e reduza o tamanho com controle de qualidade. 100% privado.",
-    href: "/compressor-imagem",
-  },
-  {
-    slug: "gerador-pix",
-    name: "Gerador de QR Code PIX",
-    description: "Gere QR Code PIX para receber pagamentos. Crie código PIX copia e cola instantaneamente.",
-    href: "/gerador-pix",
-  },
-  {
-    slug: "calculadora-investimentos",
-    name: "Calculadora de Investimentos",
-    description: "Simule e compare CDB, LCI/LCA e Tesouro Direto. Veja o rendimento líquido com desconto de IR.",
-    href: "/calculadora-investimentos",
-  },
-  {
-    slug: "consulta-cep",
-    name: "Consulta CEP",
-    description: "Encontre endereços completos por CEP ou descubra o CEP de qualquer rua do Brasil. Dados oficiais dos Correios.",
-    href: "/consulta-cep",
+    titulo: "Utilidades Digitais",
+    descricao: "Ferramentas de produtividade e segurança para o dia a dia digital.",
+    ferramentas: [
+      { slug: "gerador-de-senha", name: "Gerador de Senha Segura", description: "Gere senhas fortes e aleatórias com letras, números e símbolos. Proteja suas contas online.", href: "/gerador-de-senha" },
+      { slug: "gerador-qr-code", name: "Gerador de QR Code", description: "Gere QR Codes para URLs, WhatsApp, Wi-Fi e mais. Baixe em PNG gratuitamente.", href: "/gerador-qr-code" },
+      { slug: "contador-de-caracteres", name: "Contador de Caracteres e Palavras", description: "Conte caracteres, palavras, frases e parágrafos. Ideal para redes sociais, SEO e redações.", href: "/contador-de-caracteres" },
+    ],
   },
 ];
 
-const featuredSlugs = ["consulta-cnpj", "juntar-pdf", "gerador-pix", "calculadora-investimentos"];
-const featuredTools = featuredSlugs.map((slug) => tools.find((t) => t.slug === slug)!);
+const allTools = categorias.flatMap((c) => c.ferramentas);
+
+const featuredSlugs = [
+  "calculadora-combustivel",
+  "calculadora-rescisao",
+  "calculadora-juros-compostos",
+  "conversor-moedas",
+  "consulta-cnpj",
+  "gerador-pix",
+];
+const featuredTools = featuredSlugs.map((slug) => allTools.find((t) => t.slug === slug)!);
 
 export default function Home() {
   return (
@@ -166,15 +85,15 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="text-center">
               <span className="inline-block rounded-full bg-blue-100 text-blue-700 text-sm font-medium px-4 py-1.5 mb-6">
-                30+ Ferramentas Gratuitas
+                Gratuitas, sem cadastro, direto no navegador
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
-                Ferramentas Online{" "}
-                <span className="text-blue-600">Gratuitas</span>
+                Calculadoras, consultas e{" "}
+                <span className="text-blue-600">ferramentas práticas</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-8">
-                Calculadoras, geradores e conversores gratuitos, sem cadastro e sem instalação.
-                A maioria das ferramentas processa os dados diretamente no navegador.
+                Ferramentas online para cálculos financeiros, consultas brasileiras e tarefas do dia a dia.
+                A maioria processa os dados no seu navegador — sem instalar nada.
               </p>
               <Link
                 href="#ferramentas"
@@ -206,7 +125,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-10">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">
-                Em Destaque
+                Mais Utilizadas
               </h2>
               <Link
                 href="#ferramentas"
@@ -215,7 +134,7 @@ export default function Home() {
                 Ver todas <ArrowRight size={14} />
               </Link>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {featuredTools.map((tool) => {
                 const { icon: Icon, category } = getToolIcon(tool.slug);
                 return (
@@ -240,7 +159,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* All Tools Grid */}
+        {/* All Tools by Category */}
         <section id="ferramentas" className="py-16 md:py-24 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -248,41 +167,37 @@ export default function Home() {
                 Todas as Ferramentas
               </h2>
               <p className="text-slate-500 text-lg max-w-xl mx-auto">
-                Escolha a ferramenta que você precisa. Sem instalar nada e sem criar conta.
+                24 ferramentas organizadas por categoria. Sem instalar nada e sem criar conta.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-              {tools.map((tool) => {
-                const { icon: Icon, category } = getToolIcon(tool.slug);
-                return (
-                  <Link
-                    key={tool.href}
-                    href={tool.href}
-                    className="group relative bg-white rounded-2xl border border-slate-200 p-5 card-interactive scroll-scale-in"
-                  >
-                    <div className={`flex items-center justify-center w-10 h-10 rounded-xl ${category.bg} mb-3`}>
-                      <Icon className={category.text} size={20} />
-                    </div>
-                    <h3 className="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors mb-1.5">
-                      {tool.name}
-                    </h3>
-                    <p className="text-slate-500 text-sm leading-relaxed line-clamp-2">
-                      {tool.description}
-                    </p>
-                  </Link>
-                );
-              })}
-
-              <div className="bg-blue-50 rounded-2xl border border-blue-200 p-5 flex flex-col items-center justify-center text-center">
-                <Sparkles size={28} className="text-blue-600 mb-3" />
-                <h3 className="text-base font-semibold text-blue-700 mb-1">
-                  Mais ferramentas em breve
-                </h3>
-                <p className="text-blue-600/70 text-sm">
-                  Novas ferramentas são adicionadas toda semana. Salve nos favoritos!
-                </p>
+            {categorias.map((cat) => (
+              <div key={cat.titulo} className="mb-12 last:mb-0">
+                <h3 className="text-lg font-semibold text-slate-900 mb-1">{cat.titulo}</h3>
+                <p className="text-slate-500 text-sm mb-4">{cat.descricao}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                  {cat.ferramentas.map((tool) => {
+                    const { icon: Icon, category } = getToolIcon(tool.slug);
+                    return (
+                      <Link
+                        key={tool.href}
+                        href={tool.href}
+                        className="group relative bg-white rounded-2xl border border-slate-200 p-5 card-interactive scroll-scale-in"
+                      >
+                        <div className={`flex items-center justify-center w-10 h-10 rounded-xl ${category.bg} mb-3`}>
+                          <Icon className={category.text} size={20} />
+                        </div>
+                        <h4 className="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors mb-1.5">
+                          {tool.name}
+                        </h4>
+                        <p className="text-slate-500 text-sm leading-relaxed line-clamp-2">
+                          {tool.description}
+                        </p>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -291,10 +206,10 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mb-3">
-                Por que usar nossas ferramentas?
+                Por que usar o FerramentaUtil?
               </h2>
               <p className="text-slate-500 text-lg max-w-xl mx-auto">
-                Praticidade, segurança e velocidade — tudo em um só lugar.
+                Praticidade, transparência e velocidade — tudo em um só lugar.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -331,7 +246,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-base font-semibold text-slate-900 mb-2">100% Gratuito</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">
-                  Todas as ferramentas são totalmente gratuitas, sem limites de uso e sem cadastro.
+                  Todas as ferramentas são gratuitas, sem limites de uso e sem cadastro.
                 </p>
               </div>
             </div>
@@ -352,7 +267,8 @@ export default function Home() {
               </div>
               <div className="text-slate-600 leading-relaxed space-y-4">
                 <p>
-                  O FerramentaUtil é um portal brasileiro de ferramentas online gratuitas, mantido pelo Grupo Bastos em Recife/PE.
+                  O FerramentaUtil é um portal brasileiro de ferramentas online gratuitas, desenvolvido e mantido pela
+                  Equipe Editorial FerramentaUtil em Recife/PE.
                   As calculadoras, geradores e conversores do site são voltados para quem precisa resolver tarefas do dia a dia
                   de forma rápida — estudantes, profissionais, empreendedores ou qualquer pessoa que precise de um cálculo
                   confiável sem instalar software.
@@ -379,112 +295,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Categorias de Ferramentas */}
-        <section className="py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mb-3">
-                Ferramentas por Categoria
-              </h2>
-              <p className="text-slate-500 text-lg max-w-xl mx-auto">
-                Mais de 30 ferramentas organizadas para facilitar a busca.
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              <div className="bg-white rounded-2xl border border-slate-200 p-6">
-                <h3 className="text-base font-semibold text-slate-900 mb-2">Calculadoras Financeiras</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-3">
-                  Juros compostos, financiamento (SAC e Price), investimentos (CDB, LCI/LCA, Tesouro Direto), rescisão trabalhista e descontos.
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  <Link href="/calculadora-juros-compostos" className="text-xs text-blue-600 hover:underline">Juros Compostos</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/calculadora-financiamento" className="text-xs text-blue-600 hover:underline">Financiamento</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/calculadora-investimentos" className="text-xs text-blue-600 hover:underline">Investimentos</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/calculadora-desconto" className="text-xs text-blue-600 hover:underline">Desconto</Link>
-                </div>
-              </div>
-              <div className="bg-white rounded-2xl border border-slate-200 p-6">
-                <h3 className="text-base font-semibold text-slate-900 mb-2">Calculadoras do Dia a Dia</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-3">
-                  IMC, calorias, idade, horas trabalhadas, porcentagem e combustível. Cada uma explica a fórmula utilizada e suas limitações.
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  <Link href="/calculadora-imc" className="text-xs text-blue-600 hover:underline">IMC</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/calculadora-calorias" className="text-xs text-blue-600 hover:underline">Calorias</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/calculadora-porcentagem" className="text-xs text-blue-600 hover:underline">Porcentagem</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/calculadora-idade" className="text-xs text-blue-600 hover:underline">Idade</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/calculadora-horas" className="text-xs text-blue-600 hover:underline">Horas</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/calculadora-combustivel" className="text-xs text-blue-600 hover:underline">Combustível</Link>
-                </div>
-              </div>
-              <div className="bg-white rounded-2xl border border-slate-200 p-6">
-                <h3 className="text-base font-semibold text-slate-900 mb-2">Geradores</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-3">
-                  Senhas seguras, QR Codes, QR Code PIX, CPF/CNPJ para testes e contratos.
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  <Link href="/gerador-de-senha" className="text-xs text-blue-600 hover:underline">Senhas</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/gerador-pix" className="text-xs text-blue-600 hover:underline">PIX</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/gerador-qr-code" className="text-xs text-blue-600 hover:underline">QR Code</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/gerador-cpf-cnpj" className="text-xs text-blue-600 hover:underline">CPF/CNPJ</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/gerador-contrato" className="text-xs text-blue-600 hover:underline">Contrato</Link>
-                </div>
-              </div>
-              <div className="bg-white rounded-2xl border border-slate-200 p-6">
-                <h3 className="text-base font-semibold text-slate-900 mb-2">Conversores</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-3">
-                  Moedas com cotação atualizada, tabela de medidas e Word/PDF.
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  <Link href="/conversor-moedas" className="text-xs text-blue-600 hover:underline">Moedas</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/tabela-medidas" className="text-xs text-blue-600 hover:underline">Medidas</Link>
-                </div>
-              </div>
-              <div className="bg-white rounded-2xl border border-slate-200 p-6">
-                <h3 className="text-base font-semibold text-slate-900 mb-2">Ferramentas de PDF e Imagem</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-3">
-                  Juntar PDFs, converter imagens para PDF, comprimir imagens e converter Word/PDF — tudo processado no navegador.
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  <Link href="/juntar-pdf" className="text-xs text-blue-600 hover:underline">Juntar PDF</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/compressor-imagem" className="text-xs text-blue-600 hover:underline">Compressor</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/conversor-word-pdf" className="text-xs text-blue-600 hover:underline">Word/PDF</Link>
-                </div>
-              </div>
-              <div className="bg-white rounded-2xl border border-slate-200 p-6">
-                <h3 className="text-base font-semibold text-slate-900 mb-2">Consultas e Utilidades</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-3">
-                  Consulta CNPJ e CEP com dados oficiais e contador de caracteres.
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  <Link href="/consulta-cnpj" className="text-xs text-blue-600 hover:underline">CNPJ</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/consulta-cep" className="text-xs text-blue-600 hover:underline">CEP</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/contador-de-caracteres" className="text-xs text-blue-600 hover:underline">Caracteres</Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Blog Section */}
-        <section className="py-16 md:py-24 bg-slate-50">
+        <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-10">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">

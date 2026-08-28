@@ -16,7 +16,7 @@ export default function Privacidade() {
           <h2>Controlador de Dados</h2>
           <p>
             O controlador dos dados pessoais coletados por este site é o
-            <strong> Grupo Bastos</strong>, com sede em Recife/PE — Brasil.
+            <strong> FerramentaUtil</strong>, com sede em Recife/PE — Brasil.
             Para exercer seus direitos de titular, entre em contato pelo e-mail{" "}
             <strong>contato@ferramentautil.com.br</strong>.
           </p>

@@ -19,7 +19,7 @@ export default function NotFound() {
           P&aacute;gina n&atilde;o encontrada
         </h1>
         <p className="text-slate-500 mb-8 leading-relaxed">
-          Essa p&aacute;gina n&atilde;o existe ou foi removida. Mas temos mais de 30
+          Essa p&aacute;gina n&atilde;o existe ou foi removida. Mas temos 24
           ferramentas gratuitas esperando por voc&ecirc;!
         </p>
 

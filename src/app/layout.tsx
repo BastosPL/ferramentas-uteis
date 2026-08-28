@@ -99,23 +99,17 @@ export default function RootLayout({
               <span><span className="text-blue-600">Ferramenta</span><span className="text-slate-900">Util</span></span>
             </Link>
             <div className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-              <Link href="/calculadora-juros-compostos" className="hover:text-blue-600 transition-colors">
-                Juros Compostos
-              </Link>
-              <Link href="/gerador-de-senha" className="hover:text-blue-600 transition-colors">
-                Gerador de Senha
-              </Link>
-              <Link href="/contador-de-caracteres" className="hover:text-blue-600 transition-colors">
-                Contador de Caracteres
-              </Link>
-              <Link href="/calculadora-rescisao" className="hover:text-blue-600 transition-colors">
-                Rescisão Trabalhista
-              </Link>
-              <Link href="/calculadora-imc" className="hover:text-blue-600 transition-colors">
-                Calculadora IMC
+              <Link href="/#ferramentas" className="hover:text-blue-600 transition-colors">
+                Ferramentas
               </Link>
               <Link href="/blog" className="hover:text-blue-600 transition-colors">
                 Blog
+              </Link>
+              <Link href="/sobre" className="hover:text-blue-600 transition-colors">
+                Sobre
+              </Link>
+              <Link href="/contato" className="hover:text-blue-600 transition-colors">
+                Contato
               </Link>
             </div>
           </nav>
@@ -132,45 +126,54 @@ export default function RootLayout({
                 <p className="text-slate-500 text-xs">Ferramentas online gratuitas</p>
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
               <div>
-                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Calculadoras</h3>
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Finanças e Trabalho</h3>
                 <ul className="space-y-2">
-                  <li><Link href="/calculadora-juros-compostos" className="text-sm text-slate-400 hover:text-white transition-colors">Juros Compostos</Link></li>
-                  <li><Link href="/calculadora-imc" className="text-sm text-slate-400 hover:text-white transition-colors">IMC</Link></li>
-                  <li><Link href="/calculadora-porcentagem" className="text-sm text-slate-400 hover:text-white transition-colors">Porcentagem</Link></li>
-                  <li><Link href="/calculadora-combustivel" className="text-sm text-slate-400 hover:text-white transition-colors">Álcool ou Gasolina</Link></li>
                   <li><Link href="/calculadora-rescisao" className="text-sm text-slate-400 hover:text-white transition-colors">Rescisão Trabalhista</Link></li>
-                  <li><Link href="/calculadora-calorias" className="text-sm text-slate-400 hover:text-white transition-colors">Calorias Diárias</Link></li>
+                  <li><Link href="/calculadora-juros-compostos" className="text-sm text-slate-400 hover:text-white transition-colors">Juros Compostos</Link></li>
+                  <li><Link href="/calculadora-investimentos" className="text-sm text-slate-400 hover:text-white transition-colors">Investimentos</Link></li>
                   <li><Link href="/calculadora-financiamento" className="text-sm text-slate-400 hover:text-white transition-colors">Financiamento</Link></li>
-                  <li><Link href="/calculadora-idade" className="text-sm text-slate-400 hover:text-white transition-colors">Idade</Link></li>
-                  <li><Link href="/calculadora-horas" className="text-sm text-slate-400 hover:text-white transition-colors">Horas</Link></li>
                   <li><Link href="/calculadora-desconto" className="text-sm text-slate-400 hover:text-white transition-colors">Desconto</Link></li>
+                  <li><Link href="/calculadora-porcentagem" className="text-sm text-slate-400 hover:text-white transition-colors">Porcentagem</Link></li>
+                  <li><Link href="/calculadora-horas" className="text-sm text-slate-400 hover:text-white transition-colors">Horas</Link></li>
+                  <li><Link href="/calculadora-combustivel" className="text-sm text-slate-400 hover:text-white transition-colors">Álcool ou Gasolina</Link></li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Geradores</h3>
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Consultas Brasil</h3>
                 <ul className="space-y-2">
-                  <li><Link href="/gerador-de-senha" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador de Senha</Link></li>
-                  <li><Link href="/gerador-qr-code" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador de QR Code</Link></li>
+                  <li><Link href="/consulta-cnpj" className="text-sm text-slate-400 hover:text-white transition-colors">Consulta CNPJ</Link></li>
+                  <li><Link href="/consulta-cep" className="text-sm text-slate-400 hover:text-white transition-colors">Consulta CEP</Link></li>
+                  <li><Link href="/gerador-pix" className="text-sm text-slate-400 hover:text-white transition-colors">QR Code PIX</Link></li>
+                  <li><Link href="/conversor-moedas" className="text-sm text-slate-400 hover:text-white transition-colors">Conversor de Moedas</Link></li>
                   <li><Link href="/gerador-cpf-cnpj" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador CPF/CNPJ</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Saúde e Dia a Dia</h3>
+                <ul className="space-y-2">
+                  <li><Link href="/calculadora-imc" className="text-sm text-slate-400 hover:text-white transition-colors">IMC</Link></li>
+                  <li><Link href="/calculadora-calorias" className="text-sm text-slate-400 hover:text-white transition-colors">Calorias Diárias</Link></li>
+                  <li><Link href="/calculadora-idade" className="text-sm text-slate-400 hover:text-white transition-colors">Idade</Link></li>
+                  <li><Link href="/tabela-medidas" className="text-sm text-slate-400 hover:text-white transition-colors">Tabela de Medidas</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Documentos e PDF</h3>
+                <ul className="space-y-2">
+                  <li><Link href="/juntar-pdf" className="text-sm text-slate-400 hover:text-white transition-colors">Juntar PDF</Link></li>
+                  <li><Link href="/conversor-word-pdf" className="text-sm text-slate-400 hover:text-white transition-colors">Word para PDF</Link></li>
+                  <li><Link href="/compressor-imagem" className="text-sm text-slate-400 hover:text-white transition-colors">Compressor de Imagem</Link></li>
                   <li><Link href="/gerador-contrato" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador de Contrato</Link></li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">PDF & Conversores</h3>
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Utilidades Digitais</h3>
                 <ul className="space-y-2">
-                  <li><Link href="/juntar-pdf" className="text-sm text-slate-400 hover:text-white transition-colors">Juntar PDF</Link></li>
-                  <li><Link href="/conversor-moedas" className="text-sm text-slate-400 hover:text-white transition-colors">Conversor de Moedas</Link></li>
-                  <li><Link href="/conversor-word-pdf" className="text-sm text-slate-400 hover:text-white transition-colors">Word para PDF</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Utilidades</h3>
-                <ul className="space-y-2">
-                  <li><Link href="/consulta-cnpj" className="text-sm text-slate-400 hover:text-white transition-colors">Consulta CNPJ</Link></li>
+                  <li><Link href="/gerador-de-senha" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador de Senha</Link></li>
+                  <li><Link href="/gerador-qr-code" className="text-sm text-slate-400 hover:text-white transition-colors">Gerador de QR Code</Link></li>
                   <li><Link href="/contador-de-caracteres" className="text-sm text-slate-400 hover:text-white transition-colors">Contador de Caracteres</Link></li>
-                  <li><Link href="/tabela-medidas" className="text-sm text-slate-400 hover:text-white transition-colors">Tabela de Medidas</Link></li>
                 </ul>
               </div>
             </div>

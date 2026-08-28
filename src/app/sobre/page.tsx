@@ -105,15 +105,15 @@ export default function Sobre() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">O que Oferecemos</h2>
         </div>
         <p className="text-slate-500 mb-6">
-          Atualmente contamos com <strong className="text-slate-900">mais de 30 ferramentas gratuitas</strong>, organizadas em categorias:
+          Atualmente contamos com <strong className="text-slate-900">24 ferramentas gratuitas</strong>, organizadas em 5 categorias:
         </p>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
-            { title: "Calculadoras", desc: "Juros compostos, IMC, calorias, financiamento, rescisão trabalhista, investimentos e mais" },
-            { title: "Geradores", desc: "Senhas seguras, QR Code, CPF/CNPJ para testes, contratos, QR Code PIX" },
-            { title: "Conversores", desc: "Moedas com cotação atualizada, tabela de medidas, Word para PDF" },
-            { title: "Ferramentas de PDF", desc: "Juntar PDF e converter imagens para PDF, compressor de imagem" },
-            { title: "Utilidades", desc: "Consulta CNPJ, consulta CEP, contador de caracteres" },
+            { title: "Finanças e Trabalho", desc: "Rescisão trabalhista, juros compostos, investimentos, financiamento, desconto, porcentagem, horas e combustível" },
+            { title: "Consultas e Recursos do Brasil", desc: "Consulta CNPJ e CEP, QR Code PIX, conversor de moedas, gerador de CPF/CNPJ para testes" },
+            { title: "Saúde e Dia a Dia", desc: "IMC, calorias diárias, calculadora de idade, tabela de medidas de roupas e calçados" },
+            { title: "Documentos, PDF e Imagem", desc: "Juntar PDF e imagens para PDF, Word para PDF, compressor de imagem, gerador de contrato" },
+            { title: "Utilidades Digitais", desc: "Gerador de senha segura, gerador de QR Code, contador de caracteres e palavras" },
           ].map((cat) => (
             <div key={cat.title} className="bg-white rounded-xl border border-slate-200 p-4">
               <h3 className="font-bold text-slate-900 text-sm mb-1">{cat.title}</h3>
