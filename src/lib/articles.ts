@@ -568,7 +568,6 @@ export const allArticles: Article[] = [
     sources: ["Adobe — especificacao do formato PDF (ISO 32000)", "PDF Association — padroes PDF/A para arquivamento"],
     relatedTools: [
       { name: "Juntar PDF", href: "/juntar-pdf" },
-      { name: "Imagem para PDF", href: "/imagem-para-pdf" },
       { name: "Conversor Word para PDF", href: "/conversor-word-pdf" },
     ],
     content: `
@@ -596,7 +595,7 @@ export const allArticles: Article[] = [
 <h2>Converter imagens para PDF</h2>
 <p>Converter imagens JPG ou PNG para PDF e util em diversas situacoes:</p>
 <ul>
-<li><strong>Digitalizacao de documentos:</strong> Tire fotos de documentos e converta para PDF com a ferramenta <a href="/imagem-para-pdf">Imagem para PDF</a>.</li>
+<li><strong>Digitalizacao de documentos:</strong> Tire fotos de documentos e converta para PDF com a ferramenta <a href="/juntar-pdf">Juntar PDF</a> (aba Imagens para PDF).</li>
 <li><strong>Portfolios:</strong> Combine varias imagens de trabalhos em um unico PDF profissional.</li>
 <li><strong>Trabalhos escolares:</strong> Transforme fotos de cadernos ou quadros em PDF para entregar ao professor.</li>
 <li><strong>Comprovantes:</strong> Converta capturas de tela de comprovantes em PDF para arquivo.</li>
@@ -642,7 +641,7 @@ export const allArticles: Article[] = [
 <p>Prefira ferramentas que processam os arquivos localmente no seu navegador, sem enviar nada para servidores externos. Isso garante que seus documentos permanecem privados e seguros.</p>
 
 <h2>Use nossas ferramentas de PDF gratuitas</h2>
-<p>Oferecemos um conjunto completo de ferramentas para trabalhar com PDF, todas gratuitas e com privacidade total — nenhum arquivo sai do seu navegador: <a href="/juntar-pdf">Juntar PDF</a>, <a href="/imagem-para-pdf">Imagem para PDF</a> e <a href="/conversor-word-pdf">Conversor Word / PDF</a>. Experimente agora!</p>
+<p>Oferecemos um conjunto completo de ferramentas para trabalhar com PDF, todas gratuitas e com privacidade total — nenhum arquivo sai do seu navegador: <a href="/juntar-pdf">Juntar PDF e Imagens para PDF</a> e <a href="/conversor-word-pdf">Conversor Word / PDF</a>. Experimente agora!</p>
     `,
   },
 ];

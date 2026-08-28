@@ -7,7 +7,7 @@ const tools = [
   "", "calculadora-juros-compostos", "gerador-de-senha", "contador-de-caracteres",
   "calculadora-imc", "calculadora-porcentagem",
   "calculadora-combustivel", "gerador-qr-code", "calculadora-rescisao", "gerador-cpf-cnpj",
-  "calculadora-calorias", "juntar-pdf", "imagem-para-pdf",
+  "calculadora-calorias", "juntar-pdf",
   "calculadora-financiamento", "conversor-moedas",
   "calculadora-idade",
   "calculadora-horas", "gerador-contrato", "calculadora-desconto",

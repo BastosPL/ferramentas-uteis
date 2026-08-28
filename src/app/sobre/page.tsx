@@ -112,7 +112,7 @@ export default function Sobre() {
             { title: "Calculadoras", desc: "Juros compostos, IMC, calorias, financiamento, rescisão trabalhista, investimentos e mais" },
             { title: "Geradores", desc: "Senhas seguras, QR Code, CPF/CNPJ para testes, contratos, QR Code PIX" },
             { title: "Conversores", desc: "Moedas com cotação atualizada, tabela de medidas, Word para PDF" },
-            { title: "Ferramentas de PDF", desc: "Juntar PDF, imagem para PDF, compressor de imagem" },
+            { title: "Ferramentas de PDF", desc: "Juntar PDF e converter imagens para PDF, compressor de imagem" },
             { title: "Utilidades", desc: "Consulta CNPJ, consulta CEP, contador de caracteres" },
           ].map((cat) => (
             <div key={cat.title} className="bg-white rounded-xl border border-slate-200 p-4">

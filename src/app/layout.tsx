@@ -161,7 +161,6 @@ export default function RootLayout({
                 <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">PDF & Conversores</h3>
                 <ul className="space-y-2">
                   <li><Link href="/juntar-pdf" className="text-sm text-slate-400 hover:text-white transition-colors">Juntar PDF</Link></li>
-                  <li><Link href="/imagem-para-pdf" className="text-sm text-slate-400 hover:text-white transition-colors">Imagem para PDF</Link></li>
                   <li><Link href="/conversor-moedas" className="text-sm text-slate-400 hover:text-white transition-colors">Conversor de Moedas</Link></li>
                   <li><Link href="/conversor-word-pdf" className="text-sm text-slate-400 hover:text-white transition-colors">Word para PDF</Link></li>
                 </ul>

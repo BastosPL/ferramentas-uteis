@@ -1,6 +1,6 @@
 import {
   TrendingUp, Lock, AlignLeft, Scale, Percent, Fuel,
-  QrCode, FileText, Fingerprint, Apple, FileDown, Image, Home,
+  QrCode, FileText, Fingerprint, Apple, FileDown, Home,
   DollarSign, Cake, Clock, FileSignature, Tag, Ruler,
   Building2, ImageDown, FileUp, Zap, PiggyBank, Search, MapPin
 } from "lucide-react";
@@ -37,7 +37,6 @@ export const toolIcons: Record<string, ToolIconConfig> = {
   "gerador-cpf-cnpj": { icon: Fingerprint, category: CATEGORIES.gerador },
   "calculadora-calorias": { icon: Apple, category: CATEGORIES.calculadora },
   "juntar-pdf": { icon: FileDown, category: CATEGORIES.pdf },
-  "imagem-para-pdf": { icon: Image, category: CATEGORIES.pdf },
   "calculadora-financiamento": { icon: Home, category: CATEGORIES.calculadora },
   "conversor-moedas": { icon: DollarSign, category: CATEGORIES.conversor },
   "calculadora-idade": { icon: Cake, category: CATEGORIES.calculadora },

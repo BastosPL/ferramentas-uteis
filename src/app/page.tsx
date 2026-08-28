@@ -69,15 +69,9 @@ const tools = [
   },
   {
     slug: "juntar-pdf",
-    name: "Juntar PDF",
-    description: "Combine vários arquivos PDF em um só. 100% grátis e privado — nada é enviado para servidores.",
+    name: "Juntar PDF e Imagens para PDF",
+    description: "Combine PDFs em um só ou converta imagens JPG e PNG para PDF. 100% grátis e privado.",
     href: "/juntar-pdf",
-  },
-  {
-    slug: "imagem-para-pdf",
-    name: "Imagem para PDF",
-    description: "Converta imagens JPG e PNG para PDF. Combine várias imagens em um único arquivo.",
-    href: "/imagem-para-pdf",
   },
   {
     slug: "calculadora-financiamento",
@@ -466,8 +460,6 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   <Link href="/juntar-pdf" className="text-xs text-blue-600 hover:underline">Juntar PDF</Link>
-                  <span className="text-slate-300">·</span>
-                  <Link href="/imagem-para-pdf" className="text-xs text-blue-600 hover:underline">Imagem → PDF</Link>
                   <span className="text-slate-300">·</span>
                   <Link href="/compressor-imagem" className="text-xs text-blue-600 hover:underline">Compressor</Link>
                   <span className="text-slate-300">·</span>
