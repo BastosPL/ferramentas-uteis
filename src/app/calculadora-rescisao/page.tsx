@@ -176,18 +176,18 @@ export default function CalculadoraRescisao() {
     let infoFGTS = "";
     if (tipo === "sem_justa_causa") {
       if (modalidadeFGTS === "saque_rescisao") {
-        infoFGTS = "Na modalidade Saque-Rescisão, o trabalhador pode movimentar o saldo integral da conta vinculada deste vínculo, além da multa rescisória de 40%.";
+        infoFGTS = "Na modalidade Saque-Rescisão, o saldo integral da conta vinculada deste vínculo fica disponível para saque conforme as regras aplicáveis, além da multa rescisória de 40%.";
       } else {
-        infoFGTS = "Na modalidade Saque-Aniversário, a multa rescisória de 40% continua sendo devida. Porém, o saldo da conta vinculada não é liberado automaticamente por causa da rescisão — permanece disponível apenas no mês de aniversário, conforme regras vigentes (Lei 13.932/2019, Art. 20-A e 20-D §6º).";
+        infoFGTS = "Na modalidade Saque-Aniversário, a multa rescisória de 40% continua sendo devida. Porém, o saldo da conta vinculada não é liberado por causa da rescisão — permanece disponível apenas no mês de aniversário, conforme regras vigentes (Lei 13.932/2019, Art. 20-A e 20-D §6º).";
       }
     } else if (tipo === "acordo_mutuo") {
       if (modalidadeFGTS === "saque_rescisao") {
         infoFGTS = "No acordo mútuo com Saque-Rescisão, o trabalhador pode movimentar até 80% do saldo da conta vinculada deste vínculo (Art. 484-A §1º CLT), além da multa rescisória de 20%.";
       } else {
-        infoFGTS = "No acordo mútuo com Saque-Aniversário, a multa rescisória de 20% é devida. A movimentação do saldo segue as regras do Saque-Aniversário — o saque de 80% previsto no Art. 484-A §1º não se aplica nesta modalidade.";
+        infoFGTS = "No acordo mútuo com Saque-Aniversário, a multa rescisória de 20% é devida. A movimentação do saldo segue as regras do Saque-Aniversário — o saque de até 80% previsto no Art. 484-A §1º não se aplica automaticamente nesta modalidade.";
       }
     } else {
-      infoFGTS = "No pedido de demissão, não há multa rescisória do FGTS e o saldo da conta vinculada não pode ser movimentado por causa da rescisão, independentemente da modalidade de saque.";
+      infoFGTS = "No pedido de demissão, não há multa rescisória do FGTS. O saldo da conta vinculada não é liberado por motivo da rescisão, independentemente da modalidade de saque.";
     }
 
     // --- Totais ---
@@ -207,7 +207,7 @@ export default function CalculadoraRescisao() {
     detalhes.push(`13º proporcional: ${avosTreze} avo(s) de 12`);
     detalhes.push(`Férias proporcionais: ${mesesFeriasProp} mês(es) do período aquisitivo atual`);
     if (numPeriodosAdquiridos > 0) {
-      detalhes.push(`Férias adquiridas (não gozadas): ${numPeriodosAdquiridos} período(s)`);
+      detalhes.push(`Férias adquiridas ainda devidas: ${numPeriodosAdquiridos} período(s)`);
     }
     if (numPeriodosEmDobro > 0) {
       detalhes.push(`Férias vencidas (em dobro): ${numPeriodosEmDobro} período(s)`);
@@ -302,7 +302,7 @@ export default function CalculadoraRescisao() {
           <h3 className="text-sm font-semibold text-gray-800 mb-3">Férias</h3>
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium mb-1 text-gray-800">Períodos completos de férias não gozadas</label>
+              <label className="block text-sm font-medium mb-1 text-gray-800">Períodos de férias adquiridas ainda devidas</label>
               <select value={periodosAdquiridos} onChange={(e) => setPeriodosAdquiridos(e.target.value)} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-rose-500 bg-white">
                 <option value="0">0 — Não tenho férias acumuladas</option>
                 <option value="1">1 período</option>
@@ -370,8 +370,8 @@ export default function CalculadoraRescisao() {
                 {[
                   { label: "Saldo de Salário", value: resultado.saldoSalario },
                   ...(resultado.feriasAdquiridas > 0 ? [
-                    { label: "Férias Adquiridas (não gozadas)", value: resultado.feriasAdquiridas },
-                    { label: "1/3 Férias Adquiridas", value: resultado.tercoFeriasAdquiridas },
+                    { label: "Férias Adquiridas Ainda Devidas", value: resultado.feriasAdquiridas },
+                    { label: "1/3 Férias Adquiridas Ainda Devidas", value: resultado.tercoFeriasAdquiridas },
                   ] : []),
                   ...(resultado.feriasEmDobro > 0 ? [
                     { label: "Férias Vencidas (em dobro)", value: resultado.feriasEmDobro },
@@ -494,7 +494,7 @@ export default function CalculadoraRescisao() {
           </p>
           <h3 className="text-lg font-semibold text-gray-900 mt-4 mb-2">Férias — Proporcionais, Adquiridas e Vencidas</h3>
           <p className="mb-3">
-            A cada 12 meses trabalhados (período aquisitivo), o funcionário adquire direito a 30 dias de férias. Na rescisão, as férias se dividem em três categorias: <strong>férias proporcionais</strong> (meses do período aquisitivo incompleto atual, com fração superior a 14 dias contando como mês completo), <strong>férias adquiridas</strong> (períodos completos que não foram gozados) e <strong>férias vencidas em dobro</strong> (períodos cujo prazo de concessão expirou — Art. 137 CLT). Todas incluem o adicional de 1/3 constitucional.
+            A cada 12 meses trabalhados (período aquisitivo), o funcionário adquire direito a 30 dias de férias. Na rescisão, as férias se dividem em três categorias: <strong>férias proporcionais</strong> (meses do período aquisitivo incompleto atual, com fração superior a 14 dias contando como mês completo), <strong>férias adquiridas ainda devidas</strong> (períodos completos cujas férias ainda não foram tiradas nem pagas) e <strong>férias vencidas em dobro</strong> (períodos cujo prazo de concessão expirou — Art. 137 CLT). Todas incluem o adicional de 1/3 constitucional.
           </p>
           <h3 className="text-lg font-semibold text-gray-900 mt-4 mb-2">13º Salário Proporcional</h3>
           <p className="mb-3">
