@@ -39,6 +39,9 @@ export default function CalculadoraCombustivel() {
     ? (economiaPorKm / Math.max(custoKmGas, custoKmAlc)) * 100
     : 0;
 
+  const empate = temResultadoPreciso && economiaPct < 1;
+  const pontoEquilibrio = pg > 0 && cg > 0 && ca > 0 ? pg * ca / cg : 0;
+
   const temKm = kmVal > 0 && temResultadoPreciso;
   const custoTotalGas = temKm ? kmVal * custoKmGas : 0;
   const custoTotalAlc = temKm ? kmVal * custoKmAlc : 0;
@@ -257,31 +260,64 @@ export default function CalculadoraCombustivel() {
                 </div>
 
                 {/* Recommendation */}
-                <div className={`rounded-xl p-5 ${melhorAlcoolPreciso ? "bg-green-50 border border-green-200" : "bg-blue-50 border border-blue-200"}`}>
-                  <p className={`text-2xl font-bold text-center ${melhorAlcoolPreciso ? "text-green-700" : "text-blue-700"}`}>
-                    {melhorAlcoolPreciso ? "Alcool e mais economico" : "Gasolina e mais economica"}
-                  </p>
-                  <div className="mt-3 text-center space-y-1">
-                    <p className="text-sm text-gray-700">
-                      Economia de <strong>R$ {economiaPorKm.toFixed(4)}</strong> por km ({economiaPct.toFixed(1)}%)
+                {empate ? (
+                  <div className="rounded-xl p-5 bg-amber-50 border border-amber-200">
+                    <p className="text-2xl font-bold text-center text-amber-700">
+                      Custos praticamente equivalentes
                     </p>
-                    {temKm && (
-                      <>
-                        <p className="text-sm text-gray-700">
-                          Economia {tipoKm === "mensal" ? "mensal" : "na viagem"}: <strong>R$ {formatReal(economiaTotal)}</strong>
-                        </p>
-                        {tipoKm === "mensal" && (
-                          <p className="text-sm font-semibold text-gray-800">
-                            Economia anual estimada: R$ {formatReal(economiaTotal * 12)}
-                          </p>
-                        )}
-                      </>
-                    )}
+                    <p className="text-sm text-gray-700 mt-3 text-center">
+                      A diferenca e de apenas {economiaPct.toFixed(1)}% — insignificante na pratica.
+                    </p>
+                    <p className="text-sm text-gray-700 mt-2 text-center">
+                      Considere outros fatores para decidir:
+                    </p>
+                    <ul className="text-sm text-gray-700 mt-2 list-disc pl-6 space-y-1">
+                      <li>Autonomia (gasolina rende mais km por tanque)</li>
+                      <li>Frequencia de abastecimento</li>
+                      <li>Disponibilidade do combustivel na sua regiao</li>
+                      <li>Preferencia pessoal</li>
+                    </ul>
                   </div>
-                  <p className="text-xs text-gray-500 mt-3 text-center">
-                    Calculo baseado no consumo informado. O consumo real varia conforme trajeto, manutencao e estilo de direcao.
-                  </p>
-                </div>
+                ) : (
+                  <div className={`rounded-xl p-5 ${melhorAlcoolPreciso ? "bg-green-50 border border-green-200" : "bg-blue-50 border border-blue-200"}`}>
+                    <p className={`text-2xl font-bold text-center ${melhorAlcoolPreciso ? "text-green-700" : "text-blue-700"}`}>
+                      {melhorAlcoolPreciso ? "Alcool e mais economico" : "Gasolina e mais economica"}
+                    </p>
+                    <div className="mt-3 text-center space-y-1">
+                      <p className="text-sm text-gray-700">
+                        Economia de <strong>R$ {economiaPorKm.toFixed(4)}</strong> por km ({economiaPct.toFixed(1)}%)
+                      </p>
+                      {temKm && (
+                        <>
+                          <p className="text-sm text-gray-700">
+                            Economia {tipoKm === "mensal" ? "mensal" : "na viagem"}: <strong>R$ {formatReal(economiaTotal)}</strong>
+                          </p>
+                          {tipoKm === "mensal" && (
+                            <p className="text-sm font-semibold text-gray-800">
+                              Economia anual estimada: R$ {formatReal(economiaTotal * 12)}
+                            </p>
+                          )}
+                        </>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* Ponto de equilíbrio */}
+                {pontoEquilibrio > 0 && (
+                  <div className="rounded-lg p-4 bg-emerald-50 border border-emerald-200">
+                    <p className="text-sm text-gray-800">
+                      <strong>Ponto de equilibrio:</strong> com o consumo informado, o etanol compensa ate aproximadamente <strong>R$ {formatReal(pontoEquilibrio)}/l</strong>.
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      Acima desse valor, a gasolina e mais economica para o seu veiculo.
+                    </p>
+                  </div>
+                )}
+
+                <p className="text-xs text-gray-500 text-center">
+                  Calculo baseado no consumo informado. O consumo real varia conforme trajeto, manutencao e estilo de direcao.
+                </p>
               </div>
             )}
 
